@@ -25,7 +25,6 @@ export function Header() {
   const navLinks = [
     { href: "/features", label: "Features" },
     { href: "/features-2", label: "Features 2" },
-    { href: "/industries", label: "Industries" },
     { href: "/why-us", label: "Why Us" },
     { href: "/why-us-2", label: "Why Us 2" },
     { href: "/pricing", label: "Pricing" },
@@ -68,6 +67,27 @@ export function Header() {
                 />
               </Link>
             ))}
+            {/* Industries Dropdown (Desktop) */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-foreground hover:text-primary transition-colors">
+                Industries
+                <ChevronDown size={16} className="group-hover:rotate-180 transition-transform" />
+              </button>
+              <div className="absolute left-0 mt-0 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <Link
+                  href="/industries"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-t-lg"
+                >
+                  Industries
+                </Link>
+                <Link
+                  href="/industries#finance"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Finance
+                </Link>
+              </div>
+            </div>
             <div className="relative group">
               <button className="flex items-center gap-1 text-foreground hover:text-primary transition-colors">
                 Playbooks
