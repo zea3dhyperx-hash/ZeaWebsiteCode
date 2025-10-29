@@ -24,12 +24,11 @@ export function StatsSection() {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-            The Complete Business Platform That Revolutionizes Healthcare Operations
+            What Is ZeaCRM?
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            From appointment scheduling to patient management, our all-in-one platform streamlines healthcare operations
-            while serving businesses across all industries. Track doctor availability, manage patient flow, and automate
-            your entire practice with AI-powered intelligence.
+            ZeaCRM is a next-generation Customer Relationship Management solution built to empower teams that want to work smarter, not harder. Developed by URL Factory, it’s designed for businesses that value speed, automation, and insight.
+            \n From capturing leads to nurturing relationships and analyzing performance, ZeaCRM helps you stay in control. The intelligent AI tool helps you monitor and manage your tasks every step of the way.
           </p>
         </div>
 
