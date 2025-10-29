@@ -7,11 +7,13 @@ import { FeaturesAutomationSection } from "@/components/features-automation-sect
 import { FeaturesMobileSection } from "@/components/features-mobile-section"
 import { FeaturesScaleSection } from "@/components/features-scale-section"
 import { FeaturesIntegrationsSection } from "@/components/features-integrations-section"
+import { Features2Grid } from "@/components/features-2-grid"
 
 export default function FeaturesPage() {
   return (
     <main className="min-h-screen">
       <Header />
+      <Features2Grid />
       <FeaturesHeroSection />
       <FeaturesCardsSection />
       <FeaturesResultsSection />
