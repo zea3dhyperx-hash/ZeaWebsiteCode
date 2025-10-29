@@ -39,7 +39,7 @@ export function Header() {
             <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-amber-400">
               <span className="text-primary-foreground font-bold text-lg">Z</span>
             </div>
-            <span className="font-bold text-xl text-foreground">ZeaCRM</span>
+            {/* <span className="font-bold text-xl text-foreground">ZeaCRM</span> */}
             <Image
               src="/logo.png"
               alt="zeaCRM logo"
