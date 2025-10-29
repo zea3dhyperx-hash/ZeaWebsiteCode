@@ -37,11 +37,10 @@ export function FourStepsSection() {
               
               
               <h3 className="text-2xl md:text-3xl font-semibold text-primary-foreground mb-4">
-                Building The Digital Marketing Engine
+                How it Works
               </h3>
               <p className="text-primary-foreground/80 mb-8">
-                Transform your business with our proven 4-step methodology designed to maximize growth and customer
-                engagement.
+                We make it so easy, your business runs on autopilot. Our process involves:
               </p>
             </div>
 
@@ -54,9 +53,9 @@ export function FourStepsSection() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-primary-foreground mb-1">Discover & Manage</h4>
+                  <h4 className="text-lg font-semibold text-primary-foreground mb-1">Capture</h4>
                   <p className="text-primary-foreground/80">
-                    Identify your target audience and organize customer data for actionable insights.
+                    Automatically import leads from your website, social channels, or campaigns.
                   </p>
                 </div>
               </div>
@@ -68,9 +67,9 @@ export function FourStepsSection() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-primary-foreground mb-1">Connect & Communicate</h4>
+                  <h4 className="text-lg font-semibold text-primary-foreground mb-1">Nurture</h4>
                   <p className="text-primary-foreground/80">
-                    Engage customers across multiple channels with personalized messaging.
+                    Automate emails, reminders, and workflows to build stronger connections.
                   </p>
                 </div>
               </div>
@@ -82,9 +81,9 @@ export function FourStepsSection() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-primary-foreground mb-1">Automate & Optimize</h4>
+                  <h4 className="text-lg font-semibold text-primary-foreground mb-1">Convert</h4>
                   <p className="text-primary-foreground/80">
-                    Streamline workflows and continuously improve performance with AI-driven insights.
+                    Use AI insights and real-time analytics to close deals faster and smarter.
                   </p>
                 </div>
               </div>
