@@ -28,7 +28,9 @@ export function StatsSection() {
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
             ZeaCRM is a next-generation Customer Relationship Management solution built to empower teams that want to work smarter, not harder. Developed by URL Factory, it’s designed for businesses that value speed, automation, and insight.
-            \n From capturing leads to nurturing relationships and analyzing performance, ZeaCRM helps you stay in control. The intelligent AI tool helps you monitor and manage your tasks every step of the way.
+          </p>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            From capturing leads to nurturing relationships and analyzing performance, ZeaCRM helps you stay in control. The intelligent AI tool helps you monitor and manage your tasks every step of the way.
           </p>
         </div>
 
