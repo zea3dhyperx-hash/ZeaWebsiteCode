@@ -36,9 +36,9 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 hover-lift">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-amber-400">
+            {/* <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-amber-400">
               <span className="text-primary-foreground font-bold text-lg">Z</span>
-            </div>
+            </div> */}
             {/* <span className="font-bold text-xl text-foreground">ZeaCRM</span> */}
             <Image
               src="/logo.png"
