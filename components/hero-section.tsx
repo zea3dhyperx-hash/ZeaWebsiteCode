@@ -52,11 +52,10 @@ export function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Transform Your Business with AI-Powered CRM Solutions
+                ZeaCRM: Smarter Relationships, Stronger Results
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Experience the future of customer relationship management with zeaCRM's intelligent AI assistants that
-                work 24/7 to grow your business, nurture leads, and delight customers.
+                Manage leads, automate sales, and turn conversations into conversions all from one intelligent platform. ZeaCRM helps growing businesses simplify customer management, automate routine tasks, and close deals faster with the power of AI.
               </p>
             </div>
 
@@ -70,12 +69,12 @@ export function HeroSection() {
                 className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400/10 font-semibold px-8 py-6 text-base rounded-lg flex items-center justify-center gap-2 bg-transparent"
               >
                 <Play size={18} />
-                Watch Demo
+                Book a Demo
               </Button>
             </div>
 
             {/* Benefits */}
-            <div className="flex flex-col sm:flex-row gap-6 pt-4">
+            {/* <div className="flex flex-col sm:flex-row gap-6 pt-4">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                 <span className="text-sm text-gray-300">No credit card required</span>
@@ -88,7 +87,7 @@ export function HeroSection() {
                 <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                 <span className="text-sm text-gray-300">Setup in 5 minutes</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right - 3D Character Illustration */}
