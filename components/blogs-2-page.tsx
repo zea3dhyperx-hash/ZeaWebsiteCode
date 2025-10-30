@@ -116,7 +116,7 @@ export function Blogs2Page() {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="px-4 py-2 rounded-lg border border-border bg-background text-foreground w-full max-w-md hover-lift"
+                className="px-4 py-2 rounded-lg border border-border border-primary bg-background text-foreground w-full max-w-md hover-lift"
               />
             </div>
           </div>

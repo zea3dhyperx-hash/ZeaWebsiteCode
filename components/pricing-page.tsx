@@ -81,27 +81,32 @@ export function PricingPage() {
   return (
     <div className="bg-black">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-4 md:px-8">
+      <section className="py-16 md:py-24 px-4 md:px-8 pt-24 pb-0 animate-slide-up">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Pricing</h1>
-          <p className="text-xl text-amber-400 mb-4">Simple, Transparent, and Scalable Plans</p>
-          <p className="text-gray-400 text-lg">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Pricing</h1>
+          <p className="text-xl text-amber-400 mb-8 animate-slide-up">Simple, Transparent, and Scalable Plans</p>
+          <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
+              ZeaCRM offers flexible pricing designed to fit businesses of all sizes. Whether you're just starting out or
+              scaling across industries, we have a plan that matches your growth journey.
+          </p>
+          {/* <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Pricing</h1> */}
+          {/* <p className="text-gray-400 text-lg">
             ZeaCRM offers flexible pricing designed to fit businesses of all sizes. Whether you're just starting out or
             scaling across industries, we have a plan that matches your growth journey.
-          </p>
+          </p> */}
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-16 md:py-24 px-4 md:px-8">
+      <section className="py-0 md:py-0 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {pricingPlans.map((plan, index) => (
               <div
                 key={index}
-                className={`rounded-lg p-8 border-2 transition-all ${
+                className={`rounded-lg p-8 border-2 hover:scale-105 transition-transform transition-all ${
                   plan.highlighted
-                    ? "border-amber-400 bg-gray-900 shadow-2xl shadow-amber-400/20 md:scale-105"
+                    ? "border-amber-400 hover:scale-110 transition-transform bg-gray-900 shadow-2xl shadow-amber-400/20 md:scale-105"
                     : "border-gray-700 bg-gray-950 hover:border-amber-400"
                 }`}
               >
@@ -153,7 +158,7 @@ export function PricingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 hover:scale-105 transition-transform">
             {[
               { title: "Transparent monthly billing", icon: "✓" },
               { title: "No hidden costs", icon: "✓" },
@@ -169,16 +174,16 @@ export function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 px-4 md:px-8">
+      <section className="py-16 md:py-24 px-4 md:px-8 ind bg-amber-400">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-background text-center mb-12">Frequently Asked Questions</h2>
 
           <div className="space-y-4">
             {faqItems.map((item, index) => (
               <div key={index} className="border border-gray-700 rounded-lg overflow-hidden">
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                  className="w-full px-6 py-4 flex items-center justify-between bg-gray-950 hover:bg-gray-900 transition-colors"
+                  className="w-full px-6 py-7 flex items-center justify-between bg-gray-950 hover:bg-gray-900 transition-colors"
                 >
                   <span className="text-white font-semibold text-left">{item.question}</span>
                   <ChevronDown
@@ -207,10 +212,10 @@ export function PricingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-amber-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-amber-500 transition-colors">
-              Start Free Trial
+              <a href="/contact-us">Contact Sales</a>
             </button>
             <button className="border-2 border-amber-400 text-amber-400 px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 hover:text-black transition-colors">
-              Book a Demo
+              <a href="/demo-2">Book a Demo</a>
             </button>
           </div>
         </div>

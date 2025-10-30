@@ -108,18 +108,18 @@ export function Demo2Page() {
         </section> */}
         {/* Book a Demo Form Section */}
         <section id="bookdemo" className="py-16 md:py-0 px-4 md:px-8">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto ">
             <h2 className="text-3xl font-bold text-foreground mb-4 text-center animate-slide-up">Schedule Your Demo</h2>
-            <p className="text-muted-foreground text-center mb-8 animate-slide-up">
-              Get a personalized walkthrough of ZeaCRM tailored to your business needs
+            <p className="text-muted-foreground text-center mb-8 animate-slide-up ">
+              Get a personalized walkthrough of ZeaCRM tailored to your business needs apple
             </p>
             <form
               onSubmit={handleBookDemoSubmit}
-              className="bg-card border border-border rounded-lg p-8 space-y-6 animate-fade-in"
+              className="bg-card border border-border border-primary rounded-lg p-8 space-y-6 animate-slide-up"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">Full Name</label>
+                  <label className="block text-sm font-semibold text-primary mb-2">Full Name</label>
                   <input
                     type="text"
                     name="name"
@@ -131,7 +131,7 @@ export function Demo2Page() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">Email</label>
+                  <label className="block text-sm font-semibold text-primary mb-2">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -145,7 +145,7 @@ export function Demo2Page() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">Company</label>
+                  <label className="block text-sm font-semibold text-primary mb-2">Company</label>
                   <input
                     type="text"
                     name="company"
@@ -156,7 +156,7 @@ export function Demo2Page() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">Phone</label>
+                  <label className="block text-sm font-semibold text-primary mb-2">Phone</label>
                   <input
                     type="tel"
                     name="phone"
@@ -168,7 +168,7 @@ export function Demo2Page() {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">Message</label>
+                <label className="block text-sm font-semibold text-primary mb-2">Message</label>
                 <textarea
                   name="message"
                   value={bookDemoForm.message}
@@ -190,7 +190,7 @@ export function Demo2Page() {
 
         {/* Success Metrics */}
         <section className="py-16 md:py-24 px-4 md:px-8 bg-primary/5">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto ">
             <h2 className="text-3xl font-bold text-foreground mb-12 animate-slide-up">Results Our Customers Achieve</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {[
@@ -201,7 +201,7 @@ export function Demo2Page() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300 hover-lift animate-fade-in"
+                  className="bg-card border border-border hover:border-primary rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300 hover-lift animate-fade-in"
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
                   <div className="text-4xl font-bold text-primary mb-2">{item.metric}</div>
@@ -221,9 +221,9 @@ export function Demo2Page() {
               Join hundreds of companies already using ZeaCRM to close more deals
             </p>
             <div className="flex gap-4 justify-center animate-slide-up">
-              <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold hover-lift">
+              {/* <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold hover-lift">
                 Start Free Trial
-              </button>
+              </button> */}
               <Link
                 href="/contact-us"
                 className="px-8 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-all duration-300 font-semibold hover-lift inline-block"

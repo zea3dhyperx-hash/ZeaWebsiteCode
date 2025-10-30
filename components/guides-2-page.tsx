@@ -99,7 +99,7 @@ export function Guides2Page() {
               placeholder="Search guides..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="px-4 py-2 rounded-lg border border-border bg-background text-foreground w-full max-w-md mx-auto hover-lift animate-slide-up"
+              className="px-4 py-2 rounded-lg border border-border border-primary bg-background text-foreground w-full max-w-md mx-auto hover-lift animate-slide-up"
             />
           </div>
         </section>
