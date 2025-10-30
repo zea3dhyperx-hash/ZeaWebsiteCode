@@ -49,7 +49,7 @@ export function Blogs2Page() {
       date: "Oct 20, 2024",
       category: "Sales Strategy",
       image: "/placeholder.svg",
-      href: "/blogs/lead-nurturing-guide",
+      href: "features.html",
     },
     {
       id: 5,
