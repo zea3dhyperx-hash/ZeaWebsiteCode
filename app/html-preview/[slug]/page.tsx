@@ -9,6 +9,10 @@ type Props = {
 // Allow only known HTML files to be previewed
 const allowed = new Set(["index", "features", "why-us"])
 
+export function generateStaticParams() {
+  return Array.from(allowed).map((slug) => ({ slug }))
+}
+
 export default function HtmlPreviewPage({ params }: Props) {
   const slug = params.slug
   if (!allowed.has(slug)) return notFound()
@@ -33,4 +37,3 @@ export default function HtmlPreviewPage({ params }: Props) {
     </>
   )
 }
-
