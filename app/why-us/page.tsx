@@ -7,12 +7,14 @@ import { WhyUsIndustrySpotlight } from "@/components/why-us-industry-spotlight"
 import { WhyUsIndustriesSection } from "@/components/why-us-industries-section"
 import { WhyUsComparisonSection } from "@/components/why-us-comparison-section"
 import { WhyUsTestimonialsSection } from "@/components/why-us-testimonials-section"
+import { WhyUs2Hero } from "@/components/why-us-2-hero"
 
 export default function WhyUsPage() {
   return (
     <main className="min-h-screen">
       <Header />
       <div className="space-y-0">
+        <WhyUs2Hero />
         <WhyChooseUsHero />
         <FeaturesComparisonTable />
         <WhyUsMainReasons />
