@@ -1,46 +1,59 @@
 "use client"
 
+import Image from "next/image"
 import { Check } from "lucide-react"
 
 export function FeatureCardsSection() {
   const features = [
     {
-      title: "Discover & Manage Leads",
-      description: "Unlock the power of intelligent lead discovery and management",
+      title: "Capture: Smart Lead Collection",
+      description: "Turn every click into a potential customer.",
       items: [
-        "Create Full Websites, Funnels & Landing Pages",
-        "Drop & Drag Services Grid Forms",
-        "Unified appointment Scheduling",
+        "Auto-import leads from web & social.",
+        "Engage instantly with smart forms.",
+        "Track every source in one view.",
       ],
-      mockupType: "dashboard",
+      image: "/images/capture.png",
     },
     {
-      title: "Connect and Communicate with Customers",
-      description: "Build lasting relationships through seamless communication",
+      title: "Nurture: Automated Relationship Building",
+      description: "Stay connected without manual effort.",
       items: [
-        "Create Full Websites, Funnels & Landing Pages",
-        "Drop & Drag Services Grid Forms",
-        "Unified appointment Scheduling",
+        "Send timed emails & reminders.",
+        "Build trust with follow-up flows.",
+        "Personalize every interaction.",
       ],
-      mockupType: "communication",
+      image: "/images/Nurture.png",
+    },
+    {
+      title: "Convert: Insight-Driven Sales Acceleration",
+      description: "Close deals faster with real-time data.",
+      items: [
+        "View live pipeline performance.",
+        "Optimize what converts best.",
+        "Get AI tips for faster wins.",
+      ],
+      image: "/images/convert.png",
     },
   ]
 
   return (
     <section className="bg-amber-400 py-16 px-4 md:px-8 lg:px-16">
-      <div className="max-w-7xl mx-auto space-y-12">
+      <div className="max-w-7xl mx-auto space-y-16">
         {features.map((feature, index) => (
           <div
             key={index}
-            className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-8 items-center`}
+            className={`flex flex-col ${
+              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+            } gap-10 items-center`}
           >
-            {/* Card Content */}
+            {/* Text Card */}
             <div className="flex-1">
-              <div className="bg-slate-900 rounded-2xl p-8 text-white">
+              <div className="bg-slate-900 rounded-2xl p-8 text-white hover:shadow-2xl transition-shadow duration-300">
                 <h3 className="text-2xl md:text-3xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-400 text-sm md:text-base mb-6">{feature.description}</p>
 
-                {/* Feature Items */}
+                {/* Bullet Points */}
                 <ul className="space-y-4 mb-6">
                   {feature.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-3">
@@ -50,7 +63,6 @@ export function FeatureCardsSection() {
                   ))}
                 </ul>
 
-                {/* Learn More Link */}
                 <a
                   href="#"
                   className="inline-block text-amber-400 font-semibold hover:text-amber-300 transition-colors text-sm md:text-base"
@@ -60,49 +72,17 @@ export function FeatureCardsSection() {
               </div>
             </div>
 
-            {/* Mockup Illustration */}
+            {/* Image Section */}
             <div className="flex-1 flex justify-center">
-              <div className="relative w-full max-w-sm">
-                {feature.mockupType === "dashboard" ? (
-                  // Dashboard Mockup
-                  <div className="space-y-3">
-                    <div className="bg-slate-800 rounded-lg p-4 h-32 flex items-center justify-center">
-                      <div className="space-y-2 w-full">
-                        <div className="h-2 bg-slate-700 rounded w-3/4"></div>
-                        <div className="h-2 bg-slate-700 rounded w-1/2"></div>
-                        <div className="h-2 bg-slate-700 rounded w-2/3"></div>
-                      </div>
-                    </div>
-                    <div className="flex gap-3">
-                      <div className="bg-slate-800 rounded-lg p-3 flex-1 h-24 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-amber-400 rounded-full"></div>
-                      </div>
-                      <div className="bg-slate-800 rounded-lg p-3 flex-1 h-24 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-amber-400 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  // Communication Mockup
-                  <div className="bg-white rounded-lg p-4 shadow-lg space-y-3">
-                    <div className="flex items-center gap-3 pb-3 border-b border-gray-200">
-                      <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
-                      <div className="flex-1">
-                        <div className="h-2 bg-gray-300 rounded w-24"></div>
-                        <div className="h-2 bg-gray-200 rounded w-16 mt-1"></div>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex gap-2">
-                        <div className="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
-                        <div className="bg-gray-100 rounded-lg p-2 flex-1 h-8"></div>
-                      </div>
-                      <div className="flex gap-2 justify-end">
-                        <div className="bg-amber-400 rounded-lg p-2 flex-1 h-8 max-w-xs"></div>
-                      </div>
-                    </div>
-                  </div>
-                )}
+              <div className="relative w-full max-w-sm hover:scale-105 transition-transform duration-500 ease-out">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={500}
+                  height={400}
+                  className="rounded-2xl shadow-lg object-cover w-full h-auto"
+                  priority
+                />
               </div>
             </div>
           </div>
