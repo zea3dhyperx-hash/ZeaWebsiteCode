@@ -41,23 +41,61 @@ export default function ContactUsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
-              // { icon: "📧", title: "Email", content: "support@zeacrm.com" },
-              // { icon: "📞", title: "Phone", content: "+1 (555) 000-0000" },
-              // { icon: "📍", title: "Address", content: "123 Business St, City, State 12345" },
-              { title: "Email", content: "support@zeacrm.com" },
-              { title: "Phone", content: "+1 (555) 000-0000" },
-              { title: "Address", content: "Salem, Tamil Nadu, India" },
+              {
+                title: "Email",
+                content: [
+                  "info@url-factory.com",
+                  "support@url-factory.com",
+                ],
+                type: "email",
+              },
+              {
+                title: "Phone",
+                content: [
+                  "(+91) 4274526722",
+                  "(+91) 8825619910",
+                ],
+                type: "phone",
+              },
+              {
+                title: "Address",
+                content:
+                  "16, CPS Tower, Advitha Ashram Rd, FaIands, Salem, Tamilnadu 636016",
+                type: "text",
+              },
             ].map((item, index) => (
               <div
                 key={index}
                 className="border border-border rounded-lg bg-primary p-6 text-center bg-card hover-lift animate-slide-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* <div className="text-4xl mb-4">{item.icon}</div> */}
                 <h3 className="font-bold mb-2 text-background text-lg">{item.title}</h3>
-                <p className="text-background">{item.content}</p>
+                <p className="text-background">
+                  {Array.isArray(item.content)
+                    ? item.content.map((line, i) => {
+                        let href = "";
+                        if (item.type === "email") href = `mailto:${line}`;
+                        if (item.type === "phone") href = `tel:${line.replace(/\s+/g, "")}`;
+                        return (
+                          <span key={i}>
+                            {href ? (
+                              <a
+                                href={href}
+                                className="text-background hover:underline"
+                              >
+                                {line}
+                              </a>
+                            ) : (
+                              line
+                            )}
+                            {i < item.content.length - 1 && <br />}
+                          </span>
+                        );
+                      })
+                    : item.content}
+                </p>
               </div>
             ))}
           </div>
@@ -129,7 +167,7 @@ export default function ContactUsPage() {
           </div>
 
           <div className="mb-16 -mx-8 w-screen bg-primary py-15">
-            <h2 className="text-6xl font-bold text-background bg-primary mb-8 text-center animate-fade-in">Got a Question?</h2>
+            <h2 className="text-6xl font-bold text-background bg-primary mb-8 text-center animate-fade-in">Get in Touch for any Information!</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center text-background bg-primary">
               <div className="animate-slide-up max-w-2xl mx-auto item-center">
                 <Image
@@ -176,7 +214,7 @@ export default function ContactUsPage() {
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center animate-fade-in">Visit Us</h2>
             <div className="border border-border rounded-lg overflow-hidden animate-scale-in">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890!2d-74.0060!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3855555%3A0xb89d1fe6bc499443!2s123%20Business%20St%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1234567890"
+                src="https://www.google.com/maps/embed?origin=mfe&pb=!1m4!2m1!1sM4FR%2B5M+Salem,+Tamil+Nadu!5e0!6i16"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
@@ -186,13 +224,13 @@ export default function ContactUsPage() {
               ></iframe>
             </div>
             <div className="mt-6 p-6 bg-card border border-border rounded-lg animate-slide-up">
-              <h3 className="font-bold text-lg text-foreground mb-2">Our Office</h3>
+              <h3 className="font-bold text-lg text-primary mb-2">Our Office</h3>
               <p className="text-muted-foreground mb-4">
                 Visit our headquarters to meet the team and learn more about zeaCRM in person.
               </p>
               <div className="space-y-2 text-foreground">
                 <p>
-                  <span className="font-semibold">Address:</span> 123 Business St, City, State 12345
+                  <span className="font-semibold">Address:</span> 16, CPS Tower, Advitha Ashram Rd, FaIands, Salem, Tamilnadu 636016
                 </p>
                 <p>
                   <span className="font-semibold">Hours:</span> Monday - Friday, 9:00 AM - 6:00 PM EST
