@@ -17,7 +17,7 @@ export default function HtmlPreviewPage({ params }: Props) {
   const slug = params.slug
   if (!allowed.has(slug)) return notFound()
 
-  const src = `/html/${slug}.html`
+  const src = `../html/${slug}.html`
 
   return (
     <>
