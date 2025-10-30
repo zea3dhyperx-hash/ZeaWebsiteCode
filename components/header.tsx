@@ -78,13 +78,49 @@ export function Header() {
                   href="/industries"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-t-lg"
                 >
-                  Industries
+                  Healthcare
                 </Link>
                 <Link
                   href="/industries#finance"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
-                  Finance
+                  Real Estate
+                </Link>
+                <Link
+                  href="/industries#finance"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Retail & E-commerce
+                </Link>
+                <Link
+                  href="/industries#finance"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Professional Services
+                </Link>
+                <Link
+                  href="/industries#finance"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Education & Training
+                </Link>
+                <Link
+                  href="/industries#finance"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Finance & Insuance
+                </Link>
+                <Link
+                  href="/industries#finance"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Automotive & Manufacturing
+                </Link>
+                <Link
+                  href="/industries#finance"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Other Industries
                 </Link>
               </div>
             </div>
