@@ -13,6 +13,7 @@ import { IndustriesSection } from "@/components/industries-section"
 import { PricingSection } from "@/components/pricing-section"
 import { CTATransformSection } from "@/components/cta-transform-section"
 import { IntegrationsLogosSection } from "@/components/integrations-logos-section"
+import { FeaturesSlider2 } from "@/components/features-slider2"
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
         <AIToolsSection />
         <FourStepsSection />
         <FeatureCardsSection />
-        <FeaturesSlider />
+        <FeaturesSlider2 />
         <FeaturesHubSection />
         <AwardSupportSection />
         <IntegrationsSection />

@@ -9,13 +9,11 @@ export function AwardSupportSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Side - Illustration */}
           <div className="flex justify-center">
-            <div className="relative w-64 h-80 bg-black rounded-lg flex items-center justify-center">
-              {/* Placeholder for professional illustration */}
-              <div className="text-center">
-                <div className="text-6xl mb-4">👨‍💼</div>
-                <div className="text-white text-sm">Support Team</div>
-              </div>
-            </div>
+            <img
+                  src="/images/support.png"
+                  alt="Award Winning Support Illustration"
+                  className="w-full h-auto rounded-lg"
+                />
           </div>
 
           {/* Right Side - Content */}
