@@ -97,7 +97,7 @@ export function Blogs2Page() {
       <Header />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 px-4 md:px-8">
+        <section className="bg-gradient-to-b from-primary/10 to-background py-15 md:py-24 px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
             {/* <div className="flex justify-center mb-6 animate-fade-in">
               <img

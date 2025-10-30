@@ -1,5 +1,5 @@
-import { Guides2Page } from "@/components/guides-2-page"
+import { GuidesPage } from "@/components/guides-page"
 
-export default function Guides2() {
-  return <Guides2Page />
+export default function Guides() {
+  return <GuidesPage />
 }

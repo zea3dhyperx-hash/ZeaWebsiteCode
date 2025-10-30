@@ -41,93 +41,97 @@ export default function ContactUsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-3xl mx-auto">
             {[
-              { icon: "📧", title: "Email", content: "support@zeacrm.com" },
-              { icon: "📞", title: "Phone", content: "+1 (555) 000-0000" },
-              { icon: "📍", title: "Address", content: "123 Business St, City, State 12345" },
+              // { icon: "📧", title: "Email", content: "support@zeacrm.com" },
+              // { icon: "📞", title: "Phone", content: "+1 (555) 000-0000" },
+              // { icon: "📍", title: "Address", content: "123 Business St, City, State 12345" },
+              { title: "Email", content: "support@zeacrm.com" },
+              { title: "Phone", content: "+1 (555) 000-0000" },
+              { title: "Address", content: "Salem, Tamil Nadu, India" },
             ].map((item, index) => (
               <div
                 key={index}
-                className="border border-border rounded-lg p-6 text-center bg-card hover-lift animate-slide-up"
+                className="border border-border rounded-lg bg-primary p-6 text-center bg-card hover-lift animate-slide-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="font-bold mb-2 text-foreground text-lg">{item.title}</h3>
-                <p className="text-muted-foreground">{item.content}</p>
+                {/* <div className="text-4xl mb-4">{item.icon}</div> */}
+                <h3 className="font-bold mb-2 text-background text-lg">{item.title}</h3>
+                <p className="text-background">{item.content}</p>
               </div>
             ))}
           </div>
 
-          <div className="border border-border rounded-lg p-8 mb-16 bg-card animate-slide-up">
-            <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="max-w-2xl mx-auto mb-16 animate-slide-up py-10">
+            <div className="border border-border border-primary hover-lift hover:bg-card/70 transition-transform duration-300 rounded-lg p-8 mb-16 bg-card animate-slide-up py-15">
+              <h2 className="text-2xl font-bold text-primary mb-6">Send us a Message</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-semibold mb-2 text-primary">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your name"
+                      className="w-full px-4 py-2 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-smooth"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold mb-2 text-primary">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="your@email.com"
+                      className="w-full px-4 py-2 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-smooth"
+                      required
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-sm font-semibold mb-2 text-foreground">Name</label>
+                  <label className="block text-sm font-semibold mb-2 text-primary">Subject</label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Your name"
+                    placeholder="How can we help?"
                     className="w-full px-4 py-2 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-smooth"
-                    required
                   />
                 </div>
+
                 <div>
-                  <label className="block text-sm font-semibold mb-2 text-foreground">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
+                  <label className="block text-sm font-semibold mb-2 text-primary">Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-2 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-smooth"
+                    placeholder="Your message..."
+                    rows={6}
+                    className="w-full px-4 py-2 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-smooth resize-none"
                     required
-                  />
+                  ></textarea>
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-foreground">Subject</label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="How can we help?"
-                  className="w-full px-4 py-2 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-smooth"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-foreground">Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Your message..."
-                  rows={6}
-                  className="w-full px-4 py-2 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-smooth resize-none"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-smooth font-semibold hover-lift"
-              >
-                Send Message
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-smooth font-semibold hover-lift"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
 
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center animate-fade-in">Why Choose zeaCRM?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="animate-slide-up">
+          <div className="mb-16 -mx-8 w-screen bg-primary py-15">
+            <h2 className="text-6xl font-bold text-background bg-primary mb-8 text-center animate-fade-in">Got a Question?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center text-background bg-primary">
+              <div className="animate-slide-up max-w-2xl mx-auto item-center">
                 <Image
                   src="/images/design-mode/Welcome.png"
                   alt="4 Steps to success with zeaCRM"
@@ -136,7 +140,7 @@ export default function ContactUsPage() {
                   className="rounded-lg hover-lift"
                 />
               </div>
-              <div className="space-y-4">
+              <div className="space-y-4 max-w-4xl pr-8 mx-auto ">
                 {[
                   {
                     title: "Expert Support",
@@ -160,8 +164,8 @@ export default function ContactUsPage() {
                     className="border-l-4 border-primary pl-4 animate-slide-up"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <h3 className="font-bold text-lg text-foreground mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.desc}</p>
+                    <h3 className="font-bold text-lg text-background mb-2">{item.title}</h3>
+                    <p className="text-background">{item.desc}</p>
                   </div>
                 ))}
               </div>

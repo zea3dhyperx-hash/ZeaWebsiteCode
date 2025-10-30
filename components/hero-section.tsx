@@ -64,13 +64,16 @@ export function HeroSection() {
               <Button className="bg-amber-400 hover:bg-amber-500 text-black font-semibold px-8 py-6 text-base rounded-lg">
                 Start Free Trial
               </Button>
+              
               <Button
                 variant="outline"
-                className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400/10 font-semibold px-8 py-6 text-base rounded-lg flex items-center justify-center gap-2 bg-transparent"
+                onClick={() => window.location.href = "/demo-2#book-demo"}
+                className="border-2 border-blue-400 text-blue-400 hover:bg-amber-400 font-semibold px-8 py-6 text-base rounded-lg flex items-center justify-center gap-2 bg-transparent"
               >
-                <Play size={18} />
-                Book a Demo
+                  <Play size={18} />
+                  Book a Demo
               </Button>
+              
             </div>
 
             {/* Benefits */}

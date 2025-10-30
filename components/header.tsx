@@ -148,24 +148,24 @@ export function Header() {
                 >
                   Guides
                 </Link>
-                <Link
+                {/* <Link
                   href="/guides-2"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
                 >
-                  Guides 2
-                </Link>
+                  Guides
+                </Link> */}
                 <Link
-                  href="/demo"
+                  href="/demo-2"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
                 >
                   Demo
                 </Link>
-                <Link
+                {/* <Link
                   href="/demo-2"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border rounded-b-lg"
                 >
                   Demo 2
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -176,13 +176,13 @@ export function Header() {
               onClick={() => setIsSignInOpen(true)}
               className="hover-lift hover:bg-primary/10 hover:text-primary transition-all duration-300"
             >
-              Sign In
+              Login
             </Button>
             <Button
               onClick={() => setIsGetStartedOpen(true)}
               className="bg-amber-400 hover:bg-amber-500 text-black font-semibold hover-lift transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/50"
             >
-              Get Started
+              Start Free Trial
             </Button>
           </div>
 
@@ -218,10 +218,10 @@ export function Header() {
                   {isPlaybooksOpen && (
                     <div className="flex flex-col gap-2 mt-2 pl-4 border-l border-border">
                       <Link href="/blogs" className="text-foreground hover:text-primary transition-colors">
-                        Blogs
+                        Blogs 2
                       </Link>
                       <Link href="/blogs-2" className="text-foreground hover:text-primary transition-colors">
-                        Blogs 2
+                        Blogs
                       </Link>
                       <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
                         Guides
@@ -229,10 +229,10 @@ export function Header() {
                       <Link href="/guides-2" className="text-foreground hover:text-primary transition-colors">
                         Guides 2
                       </Link>
-                      <Link href="/demo" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/demo-2" className="text-foreground hover:text-primary transition-colors">
                         Demo
                       </Link>
-                      <Link href="/demo-2" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/demo" className="text-foreground hover:text-primary transition-colors">
                         Demo 2
                       </Link>
                     </div>

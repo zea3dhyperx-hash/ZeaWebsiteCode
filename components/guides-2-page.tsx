@@ -81,16 +81,16 @@ export function Guides2Page() {
       <Header />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 px-4 md:px-8">
+        <section className="bg-gradient-to-b from-primary/10 to-background py-16 md:py-15 px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6 animate-fade-in">
+            {/* <div className="flex justify-center mb-6 animate-fade-in">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/68c6c410024cf8ec47d6e3a7%281%29-zH93U9LGERy9pNBqMr2KDpBbblZtgX.png"
                 alt="ZeaCRM Logo"
                 className="h-12 w-auto"
               />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">ZeaCRM Guides 2</h1>
+            </div> */}
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Guides</h1>
             <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
               Comprehensive guides to master every aspect of ZeaCRM
             </p>

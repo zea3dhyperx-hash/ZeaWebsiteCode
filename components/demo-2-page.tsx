@@ -62,26 +62,27 @@ export function Demo2Page() {
       <Header />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 px-4 md:px-8">
+        <section className="bg-gradient-to-b from-primary/10 to-background py-0 md:py-24 px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6 animate-fade-in">
+            {/* <div className="flex justify-center mb-6 animate-fade-in">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/68c6c410024cf8ec47d6e3a7%281%29-zH93U9LGERy9pNBqMr2KDpBbblZtgX.png"
                 alt="ZeaCRM Logo"
                 className="h-12 w-auto"
               />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">ZeaCRM Demo 2</h1>
+            </div> */}
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Demo</h1>
             <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
               Experience the power of AI-driven CRM with our interactive demonstration
             </p>
             <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold hover-lift animate-slide-up">
-              Start Interactive Demo
+              <a href = "#bookdemo">Book a Demo </a>
+
             </button>
           </div>
         </section>
 
-        {/* Features Showcase */}
+        {/* Features Showcase
         <section className="py-16 md:py-24 px-4 md:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-foreground mb-12 animate-slide-up">Key Features</h2>
@@ -104,34 +105,9 @@ export function Demo2Page() {
               ))}
             </div>
           </div>
-        </section>
-
-        {/* Success Metrics */}
-        <section className="py-16 md:py-24 px-4 md:px-8 bg-primary/5">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-12 animate-slide-up">Results Our Customers Achieve</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {[
-                { metric: "250%", label: "Avg Revenue Growth" },
-                { metric: "60%", label: "Time Saved" },
-                { metric: "95%", label: "Customer Satisfaction" },
-                { metric: "3x", label: "Faster Deals" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300 hover-lift animate-fade-in"
-                  style={{ animationDelay: `${i * 100}ms` }}
-                >
-                  <div className="text-4xl font-bold text-primary mb-2">{item.metric}</div>
-                  <p className="text-muted-foreground">{item.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        </section> */}
         {/* Book a Demo Form Section */}
-        <section className="py-16 md:py-24 px-4 md:px-8">
+        <section id="bookdemo" className="py-16 md:py-0 px-4 md:px-8">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold text-foreground mb-4 text-center animate-slide-up">Schedule Your Demo</h2>
             <p className="text-muted-foreground text-center mb-8 animate-slide-up">
@@ -211,6 +187,31 @@ export function Demo2Page() {
             </form>
           </div>
         </section>
+
+        {/* Success Metrics */}
+        <section className="py-16 md:py-24 px-4 md:px-8 bg-primary/5">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-foreground mb-12 animate-slide-up">Results Our Customers Achieve</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {[
+                { metric: "250%", label: "Avg Revenue Growth" },
+                { metric: "60%", label: "Time Saved" },
+                { metric: "95%", label: "Customer Satisfaction" },
+                { metric: "3x", label: "Faster Deals" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300 hover-lift animate-fade-in"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
+                  <div className="text-4xl font-bold text-primary mb-2">{item.metric}</div>
+                  <p className="text-muted-foreground">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         {/* CTA Section */}
         <section className="py-16 md:py-24 px-4 md:px-8 bg-primary/10">
