@@ -80,7 +80,8 @@ export function FeatureCardsSection() {
                   alt={feature.title}
                   width={500}
                   height={400}
-                  className="rounded-2xl shadow-lg object-cover w-full h-auto"
+                  className="rounded-2xl object-cover w-full h-auto"
+                  // className="rounded-2xl shadow-lg object-cover w-full h-auto"
                   priority
                 />
               </div>

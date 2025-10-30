@@ -12,6 +12,7 @@ import { Features2Hero } from "@/components/features-2-hero"
 import { Features2CTA } from "@/components/features-2-cta"
 import { Features2Integration } from "@/components/features-2-integration"
 import { Features2Showcase } from "@/components/features-2-showcase"
+import { FeaturesSlider } from "@/components/features-slider"
 
 export default function FeaturesPage() {
   return (
@@ -19,6 +20,7 @@ export default function FeaturesPage() {
       <Header />
       <Features2Hero />
       <Features2Grid />
+      <FeaturesSlider />
       <FeaturesHeroSection />
       <FeaturesCardsSection />
       <FeaturesResultsSection />
