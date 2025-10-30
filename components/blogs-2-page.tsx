@@ -18,6 +18,7 @@ export function Blogs2Page() {
       date: "Oct 29, 2024",
       category: "AI & Technology",
       image: "/ai-customer-insights.jpg",
+      href: "/blogs/ai-powered-customer-insights",
     },
     {
       id: 2,
@@ -26,6 +27,7 @@ export function Blogs2Page() {
       date: "Oct 26, 2024",
       category: "Sales Strategy",
       image: "/sales-team-scaling.jpg",
+      href: "/blogs/scaling-your-sales-team",
     },
     {
       id: 3,
@@ -34,6 +36,7 @@ export function Blogs2Page() {
       date: "Oct 23, 2024",
       category: "Case Studies",
       image: "/customer-success-team.png",
+      href: "/blogs/customer-success-stories",
     },
   ]
 
@@ -46,6 +49,7 @@ export function Blogs2Page() {
       date: "Oct 20, 2024",
       category: "Sales Strategy",
       image: "/placeholder.svg",
+      href: "/blogs/lead-nurturing-guide",
     },
     {
       id: 5,
@@ -54,6 +58,7 @@ export function Blogs2Page() {
       date: "Oct 17, 2024",
       category: "Integration",
       image: "/placeholder.svg",
+      href: "/blogs/integrating-your-tech-stack",
     },
     {
       id: 6,
@@ -62,6 +67,7 @@ export function Blogs2Page() {
       date: "Oct 14, 2024",
       category: "Mobile",
       image: "/placeholder.svg",
+      href: "/blogs/mobile-crm-managing-sales",
     },
   ]
 
@@ -100,7 +106,7 @@ export function Blogs2Page() {
                 className="h-12 w-auto"
               />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">ZeaCRM Blog 2</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Blogs</h1>
             <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
               Expert insights, industry trends, and success stories from the ZeaCRM community
             </p>
@@ -138,6 +144,46 @@ export function Blogs2Page() {
           </div>
         </section>
 
+        {/* All Articles Grid */}
+        <section className="py-16 md:py-24 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-foreground mb-4 animate-slide-up">
+              {searchQuery || selectedCategory !== "All" ? "Search Results" : "All Articles"}
+            </h2>
+            {filteredArticles.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {filteredArticles.map((article, i) => (
+                  <article
+                    key={article.id}
+                    className="flex gap-4 pb-8 border-b border-border last:border-b-0 hover:translate-x-1 transition-transform duration-300 animate-fade-in"
+                    style={{ animationDelay: `${i * 50}ms` }}
+                  >
+                    <img
+                      src={article.image || "/placeholder.svg"}
+                      alt={article.title}
+                      className="w-24 h-24 rounded-lg object-cover flex-shrink-0"
+                    />
+                    <div className="flex-1">
+                      <div className="text-xs text-muted-foreground mb-2">{article.date}</div>
+                      <h3 className="text-lg font-bold text-foreground mb-2">{article.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-3">{article.excerpt}</p>
+                      <Link
+                        href={(article as any).href}
+                        className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
+                      >
+                        Read More →
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">No articles found matching your search.</p>
+              </div>
+            )}
+          </div>
+        </section>
         {/* Featured Articles */}
         <section className="py-16 md:py-24 px-4 md:px-8">
           <div className="max-w-6xl mx-auto">
@@ -163,7 +209,7 @@ export function Blogs2Page() {
                     </div>
                     <h3 className="text-xl font-bold text-foreground mb-3">{article.title}</h3>
                     <p className="text-muted-foreground mb-4">{article.excerpt}</p>
-                    <Link href="#" className="text-primary hover:text-primary/80 font-semibold transition-colors">
+                    <Link href={(article as any).href} className="text-primary hover:text-primary/80 font-semibold transition-colors">
                       Read More →
                     </Link>
                   </div>
@@ -173,7 +219,7 @@ export function Blogs2Page() {
           </div>
         </section>
 
-        {/* Trending Topics */}
+        {/* Trending Topics
         <section className="py-16 md:py-24 px-4 md:px-8 bg-primary/5">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-foreground mb-12 animate-slide-up">Trending Topics</h2>
@@ -189,48 +235,8 @@ export function Blogs2Page() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
-        {/* All Articles Grid */}
-        <section className="py-16 md:py-24 px-4 md:px-8">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-4 animate-slide-up">
-              {searchQuery || selectedCategory !== "All" ? "Search Results" : "All Articles"}
-            </h2>
-            {filteredArticles.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {filteredArticles.map((article, i) => (
-                  <article
-                    key={article.id}
-                    className="flex gap-4 pb-8 border-b border-border last:border-b-0 hover:translate-x-1 transition-transform duration-300 animate-fade-in"
-                    style={{ animationDelay: `${i * 50}ms` }}
-                  >
-                    <img
-                      src={article.image || "/placeholder.svg"}
-                      alt={article.title}
-                      className="w-24 h-24 rounded-lg object-cover flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <div className="text-xs text-muted-foreground mb-2">{article.date}</div>
-                      <h3 className="text-lg font-bold text-foreground mb-2">{article.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{article.excerpt}</p>
-                      <Link
-                        href="#"
-                        className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
-                      >
-                        Read More →
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-12">
-                <p className="text-muted-foreground">No articles found matching your search.</p>
-              </div>
-            )}
-          </div>
-        </section>
 
         {/* Newsletter Signup */}
         <section className="py-16 md:py-24 px-4 md:px-8 bg-primary/10">
