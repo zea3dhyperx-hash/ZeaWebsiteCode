@@ -49,7 +49,7 @@ export function Blogs2Page() {
       date: "Oct 20, 2024",
       category: "Sales Strategy",
       image: "/placeholder.svg",
-      href: "/html-preview/features",
+      href: "/html-preview/features.html",
     },
     {
       id: 5,
