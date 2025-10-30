@@ -130,17 +130,17 @@ export function Header() {
                 <ChevronDown size={16} className="group-hover:rotate-180 transition-transform" />
               </button>
               <div className="absolute left-0 mt-0 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <Link
+                {/* <Link
                   href="/blogs"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-t-lg"
                 >
                   Blogs
-                </Link>
+                </Link> */}
                 <Link
                   href="/blogs-2"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
                 >
-                  Blogs 2
+                  Blogs
                 </Link>
                 <Link
                   href="/guides"
