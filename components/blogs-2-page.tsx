@@ -18,7 +18,7 @@ export function Blogs2Page() {
       date: "Oct 29, 2024",
       category: "AI & Technology",
       image: "/ai-customer-insights.jpg",
-      href: "html-preview/index",
+      href: "html/features.html",
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export function Blogs2Page() {
       date: "Oct 26, 2024",
       category: "Sales Strategy",
       image: "/sales-team-scaling.jpg",
-      href: "html-preview/features",
+      href: "html/features.html",
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ export function Blogs2Page() {
       date: "Oct 23, 2024",
       category: "Case Studies",
       image: "/customer-success-team.png",
-      href: "html-preview/why-us",
+      href: "html/features.html",
     },
   ]
 
@@ -49,7 +49,7 @@ export function Blogs2Page() {
       date: "Oct 20, 2024",
       category: "Sales Strategy",
       image: "/placeholder.svg",
-      href: "html-preview/features",
+      href: "html/features.html",
     },
     {
       id: 5,
@@ -58,7 +58,7 @@ export function Blogs2Page() {
       date: "Oct 17, 2024",
       category: "Integration",
       image: "/placeholder.svg",
-      href: "html-preview/index",
+      href: "html/features.html",
     },
     {
       id: 6,
@@ -67,7 +67,7 @@ export function Blogs2Page() {
       date: "Oct 14, 2024",
       category: "Mobile",
       image: "/placeholder.svg",
-      href: "html-preview/why-us",
+      href: "html/features.html",
     },
   ]
 
@@ -99,13 +99,13 @@ export function Blogs2Page() {
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6 animate-fade-in">
+            {/* <div className="flex justify-center mb-6 animate-fade-in">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/68c6c410024cf8ec47d6e3a7%281%29-zH93U9LGERy9pNBqMr2KDpBbblZtgX.png"
                 alt="ZeaCRM Logo"
                 className="h-12 w-auto"
               />
-            </div>
+            </div> */}
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Blogs</h1>
             <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
               Expert insights, industry trends, and success stories from the ZeaCRM community
