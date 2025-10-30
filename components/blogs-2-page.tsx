@@ -18,7 +18,7 @@ export function Blogs2Page() {
       date: "Oct 29, 2024",
       category: "AI & Technology",
       image: "/ai-customer-insights.jpg",
-      href: "/blogs/ai-powered-customer-insights",
+      href: "/html-preview/index",
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export function Blogs2Page() {
       date: "Oct 26, 2024",
       category: "Sales Strategy",
       image: "/sales-team-scaling.jpg",
-      href: "/blogs/scaling-your-sales-team",
+      href: "/html-preview/features",
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ export function Blogs2Page() {
       date: "Oct 23, 2024",
       category: "Case Studies",
       image: "/customer-success-team.png",
-      href: "/blogs/customer-success-stories",
+      href: "/html-preview/why-us",
     },
   ]
 
@@ -49,7 +49,7 @@ export function Blogs2Page() {
       date: "Oct 20, 2024",
       category: "Sales Strategy",
       image: "/placeholder.svg",
-      href: "/html/features.html",
+      href: "/html-preview/features",
     },
     {
       id: 5,
@@ -58,7 +58,7 @@ export function Blogs2Page() {
       date: "Oct 17, 2024",
       category: "Integration",
       image: "/placeholder.svg",
-      href: "/blogs/integrating-your-tech-stack",
+      href: "/html-preview/index",
     },
     {
       id: 6,
@@ -67,7 +67,7 @@ export function Blogs2Page() {
       date: "Oct 14, 2024",
       category: "Mobile",
       image: "/placeholder.svg",
-      href: "/blogs/mobile-crm-managing-sales",
+      href: "/html-preview/why-us",
     },
   ]
 
