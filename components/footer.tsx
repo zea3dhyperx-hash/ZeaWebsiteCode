@@ -5,6 +5,7 @@ import type React from "react"
 import { Linkedin, Facebook, Instagram, Youtube } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import Image from "next/image"
 
 export function Footer() {
   const [email, setEmail] = useState("")
@@ -22,10 +23,14 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-amber-400 rounded-lg flex items-center justify-center">
-                <span className="text-slate-950 font-bold">Z</span>
-              </div>
-              <span className="font-bold text-lg text-white">zeaCRM</span>
+              <Image
+                src="/logo.png"
+                alt="zeaCRM logo"
+                width={120}
+                height={32}
+                priority
+                className="h-8 w-auto"
+              />
             </div>
             <p className="text-sm text-gray-400">
               ZeaCRM is an AI-powered CRM platform built for all industries — from healthcare to real estate, retail,
