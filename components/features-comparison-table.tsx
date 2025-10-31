@@ -19,12 +19,12 @@ export function FeaturesComparisonTable() {
   ]
 
   return (
-    <section className="bg-background py-20 md:py-24">
+    <section className="bg-white py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="overflow-x-auto flex justify-center">
-          <table className="border border-gray-200 radius-60 bg-white shadow-sm ">
+          <table className="border-b-2">
             <thead>
-              <tr className="border-b-2 border-gray-200 rounded-t-lg bg-green-50">
+              <tr className="border-b-2 border-gray-200">
                 <th className="text-left py-6 px-4 font-bold text-black text-lg">FEATURES</th>
                 <th className="text-center py-6 px-4 font-bold text-black text-lg">REPLACES</th>
                 <th className="text-center py-6 px-4 font-bold text-black text-lg">OTHER TOOLS</th>

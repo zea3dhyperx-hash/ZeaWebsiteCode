@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FeaturesHeroSection } from "@/components/features-hero-section"
@@ -21,10 +22,10 @@ export default function FeaturesPage() {
       <Features2Hero />
       <Features2Grid />
       <FeaturesSlider />
-      <FeaturesHeroSection />
-      <FeaturesCardsSection />
+      {/* <FeaturesHeroSection /> */}
+      {/* <FeaturesCardsSection /> */}
       <FeaturesResultsSection />
-      <FeaturesAutomationSection />
+      {/* <FeaturesAutomationSection /> */}
       <FeaturesMobileSection />
       <Features2Showcase />
       <Features2Integration />

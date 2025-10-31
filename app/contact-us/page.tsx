@@ -5,7 +5,13 @@ import type React from "react"
 import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Target, BarChart3, Users, MessageCircle, LinkIcon, Mail, Phone, MapPin } from "lucide-react"
+
 import Image from "next/image"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -32,16 +38,141 @@ export default function ContactUsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background py-12 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+      <main className="min-h-screen bg-background px-4">
+        <div className="mx-auto">
+          <section className="py-10 lg:py-16 w-screen relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
+            <div className="container mx-auto px-4 relative">
+              <div className="text-center mb-16">
+                <div className="flex justify-center mb-6">
+                  <MessageCircle className="w-16 h-16 text-yellow-500" />
+                </div>
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">Let's Talk. We're Here to Help.</h1>
+                <p className="text-xl text-gray-400 max-w-2xl mx-auto text-pretty">
+                  Have questions about ZeaCRM, need support, or just want to explore how automation can transform your
+                  business? Our team is only a message away.
+                </p>
+                <Button className="mt-8 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 text-lg">
+                  Send a Message
+                </Button>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div className="space-y-8">
+                  <div>
+                    <h2 className="text-2xl font-bold mb-8">Contact Information</h2>
+                    <div className="space-y-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
+                          <Mail className="w-6 h-6 text-black" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold mb-2 text-yellow-500">Email Us</h3>
+                          <p className="text-lg text-gray-300 mb-1">For general inquiries, partnerships, and support:</p>
+                          <p className="text-lg text-white font-medium">support@zeacrm.com</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
+                          <Phone className="w-6 h-6 text-black" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold mb-2 text-yellow-500">Call Us</h3>
+                          <p className="text-lg text-gray-300 mb-1">Sales & Support Team</p>
+                          <p className="text-lg text-white font-medium">+91 94854 48291</p>
+                          <p className="text-sm text-gray-500">(Mon-Fri, 10am-6pm IST)</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
+                          <MapPin className="w-6 h-6 text-black" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold mb-2 text-yellow-500">Office Address</h3>
+                          <p className="text-lg text-gray-300">ZeaCRM HQ</p>
+                          <p className="text-lg text-white">123 Business Avenue,</p>
+                          <p className="text-lg text-white">Salem, Tamil Nadu, India</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gray-900/50 rounded-lg p-6 border border-amber-400 hover:scale-101">
+                    <h3 className="text-lg font-semibold mb-4 text-yellow-500">Why Reach Out?</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <p className="text-base text-gray-300">Learn how ZeaCRM fits your business</p>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <p className="text-base text-gray-300">Request a partnership or collaboration</p>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <p className="text-base text-gray-300">Get help from our support experts</p>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <p className="text-base text-gray-300">Book a free consultation or demo</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <Card className="p-8 bg-gray-900/50 border-amber-400 hover:scale-101 transition-smooth">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <MessageCircle className="w-6 h-6 text-amber-400" />
+                    <h2 className="text-2xl font-bold">Get in Touch Instantly</h2>
+                  </div>
+                  <form className="space-y-6" id="contact-form">
+                    <div>
+                      <label className="block text-base font-medium mb-2">Full Name*</label>
+                      <Input className="bg-gray-800 border-gray-700 text-white" placeholder="Your full name" required />
+                    </div>
+                    <div>
+                      <label className="block text-base font-medium mb-2">Email Address*</label>
+                      <Input
+                        type="email"
+                        className="bg-gray-800 border-gray-700 text-white"
+                        placeholder="your@company.com"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-base font-medium mb-2">Phone Number</label>
+                      <Input type="tel" className="bg-gray-800 border-gray-700 text-white" placeholder="+91 98765 43210" />
+                    </div>
+                    <div>
+                      <label className="block text-base font-medium mb-2">Company Name</label>
+                      <Input className="bg-gray-800 border-gray-700 text-white" placeholder="Your company's name" />
+                    </div>
+                    <div>
+                      <label className="block text-base font-medium mb-2">Message*</label>
+                      <Textarea
+                        className="bg-gray-800 border-gray-700 text-white min-h-32"
+                        placeholder="How can we help you today?"
+                        required
+                      />
+                    </div>
+                    <Button className="w-full bg-amber-400 text-black font-semibold text-lg">
+                      Send Message
+                    </Button>
+                  </form>
+                </Card>
+              </div>
+            </div>
+          </section>
+          {/* <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Contact Us</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
             </p>
-          </div>
+          </div> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
               {
                 title: "Email",
@@ -164,15 +295,15 @@ export default function ContactUsPage() {
                 </button>
               </form>
             </div>
-          </div>
+          </div> */}
 
           <div className="mb-16 -mx-8 w-screen bg-primary py-15">
             <h2 className="text-6xl font-bold text-background bg-primary mb-8 text-center animate-fade-in">Get in Touch for any Information!</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center text-background bg-primary">
-              <div className="animate-slide-up max-w-2xl mx-auto item-center">
+              <div className="animate-slide-up max-w-2xl mx-auto item-center justify-center scale-130">
                 <Image
-                  src="/images/design-mode/Welcome.png"
-                  alt="4 Steps to success with zeaCRM"
+                  src="/images/contact.png"
+                  alt="Contact Us"
                   width={400}
                   height={400}
                   className="rounded-lg hover-lift"

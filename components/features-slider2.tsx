@@ -143,7 +143,7 @@ export function FeaturesSlider2() {
   const feature = featuresData[currentSlide]
 
   return (
-    <section className="bg-black py-20 px-4 sm:px-6 lg:px-8">
+    <section className="bg-black py-20 px-40 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-4xl sm:text-5xl font-bold text-center text-amber-400 mb-16">FEATURES</h2>

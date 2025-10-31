@@ -9,7 +9,7 @@ export function Features2CTA() {
           Get full access to all features with a free 14-day trial. No credit card required.
         </p>
         <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover-lift hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-lg">
-          Start Free Trial
+          <a href="contact-us">Contact Sales</a>
         </button>
       </div>
     </section>

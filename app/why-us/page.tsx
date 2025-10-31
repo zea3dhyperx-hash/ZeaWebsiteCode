@@ -8,6 +8,7 @@ import { WhyUsIndustriesSection } from "@/components/why-us-industries-section"
 import { WhyUsComparisonSection } from "@/components/why-us-comparison-section"
 import { WhyUsTestimonialsSection } from "@/components/why-us-testimonials-section"
 import { WhyUs2Hero } from "@/components/why-us-2-hero"
+import CaseStudyCard from "@/components/animata/card/case-study-card"
 
 export default function WhyUsPage() {
   return (

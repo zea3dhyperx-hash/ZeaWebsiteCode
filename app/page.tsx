@@ -14,6 +14,7 @@ import { PricingSection } from "@/components/pricing-section"
 import { CTATransformSection } from "@/components/cta-transform-section"
 import { IntegrationsLogosSection } from "@/components/integrations-logos-section"
 import { FeaturesSlider2 } from "@/components/features-slider2"
+import FlowerMenu from "@/components/animata/list/flower-menu"
 
 export default function Home() {
   return (
@@ -32,7 +33,7 @@ export default function Home() {
         <IndustriesSection />
         <PricingSection />
         <CTATransformSection />
-        <IntegrationsLogosSection />
+        {/* <IntegrationsLogosSection /> */}
       </main>
       <Footer />
     </>

@@ -4,72 +4,33 @@ import { useState, useMemo } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
+import { BLOG_POSTS } from "@/lib/blogs"
 
 export function Blogs2Page() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
 
-  const featuredArticles = [
-    {
-      id: 1,
-      title: "AI-Powered Customer Insights: The Future of CRM",
-      excerpt:
-        "Discover how artificial intelligence transforms customer data into actionable insights for better decision-making.",
-      date: "Oct 29, 2024",
-      category: "AI & Technology",
-      image: "/ai-customer-insights.jpg",
-      href: "html/features.html",
-    },
-    {
-      id: 2,
-      title: "Scaling Your Sales Team Without Scaling Costs",
-      excerpt: "Learn proven strategies to grow your sales revenue while maintaining operational efficiency.",
-      date: "Oct 26, 2024",
-      category: "Sales Strategy",
-      image: "/sales-team-scaling.jpg",
-      href: "html/features.html",
-    },
-    {
-      id: 3,
-      title: "Customer Success Stories: Real Results with ZeaCRM",
-      excerpt: "Read how leading companies achieved remarkable growth using ZeaCRM's powerful features.",
-      date: "Oct 23, 2024",
-      category: "Case Studies",
-      image: "/customer-success-team.png",
-      href: "html/features.html",
-    },
-  ]
+  const featuredArticles = BLOG_POSTS.filter((p) => p.featured).slice(0, 3).map((p, idx) => ({
+    id: idx + 1,
+    title: p.title,
+    excerpt: p.excerpt ?? "",
+    date: p.date,
+    category: p.category,
+    image: p.image,
+    slug: p.slug,
+    htmlPath: p.htmlPath,
+  }))
 
-  const allArticles = [
-    ...featuredArticles,
-    {
-      id: 4,
-      title: "The Complete Guide to Lead Nurturing",
-      excerpt: "Master the art of nurturing leads through every stage of the sales funnel.",
-      date: "Oct 20, 2024",
-      category: "Sales Strategy",
-      image: "/placeholder.svg",
-      href: "html/features.html",
-    },
-    {
-      id: 5,
-      title: "Integrating Your Tech Stack: Best Practices",
-      excerpt: "Learn how to seamlessly integrate ZeaCRM with your existing tools and systems.",
-      date: "Oct 17, 2024",
-      category: "Integration",
-      image: "/placeholder.svg",
-      href: "html/features.html",
-    },
-    {
-      id: 6,
-      title: "Mobile CRM: Managing Sales on the Go",
-      excerpt: "Explore how mobile CRM capabilities empower your team to close deals anywhere.",
-      date: "Oct 14, 2024",
-      category: "Mobile",
-      image: "/placeholder.svg",
-      href: "html/features.html",
-    },
-  ]
+  const allArticles = BLOG_POSTS.map((p, idx) => ({
+    id: idx + 1,
+    title: p.title,
+    excerpt: p.excerpt ?? "",
+    date: p.date,
+    category: p.category,
+    image: p.image,
+    slug: p.slug,
+    htmlPath: p.htmlPath,
+  }))
 
   const trendingTopics = [
     "AI Automation",
@@ -168,7 +129,7 @@ export function Blogs2Page() {
                       <h3 className="text-lg font-bold text-foreground mb-2">{article.title}</h3>
                       <p className="text-sm text-muted-foreground mb-3">{article.excerpt}</p>
                       <Link
-                        href={(article as any).href}
+                        href={(article as any).htmlPath || "#"}
                         className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
                       >
                         Read More →
@@ -209,7 +170,7 @@ export function Blogs2Page() {
                     </div>
                     <h3 className="text-xl font-bold text-foreground mb-3">{article.title}</h3>
                     <p className="text-muted-foreground mb-4">{article.excerpt}</p>
-                    <Link href={(article as any).href} className="text-primary hover:text-primary/80 font-semibold transition-colors">
+                    <Link href={(article as any).htmlPath || "#"} className="text-primary hover:text-primary/80 font-semibold transition-colors">
                       Read More →
                     </Link>
                   </div>
@@ -260,4 +221,9 @@ export function Blogs2Page() {
     </>
   )
 }
+
+
+
+
+
 

@@ -6,12 +6,13 @@ export function FeaturesMobileSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <div className="bg-background/10 rounded-lg p-12 border border-background/20 flex items-center justify-center min-h-96">
+            <img src="/images/devices.png" alt="Responsive Design" />
+            {/* <div className="bg-background/10 rounded-lg p-12 border border-background/20 flex items-center justify-center min-h-96">
               <div className="text-center">
                 <Smartphone className="w-24 h-24 mx-auto mb-4 text-primary" />
                 <p className="text-background/80">Mobile App Interface</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="order-1 md:order-2">

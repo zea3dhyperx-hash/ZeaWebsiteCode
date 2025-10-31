@@ -137,7 +137,7 @@ export function Header() {
                   Blogs
                 </Link> */}
                 <Link
-                  href="/blogs-2"
+                  href="/blogs"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
                 >
                   Blogs
@@ -155,7 +155,7 @@ export function Header() {
                   Guides
                 </Link> */}
                 <Link
-                  href="/demo-2"
+                  href="/demo"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
                 >
                   Demo
@@ -218,23 +218,23 @@ export function Header() {
                   {isPlaybooksOpen && (
                     <div className="flex flex-col gap-2 mt-2 pl-4 border-l border-border">
                       <Link href="/blogs" className="text-foreground hover:text-primary transition-colors">
-                        Blogs 2
-                      </Link>
-                      <Link href="/blogs-2" className="text-foreground hover:text-primary transition-colors">
                         Blogs
                       </Link>
+                      {/* <Link href="/blogs-2" className="text-foreground hover:text-primary transition-colors">
+                        Blogs 2
+                      </Link> */}
                       <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
                         Guides
                       </Link>
-                      <Link href="/guides-2" className="text-foreground hover:text-primary transition-colors">
+                      {/* <Link href="/guides-2" className="text-foreground hover:text-primary transition-colors">
                         Guides 2
-                      </Link>
+                      </Link> */}
                       <Link href="/demo-2" className="text-foreground hover:text-primary transition-colors">
                         Demo
                       </Link>
-                      <Link href="/demo" className="text-foreground hover:text-primary transition-colors">
+                      {/* <Link href="/demo" className="text-foreground hover:text-primary transition-colors">
                         Demo 2
-                      </Link>
+                      </Link> */}
                     </div>
                   )}
                 </div>

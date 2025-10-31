@@ -33,25 +33,25 @@ export function Features2Grid() {
   ]
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4 text-balance">Core Features</h2>
-        <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-background mb-4 text-balance">Core Features</h2>
+        <p className="text-center text-background text-lg mb-16 max-w-2xl mx-auto">
           Everything you need to run a world-class sales organization
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 flex justify-center">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group p-8 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover-lift animate-fade-in"
+              className="group p-8 bg-card rounded-xl border border-border hover:border-primary transition-all duration-300 hover-lift animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-5xl mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <h3 className="text-xl font-semibold flex justify-center text-primary mb-3">{feature.title}</h3>
+              <p className="text-muted-foregroundflex justify-center ">{feature.description}</p>
             </div>
           ))}
         </div>
