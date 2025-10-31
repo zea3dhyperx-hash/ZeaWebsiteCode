@@ -57,12 +57,13 @@ export function WhyChooseUsHero() {
 
           {/* Right Illustration */}
           <div className="flex items-center justify-center">
-            <div className="relative w-full h-96 bg-white/10 rounded-lg flex items-center justify-center border-2 border-black/20">
+            <img src="/images/WhyUs.png" alt="" />
+            {/* <div className="relative w-full h-96 bg-white/10 rounded-lg flex items-center justify-center border-2 border-black/20">
               <div className="text-center">
                 <p className="text-black/50 font-semibold">Team Illustration</p>
                 <p className="text-sm text-black/40">4 Diverse Business Professionals</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
