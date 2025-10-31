@@ -9,6 +9,7 @@ import { BLOG_POSTS } from "@/lib/blogs"
 export function Blogs2Page() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
+  const [selectedAuthor, setSelectedAuthor] = useState("All Authors")
 
   const featuredArticles = BLOG_POSTS.filter((p) => p.featured).slice(0, 3).map((p, idx) => ({
     id: idx + 1,
@@ -43,15 +44,21 @@ export function Blogs2Page() {
 
   const categories = ["All", "AI & Technology", "Sales Strategy", "Case Studies", "Integration", "Mobile"]
 
+  const authors = useMemo(() => {
+    const names = Array.from(new Set(BLOG_POSTS.map((p) => p.author))).sort()
+    return ["All Authors", ...names]
+  }, [])
+
   const filteredArticles = useMemo(() => {
     return allArticles.filter((article) => {
       const matchesSearch =
         article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         article.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
       const matchesCategory = selectedCategory === "All" || article.category === selectedCategory
-      return matchesSearch && matchesCategory
+      const matchesAuthor = selectedAuthor === "All Authors" || (article as any).author === selectedAuthor
+      return matchesSearch && matchesCategory && matchesAuthor
     })
-  }, [searchQuery, selectedCategory])
+  }, [searchQuery, selectedCategory, selectedAuthor])
 
   return (
     <>
@@ -83,10 +90,10 @@ export function Blogs2Page() {
           </div>
         </section>
 
-        {/* Category Filter */}
+        {/* Category + Author Filters */}
         <section className="py-8 px-4 md:px-8 border-b border-border">
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-3">
               {categories.map((category, i) => (
                 <button
                   key={category}
@@ -99,6 +106,22 @@ export function Blogs2Page() {
                   style={{ animationDelay: `${i * 50}ms` }}
                 >
                   {category}
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {authors.map((name, i) => (
+                <button
+                  key={name}
+                  onClick={() => setSelectedAuthor(name)}
+                  className={`px-4 py-2 rounded-full transition-all duration-300 hover-lift ${
+                    selectedAuthor === name
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-card border border-border hover:border-primary"
+                  }`}
+                  style={{ animationDelay: `${i * 50}ms` }}
+                >
+                  {name}
                 </button>
               ))}
             </div>

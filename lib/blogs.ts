@@ -15,7 +15,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ai-powered-customer-insights",
     title: "AI-Powered Customer Insights",
-    author: "Sam Ebenezer",
+    author: "Miles",
     date: "Oct 29, 2024",
     category: "AI & Tech",
     image: "/ai-customer-insights.jpg",
