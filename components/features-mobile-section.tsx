@@ -1,5 +1,6 @@
 import { Smartphone } from "lucide-react"
 
+
 export function FeaturesMobileSection() {
   return (
     <div className="text-background py-20 md:py-[50px] bg-background">
