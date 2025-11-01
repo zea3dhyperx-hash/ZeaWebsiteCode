@@ -75,43 +75,50 @@ export function Header() {
               </button>
               <div className="absolute left-0 mt-0 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <Link
-                  href="/allIndustries/healthcare"
+                  // href="/allIndustries/healthcare"
+                  href="Industries/Healthcare1/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-t-lg"
                 >
                   Healthcare
                 </Link>
                 <Link
-                  href="/allIndustries/realestate"
+                  // href="/allIndustries/realestate"
+                  href="/Industries/Realestate/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Real Estate
                 </Link>
                 <Link
-                  href="/allIndustries/retail"
+                  // href="/allIndustries/retail"
+                  href="/Industries/Retail1/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Retail & E-commerce
                 </Link>
                 <Link
-                  href="/allIndustries/professional"
+                  // href="/allIndustries/professional"
+                  href="/Industries/professional/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Professional Services
                 </Link>
                 <Link
-                  href="/allIndustries/education"
+                  // href="/allIndustries/education"
+                  href="/Industries/Educationservice/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Education & Training
                 </Link>
                 <Link
-                  href="/allIndustries/finance"
+                  // href="/allIndustries/finance"
+                  href="/Industries/Finance/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Finance & Insurance
                 </Link>
                 <Link
-                  href="/allIndustries/automotive"
+                  // href="/allIndustries/automotive"
+                  href="/Industries/Automotive/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Automotive & Manufacturing
