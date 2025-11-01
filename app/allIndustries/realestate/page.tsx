@@ -8,7 +8,7 @@ export default function WhyUsPage() {
     <main className="min-h-screen">
       <Header />
       <iframe
-        src="/industries/Realestate/index.html"
+        src="/Industries2/realestate/index.html"
         title="Real Estate"
         style={{
           width: "100%",
