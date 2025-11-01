@@ -116,12 +116,12 @@ export function Header() {
                 >
                   Automotive & Manufacturing
                 </Link>
-                {/* <Link
+                <Link
                   href="/industries#finance"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Other Industries
-                </Link> */}
+                </Link>
               </div>
             </div>
             <div className="relative group">
