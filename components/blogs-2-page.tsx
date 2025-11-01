@@ -76,7 +76,7 @@ export function Blogs2Page() {
             </div> */}
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Blogs</h1>
             <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
-              Expert insights, industry trends, and success stories from the ZeaCRM community
+              Expert insights, industry  trends, and success stories from the ZeaCRM community
             </p>
             <div className="flex gap-4 justify-center animate-slide-up">
               <input
