@@ -83,14 +83,14 @@ export function Header() {
                 </Link>
                 <Link
                   // href="/allIndustries/realestate"
-                  href="/Industries/Realestate/index.html"
+                  href="/Industries2/realestate/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Real Estate
                 </Link>
                 <Link
                   // href="/allIndustries/retail"
-                  href="/Industries/Retail1/index.html"
+                  href="/Industries2/Retail/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Retail & E-commerce
