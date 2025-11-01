@@ -8,7 +8,7 @@ export default function WhyUsPage() {
     <main className="min-h-screen">
       <Header />
       <iframe
-        src="/industries/Healthcare1/index.html"
+        src="/Industries2/healthcare/index.html"
         title="Healthcare"
         style={{
           width: "100%",
