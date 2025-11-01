@@ -58,10 +58,10 @@ export function AwardSupportSection() {
             </div>
 
             <a
-              href="#"
+              href="/contact-us"
               className="inline-block bg-black text-amber-400 px-6 py-2 rounded font-semibold hover:bg-gray-900 transition-colors"
             >
-              LEARN MORE HERE
+              CONTACT US TODAY
             </a>
           </div>
         </div>

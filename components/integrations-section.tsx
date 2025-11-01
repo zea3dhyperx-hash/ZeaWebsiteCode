@@ -82,7 +82,8 @@ export function IntegrationsSection() {
         {/* CTA Button */}
         <div className="flex justify-center">
           <button className="bg-black text-white px-8 py-3 rounded font-semibold hover:bg-gray-900 transition-colors">
-            EXPLORE ALL INTEGRATIONS
+            <a href="demo">BOOK A DEMO & EXPLORE ALL INTEGRATIONS</a>
+            
           </button>
         </div>
       </div>

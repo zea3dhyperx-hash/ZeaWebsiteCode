@@ -1,6 +1,7 @@
 "use client"
 
 import { CheckCircle2 } from "lucide-react"
+import { Image } from "lucide-react"
 import { useEffect, useRef } from "react"
 
 export function CTATransformSection() {
@@ -34,7 +35,7 @@ export function CTATransformSection() {
                 Start Free Trial
               </button>
               <button className="border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black font-semibold px-8 py-3 rounded-lg transition-colors">
-                Schedule a Demo
+                <a href="/demo">Schedule a Demo</a>
               </button>
             </div>
 
@@ -61,7 +62,12 @@ export function CTATransformSection() {
 
           {/* Right Side - Animated Illustration */}
           <div ref={containerRef} className="hidden md:flex items-center justify-center">
-            <div className="w-full h-80 bg-gradient-to-br from-amber-400/10 to-amber-400/5 rounded-lg flex items-center justify-center border border-amber-400/20 relative overflow-hidden">
+            <img
+                  src="/images/contact12.jpg"
+                  alt="Award Winning Support Illustration"
+                  className="w-full h-auto rounded-lg"
+                />
+            {/* <div className="w-full h-80 bg-gradient-to-br from-amber-400/10 to-amber-400/5 rounded-lg flex items-center justify-center border border-amber-400/20 relative overflow-hidden">
               <svg
                 className="w-48 h-48 animate-pulse"
                 viewBox="0 0 200 200"
@@ -81,7 +87,7 @@ export function CTATransformSection() {
                 <path d="M 70 140 L 130 140" stroke="#fbbf24" strokeWidth="2" />
               </svg>
               <div className="absolute inset-0 bg-gradient-to-t from-amber-400/5 to-transparent pointer-events-none" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
