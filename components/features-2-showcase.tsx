@@ -1,5 +1,6 @@
 // "use client";
-import { Video } from "lucide-react";
+import { Image } from "lucide-react";
+import myImage from "../public/images/pipeline.png";
 // import Lottie from "lottie-react";
 // var check = "../animations/anim1.json";
 
@@ -26,14 +27,15 @@ export function Features2Showcase() {
               )}
             </ul>
           </div>
-          <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl p-8 h-96 flex items-center justify-center border border-primary/20 animate-scale-in">
-            
-            <div className="text-center w-full h-full flex flex-col items-center justify-center">
-              {/* <video className="w-full h-full object-contain rounded-md" src="/WebM/robot.webm" autoPlay loop muted playsInline /> */}
-              {/* <Lottie animationData={check} loop></Lottie> */}
-              {/* console.log("Animation data:", animationData); */}
-              {/* <svg>className="w-full h-full object-contain rounded-md" src="/WebM/1.svg" autoPlay loop muted playsInline</svg> */}
-              <p className="text-muted-foreground mt-4">Pipeline Visualization</p>
+          <div className="bg-gradient-to-br p-8 h-96 flex items-center justify-center animate-scale-in">
+
+            <div className="text-center w-full h-full flex flex-col scale-110 items-center justify-center">
+              <img src="/images/pipeline.png" alt="Custom" />
+              {/* <Image>
+                  src="/images/pipeline.png"
+                  alt="Pipeline Visualization"
+              </Image>
+              <p className="text-muted-foreground mt-4">Pipeline Visualization</p> */}
             </div>
           </div>
         </div>

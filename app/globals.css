@@ -295,4 +295,6 @@
     /* Using CSS variable directly instead of Tailwind shadow utility */
     box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.2);
   }
+
+  
 }

@@ -28,7 +28,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "banana-url",
     title: "Banana Health Benefits",
-    author: "Sam Ebenezer",
+    author: "Sherly Angel",
     date: "Oct 30, 2024",
     category: "Healthcare",
     image: "/ai-customer-insights.jpg",
@@ -36,7 +36,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Why Banana is a superfood.",
     content: "<p>this is the content for the banana article.</p>",
     // Example using external html file under public/blogs/banana-url.html
-    htmlPath: "/blogs/template.html",
+    htmlPath: "blog-1",
     featured: false,
   },
 ]

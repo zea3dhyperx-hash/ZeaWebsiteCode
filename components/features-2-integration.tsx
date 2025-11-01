@@ -13,7 +13,7 @@ export function Features2Integration() {
           {integrations.map((integration, index) => (
             <div
               key={index}
-              className="p-6 bg-card rounded-lg border border-border hover:border-primary transition-all duration-300 hover-lift animate-fade-in"
+              className="p-6 bg-card rounded-lg border border-border transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <p className="font-semibold text-foreground">{integration}</p>
