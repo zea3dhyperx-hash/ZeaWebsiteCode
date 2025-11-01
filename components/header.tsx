@@ -76,7 +76,7 @@ export function Header() {
               <div className="absolute left-0 mt-0 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <Link
                   // href="/allIndustries/healthcare"
-                  href="Industries/Healthcare1/index.html"
+                  href="Industries2/healthcare1/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-t-lg"
                 >
                   Healthcare

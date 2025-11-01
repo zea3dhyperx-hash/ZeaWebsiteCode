@@ -1,0 +1,2443 @@
+.retail-e-com,
+.retail-e-com * {
+  box-sizing: border-box;
+}
+.retail-e-com {
+  background: #000000;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  height: 4648px;
+  position: relative;
+  overflow: hidden;
+}
+.rectangle-351 {
+  width: 513px;
+  height: 305px;
+  position: absolute;
+  left: 122px;
+  top: 2919px;
+  filter: blur(30px);
+  object-fit: cover;
+}
+.ellipse-2 {
+  background: rgba(240, 255, 155, 0.62);
+  border-radius: 50%;
+  width: 2858px;
+  height: 160px;
+  position: absolute;
+  left: calc(50% - 1200px);
+  top: 534px;
+  filter: blur(112.5px);
+}
+.ellipse-767 {
+  background: rgba(145, 82, 158, 0.5);
+  border-radius: 50%;
+  width: 725px;
+  height: 596px;
+  position: absolute;
+  left: calc(50% - 1702px);
+  top: 2698px;
+  filter: blur(112.5px);
+  aspect-ratio: 725/596;
+}
+.rectangle-350 {
+  width: 1498px;
+  height: 596px;
+  position: absolute;
+  left: -42px;
+  top: 64px;
+  object-fit: cover;
+}
+.rectangle-349 {
+  background: rgba(15, 14, 14, 0.4);
+  width: 1472px;
+  height: 596px;
+  position: absolute;
+  left: -29px;
+  top: 64px;
+}
+.frame-238 {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 716px;
+  position: absolute;
+  left: 376px;
+  top: 231px;
+}
+.heading {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Outfit-Bold", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  height: 61px;
+}
+.heading2 {
+  color: #fdfdff;
+  text-align: center;
+  font-family: "DmSans-Bold", sans-serif;
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  height: 48px;
+}
+.classic-button {
+  border-radius: 5px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.hover-false {
+  padding: 2px 0px 2px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.button {
+  background: #d4af37;
+  border-radius: 4px;
+  padding: 16px 32px 16px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0px 5px 15px 0px rgba(37, 44, 97, 0.15),
+    0px 2px 4px 0px rgba(136, 144, 194, 0.2);
+  overflow: hidden;
+}
+.get-started {
+  color: #ffffff;
+  text-align: left;
+  font-family: "RobotoSlab-Bold", sans-serif;
+  font-size: 21.030000686645508px;
+  font-weight: 700;
+  position: relative;
+}
+.hover-true {
+  padding: 0px 0px 4px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.button2 {
+  background: #d4af37;
+  border-radius: 4px;
+  padding: 16px 32px 16px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0px 7px 21px 0px rgba(37, 44, 97, 0.2),
+    0px 3px 8px 0px rgba(136, 144, 194, 0.25);
+  overflow: hidden;
+}
+.group-251 {
+  position: absolute;
+  inset: 0;
+}
+.frame-427320628 {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  row-gap: 60px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 1233.02px;
+  position: absolute;
+  left: 117px;
+  top: 967px;
+}
+.healthcare-that-works-for-everyone {
+  color: #d4af37;
+  text-align: center;
+  font-family: "RobotoSlab-Medium", sans-serif;
+  font-size: 46px;
+  font-weight: 500;
+  position: relative;
+  width: 1233px;
+}
+.section-3 {
+  flex-shrink: 0;
+  width: 541px;
+  height: 407px;
+  position: relative;
+  overflow: visible;
+}
+.from-healthcare-and-real-estate-to-retail-and-finance-zea-crm-adapts-to-your-unique-challenges-with-automation-first-solutions-discover-how-we-help-businesses-streamline-operations-enhance-customer-relationships-and-drive-growth-from-healthcare-and-real-estate-to-retail-and-finance-zea-crm-adapts-to-your-unique-challenges-with-automation-first-solutions-discover-how-we-help-businesses-streamline-operations-enhance-customer-relationships-and-drive-growth {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NeueHaasGroteskTextPro-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 29.2px;
+  font-weight: 400;
+  position: relative;
+  width: 618px;
+}
+.group-238 {
+  width: 625px;
+  height: 40px;
+  position: static;
+}
+.solution {
+  width: 110px;
+  height: 38px;
+  position: absolute;
+  left: 930px;
+  top: 817px;
+}
+.solution2 {
+  color: #fffefd;
+  text-align: center;
+  font-family: "AbhayaLibreExtraBold-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  right: -2.73%;
+  left: -2.73%;
+  width: 105.45%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+}
+.video {
+  width: 77px;
+  height: 38px;
+  position: absolute;
+  left: 415px;
+  top: 815px;
+}
+.video2 {
+  color: #fffefd;
+  text-align: center;
+  font-family: "AbhayaLibreExtraBold-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  width: 100%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+}
+.use-cases {
+  width: 130px;
+  height: 38px;
+  position: absolute;
+  left: 558px;
+  top: 815px;
+}
+.use-cases2 {
+  color: #fffefd;
+  text-align: center;
+  font-family: "AbhayaLibreExtraBold-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  right: 2.31%;
+  left: 2.31%;
+  width: 95.38%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+}
+.benefits {
+  width: 110px;
+  height: 38px;
+  position: absolute;
+  left: 754px;
+  top: 815px;
+}
+.benefits2 {
+  color: #fffefd;
+  text-align: center;
+  font-family: "AbhayaLibreExtraBold-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  width: 100%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+}
+.group-252 {
+  position: absolute;
+  inset: 0;
+}
+.group-244 {
+  width: 585.5px;
+  height: 317.32px;
+  position: absolute;
+  left: 731px;
+  top: 1855px;
+}
+.value {
+  background: #ececec;
+  border-radius: 25.94px;
+  border-style: solid;
+  border-color: #e8e8e8;
+  border-width: 2px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  box-shadow: 9px 20px 100px 0px rgba(0, 0, 0, 0.05);
+}
+.frame-48095533 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 159px;
+  height: 130px;
+  position: relative;
+}
+.icons {
+  flex-shrink: 0;
+  width: 120px;
+  height: 130px;
+  position: relative;
+}
+.supermarkets-chains {
+  color: #2a2a2a;
+  text-align: center;
+  font-family: "Poppins-Bold", sans-serif;
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: 700;
+  position: absolute;
+  right: 12.89%;
+  left: 16.91%;
+  width: 70.2%;
+  bottom: 33.44%;
+  top: 54.57%;
+  height: 11.99%;
+}
+.frame-344858 {
+  display: flex;
+  flex-direction: column;
+  gap: 12.97px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 91.8%;
+  height: 24.61%;
+  position: absolute;
+  right: 2.05%;
+  left: 6.15%;
+  bottom: 4.73%;
+  top: 70.66%;
+}
+.easy-to-customize-screens-reusable-section {
+  color: #6f6d6d;
+  text-align: center;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.ellipse-765 {
+  background: #ff8ca0;
+  border-radius: 50%;
+  width: 22.15%;
+  height: 40.91%;
+  position: absolute;
+  right: 39%;
+  left: 38.86%;
+  bottom: 53.33%;
+  top: 5.76%;
+}
+._9-shop-copy-1 {
+  width: 16.4%;
+  height: 27.13%;
+  position: absolute;
+  right: 41.76%;
+  left: 41.84%;
+  bottom: 60.25%;
+  top: 12.62%;
+  overflow: hidden;
+}
+.vector {
+  width: 32.64%;
+  height: 25.01%;
+  position: absolute;
+  right: 33.68%;
+  left: 33.68%;
+  bottom: 16.41%;
+  top: 58.58%;
+  overflow: visible;
+}
+.vector2 {
+  width: 20.57%;
+  height: 16.67%;
+  position: absolute;
+  right: 6.6%;
+  left: 72.83%;
+  bottom: 60.43%;
+  top: 22.9%;
+  overflow: visible;
+}
+.vector3 {
+  width: 14.89%;
+  height: 16.67%;
+  position: absolute;
+  right: 54.78%;
+  left: 30.33%;
+  bottom: 60.43%;
+  top: 22.9%;
+  overflow: visible;
+}
+.vector4 {
+  width: 14.89%;
+  height: 16.67%;
+  position: absolute;
+  right: 30.33%;
+  left: 54.78%;
+  bottom: 60.43%;
+  top: 22.9%;
+  overflow: visible;
+}
+.vector5 {
+  width: 20.57%;
+  height: 16.67%;
+  position: absolute;
+  right: 72.83%;
+  left: 6.6%;
+  bottom: 60.43%;
+  top: 22.9%;
+  overflow: visible;
+}
+.group {
+  width: 100%;
+  height: 90.71%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 4.65%;
+  top: 4.65%;
+  overflow: visible;
+}
+.group2 {
+  width: 100%;
+  height: 90.71%;
+  position: absolute;
+  right: -485.42%;
+  left: 485.42%;
+  bottom: -783.73%;
+  top: 793.02%;
+  overflow: visible;
+}
+.group-245 {
+  width: 585.5px;
+  height: 317.32px;
+  position: absolute;
+  left: 461px;
+  top: 2207px;
+}
+.frame-480955332 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.icons2 {
+  flex-shrink: 0;
+  width: 129.68px;
+  height: 129.68px;
+  position: relative;
+}
+.frame-3448582 {
+  display: flex;
+  flex-direction: column;
+  gap: 12.97px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.free-icons {
+  color: #2a2a2a;
+  text-align: center;
+  font-family: "Poppins-Bold", sans-serif;
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+.you-will-get-free-icon-set-and-custom-with-your-styles-as {
+  color: #6f6d6d;
+  text-align: center;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.frame-427320626 {
+  width: 22.15%;
+  height: 40.87%;
+  position: absolute;
+  right: 40.85%;
+  left: 37%;
+  bottom: 53.09%;
+  top: 6.04%;
+  overflow: visible;
+}
+.your-all-in-one-ai-powered-crm-automation-platform {
+  color: #d4af37;
+  text-align: left;
+  font-family: "RobotoSlab-Bold", sans-serif;
+  font-size: 32px;
+  line-height: 29.2px;
+  font-weight: 700;
+  position: absolute;
+  left: 304px;
+  top: 1681px;
+}
+.track-prices-in-real-time-get-instant-alerts-on-price-drops-stay-updated-on-the-best-deals {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(--content-font-family, "Roboto-Regular", sans-serif);
+  font-size: var(--content-font-size, 23px);
+  font-weight: var(--content-font-weight, 400);
+  position: absolute;
+  left: calc(50% - 433px);
+  top: 1750px;
+  width: 972px;
+}
+.group-242 {
+  width: 585.5px;
+  height: 317px;
+  position: absolute;
+  left: 124px;
+  top: 1855px;
+}
+.ellipse-7652 {
+  background: var(--primary-default-500, #ff8ca0);
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 129.68px;
+  height: 129.68px;
+  position: relative;
+}
+.online-stores {
+  color: #2a2a2a;
+  text-align: center;
+  font-family: "Poppins-Bold", sans-serif;
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: 700;
+  position: absolute;
+  right: 29.25%;
+  left: 29.25%;
+  width: 41.5%;
+  bottom: 35.8%;
+  top: 52.21%;
+  height: 11.99%;
+}
+.frame-3448583 {
+  display: flex;
+  flex-direction: column;
+  gap: 12.97px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 91.8%;
+  height: 24.61%;
+  position: absolute;
+  right: 3.84%;
+  left: 4.36%;
+  bottom: 8.12%;
+  top: 67.27%;
+}
+._13-shopping-cart-heart-copy-1 {
+  width: 18.1%;
+  height: 29.97%;
+  position: absolute;
+  right: 42.19%;
+  left: 39.71%;
+  bottom: 58.28%;
+  top: 11.75%;
+  overflow: hidden;
+}
+.group3 {
+  width: 68%;
+  height: 47.73%;
+  position: absolute;
+  right: 7.78%;
+  left: 24.22%;
+  bottom: 33.7%;
+  top: 18.57%;
+  overflow: visible;
+}
+.group4 {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 5.48px;
+  overflow: visible;
+}
+.group-253 {
+  position: absolute;
+  inset: 0;
+}
+.from-healthcare-and-real-estate-to-retail-and-finance-zea-crm-adapts-to-your-unique-challenges-with-automation-first-solutions-discover-how-we-help-businesses-streamline-operations-enhance-customer-relationships-and-drive-growth-from-healthcare-and-real-estate-to-retail-and-finance-zea-crm-adapts-to-your-unique-challenges-with-automation-first-solutions-discover-how-we-help-businesses-streamline-operations-enhance-customer-relationships-and-drive-growth2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NeueHaasGroteskTextPro-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 29.2px;
+  font-weight: 400;
+  position: absolute;
+  left: 676px;
+  top: 2886px;
+  width: 636px;
+}
+.your-all-in-one-ai-powered-crm-automation-platform2 {
+  color: #d4af37;
+  text-align: left;
+  font-family: "RobotoSlab-Bold", sans-serif;
+  font-size: 32px;
+  line-height: 29.2px;
+  font-weight: 700;
+  position: absolute;
+  left: 248px;
+  top: 2734px;
+}
+.rectangle-352 {
+  width: 510px;
+  height: 326px;
+  position: absolute;
+  left: 129px;
+  top: 2868px;
+}
+.rectangle-348 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  object-fit: cover;
+}
+.group-254 {
+  position: absolute;
+  inset: 0;
+}
+.your-all-in-one-ai-powered-crm-automation-platform3 {
+  color: #d4af37;
+  text-align: left;
+  font-family: "RobotoSlab-Bold", sans-serif;
+  font-size: 32px;
+  line-height: 29.2px;
+  font-weight: 700;
+  position: absolute;
+  left: 326px;
+  top: 3354px;
+}
+.track-prices-in-real-time-get-instant-alerts-on-price-drops-stay-updated {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(--content-font-family, "Roboto-Regular", sans-serif);
+  font-size: var(--content-font-size, 23px);
+  font-weight: var(--content-font-weight, 400);
+  position: absolute;
+  left: calc(50% - 344px);
+  top: 3447px;
+  width: 794px;
+}
+.frame-248 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 966px;
+  position: absolute;
+  left: 272px;
+  top: 3581px;
+}
+.frame-427320629 {
+  display: flex;
+  flex-direction: row;
+  gap: 121px;
+  row-gap: 73px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 607px;
+  position: relative;
+}
+.frame-427320631 {
+  display: flex;
+  flex-direction: row;
+  gap: 121px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-250 {
+  flex-shrink: 0;
+  width: 346px;
+  height: 248px;
+  position: relative;
+}
+.group-249 {
+  position: absolute;
+  inset: 0;
+}
+.image-h-40 {
+  width: 346px;
+  height: 248px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.vector6 {
+  width: 22.09%;
+  height: 4.95%;
+  position: absolute;
+  right: 39.11%;
+  left: 38.8%;
+  bottom: 5.8%;
+  top: 89.25%;
+  overflow: visible;
+}
+.vector7 {
+  width: 2.3%;
+  height: 12.38%;
+  position: absolute;
+  right: 49%;
+  left: 48.7%;
+  bottom: 7.82%;
+  top: 79.79%;
+  overflow: visible;
+}
+.vector8 {
+  width: 83.99%;
+  height: 70.46%;
+  position: absolute;
+  right: 8.01%;
+  left: 8%;
+  bottom: 18.69%;
+  top: 10.85%;
+  overflow: visible;
+}
+.vector9 {
+  width: 83.12%;
+  height: 172.48px;
+  position: absolute;
+  right: 8.44%;
+  left: 8.43%;
+  top: calc(50% - 95.55px);
+  overflow: visible;
+}
+.vector10 {
+  width: 81.58%;
+  height: 60.72%;
+  position: absolute;
+  right: 9.21%;
+  left: 9.2%;
+  bottom: 21.05%;
+  top: 18.23%;
+  overflow: visible;
+}
+.vector11 {
+  width: 78.28%;
+  height: 44.62%;
+  position: absolute;
+  right: 10.96%;
+  left: 10.75%;
+  bottom: 24.55%;
+  top: 30.83%;
+  overflow: visible;
+}
+.vector12 {
+  width: 81.64%;
+  height: 11.08%;
+  position: absolute;
+  right: 9.18%;
+  left: 9.17%;
+  bottom: 76.23%;
+  top: 12.68%;
+  overflow: visible;
+}
+.vector13 {
+  width: 15.19%;
+  height: 3.04%;
+  position: absolute;
+  right: 73.02%;
+  left: 11.79%;
+  bottom: 71.3%;
+  top: 25.66%;
+  overflow: visible;
+}
+.vector14 {
+  width: 59.07%;
+  height: 3.04%;
+  position: absolute;
+  right: 11.92%;
+  left: 29.01%;
+  bottom: 71.3%;
+  top: 25.66%;
+  overflow: visible;
+}
+.vector15 {
+  width: 15.19%;
+  height: 12.8%;
+  position: absolute;
+  right: 73.02%;
+  left: 11.79%;
+  bottom: 30.48%;
+  top: 56.72%;
+  overflow: visible;
+}
+.vector16 {
+  width: 12.98%;
+  height: 21.61%;
+  position: absolute;
+  right: 11.92%;
+  left: 75.1%;
+  bottom: 45.81%;
+  top: 32.57%;
+  overflow: visible;
+}
+.vector17 {
+  width: 43.05%;
+  height: 12.11%;
+  position: absolute;
+  right: 27.89%;
+  left: 29.06%;
+  bottom: 55.32%;
+  top: 32.57%;
+  overflow: visible;
+}
+.vector18 {
+  width: 42.06%;
+  height: 10.13%;
+  position: absolute;
+  right: 28.42%;
+  left: 29.52%;
+  bottom: 56.27%;
+  top: 33.6%;
+  overflow: visible;
+}
+.vector19 {
+  width: 24.18%;
+  height: 21.62%;
+  position: absolute;
+  right: 46.76%;
+  left: 29.06%;
+  bottom: 30.77%;
+  top: 47.61%;
+  overflow: visible;
+}
+.vector20 {
+  width: 23.11%;
+  height: 20.27%;
+  position: absolute;
+  right: 47.37%;
+  left: 29.52%;
+  bottom: 31.28%;
+  top: 48.46%;
+  overflow: visible;
+}
+.vector21 {
+  width: 15.19%;
+  height: 21.61%;
+  position: absolute;
+  right: 73.02%;
+  left: 11.79%;
+  bottom: 45.81%;
+  top: 32.57%;
+  overflow: visible;
+}
+.vector22 {
+  width: 11.5%;
+  height: 0%;
+  position: absolute;
+  right: 75.13%;
+  left: 13.36%;
+  bottom: 64.32%;
+  top: 35.68%;
+  overflow: visible;
+}
+.vector23 {
+  width: 11.5%;
+  height: 0%;
+  position: absolute;
+  right: 75.13%;
+  left: 13.36%;
+  bottom: 61.62%;
+  top: 38.38%;
+  overflow: visible;
+}
+.vector24 {
+  width: 11.5%;
+  height: 0%;
+  position: absolute;
+  right: 75.13%;
+  left: 13.36%;
+  bottom: 58.92%;
+  top: 41.08%;
+  overflow: visible;
+}
+.vector25 {
+  width: 11.5%;
+  height: 0%;
+  position: absolute;
+  right: 75.13%;
+  left: 13.36%;
+  bottom: 56.22%;
+  top: 43.78%;
+  overflow: visible;
+}
+.vector26 {
+  width: 11.5%;
+  height: 0%;
+  position: absolute;
+  right: 75.13%;
+  left: 13.36%;
+  bottom: 53.52%;
+  top: 46.48%;
+  overflow: visible;
+}
+.vector27 {
+  width: 16.26%;
+  height: 21.62%;
+  position: absolute;
+  right: 27.73%;
+  left: 56.01%;
+  bottom: 30.77%;
+  top: 47.61%;
+  overflow: visible;
+}
+.vector28 {
+  width: 12.57%;
+  height: 0%;
+  position: absolute;
+  right: 29.71%;
+  left: 57.72%;
+  bottom: 48%;
+  top: 52%;
+  overflow: visible;
+}
+.vector29 {
+  width: 12.57%;
+  height: 0%;
+  position: absolute;
+  right: 29.71%;
+  left: 57.72%;
+  bottom: 45.3%;
+  top: 54.7%;
+  overflow: visible;
+}
+.vector30 {
+  width: 12.57%;
+  height: 0%;
+  position: absolute;
+  right: 29.71%;
+  left: 57.72%;
+  bottom: 42.59%;
+  top: 57.41%;
+  overflow: visible;
+}
+.vector31 {
+  width: 12.57%;
+  height: 0%;
+  position: absolute;
+  right: 29.71%;
+  left: 57.72%;
+  bottom: 39.89%;
+  top: 60.11%;
+  overflow: visible;
+}
+.vector32 {
+  width: 12.57%;
+  height: 0%;
+  position: absolute;
+  right: 29.71%;
+  left: 57.72%;
+  bottom: 37.19%;
+  top: 62.81%;
+  overflow: visible;
+}
+.vector33 {
+  width: 11.41%;
+  height: 19.79%;
+  position: absolute;
+  right: 12.7%;
+  left: 75.89%;
+  bottom: 46.73%;
+  top: 33.48%;
+  overflow: visible;
+}
+.vector34 {
+  width: 7.04%;
+  height: 8.05%;
+  position: absolute;
+  right: 62.75%;
+  left: 30.22%;
+  bottom: 57.18%;
+  top: 34.77%;
+  overflow: visible;
+}
+.vector35 {
+  width: 9.97%;
+  height: 8.05%;
+  position: absolute;
+  right: 51.42%;
+  left: 38.61%;
+  bottom: 57.18%;
+  top: 34.77%;
+  overflow: visible;
+}
+.vector36 {
+  width: 2.4%;
+  height: 3.53%;
+  position: absolute;
+  right: 21.14%;
+  left: 76.46%;
+  bottom: 79.61%;
+  top: 16.86%;
+  overflow: visible;
+}
+.vector37 {
+  width: 2.4%;
+  height: 3.53%;
+  position: absolute;
+  right: 16.93%;
+  left: 80.66%;
+  bottom: 79.61%;
+  top: 16.86%;
+  overflow: visible;
+}
+.vector38 {
+  width: 2.4%;
+  height: 3.53%;
+  position: absolute;
+  right: 12.73%;
+  left: 84.87%;
+  bottom: 79.61%;
+  top: 16.86%;
+  overflow: visible;
+}
+.vector39 {
+  width: 3.71%;
+  height: 4.7%;
+  position: absolute;
+  right: 84.97%;
+  left: 11.32%;
+  bottom: 78.26%;
+  top: 17.04%;
+  overflow: visible;
+}
+.vector40 {
+  width: 5.17%;
+  height: 2.85%;
+  position: absolute;
+  right: 84.24%;
+  left: 10.59%;
+  bottom: 82.69%;
+  top: 14.45%;
+  overflow: visible;
+}
+.vector41 {
+  width: 3.84%;
+  height: 0%;
+  position: absolute;
+  right: 84.93%;
+  left: 11.23%;
+  bottom: 82.65%;
+  top: 17.35%;
+  overflow: visible;
+}
+.vector42 {
+  width: 16.95%;
+  height: 1.67%;
+  position: absolute;
+  right: 48.45%;
+  left: 34.6%;
+  bottom: 1.76%;
+  top: 96.58%;
+  overflow: visible;
+}
+.vector43 {
+  width: 24.88%;
+  height: 2.09%;
+  position: absolute;
+  right: 16.07%;
+  left: 59.05%;
+  bottom: 0.19%;
+  top: 97.72%;
+  overflow: visible;
+}
+.vector44 {
+  width: 5.44%;
+  height: 1.49%;
+  position: absolute;
+  right: 87.94%;
+  left: 6.62%;
+  bottom: 4.92%;
+  top: 93.59%;
+  overflow: visible;
+}
+.vector45 {
+  width: 24.88%;
+  height: 2.09%;
+  position: absolute;
+  right: 66%;
+  left: 9.12%;
+  bottom: 1.51%;
+  top: 96.4%;
+  overflow: visible;
+}
+.vector46 {
+  width: 11.08%;
+  height: 31.27%;
+  position: absolute;
+  right: 88.79%;
+  left: 0.12%;
+  bottom: 10.26%;
+  top: 58.48%;
+  overflow: visible;
+}
+.vector47 {
+  width: 7.73%;
+  height: 26.6%;
+  position: absolute;
+  right: 88.54%;
+  left: 3.73%;
+  bottom: 5.5%;
+  top: 67.9%;
+  overflow: visible;
+}
+.vector48 {
+  width: 7.15%;
+  height: 28.72%;
+  position: absolute;
+  right: 84.01%;
+  left: 8.84%;
+  bottom: 6.97%;
+  top: 64.32%;
+  overflow: visible;
+}
+.vector49 {
+  width: 8.1%;
+  height: 16.05%;
+  position: absolute;
+  right: 91.86%;
+  left: 0.04%;
+  bottom: 8.41%;
+  top: 75.54%;
+  overflow: visible;
+}
+.vector50 {
+  width: 3.91%;
+  height: 23.08%;
+  position: absolute;
+  right: 87.07%;
+  left: 9.02%;
+  bottom: 5.35%;
+  top: 71.57%;
+  overflow: visible;
+}
+.vector51 {
+  width: 6.4%;
+  height: 13.37%;
+  position: absolute;
+  right: 91.44%;
+  left: 2.17%;
+  bottom: 5.45%;
+  top: 81.19%;
+  overflow: visible;
+}
+.vector52 {
+  width: 5.44%;
+  height: 1.49%;
+  position: absolute;
+  right: 11.75%;
+  left: 82.8%;
+  bottom: 6.68%;
+  top: 91.83%;
+  overflow: visible;
+}
+.vector53 {
+  width: 9.74%;
+  height: 35.2%;
+  position: absolute;
+  right: 4.19%;
+  left: 86.07%;
+  bottom: 14.38%;
+  top: 50.42%;
+  overflow: visible;
+}
+.vector54 {
+  width: 7.64%;
+  height: 37.89%;
+  position: absolute;
+  right: 6.44%;
+  left: 85.92%;
+  bottom: 7.52%;
+  top: 54.59%;
+  overflow: visible;
+}
+.vector55 {
+  width: 8.43%;
+  height: 23.25%;
+  position: absolute;
+  right: 3.36%;
+  left: 88.21%;
+  bottom: 16.78%;
+  top: 59.97%;
+  overflow: visible;
+}
+.vector56 {
+  width: 11.58%;
+  height: 15.95%;
+  position: absolute;
+  right: 0.69%;
+  left: 87.73%;
+  bottom: 14.14%;
+  top: 69.91%;
+  overflow: visible;
+}
+.vector57 {
+  width: 8.16%;
+  height: 28.85%;
+  position: absolute;
+  right: 5.12%;
+  left: 86.73%;
+  bottom: 7.22%;
+  top: 63.94%;
+  overflow: visible;
+}
+.vector58 {
+  width: 7.04%;
+  height: 9.17%;
+  position: absolute;
+  right: 5.23%;
+  left: 87.73%;
+  bottom: 14.28%;
+  top: 76.55%;
+  overflow: visible;
+}
+.vector59 {
+  width: 4.56%;
+  height: 1.72%;
+  position: absolute;
+  right: 7.64%;
+  left: 87.8%;
+  bottom: 3.43%;
+  top: 94.85%;
+  overflow: visible;
+}
+.vector60 {
+  width: 7.42%;
+  height: 19.64%;
+  position: absolute;
+  right: 10.28%;
+  left: 82.3%;
+  bottom: 7.09%;
+  top: 73.26%;
+  overflow: visible;
+}
+.vector61 {
+  width: 4.74%;
+  height: 15%;
+  position: absolute;
+  right: 9.93%;
+  left: 85.34%;
+  bottom: 4.33%;
+  top: 80.67%;
+  overflow: visible;
+}
+.vector62 {
+  width: 9.13%;
+  height: 14.35%;
+  position: absolute;
+  right: 0.05%;
+  left: 90.82%;
+  bottom: 7.18%;
+  top: 78.47%;
+  overflow: visible;
+}
+.vector63 {
+  width: 5.25%;
+  height: 12.7%;
+  position: absolute;
+  right: 4.08%;
+  left: 90.67%;
+  bottom: 4.04%;
+  top: 83.25%;
+  overflow: visible;
+}
+.vector64 {
+  width: 2.33%;
+  height: 5.95%;
+  position: absolute;
+  right: 26.69%;
+  left: 70.97%;
+  bottom: 3.29%;
+  top: 90.75%;
+  overflow: visible;
+}
+.vector65 {
+  width: 5.89%;
+  height: 3.47%;
+  position: absolute;
+  right: 27.06%;
+  left: 67.05%;
+  bottom: 0.68%;
+  top: 95.85%;
+  overflow: visible;
+}
+.vector66 {
+  width: 2.29%;
+  height: 7.03%;
+  position: absolute;
+  right: 18.46%;
+  left: 79.25%;
+  bottom: 3.77%;
+  top: 89.2%;
+  overflow: visible;
+}
+.vector67 {
+  width: 5.48%;
+  height: 3.95%;
+  position: absolute;
+  right: 18.2%;
+  left: 76.31%;
+  bottom: 0.92%;
+  top: 95.13%;
+  overflow: visible;
+}
+.vector68 {
+  width: 7.34%;
+  height: 36.69%;
+  position: absolute;
+  right: 16.07%;
+  left: 76.6%;
+  bottom: 6.99%;
+  top: 56.32%;
+  overflow: visible;
+}
+.vector69 {
+  width: 8.64%;
+  height: 36.13%;
+  position: absolute;
+  right: 20.64%;
+  left: 70.72%;
+  bottom: 5.96%;
+  top: 57.91%;
+  overflow: visible;
+}
+.vector70 {
+  width: 2.64%;
+  height: 8.47%;
+  position: absolute;
+  right: 20.24%;
+  left: 77.11%;
+  bottom: 27.62%;
+  top: 63.91%;
+  overflow: visible;
+}
+.vector71 {
+  width: 0.13%;
+  height: 2.33%;
+  position: absolute;
+  right: 27.44%;
+  left: 72.42%;
+  bottom: 21.48%;
+  top: 76.19%;
+  overflow: visible;
+}
+.vector72 {
+  width: 0.29%;
+  height: 5.46%;
+  position: absolute;
+  right: 24.59%;
+  left: 75.12%;
+  bottom: 11.42%;
+  top: 83.12%;
+  overflow: visible;
+}
+.vector73 {
+  width: 0%;
+  height: 0.9%;
+  position: absolute;
+  right: 24.82%;
+  left: 75.18%;
+  bottom: 9.25%;
+  top: 89.85%;
+  overflow: visible;
+}
+.vector74 {
+  width: 0.59%;
+  height: 4.48%;
+  position: absolute;
+  right: 17.69%;
+  left: 81.72%;
+  bottom: 15.5%;
+  top: 80.02%;
+  overflow: visible;
+}
+.vector75 {
+  width: 0.2%;
+  height: 1.35%;
+  position: absolute;
+  right: 17.25%;
+  left: 82.54%;
+  bottom: 12.7%;
+  top: 85.95%;
+  overflow: visible;
+}
+.vector76 {
+  width: 3.7%;
+  height: 2.88%;
+  position: absolute;
+  right: 23.74%;
+  left: 72.55%;
+  bottom: 54.41%;
+  top: 42.71%;
+  overflow: visible;
+}
+.vector77 {
+  width: 6.04%;
+  height: 7.03%;
+  position: absolute;
+  right: 19.07%;
+  left: 74.89%;
+  bottom: 50.09%;
+  top: 42.89%;
+  overflow: visible;
+}
+.vector78 {
+  width: 13.35%;
+  height: 8.28%;
+  position: absolute;
+  right: 25.85%;
+  left: 60.8%;
+  bottom: 53.53%;
+  top: 38.2%;
+  overflow: visible;
+}
+.vector79 {
+  width: 4.48%;
+  height: 5.37%;
+  position: absolute;
+  right: 32.82%;
+  left: 62.69%;
+  bottom: 50.24%;
+  top: 44.39%;
+  overflow: visible;
+}
+.vector80 {
+  width: 3.52%;
+  height: 10.28%;
+  position: absolute;
+  right: 19.53%;
+  left: 76.95%;
+  bottom: 54.19%;
+  top: 35.53%;
+  overflow: visible;
+}
+.vector81 {
+  width: 8.36%;
+  height: 18.87%;
+  position: absolute;
+  right: 17.49%;
+  left: 74.16%;
+  bottom: 38.58%;
+  top: 42.56%;
+  overflow: visible;
+}
+.vector82 {
+  width: 14.75%;
+  height: 9.88%;
+  position: absolute;
+  right: 20.18%;
+  left: 65.07%;
+  bottom: 46.8%;
+  top: 43.32%;
+  overflow: visible;
+}
+.vector83 {
+  width: 6%;
+  height: 9.77%;
+  position: absolute;
+  right: 17.09%;
+  left: 76.92%;
+  bottom: 55.12%;
+  top: 35.11%;
+  overflow: visible;
+}
+.vector84 {
+  width: 1.01%;
+  height: 1.56%;
+  position: absolute;
+  right: 20.68%;
+  left: 78.32%;
+  bottom: 60.89%;
+  top: 37.54%;
+  overflow: visible;
+}
+.vector85 {
+  width: 0.93%;
+  height: 1.05%;
+  position: absolute;
+  right: 21.48%;
+  left: 77.58%;
+  bottom: 58.53%;
+  top: 40.41%;
+  overflow: visible;
+}
+.vector86 {
+  width: 0.53%;
+  height: 0.4%;
+  position: absolute;
+  right: 21%;
+  left: 78.48%;
+  bottom: 61.58%;
+  top: 38.02%;
+  overflow: visible;
+}
+.vector87 {
+  width: 1.68%;
+  height: 1.63%;
+  position: absolute;
+  right: 25.08%;
+  left: 73.24%;
+  bottom: 56.09%;
+  top: 42.28%;
+  overflow: visible;
+}
+.vector88 {
+  width: 3.8%;
+  height: 4.06%;
+  position: absolute;
+  right: 21.25%;
+  left: 74.95%;
+  bottom: 47.16%;
+  top: 48.79%;
+  overflow: visible;
+}
+.vector89 {
+  width: 2.08%;
+  height: 3.03%;
+  position: absolute;
+  right: 22.58%;
+  left: 75.34%;
+  bottom: 53.35%;
+  top: 43.61%;
+  overflow: visible;
+}
+.vector90 {
+  width: 1.59%;
+  height: 0.25%;
+  position: absolute;
+  right: 27.58%;
+  left: 70.83%;
+  bottom: 47.54%;
+  top: 52.21%;
+  overflow: visible;
+}
+.vector91 {
+  width: 0.61%;
+  height: 0.08%;
+  position: absolute;
+  right: 26.46%;
+  left: 72.93%;
+  bottom: 47.67%;
+  top: 52.25%;
+  overflow: visible;
+}
+.vector92 {
+  width: 0%;
+  height: 2.25%;
+  position: absolute;
+  right: 18.94%;
+  left: 81.06%;
+  bottom: 42.05%;
+  top: 55.7%;
+  overflow: visible;
+}
+.vector93 {
+  width: 0.13%;
+  height: 1.88%;
+  position: absolute;
+  right: 17.93%;
+  left: 81.94%;
+  bottom: 51.66%;
+  top: 46.47%;
+  overflow: visible;
+}
+.vector94 {
+  width: 6.73%;
+  height: 20.65%;
+  position: absolute;
+  right: 31.18%;
+  left: 62.09%;
+  bottom: 3.37%;
+  top: 75.97%;
+  overflow: visible;
+}
+.vector95 {
+  width: 4.55%;
+  height: 15.86%;
+  position: absolute;
+  right: 38.5%;
+  left: 56.95%;
+  bottom: 2.81%;
+  top: 81.33%;
+  overflow: visible;
+}
+.vector96 {
+  width: 5.35%;
+  height: 8.64%;
+  position: absolute;
+  right: 31.25%;
+  left: 63.4%;
+  bottom: 3%;
+  top: 88.36%;
+  overflow: visible;
+}
+.vector97 {
+  width: 3.58%;
+  height: 7.7%;
+  position: absolute;
+  right: 33.45%;
+  left: 62.97%;
+  bottom: 1.07%;
+  top: 91.23%;
+  overflow: visible;
+}
+.vector98 {
+  width: 2.75%;
+  height: 15.96%;
+  position: absolute;
+  right: 35.08%;
+  left: 62.17%;
+  bottom: 1.63%;
+  top: 82.42%;
+  overflow: visible;
+}
+.vector99 {
+  width: 2.6%;
+  height: 12.5%;
+  position: absolute;
+  right: 38.43%;
+  left: 58.97%;
+  bottom: 1.37%;
+  top: 86.13%;
+  overflow: visible;
+}
+.vector100 {
+  width: 5.42%;
+  height: 16.97%;
+  position: absolute;
+  right: 45.64%;
+  left: 48.95%;
+  bottom: 9.01%;
+  top: 74.02%;
+  overflow: visible;
+}
+.vector101 {
+  width: 3.78%;
+  height: 16.27%;
+  position: absolute;
+  right: 50.01%;
+  left: 46.21%;
+  bottom: 17.15%;
+  top: 66.58%;
+  overflow: visible;
+}
+.vector102 {
+  width: 5.85%;
+  height: 11.78%;
+  position: absolute;
+  right: 52.08%;
+  left: 42.08%;
+  bottom: 9.98%;
+  top: 78.24%;
+  overflow: visible;
+}
+.vector103 {
+  width: 6.98%;
+  height: 18.74%;
+  position: absolute;
+  right: 47.81%;
+  left: 45.21%;
+  bottom: 3.16%;
+  top: 78.1%;
+  overflow: visible;
+}
+.vector104 {
+  width: 0.28%;
+  height: 23.21%;
+  position: absolute;
+  right: 51.23%;
+  left: 48.49%;
+  bottom: 4.37%;
+  top: 72.42%;
+  overflow: visible;
+}
+.vector105 {
+  width: 4.63%;
+  height: 5.33%;
+  position: absolute;
+  right: 48.99%;
+  left: 46.38%;
+  bottom: 2.41%;
+  top: 92.27%;
+  overflow: visible;
+}
+.vector106 {
+  width: 3.21%;
+  height: 8.23%;
+  position: absolute;
+  right: 58.73%;
+  left: 38.06%;
+  bottom: 33.21%;
+  top: 58.56%;
+  overflow: visible;
+}
+.vector107 {
+  width: 3.24%;
+  height: 9.57%;
+  position: absolute;
+  right: 59.87%;
+  left: 36.89%;
+  bottom: 29.81%;
+  top: 60.62%;
+  overflow: visible;
+}
+.vector108 {
+  width: 3.71%;
+  height: 13.77%;
+  position: absolute;
+  right: 60.72%;
+  left: 35.57%;
+  bottom: 32.97%;
+  top: 53.25%;
+  overflow: visible;
+}
+.vector109 {
+  width: 0.9%;
+  height: 21.62%;
+  position: absolute;
+  right: 62.41%;
+  left: 36.69%;
+  bottom: 21.34%;
+  top: 57.04%;
+  overflow: visible;
+}
+.vector110 {
+  width: 3.88%;
+  height: 13.9%;
+  position: absolute;
+  right: 64.6%;
+  left: 31.52%;
+  bottom: 26.66%;
+  top: 59.44%;
+  overflow: visible;
+}
+.vector111 {
+  width: 1.64%;
+  height: 15.11%;
+  position: absolute;
+  right: 64.77%;
+  left: 33.59%;
+  bottom: 21.04%;
+  top: 63.85%;
+  overflow: visible;
+}
+.vector112 {
+  width: 7.22%;
+  height: 9.99%;
+  position: absolute;
+  right: 56.99%;
+  left: 35.79%;
+  bottom: 22.12%;
+  top: 67.89%;
+  overflow: visible;
+}
+.vector113 {
+  width: 4.67%;
+  height: 7.91%;
+  position: absolute;
+  right: 59.55%;
+  left: 35.78%;
+  bottom: 23.44%;
+  top: 68.65%;
+  overflow: visible;
+}
+.vector114 {
+  width: 4.63%;
+  height: 5.33%;
+  position: absolute;
+  right: 61.42%;
+  left: 33.95%;
+  bottom: 18.46%;
+  top: 76.21%;
+  overflow: visible;
+}
+.vector115 {
+  width: 5.59%;
+  height: 7.2%;
+  position: absolute;
+  right: 69.34%;
+  left: 25.07%;
+  bottom: 31.67%;
+  top: 61.13%;
+  overflow: visible;
+}
+.vector116 {
+  width: 4.85%;
+  height: 5.96%;
+  position: absolute;
+  right: 68.61%;
+  left: 26.54%;
+  bottom: 35.75%;
+  top: 58.29%;
+  overflow: visible;
+}
+.vector117 {
+  width: 4.24%;
+  height: 2.43%;
+  position: absolute;
+  right: 69.31%;
+  left: 26.45%;
+  bottom: 36.6%;
+  top: 60.97%;
+  overflow: visible;
+}
+.vector118 {
+  width: 2.32%;
+  height: 1.57%;
+  position: absolute;
+  right: 68.35%;
+  left: 29.34%;
+  bottom: 38.37%;
+  top: 60.05%;
+  overflow: visible;
+}
+.vector119 {
+  width: 0.72%;
+  height: 1.17%;
+  position: absolute;
+  right: 71.37%;
+  left: 27.91%;
+  bottom: 33.96%;
+  top: 64.87%;
+  overflow: visible;
+}
+.vector120 {
+  width: 0.25%;
+  height: 0.58%;
+  position: absolute;
+  right: 70.5%;
+  left: 29.25%;
+  bottom: 34.55%;
+  top: 64.86%;
+  overflow: visible;
+}
+.vector121 {
+  width: 0.99%;
+  height: 1.32%;
+  position: absolute;
+  right: 71.09%;
+  left: 27.92%;
+  bottom: 36.21%;
+  top: 62.48%;
+  overflow: visible;
+}
+.vector122 {
+  width: 0.24%;
+  height: 0.61%;
+  position: absolute;
+  right: 71.29%;
+  left: 28.47%;
+  bottom: 36.58%;
+  top: 62.8%;
+  overflow: visible;
+}
+.vector123 {
+  width: 4.94%;
+  height: 5.31%;
+  position: absolute;
+  right: 66.34%;
+  left: 28.72%;
+  bottom: 2.31%;
+  top: 92.38%;
+  overflow: visible;
+}
+.vector124 {
+  width: 3.85%;
+  height: 6.55%;
+  position: absolute;
+  right: 86.62%;
+  left: 9.53%;
+  bottom: 2.32%;
+  top: 91.13%;
+  overflow: visible;
+}
+.vector125 {
+  width: 12.15%;
+  height: 19.04%;
+  position: absolute;
+  right: 68.17%;
+  left: 19.68%;
+  bottom: 5.07%;
+  top: 75.89%;
+  overflow: visible;
+}
+.vector126 {
+  width: 12.62%;
+  height: 22.8%;
+  position: absolute;
+  right: 75.31%;
+  left: 12.07%;
+  bottom: 2.3%;
+  top: 74.91%;
+  overflow: visible;
+}
+.vector127 {
+  width: 5.41%;
+  height: 2.94%;
+  position: absolute;
+  right: 61.43%;
+  left: 33.16%;
+  bottom: 19.22%;
+  top: 77.84%;
+  overflow: visible;
+}
+.vector128 {
+  width: 10.63%;
+  height: 13.02%;
+  position: absolute;
+  right: 72.09%;
+  left: 17.28%;
+  bottom: 21.8%;
+  top: 65.19%;
+  overflow: visible;
+}
+.vector129 {
+  width: 7.65%;
+  height: 7.13%;
+  position: absolute;
+  right: 73.04%;
+  left: 19.31%;
+  bottom: 20.69%;
+  top: 72.18%;
+  overflow: visible;
+}
+.vector130 {
+  width: 10.64%;
+  height: 14.4%;
+  position: absolute;
+  right: 64.63%;
+  left: 24.73%;
+  bottom: 18.89%;
+  top: 66.7%;
+  overflow: visible;
+}
+.vector131 {
+  width: 0.52%;
+  height: 5.42%;
+  position: absolute;
+  right: 77.3%;
+  left: 22.18%;
+  bottom: 14.53%;
+  top: 80.05%;
+  overflow: visible;
+}
+.vector132 {
+  width: 0.54%;
+  height: 2.06%;
+  position: absolute;
+  right: 71.52%;
+  left: 27.94%;
+  bottom: 17.01%;
+  top: 80.92%;
+  overflow: visible;
+}
+.vector133 {
+  width: 1.02%;
+  height: 4.04%;
+  position: absolute;
+  right: 74.43%;
+  left: 24.55%;
+  bottom: 25.42%;
+  top: 70.54%;
+  overflow: visible;
+}
+.vector134 {
+  width: 0.76%;
+  height: 0.93%;
+  position: absolute;
+  right: 80.13%;
+  left: 19.11%;
+  bottom: 6.87%;
+  top: 92.19%;
+  overflow: visible;
+}
+.vector135 {
+  width: 1.79%;
+  height: 4.36%;
+  position: absolute;
+  right: 70.04%;
+  left: 28.17%;
+  bottom: 24.28%;
+  top: 71.36%;
+  overflow: visible;
+}
+.vector136 {
+  width: 1.62%;
+  height: 1.34%;
+  position: absolute;
+  right: 70.27%;
+  left: 28.11%;
+  bottom: 20.61%;
+  top: 78.05%;
+  overflow: visible;
+}
+.vector137 {
+  width: 0.41%;
+  height: 0.62%;
+  position: absolute;
+  right: 72.09%;
+  left: 27.5%;
+  bottom: 22.24%;
+  top: 77.14%;
+  overflow: visible;
+}
+.vector138 {
+  width: 0.36%;
+  height: 1.85%;
+  position: absolute;
+  right: 82.64%;
+  left: 17%;
+  bottom: 14.79%;
+  top: 83.36%;
+  overflow: visible;
+}
+.vector139 {
+  width: 0.26%;
+  height: 0.94%;
+  position: absolute;
+  right: 82.26%;
+  left: 17.48%;
+  bottom: 13.25%;
+  top: 85.81%;
+  overflow: visible;
+}
+.vector140 {
+  width: 1.54%;
+  height: 0.11%;
+  position: absolute;
+  right: 85.75%;
+  left: 12.7%;
+  bottom: 7.88%;
+  top: 92.01%;
+  overflow: visible;
+}
+.vector141 {
+  width: 0.02%;
+  height: 2.9%;
+  position: absolute;
+  right: 71.99%;
+  left: 27.99%;
+  bottom: 7.35%;
+  top: 89.75%;
+  overflow: visible;
+}
+.vector142 {
+  width: 10.71%;
+  height: 13.62%;
+  position: absolute;
+  right: 72.41%;
+  left: 16.87%;
+  bottom: 21.65%;
+  top: 64.72%;
+  overflow: visible;
+}
+.vector143 {
+  width: 0.61%;
+  height: 1.51%;
+  position: absolute;
+  right: 80.86%;
+  left: 18.53%;
+  bottom: 25.78%;
+  top: 72.71%;
+  overflow: visible;
+}
+.vector144 {
+  width: 0.77%;
+  height: 2.7%;
+  position: absolute;
+  right: 74.45%;
+  left: 24.78%;
+  bottom: 24.79%;
+  top: 72.51%;
+  overflow: visible;
+}
+.mask-group {
+  height: auto;
+  position: absolute;
+  left: 40.34px;
+  top: 185.77px;
+  overflow: visible;
+}
+.vector145 {
+  width: 2.03%;
+  height: 2.75%;
+  position: absolute;
+  right: 75.78%;
+  left: 22.19%;
+  bottom: 20.76%;
+  top: 76.49%;
+  overflow: visible;
+}
+.vector146 {
+  width: 1.28%;
+  height: 0.15%;
+  position: absolute;
+  right: 61.46%;
+  left: 37.27%;
+  bottom: 20.82%;
+  top: 79.03%;
+  overflow: visible;
+}
+.vector147 {
+  width: 1.3%;
+  height: 0.24%;
+  position: absolute;
+  right: 61.44%;
+  left: 37.25%;
+  bottom: 20.38%;
+  top: 79.39%;
+  overflow: visible;
+}
+.vector148 {
+  width: 1.2%;
+  height: 0.4%;
+  position: absolute;
+  right: 61.49%;
+  left: 37.31%;
+  bottom: 19.82%;
+  top: 79.79%;
+  overflow: visible;
+}
+.vector149 {
+  width: 0%;
+  height: 11.23%;
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  bottom: 88.32%;
+  top: 0.46%;
+  overflow: visible;
+}
+.vector150 {
+  width: 3.22%;
+  height: 4.73%;
+  position: absolute;
+  right: 48.15%;
+  left: 48.62%;
+  bottom: 82.24%;
+  top: 13.03%;
+  overflow: visible;
+}
+.vector151 {
+  width: 13.99%;
+  height: 7.43%;
+  position: absolute;
+  right: 43.01%;
+  left: 43%;
+  bottom: 84.09%;
+  top: 8.48%;
+  overflow: visible;
+}
+.vector152 {
+  width: 12.43%;
+  height: 6.08%;
+  position: absolute;
+  right: 43.79%;
+  left: 43.78%;
+  bottom: 84.77%;
+  top: 9.15%;
+  overflow: visible;
+}
+.frame-246 {
+  flex-shrink: 0;
+  width: 352px;
+  height: 180px;
+  position: relative;
+}
+.frame-427320630 {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 352px;
+  position: absolute;
+  left: 12px;
+  top: 54px;
+}
+.online-store {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 60.900001525878906px;
+  line-height: 48px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.unified-brand-experience-funnels-for-higher-conversions-faster {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 19.600000381469727px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.vector153 {
+  opacity: 0.1;
+  width: 85.55%;
+  height: 131.33%;
+  position: absolute;
+  right: 1.17%;
+  left: 13.28%;
+  bottom: -187.42%;
+  top: 156.09%;
+  overflow: visible;
+}
+.clip-path-group {
+  height: auto;
+  position: absolute;
+  left: 25px;
+  top: 295px;
+  overflow: visible;
+}
+.frame-427320632 {
+  display: flex;
+  flex-direction: row;
+  gap: 133px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: absolute;
+  left: 300px;
+  top: 3912px;
+}
+.group-250 {
+  flex-shrink: 0;
+  width: 367px;
+  height: 173px;
+  position: static;
+}
+.intelligent-optimization {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 60.900001525878906px;
+  line-height: 55px;
+  font-weight: 400;
+  position: absolute;
+  left: 3px;
+  top: 60.53px;
+  width: 364px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.auto-inventory-sync-low-stock-alerts-feedback-collection-campaigns {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 19.600000381469727px;
+  line-height: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 185.53px;
+  width: 364px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.group5 {
+  flex-shrink: 0;
+  width: 350.26px;
+  height: 233.53px;
+  position: relative;
+  overflow: visible;
+}
+.frame-232 {
+  padding: 0px 150px 0px 156px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1484px;
+  height: 167px;
+  position: absolute;
+  left: -9px;
+  top: 4242px;
+}
+.frame-229 {
+  flex-shrink: 0;
+  width: 1484px;
+  height: 167px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.frame-231 {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.our-platform-is-built-on-five-core-principles-to-guarantee-your-success {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Gorditas-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 38px;
+  font-weight: 400;
+  position: relative;
+  width: 523px;
+  height: 68px;
+}
+.image-box {
+  flex-shrink: 0;
+  width: 236px;
+  height: 167px;
+  position: relative;
+  object-fit: cover;
+}
+.group-229 {
+  flex-shrink: 0;
+  width: 343.49px;
+  height: 34.07px;
+  position: static;
+}
+.background {
+  width: 31.16%;
+  height: 20.4%;
+  position: absolute;
+  right: 0%;
+  left: 68.84%;
+  bottom: 39.8%;
+  top: 39.8%;
+  overflow: visible;
+}
+.frame-230 {
+  background: #ffb600;
+  border-radius: 10px;
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 81.09px;
+  height: 34px;
+  position: absolute;
+  left: 1021px;
+  top: 66.53px;
+}
+.sign-up {
+  color: #fff6f6;
+  text-align: center;
+  font-family: "GothicA1-SemiBold", sans-serif;
+  font-size: 14px;
+  line-height: 29.2px;
+  font-weight: 600;
+  position: relative;
+}
+.enter-your-email {
+  color: #838282;
+  text-align: center;
+  font-family: "GothicA1-ExtraLight", sans-serif;
+  font-size: 14px;
+  line-height: 29.2px;
+  font-weight: 200;
+  position: absolute;
+  left: 759px;
+  top: 69.53px;
+  width: 146px;
+  height: 27px;
+}
