@@ -112,13 +112,13 @@ export function Footer() {
 
             <div className="space-y-2">
               <p className="text-sm font-semibold text-white">Subscribe for product updates and automation tips.</p>
-              <form onSubmit={handleSubscribe} className="flex gap-2">
+              <form onSubmit={handleSubscribe} className="gap-2">
                 <input
                   type="email"
                   placeholder="Your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 rounded text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400"
+                  className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 my-2 rounded text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400"
                   required
                 />
                 <button
@@ -134,7 +134,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-slate-800 pt-8 text-center text-sm text-gray-500">
-          <p>© 2025 ZeaCRM | Powered by UBL Factory | All rights reserved</p>
+          <p>© 2025 ZeaCRM | Powered by ZeaCRM Factory | All rights reserved</p>
         </div>
       </div>
     </footer>

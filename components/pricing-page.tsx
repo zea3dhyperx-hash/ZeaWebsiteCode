@@ -174,18 +174,19 @@ export function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 px-4 md:px-8 ind bg-amber-400">
+      <section className="py-16 md:py-24 px-4 md:px-8 ind bg-background">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-background text-center mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-primary text-center mb-12">Frequently Asked Questions</h2>
 
           <div className="space-y-4">
             {faqItems.map((item, index) => (
-              <div key={index} className="border border-gray-700 rounded-lg overflow-hidden">
+              <div key={index} className="border border-primary rounded-lg overflow-hidden">
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                  className="w-full px-6 py-7 flex items-center justify-between bg-gray-950 hover:bg-gray-900 transition-colors"
+                  // className="w-full px-6 py-7 flex items-center justify-between bg-gray-950 hover:bg-gray-900 transition-colors"
+                  className="w-full px-6 py-7 flex items-center justify-between bg-background hover:bg-primary/10 transition-colors"
                 >
-                  <span className="text-white font-semibold text-left">{item.question}</span>
+                  <span className="text-white hover:text-background font-semibold text-left">{item.question}</span>
                   <ChevronDown
                     className={`w-5 h-5 text-amber-400 transition-transform ${
                       expandedFaq === index ? "rotate-180" : ""
