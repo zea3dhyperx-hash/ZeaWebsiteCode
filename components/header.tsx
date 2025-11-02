@@ -179,17 +179,17 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-4">
             <Button
-              variant="outline"
-              onClick={() => setIsSignInOpen(true)}
+              // variant="outline"
+              // onClick={() => setIsSignInOpen(true)}
               className="hover-lift hover:bg-primary/10 hover:text-primary transition-all duration-300"
             >
-              Login
+              <a href="sign-in">Login</a>
             </Button>
             <Button
-              onClick={() => setIsGetStartedOpen(true)}
+              // onClick={() => setIsGetStartedOpen(true)}
               className="bg-amber-400 hover:bg-amber-500 text-black font-semibold hover-lift transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/50"
             >
-              Start Free Trial
+              <a href="get-started">Start Free Trial</a>
             </Button>
           </div>
 
@@ -247,22 +247,22 @@ export function Header() {
                 </div>
                 <Button
                   variant="outline"
-                  onClick={() => {
-                    setIsSignInOpen(true)
-                    setIsOpen(false)
-                  }}
+                  // onClick={() => {
+                  //   setIsSignInOpen(true)
+                  //   setIsOpen(false)
+                  // }}
                   className="w-full bg-transparent hover:bg-primary/10"
                 >
-                  Sign In
+                  <a href="/sign-in">Log In</a>
                 </Button>
                 <Button
-                  onClick={() => {
-                    setIsGetStartedOpen(true)
-                    setIsOpen(false)
-                  }}
+                  // onClick={() => {
+                  //   setIsGetStartedOpen(true)
+                  //   setIsOpen(false)
+                  // }}
                   className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold"
                 >
-                  Get Started
+                  <a href="/get-started">Get Started</a>
                 </Button>
               </div>
             </div>

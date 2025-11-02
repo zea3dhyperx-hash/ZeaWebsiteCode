@@ -76,7 +76,7 @@ export function Demo2Page() {
               Experience the power of AI-driven CRM with our interactive demonstration
             </p>
             <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold hover-lift animate-slide-up">
-              <a href = "#bookdemo">Book a Demo </a>
+              <a href = "/demo#bookdemo">Book a Demo </a>
 
             </button>
           </div>
@@ -107,15 +107,15 @@ export function Demo2Page() {
           </div>
         </section> */}
         {/* Book a Demo Form Section */}
-        <section id="bookdemo" className="py-16 md:py-0 px-4 md:px-8">
+        <section className="py-16 md:py-10 px-4 md:px-8">
           <div className="max-w-2xl mx-auto ">
-            <h2 className="text-3xl font-bold text-foreground mb-4 text-center animate-slide-up">Schedule Your Demo</h2>
+            <h2 id="bookdemo" className="text-3xl font-bold text-foreground mb-4 text-center animate-slide-up">Schedule Your Demo</h2>
             <p className="text-muted-foreground text-center mb-8 animate-slide-up ">
               Get a personalized walkthrough of ZeaCRM tailored to your business needs apple
             </p>
             <form
               onSubmit={handleBookDemoSubmit}
-              className="bg-card border border-border border-primary rounded-lg p-8 space-y-6 animate-slide-up"
+               className="bg-card border border-border border-primary rounded-lg p-8 space-y-6 animate-slide-up"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>

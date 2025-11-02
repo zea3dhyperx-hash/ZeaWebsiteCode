@@ -40,10 +40,11 @@ export default function GetStartedPage() {
       <Header />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-card border border-border rounded-lg p-8 space-y-6">
+          <div className="bg-card border border-border rounded-lg p-8 space-y-6 border-primary">
             <div className="text-center">
-              <h1 className="text-3xl font-bold text-foreground mb-2">Get Started with ZeaCRM</h1>
+              <h1 className="text-3xl font-bold text-foreground mb-2">Get Started</h1>
               <p className="text-muted-foreground">Create your account and start managing customers today</p>
+              {/* <p className="text-muted-foreground">Our sales team will contact within two working days</p> */}
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -158,9 +159,10 @@ export default function GetStartedPage() {
             <p className="text-center text-sm text-muted-foreground">
               Already have an account?{" "}
               <Link href="/sign-in" className="text-primary hover:text-primary/80 font-semibold">
-                Sign In
+                Log In
               </Link>
             </p>
+            <p className="text-muted-foreground text-center">Our sales team will contact within two working days</p>
           </div>
         </div>
       </main>

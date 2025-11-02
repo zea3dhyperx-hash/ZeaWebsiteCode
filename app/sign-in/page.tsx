@@ -32,9 +32,9 @@ export default function SignInPage() {
       <Header />
       <main className="min-h-screen bg-background flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md">
-          <div className="bg-card border border-border rounded-lg p-8 space-y-6">
+          <div className="bg-card border border-border rounded-lg p-8 space-y-6 border-primary">
             <div className="text-center">
-              <h1 className="text-3xl font-bold text-foreground mb-2">Sign In</h1>
+              <h1 className="text-3xl font-bold text-foreground mb-2">Log In</h1>
               <p className="text-muted-foreground">Welcome back to ZeaCRM</p>
             </div>
 
