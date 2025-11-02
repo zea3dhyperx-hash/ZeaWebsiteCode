@@ -19,10 +19,10 @@ export function WhyUs2Hero() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover-lift hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
-            Start Free Trial
+            <a href="/get-started"> Start Free Trial</a>
           </button>
           <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
-            Watch Demo
+            <a href="/demo"> Book a Demo</a>
           </button>
         </div>
       </div>

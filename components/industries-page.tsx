@@ -19,42 +19,49 @@ const industries = [
   {
     name: "Healthcare",
     icon: Heart,
+    link: "/allIndustries/healthcare",
     description:
       "Streamline patient management, appointment scheduling, and healthcare operations with AI-powered CRM solutions designed for medical practices.",
   },
   {
     name: "Real Estate",
     icon: Home,
+    link: "/allIndustries/realestate",
     description:
       "Manage property listings, client relationships, and sales pipelines with comprehensive tools built for real estate professionals.",
   },
   {
     name: "Retail & E-Commerce",
     icon: ShoppingCart,
+    link: "/allIndustries/retail",
     description:
       "Enhance customer experience, manage inventory, and boost sales with integrated e-commerce and retail management features.",
   },
   {
     name: "Professional Services",
     icon: Briefcase,
+    link: "/allIndustries/professional",
     description:
       "Organize client projects, track billable hours, and manage service delivery with tools tailored for consultants and agencies.",
   },
   {
     name: "Education & Training",
     icon: BookOpen,
+    link: "/allIndustries/education",
     description:
       "Manage student relationships, course enrollment, and training programs with education-focused CRM capabilities.",
   },
   {
     name: "Finance & Insurance",
     icon: Zap,
+    link: "/allIndustries/finance",
     description:
       "Secure client data, manage policies, and streamline financial operations with compliance-ready CRM solutions.",
   },
   {
     name: "Automotive & Manufacturing",
     icon: Building2,
+    link: "/allIndustries/automotive",
     description:
       "Optimize supply chain, manage customer orders, and track production with industry-specific CRM tools.",
   },
@@ -137,7 +144,7 @@ export function IndustriesPage() {
                     <h3 className="text-2xl font-bold text-white">{industry.name}</h3>
                   </div>
                   <p className="text-gray-300 leading-relaxed">{industry.description}</p>
-                  <Button className="mt-6 bg-amber-400 text-black hover:bg-amber-300">Learn More</Button>
+                  <Button className="mt-6 bg-amber-400 text-black hover:bg-amber-300"><a href={industry.link}>Learn More</a></Button>
                 </div>
               )
             })}
@@ -176,12 +183,12 @@ export function IndustriesPage() {
             See how ZeaCRM can deliver care with efficiency, accuracy, and trust for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-6 text-lg">Book a Demo</Button>
+            <Button className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-6 text-lg"><a href="/demo">Book a Demo</a></Button>
             <Button
               variant="outline"
-              className="border-amber-400 text-amber-400 hover:bg-amber-400/10 px-8 py-6 text-lg bg-transparent"
+              className="border-amber-400 text-amber-400 hover:bg-amber-400 px-8 py-6 text-lg bg-transparent"
             >
-              Start Free Trial
+              <a href="/get-started">Start Free Trial</a>
             </Button>
           </div>
         </div>

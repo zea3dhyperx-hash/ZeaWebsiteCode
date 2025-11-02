@@ -51,7 +51,7 @@ export function WhyChooseUsHero() {
             </div>
 
             <Button className="bg-black text-amber-400 hover:bg-black/90 font-semibold px-8 py-6 text-base">
-              TRY OUR FREE TRIAL
+              <a href="/get-started"> TRY OUR FREE TRIAL</a>
             </Button>
           </div>
 

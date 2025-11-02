@@ -89,36 +89,36 @@ export function Header() {
                   Real Estate
                 </Link>
                 <Link
-                  // href="/allIndustries/retail"
-                  href="/Industries2/retail/index.html"
+                  href="/allIndustries/retail"
+                  // href="/Industries2/retail/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Retail & E-commerce
                 </Link>
                 <Link
-                  // href="/allIndustries/professional"
-                  href="/Industries2/professional/index.html"
+                  href="/allIndustries/professional"
+                  // href="/Industries2/professional/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Professional Services
                 </Link>
                 <Link
-                  // href="/allIndustries/education"
-                  href="/Industries2/education/index.html"
+                  href="/allIndustries/education"
+                  // href="/Industries2/education/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Education & Training
                 </Link>
                 <Link
-                  // href="/allIndustries/finance"
-                  href="/Industries2/finance/index.html"
+                  href="/allIndustries/finance"
+                  // href="/Industries2/finance/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Finance & Insurance
                 </Link>
                 <Link
-                  // href="/allIndustries/automotive"
-                  href="/Industries2/automotive/index.html"
+                  href="/allIndustries/automotive"
+                  // href="/Industries2/automotive/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Automotive & Manufacturing

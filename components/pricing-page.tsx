@@ -215,7 +215,7 @@ export function PricingPage() {
               <a href="/contact-us">Contact Sales</a>
             </button>
             <button className="border-2 border-amber-400 text-amber-400 px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 hover:text-black transition-colors">
-              <a href="/demo-2">Book a Demo</a>
+              <a href="/demo">Book a Demo</a>
             </button>
           </div>
         </div>
