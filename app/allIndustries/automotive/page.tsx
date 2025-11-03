@@ -1,28 +1,11 @@
-
-import React from "react";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import AutomotivePage from "@/components/automotive-page";
 
 export const metadata = {
-  title: " Automotive & Manufacturing | Zea CRM",
+  title: " Automotive & Manufacturing | ZeaCRM",
   description:
-    " Zea CRM streamlines automotive and manufacturing operations with AI-powered automation. Manage leads, track inventory, and optimize workflows to drive efficiency and growth in your business.",
+    " Zea CRM streamlines operations in the automotive and manufacturing sectors with smart automation. Manage leads, track inventory, and optimize workflows to drive efficiency and growth.",
 };
 
-export default function WhyUsPage() {
-  return (
-    <main className="min-h-screen">
-      <Header />
-      <iframe
-        src="/Industries2/automotive/index.html"
-        title="Automotive & Manufacturing"
-        style={{
-          width: "100%",
-          height: "calc(100vh - 0px)", // adjust for header/footer height
-          border: "none",
-        }}
-      />
-      <Footer />
-    </main>
-  );
+export default function automotive() {
+  return <AutomotivePage />
 }

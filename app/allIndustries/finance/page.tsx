@@ -1,22 +1,13 @@
-"use client";
-import React from "react";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import FinancePage from '@/components/finance-page';
 
-export default function WhyUsPage() {
+export const metadata = {
+  title: " Finance & Insurance - ZeaCRM",
+  description:
+    " Discover ZeaCRM's Finance & Insurance solutions, designed to streamline operations, enhance customer relationships, and drive growth in the financial sector.",
+};
+
+export default function Finance() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <iframe
-        src="/Industries2/finance/index.html"
-        title="Finance & Insurance"
-        style={{
-          width: "100%",
-          height: "calc(100vh - 0px)", // adjust for header/footer height
-          border: "none",
-        }}
-      />
-      <Footer />
-    </main>
+    <FinancePage />
   );
 }

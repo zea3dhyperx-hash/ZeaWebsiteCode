@@ -20,6 +20,7 @@ export function Blogs2Page() {
     image: p.image,
     slug: p.slug,
     htmlPath: p.htmlPath,
+    author: p.author,
   }))
 
   const allArticles = BLOG_POSTS.map((p, idx) => ({
@@ -31,6 +32,7 @@ export function Blogs2Page() {
     image: p.image,
     slug: p.slug,
     htmlPath: p.htmlPath,
+    author: p.author,
   }))
 
   const trendingTopics = [
@@ -244,7 +246,6 @@ export function Blogs2Page() {
     </>
   )
 }
-
 
 
 

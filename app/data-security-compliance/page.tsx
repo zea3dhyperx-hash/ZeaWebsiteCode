@@ -2,7 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata = {
-  title: " Data Security and Compliance | Zea CRM",
+  title: " Data Security and Compliance | ZeaCRM",
   description:
     "  Learn about Zea CRM's robust data security measures and compliance with industry standards like HIPAA, GDPR, and SOC 2. Discover how we protect your data while providing our AI-powered CRM services across various industries.",
 };

@@ -1,22 +1,13 @@
-"use client";
-import React from "react";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import HealthcarePage from "@/components/healthcare-page";
 
-export default function WhyUsPage() {
+export const metadata = {
+  title: " Healthcare - ZeaCRM",
+  description:
+    " Discover ZeaCRM's Healthcare solutions, designed to streamline patient management, enhance care coordination, and improve operational efficiency in healthcare organizations.",
+};
+
+export default function Healthcare() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <iframe
-        src="/Industries2/healthcare/index.html"
-        title="Healthcare"
-        style={{
-          width: "100%",
-          height: "calc(100vh - 0px)", // adjust for header/footer height
-          border: "none",
-        }}
-      />
-      <Footer />
-    </main>
+    <HealthcarePage />
   );
 }

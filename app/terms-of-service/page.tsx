@@ -2,7 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata = {
-  title: " Terms of Service | Zea CRM",
+  title: " Terms of Service | ZeaCRM",
   description:
     " Review Zea CRM's Terms of Service to understand the rules and regulations for using our AI-powered CRM platform. Stay informed about your rights and responsibilities while leveraging our tools to enhance productivity across various industries.",
 };

@@ -2,7 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata = {
-  title: " Privacy Policy | Zea CRM",
+  title: " Privacy Policy | ZeaCRM",
   description:
     " Read Zea CRM's Privacy Policy to understand how we collect, use, and protect your personal data while providing our AI-powered CRM services across various industries.",
 };

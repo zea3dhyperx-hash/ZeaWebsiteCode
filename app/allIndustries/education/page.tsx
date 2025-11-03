@@ -1,23 +1,13 @@
-"use client";
-import React from "react";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import EducationPageContent from "@/components/education-page";
 
+export const metadata = {
+  title: " Education & Training - ZeaCRM",
+  description:
+    " Discover ZeaLabs' Education & Training solutions, empowering learners with innovative technology for a brighter future.",
+};
 
-export default function WhyUsPage() {
+export default function Education() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <iframe
-        src="/Industries2/education/index.html"
-        title="Education & Training"
-        style={{
-          width: "100%",
-          height: "calc(100vh - 0px)", // adjust for header/footer height
-          border: "none",
-        }}
-      />
-      <Footer />
-    </main>
+    <EducationPageContent/>
   );
 }

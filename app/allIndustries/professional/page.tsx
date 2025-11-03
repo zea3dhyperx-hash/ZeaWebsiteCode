@@ -1,23 +1,12 @@
-"use client";
-import React from "react";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import ProfessionalContent from "@/components/professional-page";
 
+export const metadata = {
+  title: "Professional Services - ZeaCRM",
+  description: "Explore our Professional Services tailored for your business needs.",
+};
 
-export default function WhyUsPage() {
+export default function Professional() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <iframe
-        src="/Industries2/professional/index.html"
-        title="Professional Services"
-        style={{
-          width: "100%",
-          height: "calc(100vh - 0px)", // adjust for header/footer height
-          border: "none",
-        }}
-      />
-      <Footer />
-    </main>
+    <ProfessionalContent />
   );
 }

@@ -1,23 +1,13 @@
-"use client";
-import React from "react";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import RetailContent from "@/components/retail-page";
 
+export const metadata = {
+  title: "Retail & E-commerce Solutions | ZeaCRM",
+  description:
+    "Discover Zea Website's tailored retail and e-commerce solutions. Enhance your online store with our expert web development services.",
+};
 
-export default function WhyUsPage() {
+export default function Retail() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <iframe
-        src="/Industries2/retail/index.html"
-        title="Retail & E-commerce"
-        style={{
-          width: "100%",
-          height: "calc(100vh - 0px)", // adjust for header/footer height
-          border: "none",
-        }}
-      />
-      <Footer />
-    </main>
+    <RetailContent />
   );
 }

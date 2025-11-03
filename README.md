@@ -8,7 +8,7 @@ step 3:
     Inside this post give all the infomations like, slug, title, author, date, category(see step 4), image, a short intro title and content, html path (see step 5), finally, In the featured, if it is features, give "true", else give "false"
 step 4: 
     To choose the category, go to "components >> 'blogs-2-page.tsx'". 
-    In the line 36 you can see all the categories. 
+    In the line 45 you can see all the categories. 
     Use one of them or if you want to create new one, create it here.
 step 5: 
     for the html path, you need to first create a blog file. 
@@ -26,9 +26,5 @@ Step 7:
 
 
 
-meta description
-auther filter
 chatbot
 hero background image
-
-social Media links

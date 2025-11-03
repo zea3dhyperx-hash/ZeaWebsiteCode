@@ -1,23 +1,12 @@
-"use client";
-import React from "react";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import RealEstateContent from "@/components/real-estate-page";
 
+export const metadata = {
+  title: "Real Estate - ZeaCRM",
+  description: "Explore our tailored solutions for the Real Estate industry.",
+};
 
-export default function WhyUsPage() {
+export default function RealEstate() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <iframe
-        src="/Industries2/realestate/index.html"
-        title="Real Estate"
-        style={{
-          width: "100%",
-          height: "calc(100vh - 0px)", // adjust for header/footer height
-          border: "none",
-        }}
-      />
-      <Footer />
-    </main>
+    <RealEstateContent />
   );
 }
