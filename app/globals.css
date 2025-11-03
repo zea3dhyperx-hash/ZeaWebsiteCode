@@ -296,5 +296,14 @@
     box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.2);
   }
 
+  .currency {
+    font-family: Inter, Segoe UI, Roboto, "Noto Sans", system-ui, Arial, sans-serif;
+    font-weight: 700; /* match your price weight /
+    line-height: 1; 
+    letter-spacing: 0;
+    display: inline-block;
+    transform: translateY(-1px); */
+  }
+
   
 }

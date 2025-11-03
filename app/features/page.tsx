@@ -16,6 +16,12 @@ import { Features2Integration } from "@/components/features-2-integration"
 import { Features2Showcase } from "@/components/features-2-showcase"
 import { FeaturesSlider } from "@/components/features-slider"
 
+export const metadata = {
+  title: "Zea CRM Features",
+  description:
+    "Explore Zea CRM's powerful features designed to streamline your business operations, enhance customer relationships, and drive growth with AI-powered automation.",
+};
+
 
 export default function FeaturesPage() {
   return (

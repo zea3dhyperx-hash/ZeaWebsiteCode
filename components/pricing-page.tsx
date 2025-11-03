@@ -4,6 +4,7 @@ import { Check, ChevronDown } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
 
+
 export function PricingPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
@@ -115,7 +116,7 @@ export function PricingPage() {
 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white">₹ {plan.price}</span>
+                    <span className="text-4xl font-bold text-white"><span className="currency">₹</span> {plan.price}</span>
                     <span className="text-gray-400">{plan.period}</span>
                   </div>
                 </div>

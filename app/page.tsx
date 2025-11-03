@@ -17,6 +17,12 @@ import { IntegrationsLogosSection } from "@/components/integrations-logos-sectio
 import { FeaturesSlider2 } from "@/components/features-slider2"
 import FlowerMenu from "@/components/animata/list/flower-menu"
 
+export const metadata = {
+  title: "Zea CRM - AI-Powered CRM for the Future of Business",
+  description:
+    "Manage customers, automate workflows, and grow your business with zeaCRM",
+};
+
 export default function Home() {
   return (
     <>

@@ -236,7 +236,7 @@ export function Header() {
                       {/* <Link href="/guides-2" className="text-foreground hover:text-primary transition-colors">
                         Guides 2
                       </Link> */}
-                      <Link href="/demo-2" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/demo" className="text-foreground hover:text-primary transition-colors">
                         Demo
                       </Link>
                       {/* <Link href="/demo" className="text-foreground hover:text-primary transition-colors">

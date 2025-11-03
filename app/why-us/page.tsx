@@ -10,6 +10,12 @@ import { WhyUsTestimonialsSection } from "@/components/why-us-testimonials-secti
 import { WhyUs2Hero } from "@/components/why-us-2-hero"
 import CaseStudyCard from "@/components/animata/card/case-study-card"
 
+export const metadata = {
+  title: "Why Choose Zea CRM | Benefits & Features",
+  description:
+    "Discover why Zea CRM is the preferred choice for businesses worldwide. Explore our key benefits, features, and success stories that set us apart in the CRM landscape.",
+};
+
 export default function WhyUsPage() {
   return (
     <main className="min-h-screen">
