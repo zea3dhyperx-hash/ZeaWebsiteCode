@@ -7,11 +7,11 @@ import "./globals.css"
 
 const dmSans = DM_Sans({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "zeaCRM - AI-Powered CRM for the Future of Business",
-  description: "Manage customers, automate workflows, and grow your business with zeaCRM",
-  generator: "v0.app",
-}
+// export const metadata: Metadata = {
+//   title: "zeaCRM - AI-Powered CRM for the Future of Business",
+//   description: "Manage customers, automate workflows, and grow your business with zeaCRM",
+//   generator: "v0.app",
+// }
 
 export default function RootLayout({
   children,
