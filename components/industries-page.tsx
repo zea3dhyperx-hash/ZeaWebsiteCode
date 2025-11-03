@@ -66,10 +66,25 @@ const industries = [
       "Optimize supply chain, manage customer orders, and track production with industry-specific CRM tools.",
   },
   {
-    name: "Other Industries",
+    name: "Hospitality (Hotels, Restaurants, Travel)",
     icon: MoreHorizontal,
+    link: "/demo",
     description:
-      "ZeaCRM's flexible platform adapts to any industry. Customize workflows and features to match your unique business needs.",
+      "Online booking & reservation reminders, Feedback & review automation, Loyalty & referral programs",
+  },
+  {
+    name: "NGOs & Nonprofits",
+    icon: MoreHorizontal,
+    link: "/demo",
+    description:
+      "Donation campaign automation, Donor engagement reminders, Transparent reports for accountability",
+  },
+  {
+    name: "Events & Entertainment",
+    icon: MoreHorizontal,
+    link: "/demo",
+    description:
+      "Online registration & e-ticketing, Auto event reminders to attendees, Post-event surveys & engagement campaigns",
   },
 ]
 

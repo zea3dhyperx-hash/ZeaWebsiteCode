@@ -31,5 +31,4 @@ auther filter
 chatbot
 hero background image
 
-Check industries
 social Media links

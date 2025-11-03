@@ -64,10 +64,10 @@ export function FeatureCardsSection() {
                 </ul>
 
                 <a
-                  href="#"
+                  href="/demo"
                   className="inline-block text-amber-400 font-semibold hover:text-amber-300 transition-colors text-sm md:text-base"
                 >
-                  LEARN MORE HERE →
+                  WANT TO KNOW MORE BOOK A DEMO HERE →
                 </a>
               </div>
             </div>
