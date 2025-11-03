@@ -253,7 +253,10 @@ export function Header() {
                   // }}
                   className="w-full bg-transparent hover:bg-primary/10"
                 >
-                  <a href="/sign-in">Log In</a>
+                  {/* <a href="/sign-in">Log In</a> */}
+                  <Link href="/sign-in" >
+                    Log In
+                  </Link>
                 </Button>
                 <Button
                   // onClick={() => {
