@@ -25,6 +25,5 @@ Step 7:
     After creating the file, note the folder's name(eg., blog-1)  go back to "lib >> blogs.ts", In the blog, write the folder's name. "blog-1". That's it. 
 
 
-
 chatbot
 hero background image
