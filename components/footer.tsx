@@ -96,16 +96,16 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-white">FOLLOW US</h4>
             <div className="flex gap-4 mb-6">
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+              <a href="https://www.facebook.com/people/ZEA-CRM/61580373855637/" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+              <a href="https://www.instagram.com/zea_crm/?next=%2F" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+              <a href="https://linkedin.com/company/zea-crm" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+              <a href="https://www.youtube.com/@ZEACRM" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Youtube size={20} />
               </a>
             </div>
