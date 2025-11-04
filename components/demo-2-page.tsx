@@ -107,7 +107,7 @@ export function Demo2Page() {
           </div>
         </section> */}
         {/* Book a Demo Form Section */}
-        <section className="py-16 md:py-10 px-4 md:px-8">
+        <section className="py-5 md:py-10 px-4 md:px-8">
           <div className="max-w-2xl mx-auto ">
             <h2 id="bookdemo" className="text-3xl font-bold text-foreground mb-4 text-center animate-slide-up">Schedule Your Demo</h2>
             <p className="text-muted-foreground text-center mb-8 animate-slide-up ">
@@ -185,12 +185,12 @@ export function Demo2Page() {
                 Schedule Demo
               </button>
             </form> */}
-
+            <div className="height-flex" style={{ height: '100vh', overflow: 'hidden' }}>
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/hNogUrE1ba9iIfvhYVxf"
-              style="width:100%;height:100%;border:none;border-radius:20px"
-              id="inline-hNogUrE1ba9iIfvhYVxf" 
-              data-layout="{'id':'INLINE'}"
+              style={{ width: '100%', height: '100%', border: 'none', borderRadius: '20px' }}
+              id="inline-hNogUrE1ba9iIfvhYVxf"
+              data-layout='{"id":"INLINE"}'
               data-trigger-type="alwaysShow"
               data-trigger-value=""
               data-activation-type="alwaysActivated"
@@ -202,9 +202,11 @@ export function Demo2Page() {
               data-layout-iframe-id="inline-hNogUrE1ba9iIfvhYVxf"
               data-form-id="hNogUrE1ba9iIfvhYVxf"
               title="Demo Form"
-                  >
-          </iframe>
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+            />
+            </div>
+            {/* External script for LeadConnector embed */}
+            {/* Consider using Next.js Script component in a page context */}
+            {/* <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" /> */}
           </div>
         </section>
 
