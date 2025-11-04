@@ -113,7 +113,7 @@ export function Demo2Page() {
             <p className="text-muted-foreground text-center mb-8 animate-slide-up ">
               Get a personalized walkthrough of ZeaCRM tailored to your business needs apple
             </p>
-            <form
+            {/* <form
               onSubmit={handleBookDemoSubmit}
                className="bg-card border border-border border-primary rounded-lg p-8 space-y-6 animate-slide-up"
             >
@@ -184,7 +184,27 @@ export function Demo2Page() {
               >
                 Schedule Demo
               </button>
-            </form>
+            </form> */}
+
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/hNogUrE1ba9iIfvhYVxf"
+              style="width:100%;height:100%;border:none;border-radius:20px"
+              id="inline-hNogUrE1ba9iIfvhYVxf" 
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Demo Form"
+              data-height="824"
+              data-layout-iframe-id="inline-hNogUrE1ba9iIfvhYVxf"
+              data-form-id="hNogUrE1ba9iIfvhYVxf"
+              title="Demo Form"
+                  >
+          </iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
           </div>
         </section>
 
