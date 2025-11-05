@@ -76,7 +76,7 @@ export function Demo2Page() {
               Experience the power of AI-driven CRM with our interactive demonstration
             </p>
             <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold hover-lift animate-slide-up">
-              <a href = "/demo#bookdemo">Book a Demo </a>
+              <a href = "https://api.leadconnectorhq.com/widget/bookings/zeacrm-demo-booking-calender">Book a Demo </a>
 
             </button>
           </div>
@@ -107,12 +107,12 @@ export function Demo2Page() {
           </div>
         </section> */}
         {/* Book a Demo Form Section */}
-        <section className="py-5 md:py-10 px-4 md:px-8">
+        {/* <section className="py-5 md:py-10 px-4 md:px-8">
           <div className="max-w-2xl mx-auto ">
             <h2 id="bookdemo" className="text-3xl font-bold text-foreground mb-4 text-center animate-slide-up">Schedule Your Demo</h2>
             <p className="text-muted-foreground text-center mb-8 animate-slide-up ">
               Get a personalized walkthrough of ZeaCRM tailored to your business needs apple
-            </p>
+            </p> */}
             {/* <form
               onSubmit={handleBookDemoSubmit}
                className="bg-card border border-border border-primary rounded-lg p-8 space-y-6 animate-slide-up"
@@ -185,8 +185,9 @@ export function Demo2Page() {
                 Schedule Demo
               </button>
             </form> */}
-            <div className="height-flex" style={{ height: '100vh', overflow: 'hidden' }}>
-            <iframe
+            {/* <div className="height-flex justify-height" style={{ height: '100vh', overflow: 'hidden' }}>
+              <iframe src="https://api.leadconnectorhq.com/widget/booking/509krt70rKL44ta393ra" style={{width: "100%", height: "100%", border:"none", overflow: "show"}} scrolling="no" id="3Ki9YVu9scOarxIVpapL_1762323045358"></iframe><script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script> */}
+            {/* <iframe
               src="https://api.leadconnectorhq.com/widget/form/hNogUrE1ba9iIfvhYVxf"
               style={{ width: '100%', height: '100%', border: 'none', borderRadius: '20px' }}
               id="inline-hNogUrE1ba9iIfvhYVxf"
@@ -202,13 +203,13 @@ export function Demo2Page() {
               data-layout-iframe-id="inline-hNogUrE1ba9iIfvhYVxf"
               data-form-id="hNogUrE1ba9iIfvhYVxf"
               title="Demo Form"
-            />
-            </div>
+            /> */}
+            {/* </div> */}
             {/* External script for LeadConnector embed */}
             {/* Consider using Next.js Script component in a page context */}
             {/* <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" /> */}
-          </div>
-        </section>
+          {/* </div>
+        </section> */}
 
         {/* Success Metrics */}
         <section className="py-16 md:py-24 px-4 md:px-8 bg-primary/5">
