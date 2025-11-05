@@ -42,9 +42,9 @@ export function StatsSection() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="border border-amber-400/30 rounded-lg p-8 bg-slate-900/50 backdrop-blur-sm hover:border-amber-400/60 transition-colors"
+              className="border border-primary/30 rounded-lg p-8 bg-slate-900/50 backdrop-blur-sm hover:border-primary/60 transition-colors"
             >
-              <div className="text-4xl font-bold text-amber-400 mb-3">{stat.number}</div>
+              <div className="text-4xl font-bold text-primary mb-3">{stat.number}</div>
               <div className="text-gray-300 text-sm leading-relaxed">{stat.label}</div>
             </div>
           ))}

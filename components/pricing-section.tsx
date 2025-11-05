@@ -17,7 +17,7 @@ const pricingPlans = [
       "WhatsApp Integration",
     ],
     buttonText: "Start Free Trial",
-    buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
+    buttonStyle: "bg-primary text-black hover:bg-primary",
     highlighted: false,
   },
   {
@@ -34,7 +34,7 @@ const pricingPlans = [
       "Standard Support",
     ],
     buttonText: "Get Started",
-    buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
+    buttonStyle: "bg-primary text-black hover:bg-primary",
     highlighted: true,
   },
   {
@@ -51,7 +51,7 @@ const pricingPlans = [
       "Priority Support",
     ],
     buttonText: "Talk to Sales",
-    buttonStyle: "bg-transparent border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black",
+    buttonStyle: "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-black",
     highlighted: false,
   },
 ]
@@ -62,8 +62,8 @@ export function PricingSection() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-amber-400 mb-2">PRICING</h2>
-          <p className="text-2xl text-amber-400 mb-4">Transparent Pricing for Ambitious Teams</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-2">PRICING</h2>
+          <p className="text-2xl text-primary mb-4">Transparent Pricing for Ambitious Teams</p>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Choose the perfect plan for your business. All plans include a 14-day free trial.
           </p>
@@ -76,8 +76,8 @@ export function PricingSection() {
               key={index}
               className={`rounded-lg p-8 border-2 transition-all ${
                 plan.highlighted
-                  ? "border-amber-400 bg-gray-900 shadow-2xl shadow-amber-400/20 scale-105"
-                  : "border-gray-700 bg-gray-950 hover:border-amber-400"
+                  ? "border-primary bg-gray-900 shadow-2xl shadow-primary/20 scale-105"
+                  : "border-gray-700 bg-gray-950 hover:border-primary"
               }`}
             >
               {/* Plan Name */}
@@ -96,7 +96,7 @@ export function PricingSection() {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-gray-300">{feature}</span>
                   </li>
                 ))}

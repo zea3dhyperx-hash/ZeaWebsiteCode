@@ -16,6 +16,7 @@ import { CTATransformSection } from "@/components/cta-transform-section"
 import { IntegrationsLogosSection } from "@/components/integrations-logos-section"
 import { FeaturesSlider2 } from "@/components/features-slider2"
 import FlowerMenu from "@/components/animata/list/flower-menu"
+import ChatWidget from "@/components/chatbot"
 
 export const metadata = {
   title: "Zea CRM - AI-Powered CRM for the Future of Business",
@@ -40,6 +41,7 @@ export default function Home() {
         <IndustriesSection />
         <PricingSection />
         <CTATransformSection />
+        <ChatWidget />
         {/* <IntegrationsLogosSection /> */}
       </main>
       <Footer />

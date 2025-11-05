@@ -146,14 +146,14 @@ export function FeaturesSlider2() {
     <section className="bg-black py-20 px-40 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="text-4xl sm:text-5xl font-bold text-center text-amber-400 mb-16">FEATURES</h2>
+        <h2 className="text-4xl sm:text-5xl font-bold text-center text-primary mb-16">FEATURES</h2>
 
         {/* Slider Container */}
         <div className="relative">
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 sm:-translate-x-16 z-10 text-amber-400 hover:text-amber-300 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 sm:-translate-x-16 z-10 text-primary hover:text-primary transition-colors"
             aria-label="Previous slide"
           >
             <ChevronLeft size={40} />
@@ -161,7 +161,7 @@ export function FeaturesSlider2() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-16 z-10 text-amber-400 hover:text-amber-300 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-16 z-10 text-primary hover:text-primary transition-colors"
             aria-label="Next slide"
           >
             <ChevronRight size={40} />
@@ -174,7 +174,7 @@ export function FeaturesSlider2() {
               {/* Left Content */}
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-amber-400 mb-4">{feature.title}</h3>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">{feature.title}</h3>
                   <p className="text-gray-300 text-base sm:text-lg leading-relaxed">{feature.description}</p>
                 </div>
 
@@ -182,14 +182,14 @@ export function FeaturesSlider2() {
                 <div className="space-y-3">
                   {feature.features.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <Check className="text-amber-400 flex-shrink-0 mt-1" size={20} />
+                      <Check className="text-primary flex-shrink-0 mt-1" size={20} />
                       <span className="text-gray-300 text-sm sm:text-base">{feat}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Testimonial Card */}
-                {/* <div className="bg-amber-400 rounded-lg p-6 mt-8">
+                {/* <div className="bg-primary rounded-lg p-6 mt-8">
                   <div className="flex items-start gap-4">
                     <div className="relative w-12 h-12 flex-shrink-0">
                       <Image
@@ -231,7 +231,7 @@ export function FeaturesSlider2() {
                   key={idx}
                   onClick={() => goToSlide(idx)}
                   className={`w-3 h-3 rounded-full transition-all ${
-                    idx === currentSlide ? "bg-amber-400 w-8" : "bg-amber-400 opacity-40 hover:opacity-60"
+                    idx === currentSlide ? "bg-primary w-8" : "bg-primary opacity-40 hover:opacity-60"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />

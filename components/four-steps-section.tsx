@@ -1,6 +1,6 @@
 export function FourStepsSection() {
   return (
-    <section className="relative py-0 px-4 rounded-3xl mx-4 md:mx-8 lg:mx-16 my-16 bg-amber-400">
+    <section className="relative py-0 px-4 rounded-3xl mx-4 md:mx-8 lg:mx-16 my-16 bg-primary">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Illustration */}

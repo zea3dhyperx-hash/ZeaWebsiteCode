@@ -15,7 +15,7 @@ const industries = [
 
 export function IndustriesSection() {
   return (
-    <section className="bg-amber-400 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-primary py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -35,7 +35,7 @@ export function IndustriesSection() {
                 key={index}
                 className="bg-black rounded-lg p-6 flex items-center gap-4 hover:shadow-lg transition-shadow cursor-pointer group"
               >
-                <Icon className="w-8 h-8 text-amber-400 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <Icon className="w-8 h-8 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="text-white font-semibold text-lg">{industry.name}</span>
               </div>
             )

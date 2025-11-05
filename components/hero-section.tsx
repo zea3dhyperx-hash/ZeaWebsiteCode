@@ -64,14 +64,14 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                className="bg-amber-400 hover:bg-amber-500 text-black font-semibold px-8 py-6 text-base rounded-lg">
+                className="bg-primary hover:bg-primary text-black font-semibold px-8 py-6 text-base rounded-lg">
                 <a href="/get-started">Start Free Trial</a>
               </Button>
               
               <Button
                 variant="outline"
                 onClick={() => window.location.href = "/demo#bookdemo"}
-                className="border-2 border-blue-400 text-blue-400 hover:bg-amber-400 font-semibold px-8 py-6 text-base rounded-lg flex items-center justify-center gap-2 bg-transparent"
+                className="border-2 border-blue-400 text-blue-400 hover:bg-primary font-semibold px-8 py-6 text-base rounded-lg flex items-center justify-center gap-2 bg-transparent"
               >
                   <Play size={18} />
                   Book a Demo

@@ -31,10 +31,10 @@ export function CTATransformSection() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-amber-400 hover:bg-amber-500 text-black font-semibold px-8 py-3 rounded-lg transition-colors">
+              <button className="bg-primary hover:bg-primary text-black font-semibold px-8 py-3 rounded-lg transition-colors">
                 <a href="/get-started">Start Free Trial</a>
               </button>
-              <button className="border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black font-semibold px-8 py-3 rounded-lg transition-colors">
+              <button className="border-2 border-primary text-primary hover:bg-primary hover:text-black font-semibold px-8 py-3 rounded-lg transition-colors">
                 <a href="/demo">Schedule a Demo</a>
               </button>
             </div>
@@ -42,19 +42,19 @@ export function CTATransformSection() {
             {/* Benefits */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300 text-sm">No credit card required</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300 text-sm">14-day free trial</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300 text-sm">Setup in 5 minutes</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300 text-sm">Dedicated support</span>
               </div>
             </div>
@@ -67,7 +67,7 @@ export function CTATransformSection() {
                   alt="Award Winning Support Illustration"
                   className="w-full h-auto rounded-lg"
                 />
-            {/* <div className="w-full h-80 bg-gradient-to-br from-amber-400/10 to-amber-400/5 rounded-lg flex items-center justify-center border border-amber-400/20 relative overflow-hidden">
+            {/* <div className="w-full h-80 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg flex items-center justify-center border border-primary/20 relative overflow-hidden">
               <svg
                 className="w-48 h-48 animate-pulse"
                 viewBox="0 0 200 200"
@@ -86,7 +86,7 @@ export function CTATransformSection() {
                 />
                 <path d="M 70 140 L 130 140" stroke="#fbbf24" strokeWidth="2" />
               </svg>
-              <div className="absolute inset-0 bg-gradient-to-t from-amber-400/5 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
             </div> */}
           </div>
         </div>

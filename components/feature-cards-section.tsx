@@ -38,7 +38,7 @@ export function FeatureCardsSection() {
   ]
 
   return (
-    <section className="bg-amber-400 py-16 px-4 md:px-8 lg:px-16">
+    <section className="bg-primary py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto space-y-16">
         {features.map((feature, index) => (
           <div
@@ -57,7 +57,7 @@ export function FeatureCardsSection() {
                 <ul className="space-y-4 mb-6">
                   {feature.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-sm md:text-base text-gray-300">{item}</span>
                     </li>
                   ))}
@@ -65,7 +65,7 @@ export function FeatureCardsSection() {
 
                 <a
                   href="/demo"
-                  className="inline-block text-amber-400 font-semibold hover:text-amber-300 transition-colors text-sm md:text-base"
+                  className="inline-block text-primary font-semibold hover:text-primary transition-colors text-sm md:text-base"
                 >
                   WANT TO KNOW MORE BOOK A DEMO HERE →
                 </a>

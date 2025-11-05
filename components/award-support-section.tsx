@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react"
 
 export function AwardSupportSection() {
   return (
-    <section className="bg-amber-400 py-16 px-4">
+    <section className="bg-primary py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Side - Illustration */}
@@ -59,7 +59,7 @@ export function AwardSupportSection() {
 
             <a
               href="/contact-us"
-              className="inline-block bg-black text-amber-400 px-6 py-2 rounded font-semibold hover:bg-gray-900 transition-colors"
+              className="inline-block bg-black text-primary px-6 py-2 rounded font-semibold hover:bg-gray-900 transition-colors"
             >
               CONTACT US TODAY
             </a>
