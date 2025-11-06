@@ -12,6 +12,7 @@ import Image from "next/image"
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isPlaybooksOpen, setIsPlaybooksOpen] = useState(false)
+  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false)
   const [isSignInOpen, setIsSignInOpen] = useState(false)
   const [isGetStartedOpen, setIsGetStartedOpen] = useState(false)
   const pathname = usePathname()
@@ -214,9 +215,59 @@ export function Header() {
                     {link.label}
                   </Link>
                 ))}
+                
+                {/* Industries (Mobile) */}
                 <div>
                   <button
-                    onClick={() => setIsPlaybooksOpen(!isPlaybooksOpen)}
+                    onClick={() => {
+                      setIsIndustriesOpen(!isIndustriesOpen)
+                      if (!isIndustriesOpen) setIsPlaybooksOpen(false)
+                    }}
+                    className="flex items-center gap-1 text-foreground hover:text-primary transition-colors w-full"
+                  >
+                    Industries
+                    <ChevronDown size={16} className={`transition-transform ${isIndustriesOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {isIndustriesOpen && (
+                    <div className="flex flex-col gap-2 mt-2 pl-4 border-l border-border">
+                      <Link href="/allIndustries/healthcare" className="text-foreground hover:text-primary transition-colors">
+                        Healthcare
+                      </Link>
+                      <Link href="/allIndustries/realestate" className="text-foreground hover:text-primary transition-colors">
+                        Real Estate
+                      </Link>
+                      <Link href="/allIndustries/retail" className="text-foreground hover:text-primary transition-colors">
+                        Retail & E-commerce
+                      </Link>
+                      <Link href="/allIndustries/professional" className="text-foreground hover:text-primary transition-colors">
+                        Professional Services
+                      </Link>
+                      <Link href="/allIndustries/education" className="text-foreground hover:text-primary transition-colors">
+                        Education
+                      </Link>
+                      <Link href="/allIndustries/finance" className="text-foreground hover:text-primary transition-colors">
+                        Finance & Banking
+                      </Link>
+                      <Link href="/allIndustries/automotive" className="text-foreground hover:text-primary transition-colors">
+                        Automotive
+                      </Link>
+                      <Link href="/allIndustries/travel" className="text-foreground hover:text-primary transition-colors">
+                        Travel & Hospitality
+                      </Link>
+                      <Link href="/allIndustries/realestate" className="text-foreground hover:text-primary transition-colors">
+                        Real Estate
+                      </Link>
+                    </div>
+                  )}
+                  
+                </div>
+                {/* Playbooks (Mobile) dropdown */}
+                <div>
+                  <button
+                    onClick={() => {
+                      setIsPlaybooksOpen(!isPlaybooksOpen)
+                      if (!isPlaybooksOpen) setIsIndustriesOpen(false)
+                    }}
                     className="flex items-center gap-1 text-foreground hover:text-primary transition-colors w-full"
                   >
                     Playbooks
@@ -227,21 +278,9 @@ export function Header() {
                       <Link href="/blogs" className="text-foreground hover:text-primary transition-colors">
                         Blogs
                       </Link>
-                      {/* <Link href="/blogs-2" className="text-foreground hover:text-primary transition-colors">
-                        Blogs 2
-                      </Link> */}
-                      {/* <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
-                        Guides
-                      </Link> */}
-                      {/* <Link href="/guides-2" className="text-foreground hover:text-primary transition-colors">
-                        Guides 2
-                      </Link> */}
                       <Link href="/demo" className="text-foreground hover:text-primary transition-colors">
                         Demo
                       </Link>
-                      {/* <Link href="/demo" className="text-foreground hover:text-primary transition-colors">
-                        Demo 2
-                      </Link> */}
                     </div>
                   )}
                 </div>
