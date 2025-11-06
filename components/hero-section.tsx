@@ -55,7 +55,7 @@ export function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-                ZeaCRM: Smarter Relationships, Stronger Results
+                Hello ZeaCRM: Smarter Relationships, Stronger Results
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Manage leads, automate sales, and turn conversations into conversions all from one intelligent platform. ZeaCRM helps growing businesses simplify customer management, automate routine tasks, and close deals faster with the power of AI.
