@@ -7,4 +7,5 @@ export const metadata = {
 
 export default function Guides2() {
   return <Guides2Page />
+  
 }

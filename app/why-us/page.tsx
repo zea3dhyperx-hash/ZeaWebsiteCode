@@ -9,6 +9,7 @@ import { WhyUsComparisonSection } from "@/components/why-us-comparison-section"
 import { WhyUsTestimonialsSection } from "@/components/why-us-testimonials-section"
 import { WhyUs2Hero } from "@/components/why-us-2-hero"
 import CaseStudyCard from "@/components/animata/card/case-study-card"
+import ChatWidget from "@/components/chatbot"
 
 export const metadata = {
   title: "Why Choose Zea CRM | Benefits & Features",
@@ -31,6 +32,7 @@ export default function WhyUsPage() {
         <WhyUsTestimonialsSection />
       </div>
       <Footer />
+      <ChatWidget />
     </main>
   )
 }

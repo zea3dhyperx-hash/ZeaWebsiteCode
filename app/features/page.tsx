@@ -15,6 +15,7 @@ import { Features2CTA } from "@/components/features-2-cta"
 import { Features2Integration } from "@/components/features-2-integration"
 import { Features2Showcase } from "@/components/features-2-showcase"
 import { FeaturesSlider } from "@/components/features-slider"
+import ChatWidget from "@/components/chatbot"
 
 export const metadata = {
   title: "Zea CRM Features",
@@ -42,6 +43,7 @@ export default function FeaturesPage() {
       <FeaturesScaleSection />
       <FeaturesIntegrationsSection />
       <Footer />
+      <ChatWidget />
     </main>
   )
 }

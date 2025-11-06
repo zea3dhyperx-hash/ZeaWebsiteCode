@@ -4,6 +4,7 @@ import { useState, useMemo } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
+import ChatWidget from "./chatbot"
 
 export function Guides2Page() {
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -211,6 +212,7 @@ export function Guides2Page() {
         </section>
       </main>
       <Footer />
+      <ChatWidget />
     </>
   )
 }

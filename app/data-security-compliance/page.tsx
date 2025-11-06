@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import ChatWidget from "@/components/chatbot";
 
 export const metadata = {
   title: " Data Security and Compliance | ZeaCRM",
@@ -102,6 +103,7 @@ export default function DataSecurityCompliancePage() {
         </div>
       </main>
       <Footer />
+      <ChatWidget />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import ChatWidget from "@/components/chatbot";
 
 export const metadata = {
   title: " Terms of Service | ZeaCRM",
@@ -97,6 +98,7 @@ export default function TermsOfServicePage() {
         </div>
       </main>
       <Footer />
+      <ChatWidget />
     </>
   )
 }

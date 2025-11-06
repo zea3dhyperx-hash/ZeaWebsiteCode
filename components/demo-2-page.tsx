@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import type React from "react"
 import Link from "next/link"
+import ChatWidget from "./chatbot"
 
 export function Demo2Page() {
   const [selectedFeature, setSelectedFeature] = useState(0)
@@ -258,6 +259,7 @@ export function Demo2Page() {
         </section>
       </main>
       <Footer />
+      <ChatWidget />
     </>
   )
 }

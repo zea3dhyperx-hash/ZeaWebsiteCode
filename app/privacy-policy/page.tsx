@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import ChatWidget from "@/components/chatbot";
 
 export const metadata = {
   title: " Privacy Policy | ZeaCRM",
@@ -77,6 +78,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </main>
       <Footer />
+      <ChatWidget />
     </>
   )
 }

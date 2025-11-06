@@ -8,6 +8,7 @@ import Link from "next/link";
 import React from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import ChatWidget from "@/components/chatbot"
 // import { RelatedBlogs } from "@/components/related-blogs" // optional
 
 export const metadata = {
@@ -267,6 +268,7 @@ export default function BlogPage() {
         </div>
       </div>
       <Footer />
+      <ChatWidget />
     </main>
   )
 }

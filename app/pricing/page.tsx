@@ -1,6 +1,7 @@
 import { Header } from "@/components/header"
 import { PricingPage } from "@/components/pricing-page"
 import { Footer } from "@/components/footer"
+import ChatWidget from "@/components/chatbot";
 
 export const metadata = {
   title: "Zea CRM Pricing",
@@ -14,6 +15,7 @@ export default function Pricing() {
       <Header />
       <PricingPage />
       <Footer />
+      <ChatWidget />
     </main>
   )
 }

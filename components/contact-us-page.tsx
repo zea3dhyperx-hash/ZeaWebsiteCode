@@ -12,6 +12,7 @@ import { Target, BarChart3, Users, MessageCircle, LinkIcon, Mail, Phone, MapPin 
 import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import ChatWidget from "./chatbot"
 
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -375,6 +376,7 @@ export default function ContactUsPage() {
         </div>
       </main>
       <Footer />
+      <ChatWidget />
     </>
   )
 }
