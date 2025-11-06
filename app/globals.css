@@ -310,5 +310,9 @@
     transform: translateY(-1px); */
   }
 
+  .break-lines {
+  white-space: pre-line;
+  }
+
   
 }

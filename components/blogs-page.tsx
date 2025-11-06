@@ -73,7 +73,7 @@ export function BlogsPage() {
     "Team Collaboration",
   ]
 
-  const categories = ["All", "Sales", "Customer Success", "Automation", "Marketing", "Security"]
+  const categories = ["All", "Sales", "Customer Success", "Automation", "Marketing", "Security", "ZeaCRM"]
 
   const filteredArticles = useMemo(() => {
     return allArticles.filter((article) => {

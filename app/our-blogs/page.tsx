@@ -35,18 +35,6 @@ export default function BlogPage() {
             "The evolution of code generation tools has been nothing short of remarkable. What started as simple autocomplete functions has evolved into sophisticated AI systems that can understand your intent and generate production-ready code. These tools analyze millions of open-source repositories and learn patterns that experienced developers have refined over decades. By leveraging transformer-based neural networks, they can predict not just the next line of code, but entire functions and modules. Developers are already seeing 30-40% improvements in coding speed, while simultaneously reducing errors and improving code quality. As these systems become more sophisticated, we can expect even more dramatic improvements in developer productivity.",
         },
         {
-          title: "Code Generation and Assistance",
-          description: "AI-powered code completion tools have transformed development workflows. These tools can now:",
-          items: [
-            "Generate entire functions from natural language descriptions",
-            "Provide intelligent code suggestions based on context",
-            "Automatically refactor existing code for optimization",
-            "Detect and fix bugs before they reach production",
-          ],
-          paragraph:
-            "The evolution of code generation tools has been nothing short of remarkable. What started as simple autocomplete functions has evolved into sophisticated AI systems that can understand your intent and generate production-ready code. These tools analyze millions of open-source repositories and learn patterns that experienced developers have refined over decades. By leveraging transformer-based neural networks, they can predict not just the next line of code, but entire functions and modules. Developers are already seeing 30-40% improvements in coding speed, while simultaneously reducing errors and improving code quality. As these systems become more sophisticated, we can expect even more dramatic improvements in developer productivity.",
-        },
-        {
           title: "Automated Testing and Quality Assurance",
           description: "Testing is becoming smarter with AI integration:",
           items: [
@@ -142,7 +130,7 @@ export default function BlogPage() {
 
               <BlogFooter author={blogData.author} />
 
-              {/* <RelatedBlogs blogs={relatedBlogs} /> */}
+              <RelatedBlogs blogs={relatedBlogs} />
             </div>
           </div>
 

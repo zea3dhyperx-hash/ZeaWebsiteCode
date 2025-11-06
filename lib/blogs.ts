@@ -12,32 +12,32 @@ export type BlogPost = {
 }
 
 export const BLOG_POSTS: BlogPost[] = [
-  {
-    slug: "ai-powered-customer-insights",
-    title: "AI-Powered Customer Insights",
-    author: "Miles",
-    date: "Oct 29, 2024",
-    category: "AI & Tech",
-    image: "/ai-customer-insights.jpg",
-    excerpt:
-      "AI transforms how CRMs work by turning data into decisions.",
-    content: "<p>AI transforms how CRMs work...</p>",
-    htmlPath: "/html/why-us.html",
-    featured: true,
-  },
+  // {
+  //   slug: "ai-powered-customer-insights",
+  //   title: "AI-Powered Customer Insights",
+  //   author: "Miles",
+  //   date: "Oct 29, 2024",
+  //   category: "AI & Tech",
+  //   image: "/ai-customer-insights.jpg",
+  //   excerpt:
+  //     "AI transforms how CRMs work by turning data into decisions.",
+  //   content: "<p>AI transforms how CRMs work...</p>",
+  //   htmlPath: "/html/why-us.html",
+  //   featured: true,
+  // },
   {
     slug: "banana-url",
-    title: "Banana Health Benefits",
+    title: "Zea CRM — Where Every Lead Becomes a Relationship",
     author: "Sherly Angel",
-    date: "Oct 30, 2024",
-    category: "Healthcare",
+    date: "Nov 06, 2025",
+    category: "AI & Technology",
     image: "/ai-customer-insights.jpg",
     excerpt:
-      "Why Banana is a superfood.",
-    content: "<p>this is the content for the banana article.</p>",
+      "Designed for the Way You Work",
+    content: "<p>Zea CRM automatically collects, assigns, and tracks leads from every source — website forms, phone calls, campaigns, or social media.</p>",
     // Example using external html file under public/blogs/banana-url.html
     htmlPath: "blog-1",
-    featured: false,
+    featured: true,
   },
 ]
 

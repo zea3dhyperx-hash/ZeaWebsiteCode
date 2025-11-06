@@ -1,28 +1,35 @@
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import AniRobot from "./ani-robot";
+
 export function AIToolsSection() {
   return (
     <section className="relative py-20 px-4 bg-background overflow-hidden">
       {/* Robot illustration area */}
       <div className="flex justify-center mb-16">
-        <div className="relative w-64 h-64">
+        <AniRobot />
+        {/* <div className="relative w-64 h-64"> */}
+
+
+          {/* <AniRobot /> */}
           {/* Animated robot SVG */}
-          <svg viewBox="0 0 200 200" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          {/* <svg viewBox="0 0 200 200" className="w-full h-full" xmlns="http://www.w3.org/2000/svg"> */}
             {/* Robot body */}
-            <rect x="70" y="80" width="60" height="70" fill="#00d4ff" rx="4" />
+            {/* <rect x="70" y="80" width="60" height="70" fill="#00d4ff" rx="4" /> */}
             {/* Robot head */}
-            <circle cx="100" cy="60" r="20" fill="#00d4ff" />
+            {/* <circle cx="100" cy="60" r="20" fill="#00d4ff" /> */}
             {/* Robot eyes */}
-            <circle cx="92" cy="55" r="3" fill="#0a0a0a" />
-            <circle cx="108" cy="55" r="3" fill="#0a0a0a" />
+            {/* <circle cx="92" cy="55" r="3" fill="#0a0a0a" />
+            <circle cx="108" cy="55" r="3" fill="#0a0a0a" /> */}
             {/* Robot arms */}
-            <rect x="50" y="90" width="20" height="10" fill="#00d4ff" rx="2" />
-            <rect x="130" y="90" width="20" height="10" fill="#00d4ff" rx="2" />
+            {/* <rect x="50" y="90" width="20" height="10" fill="#00d4ff" rx="2" />
+            <rect x="130" y="90" width="20" height="10" fill="#00d4ff" rx="2" /> */}
             {/* Platform */}
-            <ellipse cx="100" cy="160" rx="50" ry="15" fill="none" stroke="#ff00ff" strokeWidth="2" />
+            {/* <ellipse cx="100" cy="160" rx="50" ry="15" fill="none" stroke="#ff00ff" strokeWidth="2" />
             <circle cx="100" cy="160" r="40" fill="none" stroke="#00d4ff" strokeWidth="1" opacity="0.5" />
-          </svg>
+          </svg> */}
 
           {/* Floating shapes */}
-          <div className="absolute top-0 left-0 w-12 h-12 rounded-full border-2 border-cyan-400 animate-pulse" />
+          {/* <div className="absolute top-0 left-0 w-12 h-12 rounded-full border-2 border-cyan-400 animate-pulse" />
           <div
             className="absolute top-8 right-4 w-10 h-10 bg-magenta-500 rounded animate-bounce"
             style={{ animationDelay: "0.2s" }}
@@ -34,9 +41,9 @@ export function AIToolsSection() {
           <div
             className="absolute bottom-16 right-12 w-6 h-6 bg-cyan-400 rounded-full animate-pulse"
             style={{ animationDelay: "0.5s" }}
-          />
-        </div>
-      </div>
+          />*/}
+         </div> 
+      {/* </div> */}
 
       {/* Content */}
       <div className="max-w-3xl mx-auto text-center">
