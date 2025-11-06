@@ -11,11 +11,14 @@ export function WhyUs2Hero() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">
-          Why Choose <span className="text-primary">zeaCRM</span>?
+        <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-2 text-balance">
+          Why Choose <span className="text-primary">ZeaCRM</span>
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance max-w-2xl mx-auto">
-          Discover why thousands of businesses trust zeaCRM to transform their customer relationships and drive growth
+        <p className="text-xl md:text-2xl text-muted-foreground mb-6 text-balance max-w-2xl mx-auto">
+          Smarter. Faster. Proven.
+        </p>
+        <p className="text-base md:text-lg text-foreground mb-8 max-w-3xl mx-auto">
+          Join 2,000+ businesses that automate their sales, marketing, and customer management with ZeaCRM. They are achieving up to 3x faster growth and 40% higher lead conversions through AI-driven automation. Are you ready?
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover-lift hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">

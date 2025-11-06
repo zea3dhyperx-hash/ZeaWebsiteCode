@@ -9,12 +9,10 @@ export function WhyChooseUsHero() {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              
-              <h2 className="text-5xl md:text-6xl font-bold text-black">WHY CHOOSE US</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-black">Why ZeaCRM Stands Out</h2>
             </div>
-
-            <p className="text-sm text-black/80 max-w-md">
-              Why you should consider ZeaCRM for your business needs and growth objectives
+            <p className="text-base md:text-lg text-black/90 max-w-2xl">
+              Not just another CRM. ZeaCRM redefines how businesses build relationships and close deals with intelligent systems.
             </p>
 
             {/* Bullet Points */}
@@ -22,30 +20,24 @@ export function WhyChooseUsHero() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-black">Big Marketers, Big Dreamers</h3>
-                  <p className="text-sm text-black/75 mt-1">
-                    Built for ambitious teams who want to scale their marketing efforts
-                  </p>
+                  <h3 className="font-bold text-black">AI That Works for You</h3>
+                  <p className="text-sm text-black/75 mt-1">Predictive insights and automation that handle the busywork so you can focus on results.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-black">Community-Driven Development</h3>
-                  <p className="text-sm text-black/75 mt-1">
-                    Your feedback shapes our roadmap. We build what our users need
-                  </p>
+                  <h3 className="font-bold text-black">Seamless Experience</h3>
+                  <p className="text-sm text-black/75 mt-1">One clean platform that brings sales, marketing, and support together.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-black">Honestly Wins Other Successful Marketers</h3>
-                  <p className="text-sm text-black/75 mt-1">
-                    Transparent pricing, honest support, and real results from day one
-                  </p>
+                  <h3 className="font-bold text-black">Scalable for Growth</h3>
+                  <p className="text-sm text-black/75 mt-1">From startups to enterprises, ZeaCRM grows with your business, not against it.</p>
                 </div>
               </div>
             </div>
