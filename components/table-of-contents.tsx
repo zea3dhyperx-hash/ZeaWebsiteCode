@@ -25,7 +25,7 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
       title: section.title,
       level: 1,
     })),
-    { id: "conclusion", title: "Conclusion", level: 1 },
+    // { id: "conclusion", title: "Conclusion", level: 1 },
   ]
 
   useEffect(() => {

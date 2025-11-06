@@ -99,7 +99,7 @@ export function BlogContent({ intro, sections }: BlogContentProps) {
         </section>
       ))}
 
-      {/* === CONCLUSION === */}
+      {/* === CONCLUSION ===
       <section id="conclusion" className="space-y-4 border-t border-border pt-8" style={{ whiteSpace: "pre-line" }}>
         <h2 className="text-2xl font-bold text-foreground md:text-3xl" style={{ whiteSpace: "pre-line" }}>
           Conclusion
@@ -109,7 +109,7 @@ export function BlogContent({ intro, sections }: BlogContentProps) {
           it's happening now. The future belongs to those who amplify creativity
           through AI while preserving the human touch.
         </p>
-      </section>
+      </section> */}
     </article>
   )
 }

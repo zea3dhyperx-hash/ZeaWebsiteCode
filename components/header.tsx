@@ -149,12 +149,12 @@ export function Header() {
                 >
                   Blogs
                 </Link>
-                <Link
+                {/* <Link
                   href="/guides"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
                 >
                   Guides
-                </Link>
+                </Link> */}
                 {/* <Link
                   href="/guides-2"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
@@ -230,9 +230,9 @@ export function Header() {
                       {/* <Link href="/blogs-2" className="text-foreground hover:text-primary transition-colors">
                         Blogs 2
                       </Link> */}
-                      <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
+                      {/* <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
                         Guides
-                      </Link>
+                      </Link> */}
                       {/* <Link href="/guides-2" className="text-foreground hover:text-primary transition-colors">
                         Guides 2
                       </Link> */}

@@ -30,7 +30,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Zea CRM — Where Every Lead Becomes a Relationship",
     author: "Sherly Angel",
     date: "Nov 06, 2025",
-    category: "AI & Technology",
+    category: "ZeaCRM",
     image: "/ai-customer-insights.jpg",
     excerpt:
       "Designed for the Way You Work",

@@ -3,99 +3,201 @@ import { BlogImage } from "@/components/blog-image"
 import { BlogContent } from "@/components/blog-content"
 import { BlogFooter } from "@/components/blog-footer"
 import { TableOfContents } from "@/components/table-of-contents"
-import { RelatedBlogs } from "@/components/related-blogs"
+import React from "react"
+import FAQ from "../faq"
+// import { RelatedBlogs } from "@/components/related-blogs" // optional
 
 export const metadata = {
-  title: "The Future of AI in Web Development | Blog",
-  description: "Explore how artificial intelligence is transforming web development practices and tools",
+  title: "Zea CRM — Where Every Lead Becomes a Relationship | Blog",
+  description:
+    " Zea CRM — Where Every Lead Becomes a Relationship | Blog",
 }
 
 export default function BlogPage() {
+  // Local FAQ for this template (independent)
+  const templateFaq = [
+    { q: 'Can I customize this template?', a: 'Yes, you can edit all sections, styles, and content to match your needs.' },
+    { q: 'Is this SEO friendly?', a: 'It uses semantic HTML and supports structured content to help with SEO.' },
+    { q: 'Does it support MDX?', a: 'You can embed MDX or use block-based content depending on your setup.' },
+  ]
+
+  function TemplateFaq() {
+    const [open, setOpen] = React.useState<number | null>(null)
+    return (
+      <section className="mt-12 border-t border-border pt-8">
+        <h2 className="text-2xl font-bold mb-4">FAQ</h2>
+        <div className="space-y-3">
+          {templateFaq.map((item, i) => (
+            <div key={i} className="rounded-md border border-border">
+              <button
+                className="w-full text-left px-4 py-3 flex justify-between items-center"
+                onClick={() => setOpen(open === i ? null : i)}
+                aria-expanded={open === i}
+              >
+                <span className="font-medium">{item.q}</span>
+                <span className="text-muted-foreground">{open === i ? '−' : '+'}</span>
+              </button>
+              {open === i && (
+                <div className="px-4 pb-4 text-sm text-muted-foreground">
+                  {item.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
   const blogData = {
-    tag: "Technology",
-    title: "The Future of AI in Web Development",
-    author: "Sarah Johnson",
-    date: "November 5, 2025",
+    tag: "ZeaCRM",
+    title: "Zea CRM — Where Every Lead Becomes a Relationship",
+    author: "Sherly Angel",
+    date: "November 6, 2025",
     time: "8:30 AM",
     image: "/ai-web-development-future-technology.jpg",
     content: {
       intro:
-        "Artificial intelligence is revolutionizing how we build and deploy web applications. From code generation to automated testing, AI is becoming an indispensable tool in every developer's toolkit. The landscape of web development has fundamentally changed over the past few years, with machine learning algorithms now capable of understanding code context, predicting bugs, and even suggesting entire architectural patterns. This transformation isn't just about speed and efficiency—it's about empowering developers to focus on creative problem-solving rather than repetitive tasks.",
+        "In business, it’s easy to get caught up chasing numbers.\n Leads. Deals. Targets. Reports. \n But growth isn’t just about collecting contacts — it’s about building meaningful relationships that last. \n \n That’s what Zea CRM is built for. \n It helps businesses turn every lead, call, or message into a real connection — one that moves your team forward and your customers closer.",
       sections: [
         {
-          title: "Code Generation and Assistance",
-          description: "AI-powered code completion tools have transformed development workflows. These tools can now:",
-          items: [
-            "Generate entire functions from natural language descriptions",
-            "Provide intelligent code suggestions based on context",
-            "Automatically refactor existing code for optimization",
-            "Detect and fix bugs before they reach production",
+          title: "Designed for the Way You Work",
+          blocks: [
+            {
+              type: "paragraph",
+              content:
+                "Zea CRM doesn’t force you to change how you do business — it enhances it. \n Everything that matters is right where you need it: leads, conversations, follow-ups, performance, and automation.",
+            },
+            // {
+            //   type: "list",
+            //   items: [
+            //     "Generate entire functions from natural language descriptions",
+            //     "Provide intelligent code suggestions based on context",
+            //     "Automatically refactor existing code for optimization",
+            //     "Detect and fix bugs before they reach production",
+            //   ],
+            // },
+            {
+              type: "paragraph",
+              content:
+                "It’s built to help your team focus less on managing software and more on creating results.",
+            },
           ],
-          paragraph:
-            "The evolution of code generation tools has been nothing short of remarkable. What started as simple autocomplete functions has evolved into sophisticated AI systems that can understand your intent and generate production-ready code. These tools analyze millions of open-source repositories and learn patterns that experienced developers have refined over decades. By leveraging transformer-based neural networks, they can predict not just the next line of code, but entire functions and modules. Developers are already seeing 30-40% improvements in coding speed, while simultaneously reducing errors and improving code quality. As these systems become more sophisticated, we can expect even more dramatic improvements in developer productivity.",
         },
-        {
-          title: "Code Generation and Assistance",
-          description: "AI-powered code completion tools have transformed development workflows. These tools can now:",
-          items: [
-            "Generate entire functions from natural language descriptions",
-            "Provide intelligent code suggestions based on context",
-            "Automatically refactor existing code for optimization",
-            "Detect and fix bugs before they reach production",
-          ],
-          paragraph:
-            "The evolution of code generation tools has been nothing short of remarkable. What started as simple autocomplete functions has evolved into sophisticated AI systems that can understand your intent and generate production-ready code. These tools analyze millions of open-source repositories and learn patterns that experienced developers have refined over decades. By leveraging transformer-based neural networks, they can predict not just the next line of code, but entire functions and modules. Developers are already seeing 30-40% improvements in coding speed, while simultaneously reducing errors and improving code quality. As these systems become more sophisticated, we can expect even more dramatic improvements in developer productivity.",
-        },
-        {
-          title: "Automated Testing and Quality Assurance",
-          description: "Testing is becoming smarter with AI integration:",
-          items: [
-            "Automatic test case generation from codebase analysis",
-            "Predictive bug detection using machine learning models",
-            "Performance optimization recommendations",
-            "Security vulnerability scanning and remediation",
-          ],
-          paragraph:
-            "Quality assurance has always been a time-consuming process, but AI is changing that reality. Modern AI systems can now analyze your codebase and automatically generate comprehensive test suites that cover edge cases humans might miss. Machine learning models trained on vulnerability databases can identify security issues before they become problems. These systems continuously learn from your project's history, understanding which parts of your code are most prone to bugs and focusing testing efforts accordingly. The future of QA isn't about replacing human testers—it's about augmenting their capabilities with intelligent, tireless systems that handle the repetitive work. Organizations adopting AI-driven testing are seeing 50% reductions in production bugs and faster release cycles.",
-        },
+
         {
           title: "The Developer Experience",
-          description: "The tools we use are evolving rapidly. Key improvements include:",
-          items: [
-            "Natural language query interfaces for documentation",
-            "Real-time error explanation and solutions",
-            "Personalized learning paths based on skill level",
-            "Collaborative AI assistants that understand project context",
+          blocks: [
+            {
+              type: "paragraph",
+              content:
+                "The tools we use are evolving rapidly. Key improvements include:",
+            },
+            {
+              type: "list",
+              items: [
+                "Natural language query interfaces for documentation",
+                "Real-time error explanation and solutions",
+                "Personalized learning paths based on skill level",
+                "Collaborative AI assistants that understand project context",
+              ],
+            },
+            {
+              type: "image",
+              imageUrl: "/developer-ai-tools.jpg",
+            },
+            {
+              type: "paragraph",
+              content:
+                "Imagine spending less time searching through documentation and more time implementing solutions. AI assistants are now capable of understanding your entire project architecture, your coding style, and your team's conventions.",
+            },
           ],
-          paragraph:
-            "The developer experience is at the center of this AI revolution. Imagine spending less time searching through documentation and more time implementing solutions. AI assistants are now capable of understanding your entire project architecture, your coding style, and your team's conventions. When you encounter an error, these systems don't just show you the error code—they explain what went wrong, why it happened, and provide multiple ways to fix it. For junior developers, this means accelerated learning curves. For senior developers, it means fewer distractions and more time for architectural decisions. The shift toward AI-powered development environments is creating a more inclusive tech industry where skill gaps are bridged not by years of experience, but by intelligent tooling.",
         },
         {
           title: "Real-World Impact and Adoption",
-          description: "Companies across industries are already experiencing tangible benefits:",
-          items: [
-            "Startup teams shipping features 2-3x faster",
-            "Enterprise development cycles compressed by weeks",
-            "Reduced onboarding time for new team members",
-            "Significant cost savings in development resources",
+          blocks: [
+            {
+              type: "paragraph",
+              content:
+                "Companies across industries are already experiencing tangible benefits:",
+            },
+            {
+              type: "list",
+              items: [
+                "Startup teams shipping features 2–3x faster",
+                "Enterprise development cycles compressed by weeks",
+                "Reduced onboarding time for new team members",
+                "Significant cost savings in development resources",
+              ],
+            },
+            {
+              type: "quote",
+              quote:
+                "AI isn’t replacing developers — it’s amplifying their capabilities.",
+            },
+            {
+              type: "paragraph",
+              content:
+                "Forward-thinking companies are reporting extraordinary results. A typical startup might go from idea to market-ready product in months instead of years.",
+            },
           ],
-          paragraph:
-            "The transition to AI-assisted development isn't theoretical anymore—it's happening now. Forward-thinking companies are reporting extraordinary results. A typical startup might go from idea to market-ready product in months instead of years. Enterprise teams are compressing development cycles that previously took weeks into days. The efficiency gains translate directly to competitive advantage. Furthermore, the barrier to entry for new developers is lowering dramatically. Someone without a computer science degree can now build sophisticated applications with AI assistance. This democratization of web development is creating opportunities we haven't yet fully imagined.",
+        },
+        {
+          title: "Real-World Impact and Adoption",
+          blocks: [
+            {
+              type: "paragraph",
+              content:
+                "Companies across industries are already experiencing tangible benefits:",
+            },
+            {
+              type: "list",
+              items: [
+                "Startup teams shipping features 2–3x faster",
+                "Enterprise development cycles compressed by weeks",
+                "Reduced onboarding time for new team members",
+                "Significant cost savings in development resources",
+              ],
+            },
+            {
+              type: "quote",
+              quote:
+                "AI isn’t replacing developers — it’s amplifying their capabilities.",
+            },
+            {
+              type: "paragraph",
+              content:
+                "Forward-thinking companies are reporting extraordinary results. A typical startup might go from idea to market-ready product in months instead of years.",
+            },
+          ],
         },
         {
           title: "Challenges and Ethical Considerations",
-          description: "As with any transformative technology, AI in development comes with important considerations:",
-          items: [
-            "Ensuring AI-generated code maintains security standards",
-            "Protecting intellectual property and open-source contributions",
-            "Understanding AI bias in code patterns and suggestions",
-            "Training developers to work effectively with AI systems",
+          blocks: [
+            {
+              type: "paragraph",
+              content:
+                "As with any transformative technology, AI in development comes with important considerations:",
+            },
+            {
+              type: "list",
+              items: [
+                "Ensuring AI-generated code maintains security standards",
+                "Protecting intellectual property and open-source contributions",
+                "Understanding AI bias in code patterns and suggestions",
+                "Training developers to work effectively with AI systems",
+              ],
+            },
+            {
+              type: "paragraph",
+              content:
+                "While AI can generate code quickly, we must ensure that generated code meets security, performance, and maintainability standards. Bias in training data can inadvertently lead AI systems to suggest suboptimal or problematic patterns.",
+            },
           ],
-          paragraph:
-            "The rise of AI tools also brings responsibility. While AI can generate code quickly, we must ensure that generated code meets security, performance, and maintainability standards. There are legitimate concerns about how AI systems trained on open-source code should handle attribution and licensing. Bias in training data can inadvertently lead AI systems to suggest suboptimal or problematic patterns. Organizations adopting these tools must invest in education and establish clear guidelines for AI usage. The most successful teams won't be those who blindly trust AI—they'll be those who use AI as a powerful tool while maintaining human oversight and judgment.",
         },
       ],
     },
+    
   }
 
   const relatedBlogs = [
@@ -125,7 +227,7 @@ export default function BlogPage() {
     <main className="min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-16 lg:px-8">
         <div className="flex gap-8">
-          {/* Main Content */}
+          {/* === MAIN CONTENT === */}
           <div className="flex-1 min-w-0">
             <div className="max-w-4xl">
               <BlogHeader
@@ -138,15 +240,27 @@ export default function BlogPage() {
 
               <BlogImage src={blogData.image} alt={blogData.title} />
 
-              <BlogContent sections={blogData.content.sections} intro={blogData.content.intro} />
+              <BlogContent
+                intro={blogData.content.intro}
+                sections={blogData.content.sections}
+              />
 
-              <BlogFooter author={blogData.author} />
+              {/* FAQ Section (independent, bottom) */}
+              <FAQ
+                items={[
+                  { q: "What is Zea CRM?", a: "Zea CRM helps teams turn leads into lasting relationships with a streamlined, AI-assisted workflow." },
+                  { q: "Is there a free trial?", a: "Yes, you can start with a 14-day free trial—no credit card required." },
+                  { q: "Does it integrate with my tools?", a: "It supports common tools like email, calendars, WhatsApp, and more. Custom integrations are available." },
+                ]}
+              />
+
+              {/* <BlogFooter author={blogData.author} /> */}
 
               {/* <RelatedBlogs blogs={relatedBlogs} /> */}
             </div>
           </div>
 
-          {/* Table of Contents Sidebar */}
+          {/* === TABLE OF CONTENTS === */}
           <TableOfContents sections={blogData.content.sections} />
         </div>
       </div>

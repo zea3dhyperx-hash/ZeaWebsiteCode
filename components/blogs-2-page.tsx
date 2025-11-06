@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useMemo } from "react"
+// import FAQ from "@/components/faq"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
@@ -44,7 +45,7 @@ export function Blogs2Page() {
     "Mobile Sales",
   ]
 
-  const categories = ["All", "AI & Technology", "Sales Strategy", "Case Studies", "Integration", "Mobile"]
+  const categories = ["All", "AI & Technology", "Sales Strategy", "Case Studies", "Integration", "Mobile", "ZeaCRM"]
 
   const authors = useMemo(() => {
     const names = Array.from(new Set(BLOG_POSTS.map((p) => p.author))).sort()
@@ -170,6 +171,7 @@ export function Blogs2Page() {
             )}
           </div>
         </section>
+        
         {/* Featured Articles */}
         <section className="py-16 md:py-24 px-4 md:px-8">
           <div className="max-w-6xl mx-auto">
@@ -246,7 +248,6 @@ export function Blogs2Page() {
     </>
   )
 }
-
 
 
 
