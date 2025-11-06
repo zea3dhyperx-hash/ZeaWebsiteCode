@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Play } from "lucide-react"
+import AniHero from "./ani-hero"
 import { GetStartedModal } from "./get-started-modal"
 import { SignInModal } from "./sign-in-modal"
 
@@ -76,29 +77,16 @@ export function HeroSection() {
                   <Play size={18} />
                   Book a Demo
               </Button>
-              
             </div>
-
-            {/* Benefits */}
-            {/* <div className="flex flex-col sm:flex-row gap-6 pt-4">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                <span className="text-sm text-gray-300">No credit card required</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                <span className="text-sm text-gray-300">14-day free trial</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                <span className="text-sm text-gray-300">Setup in 5 minutes</span>
-              </div>
-            </div> */}
+            {/* <AniHero /> */}
+            
           </div>
+          <AniHero />
 
           {/* Right - 3D Character Illustration */}
           <div className="relative h-96 lg:h-full flex items-center justify-center">
-            <img src="images/Hero2.png" alt="A girl handling lot of things easily with zeaCRM" />
+            {/* <AniHero /> */}
+            {/* <img src="images/Hero2.png" alt="A girl handling lot of things easily with zeaCRM" /> */}
             {/* <div className="relative w-full h-full flex items-center justify-center"> */}
               {/* Placeholder for 3D character - using a styled div */}
               {/* <div className="relative w-64 h-80"> */}
