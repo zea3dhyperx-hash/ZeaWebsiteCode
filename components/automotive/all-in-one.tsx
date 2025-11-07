@@ -27,13 +27,12 @@ export function AllInOne() {
           {/* Image */}
           <div
             className="rounded-lg overflow-hidden h-80 lg:h-96"
-            style={{
-              backgroundImage:
-                "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rectangle%20169-L5bNsThbDKzf8hwLaYlbhbHATrb0Fh.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
           />
+          <img
+              src="allinone.png"
+              alt="Healthcare team collaboration"
+              className="w-full h-full object-cover"
+            />
         </div>
       </div>
     </section>

@@ -4,16 +4,11 @@ export function RealEstateHero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage:
-            "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rectangle%201-Mwk3O234IbUnUXOvBxGZUoA8ba8D1Y.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
-      />
+      {/* Background Image */}
+      <div className="absolute inset-0 object-cover opacity-60 flex">
+        <img src="realestatebg.png" alt="healthcare background image" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
+      </div>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950 z-10" />

@@ -5,10 +5,10 @@ export function Hero() {
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden">
       {/* Background Image */}
-            <div className="absolute inset-0 object-cover opacity-60 flex">
-              <img src="healthbg.png" alt="healthcare background image" />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
-            </div>
+      <div className="absolute inset-0 object-cover opacity-60 flex">
+        <img src="healthbg.png" alt="healthcare background image" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance leading-tight">Healthcare</h1>

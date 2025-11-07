@@ -18,7 +18,7 @@ export function AllInOne() {
 
           <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-slate-600 to-slate-800">
             <img
-              src="/healthcare-team-working-together.jpg"
+              src="allinone.png"
               alt="Healthcare team collaboration"
               className="w-full h-full object-cover"
             />
