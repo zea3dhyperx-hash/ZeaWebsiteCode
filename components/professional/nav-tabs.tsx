@@ -17,7 +17,7 @@ export function ProfessionalNavTabs() {
   }
 
   return (
-    <nav className="sticky top-0 z-40 bg-black border-b border-gray-800">
+    <nav className="sticky top-0 z-50 bg-black border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center gap-8 py-4 tracking-normal text-2xl">
           {tabs.map((tab) => (

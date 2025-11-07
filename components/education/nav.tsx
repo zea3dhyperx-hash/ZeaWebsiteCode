@@ -7,7 +7,7 @@ export function EducationNav() {
   ]
 
   return (
-    <div className="bg-slate-900 border-b border-amber-500/20 py-4 px-4 sm:px-6 lg:px-8 sticky top-0 z-40">
+    <div className=" bg-slate-900 border-b border-amber-500/20 py-4 px-4 sm:px-6 lg:px-8 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12">
           {navItems.map((item) => (

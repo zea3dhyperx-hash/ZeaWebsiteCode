@@ -30,7 +30,7 @@ export function HeroFeatures() {
   }
 
   return (
-    <section className="bg-slate-950 py-8 px-4">
+    <section className="bg-slate-950 py-8 px-4 sticky top-0 z-50 bg-black py-8 shadow-lg">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-center gap-12 flex-wrap md:flex-nowrap">
           {features.map((feature, idx) => (
