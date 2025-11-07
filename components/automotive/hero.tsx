@@ -10,10 +10,10 @@ export function AutomotiveHero() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 z-0 animate-fade-in"
+          className="absolute inset-0 z-0"
           style={{
             backgroundImage:
-              "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rectangle%201-hbRaAjyAiwem9YaYlTgX67axxbxoL1.png')",
+              "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rectangle%201-Mwk3O234IbUnUXOvBxGZUoA8ba8D1Y.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",
@@ -26,31 +26,20 @@ export function AutomotiveHero() {
         {/* Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6">
-            <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight opacity-0 animate-fade-in-up"
-              style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
-            >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Automotive & Manufacturing
             </h1>
-            <p
-              className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto opacity-0 animate-fade-in-up"
-              style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
-            >
-              AI-Powered CRM Solutions for Dealers, Distributors, and Manufacturers
-            </p>
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">AI-Powered CRM for Faster Growth</p>
 
             {/* CTA Buttons */}
-            <div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 opacity-0 animate-fade-in-up"
-              style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
-            >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <button
                 onClick={() => setShowVideoModal(true)}
-                className="px-8 py-3 bg-amber-400 hover:bg-amber-500 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-amber-400/50"
+                className="px-8 py-3 bg-amber-400 hover:bg-amber-500 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
               >
                 Request Demo
               </button>
-              <button className="px-8 py-3 bg-amber-400 hover:bg-amber-500 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-amber-400/50">
+              <button className="px-8 py-3 bg-amber-400 hover:bg-amber-500 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
                 Learn More
               </button>
             </div>
@@ -61,11 +50,11 @@ export function AutomotiveHero() {
       {/* Video Modal */}
       {showVideoModal && (
         <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={() => setShowVideoModal(false)}
         >
           <div
-            className="bg-slate-900 rounded-lg overflow-hidden max-w-2xl w-full animate-scale-in"
+            className="bg-slate-900 rounded-lg overflow-hidden max-w-2xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="aspect-video bg-slate-800 flex items-center justify-center relative">
