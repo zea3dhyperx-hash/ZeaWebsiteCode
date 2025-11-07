@@ -10,9 +10,9 @@ export function Features2Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+      <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
         <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">Work Smarter, Sell Faster, Grow Bigger</h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance max-w-2xl mx-auto">ZeaCRM gives you everything you need to automate workflows, manage relationships, and close deals. All in one intelligent, easy-to-use platform. Whether you’re a solopreneur or a growing enterprise, you’ll experience business agility powered by AI.</p>
+        <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance max-w-5xl mx-auto">ZeaCRM gives you everything you need to automate workflows, manage relationships, and close deals. All in one intelligent, easy-to-use platform. Whether you’re a solopreneur or a growing enterprise, you’ll experience business agility powered by AI.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover-lift hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
             <a href="#slider">Explore All Features</a>

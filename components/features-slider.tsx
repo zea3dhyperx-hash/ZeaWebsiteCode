@@ -170,7 +170,8 @@ export function FeaturesSlider() {
 
           {/* Slide Content with Transition */}
           <div className="transition-all duration-500 ease-in-out">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="items-center">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center"> */}
               {/* Left Content */}
               <div className="space-y-6 items-center justify-center">
                 <div>
@@ -189,8 +190,8 @@ export function FeaturesSlider() {
                 </div> */}
 
                 {/* Testimonial Card */}
-                <div className="bg-amber-400 rounded-lg p-6 mt-8">
-                  <div className="flex items-start gap-4">
+                {/* <div className="bg-amber-400 rounded-lg p-6 mt-8">
+                  <div className="flex items-start gap-4"> */}
                     {/* <div className="relative w-12 h-12 flex-shrink-0">
                       <Image
                         src={feature.testimonial.image || "/placeholder.svg"}
@@ -199,17 +200,17 @@ export function FeaturesSlider() {
                         className="rounded-full object-cover"
                       />
                     </div> */}
-                    <div className="flex-1">
+                    {/* <div className="flex-1">
                       <p className="text-black text-sm sm:text-base font-medium mb-2">{feature.testimonial.text}</p>
                       <p className="text-black font-semibold text-sm">{feature.testimonial.name}</p>
                       <p className="text-black text-xs opacity-75">{feature.testimonial.role}</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div> 
 
               {/* Right Content - Diagram */}
-              <div className="flex justify-center items-center">
+              {/* <div className="flex justify-center items-center">
                 <div className="relative w-full aspect-square max-w-md">
                   <Image
                     src={feature.diagram || "/placeholder.svg"}
@@ -218,7 +219,7 @@ export function FeaturesSlider() {
                     className="object-contain"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

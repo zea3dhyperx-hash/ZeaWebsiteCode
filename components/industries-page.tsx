@@ -12,79 +12,165 @@ import {
   MoreHorizontal,
   Search,
   CheckCircle,
+  Truck,
+  HeartHandshake,
+  Film,
+  CalendarClock,
+  Hammer,
+  Leaf,
+  Radio,
+  Users2,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const industries = [
+  // {
+  //   name: "Healthcare",
+  //   icon: Heart,
+  //   link: "/allIndustries/healthcare",
+  //   description:
+  //     "Streamline patient management, appointment scheduling, and healthcare operations with AI-powered CRM solutions designed for medical practices.",
+  // },
+  // {
+  //   name: "Real Estate",
+  //   icon: Home,
+  //   link: "/allIndustries/realestate",
+  //   description:
+  //     "Manage property listings, client relationships, and sales pipelines with comprehensive tools built for real estate professionals.",
+  // },
+  // {
+  //   name: "Retail & E-Commerce",
+  //   icon: ShoppingCart,
+  //   link: "/allIndustries/retail",
+  //   description:
+  //     "Enhance customer experience, manage inventory, and boost sales with integrated e-commerce and retail management features.",
+  // },
+  // {
+  //   name: "Professional Services",
+  //   icon: Briefcase,
+  //   link: "/allIndustries/professional",
+  //   description:
+  //     "Organize client projects, track billable hours, and manage service delivery with tools tailored for consultants and agencies.",
+  // },
+  // {
+  //   name: "Education & Training",
+  //   icon: BookOpen,
+  //   link: "/allIndustries/education",
+  //   description:
+  //     "Manage student relationships, course enrollment, and training programs with education-focused CRM capabilities.",
+  // },
+  // {
+  //   name: "Finance & Insurance",
+  //   icon: Zap,
+  //   link: "/allIndustries/finance",
+  //   description:
+  //     "Secure client data, manage policies, and streamline financial operations with compliance-ready CRM solutions.",
+  // },
+  // {
+  //   name: "Automotive & Manufacturing",
+  //   icon: Building2,
+  //   link: "/allIndustries/automotive",
+  //   description:
+  //     "Optimize supply chain, manage customer orders, and track production with industry-specific CRM tools.",
+  // },
+  // {
+  //   name: "Hospitality (Hotels, Restaurants, Travel)",
+  //   icon: MoreHorizontal,
+  //   link: "/demo",
+  //   description:
+  //     "Online booking & reservation reminders, Feedback & review automation, Loyalty & referral programs",
+  // },
+  // {
+  //   name: "NGOs & Nonprofits",
+  //   icon: MoreHorizontal,
+  //   link: "/demo",
+  //   description:
+  //     "Donation campaign automation, Donor engagement reminders, Transparent reports for accountability",
+  // },
+  // {
+  //   name: "Events & Entertainment",
+  //   icon: MoreHorizontal,
+  //   link: "/demo",
+  //   description:
+  //     "Online registration & e-ticketing, Auto event reminders to attendees, Post-event surveys & engagement campaigns",
+  // },
+  // Additional industries from "Who We Help"
   {
-    name: "Healthcare",
-    icon: Heart,
-    link: "/allIndustries/healthcare",
+    name: "Hospitality & Travel",
+    icon: MoreHorizontal,
+    link: "/demo",
     description:
-      "Streamline patient management, appointment scheduling, and healthcare operations with AI-powered CRM solutions designed for medical practices.",
+      "Manage guest bookings, loyalty programs, and personalized experiences.",
   },
   {
-    name: "Real Estate",
-    icon: Home,
-    link: "/allIndustries/realestate",
+    name: "Logistics & Supply Chain",
+    icon: Truck,
+    link: "/demo",
     description:
-      "Manage property listings, client relationships, and sales pipelines with comprehensive tools built for real estate professionals.",
+      "Track shipments, automate updates, and manage vendor communication.",
   },
   {
-    name: "Retail & E-Commerce",
-    icon: ShoppingCart,
-    link: "/allIndustries/retail",
+    name: "Non-Profit Organizations",
+    icon: HeartHandshake,
+    link: "/demo",
     description:
-      "Enhance customer experience, manage inventory, and boost sales with integrated e-commerce and retail management features.",
+      "Handle donor management, campaigns, and volunteer coordination.",
   },
   {
-    name: "Professional Services",
-    icon: Briefcase,
-    link: "/allIndustries/professional",
+    name: "Media & Entertainment",
+    icon: Film,
+    link: "/demo",
     description:
-      "Organize client projects, track billable hours, and manage service delivery with tools tailored for consultants and agencies.",
+      "Manage talent, projects, sponsorships, and audience engagement.",
   },
   {
-    name: "Education & Training",
-    icon: BookOpen,
-    link: "/allIndustries/education",
+    name: "Event Management Companies",
+    icon: CalendarClock,
+    link: "/demo",
     description:
-      "Manage student relationships, course enrollment, and training programs with education-focused CRM capabilities.",
+      "Track clients, vendors, and event workflows easily.",
   },
   {
-    name: "Finance & Insurance",
+    name: "Energy & Utilities",
     icon: Zap,
-    link: "/allIndustries/finance",
+    link: "/demo",
     description:
-      "Secure client data, manage policies, and streamline financial operations with compliance-ready CRM solutions.",
+      "Manage service requests, billing, and customer support efficiently.",
   },
   {
-    name: "Automotive & Manufacturing",
+    name: "Construction & Real Estate Services",
+    icon: Hammer,
+    link: "/demo",
+    description:
+      "Oversee leads, contracts, and project milestones.",
+  },
+  {
+    name: "Agriculture & Agri-Tech",
+    icon: Leaf,
+    link: "/demo",
+    description:
+      "Track distributors, farmers, and seasonal demand cycles.",
+  },
+  {
+    name: "Public Sector & Government Projects",
     icon: Building2,
-    link: "/allIndustries/automotive",
-    description:
-      "Optimize supply chain, manage customer orders, and track production with industry-specific CRM tools.",
-  },
-  {
-    name: "Hospitality (Hotels, Restaurants, Travel)",
-    icon: MoreHorizontal,
     link: "/demo",
     description:
-      "Online booking & reservation reminders, Feedback & review automation, Loyalty & referral programs",
+      "Manage citizen services, feedback, and communication records.",
   },
   {
-    name: "NGOs & Nonprofits",
-    icon: MoreHorizontal,
+    name: "Telecommunication Providers",
+    icon: Radio,
     link: "/demo",
     description:
-      "Donation campaign automation, Donor engagement reminders, Transparent reports for accountability",
+      "Automate service updates, renewal alerts, and customer outreach.",
   },
   {
-    name: "Events & Entertainment",
-    icon: MoreHorizontal,
+    name: "Recruitment & Staffing Firms",
+    icon: Users2,
     link: "/demo",
     description:
-      "Online registration & e-ticketing, Auto event reminders to attendees, Post-event surveys & engagement campaigns",
+      "Manage job openings, candidate pipelines, and employer relationships.",
   },
 ]
 
@@ -149,6 +235,10 @@ export function IndustriesPage() {
       {/* Industries Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-amber-400/20">
         <div className="max-w-6xl mx-auto">
+          <h1 className="text-5xl sm:text-6xl font-bold text-white mb-4">Who We Help</h1>
+          <p className="text-lg text-gray-300 max-w-6xl mx-auto mb-8">
+            ZeaCRM is flexible and scalable, supporting a wide range of industries beyond traditional sectors:
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((industry, index) => {
               const Icon = industry.icon
@@ -162,13 +252,53 @@ export function IndustriesPage() {
                     <h3 className="text-2xl font-bold text-white">{industry.name}</h3>
                   </div>
                   <p className="text-gray-300 leading-relaxed">{industry.description}</p>
-                  <Button className="mt-6 bg-amber-400 text-black hover:bg-amber-300"><a href={industry.link}>Learn More</a></Button>
+                  <Button className="mt-6 bg-amber-400 text-black hover:bg-amber-300"><a href={industry.link}>Book a Demo</a></Button>
                 </div>
               )
             })}
           </div>
         </div>
       </section>
+
+      
+
+
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="animate-fade-in">
+          <h2 className="text-4xl font-bold text-foreground mb-6 text-balance">All-in-One Platform for Every Business Need</h2>
+           <p className="text-lg text-muted-foreground mb-6">
+            ZeaCRM’s flexible architecture adapts to your business model whether you specialize in B2B, B2C, or hybrid. With powerful AI automation, real-time dashboards, and seamless integrations, it helps teams stay connected and productive across functions.
+          </p>
+           <p className="text-lg text-muted-foreground mb-6">
+            You can customize workflows, automate follow-ups, and gain insights tailored to your industry without extra complexity. ZeaCRM grows with you, supporting your expansion into new markets and helping your team stay focused on what matters most: results.
+          </p>
+          {/* <ul className="space-y-4">
+            {["Track and update deal stages in real time", "Get AI recommendations on high-value leads", "Automate stage-based tasks and follow-ups", "Forecast revenue and conversion trends instantly"].map(
+              (item, i) => (
+                <li key={i} className="flex items-center gap-3 text-foreground">
+                <span className="text-primary text-xl">✓</span>
+                {item}
+                </li>
+              ),
+            )}
+          </ul> */}
+          </div>
+          <div className="bg-gradient-to-br p-8 h-96 flex items-center justify-center animate-scale-in">
+
+            <div className="text-center rounded-50 w-full h-full flex flex-col scale-110 items-center justify-center">
+              <img src="/img5.png" alt="A group of people working happily" />
+              {/* <Image>
+                  src="/images/pipeline.png"
+                  alt="Pipeline Visualization"
+                  </Image>
+                  <p className="text-muted-foreground mt-4">Pipeline Visualization</p> */}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
       {/* Why ZeaCRM Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-amber-400/20">
@@ -196,9 +326,9 @@ export function IndustriesPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">Your industry is evolving—your CRM should too.</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Let’s Simplify Your Business Management</h2>
           <p className="text-lg text-gray-300 mb-8">
-            See how ZeaCRM can deliver care with efficiency, accuracy, and trust for your business.
+            See how ZeaCRM can adapt to your industry and empower your team with smarter automation and insights.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-6 text-lg"><a href="/demo">Book a Demo</a></Button>

@@ -17,17 +17,20 @@ export function FeaturesMobileSection() {
           </div>
 
           <div className="order-1 md:order-2">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-foreground">Stay Connected, Wherever Business Takes You</h2>
-            <p className="text-lg opacity-90 mb-8 text-foreground">Your sales never sleep and neither does ZeaCRM. Manage your customers, monitor performance, and collaborate with your team from any device.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-foreground">
+              Access ZeaCRM Anywhere, Anytime
+            </h2>
+            <p className="text-lg opacity-90 mb-8 text-foreground">
+              Manage your business on the go with our fully responsive mobile app and cloud-based platform.
+            </p>
 
             <div className="space-y-4 text-foreground">
               {[
-                "100% cloud-based platform for secure remote access",
-                "Works on desktop, tablet, and mobile",
-                "Real-time notifications and updates",
-                "Offline mode for essential functions",
-                "Data auto-sync across all devices",
-                "Role-based permissions for team control",
+                "Native iOS & Android apps with offline mode",
+                "Real-time sync across all devices",
+                "Push notifications for important updates",
+                "Secure cloud storage with automatic backups",
+                "Works seamlessly on tablets and desktops",
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3 text-foreground">
                   <Smartphone className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
