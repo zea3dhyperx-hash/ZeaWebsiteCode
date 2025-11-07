@@ -13,13 +13,6 @@ export const metadata = {
 export default function IndustriesPageRoute() {
   return (
     <>
-      {/* <Head>
-        <title>Other Industries | Zea CRM</title>
-        <meta
-          name="description"
-          content="Boost productivity with Zea CRM — the all-in-one automation platform for every industry. From real estate and finance to education, healthcare, and retail, Zea CRM helps streamline workflows, manage leads, and scale operations effortlessly."
-        />
-      </Head> */}
       <Header />
       <IndustriesPage />
       <Footer />

@@ -105,24 +105,21 @@ export function IndustriesPage() {
       {/* Hero Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-amber-400/20">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-white mb-4">ZeaCRM for Every Industry</h1>
-          <p className="text-xl text-amber-400 mb-6">AI-Powered CRM Solutions Tailored to Your Workflow</p>
+          <h1 className="text-5xl sm:text-6xl font-bold text-white mb-4">Other Industries</h1>
+          <p className="text-xl text-amber-400 mb-6">AI-Powered CRM Solutions for Every Business Sector</p>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
-            From healthcare and real estate to retail and finance, ZeaCRM adapts to your unique challenges with
-            automation first solutions. Discover how we help businesses streamline operations, enhance customer
-            relationships, and drive growth.
+            Smarter Relationship Management Across Every Industry
           </p>
 
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto mb-8">
+          {/* <div className="max-w-2xl mx-auto mb-8">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              
             </div>
-          </div>
+          </div> */}
 
           {/* Industry Filter Tabs */}
-          <div className="flex flex-wrap gap-3 justify-center">
+          {/* <div className="flex flex-wrap gap-3 justify-center">
             {industries.map((industry) => (
               <button
                 key={industry.name}
@@ -136,7 +133,13 @@ export function IndustriesPage() {
                 {industry.name}
               </button>
             ))}
-          </div>
+          </div> */}
+          <p className="text-lg text-gray-300 max-w-6xl mx-auto mb-8">
+            Every business, no matter the sector, depends on strong relationships and efficient communication. ZeaCRM brings automation, intelligence, and organization to industries that thrive on consistency, coordination, and customer satisfaction.
+          </p>
+          <p className="text-lg text-gray-300 max-w-6xl mx-auto mb-8">
+            From logistics to travel, entertainment to non-profits, ZeaCRM adapts to your unique workflows. The platform helps you automate repetitive tasks, track every interaction, and turn data into actionable insights. This is ensuring smarter decisions and faster growth, no matter what business you're in.
+          </p>
         </div>
       </section>
 
@@ -211,3 +214,5 @@ export function IndustriesPage() {
     </main>
   )
 }
+
+

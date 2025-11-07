@@ -1,7 +1,7 @@
 export function InstitutionsSection() {
   const institutions = [
     {
-      title: "Schools &amp; Colleges",
+      title: "Schools & Colleges",
       icon: "🎓",
     },
     {

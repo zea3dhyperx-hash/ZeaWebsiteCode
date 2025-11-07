@@ -3,7 +3,7 @@ export function EducationNav() {
     { label: "Video", href: "#video" },
     { label: "UseCases", href: "#usecases" },
     { label: "Benefits", href: "#benefits" },
-    
+    { label: "Solution", href: "#solutions" },
   ]
 
   return (

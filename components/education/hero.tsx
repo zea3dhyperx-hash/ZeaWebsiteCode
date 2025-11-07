@@ -29,7 +29,7 @@ export function EducationHero() {
           <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-4 rounded-lg transition-colors shadow-lg">
             Request Demo
           </button>
-          <button className="border-2 border-amber-500 hover:bg-amber-500/10 text-white font-bold px-8 py-4 rounded-lg transition-colors">
+          <button className="bg-transparent border-2 border-amber-500 hover:bg-amber-500 text-amber-500 hover:text-white font-bold px-8 py-4 rounded-lg transition-all shadow-lg">
             Learn More
           </button>
         </div>

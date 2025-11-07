@@ -107,7 +107,7 @@ export function Header() {
                   Professional Services
                 </Link>
                 <Link
-                  href="/allIndustries/education"
+                  href="/education"
                   // href="/allIndustries/education"
                   // href="/Industries2/education/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
@@ -248,7 +248,7 @@ export function Header() {
                       <Link href="/professional" className="text-foreground hover:text-primary transition-colors">
                         Professional Services
                       </Link>
-                      <Link href="/allIndustries/education" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/education" className="text-foreground hover:text-primary transition-colors">
                         Education
                       </Link>
                       <Link href="/finance" className="text-foreground hover:text-primary transition-colors">
