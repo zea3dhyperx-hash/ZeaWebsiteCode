@@ -92,14 +92,15 @@ export function Header() {
                   Real Estate
                 </Link>
                 <Link
-                  href="/allIndustries/retail"
+                  href="/retail"
+                  // href="/allIndustries/retail"
                   // href="/Industries2/retail/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Retail & E-commerce
                 </Link>
                 <Link
-                  href="/allIndustries/professional"
+                  href="/professional"
                   // href="/Industries2/professional/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
@@ -107,6 +108,7 @@ export function Header() {
                 </Link>
                 <Link
                   href="/allIndustries/education"
+                  // href="/allIndustries/education"
                   // href="/Industries2/education/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
@@ -120,7 +122,8 @@ export function Header() {
                   Finance & Insurance
                 </Link>
                 <Link
-                  href="/allIndustries/automotive"
+                  href="/automotive"
+                  // href="/allIndustries/automotive"
                   // href="/Industries2/automotive/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
@@ -232,16 +235,16 @@ export function Header() {
                   </button>
                   {isIndustriesOpen && (
                     <div className="flex flex-col gap-2 mt-2 pl-4 border-l border-border">
-                      <Link href="/allIndustries/healthcare" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/healthcare" className="text-foreground hover:text-primary transition-colors">
                         Healthcare
                       </Link>
-                      <Link href="/allIndustries/realestate" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/realestate" className="text-foreground hover:text-primary transition-colors">
                         Real Estate
                       </Link>
-                      <Link href="/allIndustries/retail" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/retail" className="text-foreground hover:text-primary transition-colors">
                         Retail & E-commerce
                       </Link>
-                      <Link href="/allIndustries/professional" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/professional" className="text-foreground hover:text-primary transition-colors">
                         Professional Services
                       </Link>
                       <Link href="/allIndustries/education" className="text-foreground hover:text-primary transition-colors">
@@ -250,7 +253,7 @@ export function Header() {
                       <Link href="/allIndustries/finance" className="text-foreground hover:text-primary transition-colors">
                         Finance & Banking
                       </Link>
-                      <Link href="/allIndustries/automotive" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/automotive" className="text-foreground hover:text-primary transition-colors">
                         Automotive
                       </Link>
                       <Link href="/allIndustries/travel" className="text-foreground hover:text-primary transition-colors">
