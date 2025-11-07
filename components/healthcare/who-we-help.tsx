@@ -9,59 +9,59 @@ const services: ServiceCard[] = [
   {
     icon: "🏥",
     title: "Hospitals",
-    description: "Streamline patient management, improve care coordination",
+    description: "Coordinate departments, manage patient journeys, and streamline follow-ups",
   },
   {
     icon: "🏪",
     title: "Clinics",
-    description: "Manage patient histories, and communications",
+    description: "Automate appointment reminders, patient histories, and communication.",
   },
   {
     icon: "🧪",
     title: "Medical Laboratories",
-    description: "Send lab results automatically and streamline operations",
+    description: "Send test results automatically and manage client feedback.",
   },
   {
     icon: "💊",
     title: "Pharmacies & Pharma Suppliers",
-    description: "Track prescriptions, manage orders, improve customer relations",
+    description: "Track prescriptions, refill reminders, and customer interactions.",
   },
   // Row 2: 4 cards
   {
     icon: "🛏️",
     title: "Medical Equipment Suppliers",
-    description: "Manage leads, track installations, and inventory updates",
+    description: "Manage leads, inventory updates, and client orders.",
   },
   {
     icon: "💆",
     title: "Wellness Centers & Therapy Clinics",
-    description: "Personalize client plans and improve retention",
+    description: "Personalize client plans and maintain session logs.",
   },
   {
     icon: "🚑",
     title: "Ambulance Services",
-    description: "Manage dispatches, track fleet, and patient tracking",
+    description: "Every Second Counts—Automation Saves Lives.",
   },
   {
     icon: "♻️",
     title: "Waste Management in Healthcare",
-    description: "Track compliance and improve operational efficiency",
+    description: "Smart, Compliant Biomedical Waste Tracking.",
   },
   // Row 3: 3 cards
   {
     icon: "👥",
     title: "Staff Onboarding & Training",
-    description: "Manage recruitment processes and training schedules",
+    description: "Automation for Hospital HR & Compliance.",
   },
   {
     icon: "📋",
     title: "Medical Records Maintenance",
-    description: "Organize and maintain patient records efficiently",
+    description: "Faster diagnosis, zero lost files, and smooth compliance checks.",
   },
   {
     icon: "📱",
     title: "Digital Marketing for Healthcare",
-    description: "Reach patients and build your healthcare brand",
+    description: "Higher patient bookings, stronger brand recall, and growth with zero manual effort.",
   },
 ]
 

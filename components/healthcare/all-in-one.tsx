@@ -9,13 +9,10 @@ export function AllInOne() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-slate-300 text-lg leading-relaxed">
-              ZeoCRM connects every team, department, and stakeholder using a single integrated platform. From patient
-              management to billing to staff coordination, all your healthcare operations live in one place.
+              ZeaCRM connects every team, department, and workflow under one powerful AI-driven system. It ensures seamless collaboration across medical, administrative, and support units. All this so that nothing slips through the cracks.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              From automated scheduling and smart notifications to integrated patient portals, ZeoCRM delivers
-              consistency in care quality every day. Better data means better decisions, smarter personalized care, and
-              improved patient engagement. All the data you need is just a click away.
+              From automated scheduling and smart notifications to AI insights that predict patient needs, ZeaCRM gives healthcare providers the clarity and control they need to deliver exceptional service every day. The result? Higher efficiency, happier patients, and smoother operations.
             </p>
           </div>
 

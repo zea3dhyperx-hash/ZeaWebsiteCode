@@ -9,13 +9,13 @@ export function FeaturesScaleSection() {
             Built to Scale with Your Business
           </h2>
           <p className="text-lg opacity-90 max-w-3xl mx-auto text-background">
-            ZeaCRM evolves with you. Whether youre closing your first deal or scaling into new markets, we are with you every step of the way.
+            ZeaCRM evolves with you. Whether you're closing your first deal or scaling into new markets, we are with you every step of the way.
           </p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           {[
-            { label: "Expand your database without extra cost.", value: "Unlimited Contacts & Pipelines ", icon: Users },
+            { label: "Expand your database without extra cost.", value: "Unlimited Contacts ", icon: Users },
             { label: "Add departments and manage permissions easily.", value: "Multi-Team Access ", icon: Workflow },
             { label: "Tailor data tracking to your unique business needs.", value: "Advanced Custom Fields ", icon: Globe },
             { label: "Handle thousands of leads without slowdown.", value: "High-Speed Performance ", icon: Cpu },

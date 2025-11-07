@@ -8,7 +8,7 @@ const solutions: Solution[] = [
   {
     icon: "🏥",
     title: "Hospitals",
-    description: "Streamline OPD flows, higher patient satisfaction, zero delays.",
+    description: "Smoother OP/IP flow, higher patient satisfaction, and better care continuity.",
   },
   {
     icon: "⚠️",
@@ -18,32 +18,32 @@ const solutions: Solution[] = [
   {
     icon: "🧬",
     title: "Medical Laboratories",
-    description: "Faster sample processing, immediate result delivery, zero delays.",
+    description: "Faster diagnosis, improved patient loyalty, and efficient lab management.",
   },
   {
     icon: "💊",
     title: "Pharmacies",
-    description: "Higher patient satisfaction, agile supply chain, and long-term loyalty.",
+    description: "Higher patient adherence, repeat sales, and long-term loyalty.",
   },
   {
     icon: "🏥",
     title: "Medical Equipment Suppliers",
-    description: "Transparent supply chain, faster equipment delivery, and higher transparency.",
+    description: "Transparent supply chain, faster payments, and repeat contracts.",
   },
   {
     icon: "🧘",
     title: "Wellness Centers & Clinics",
-    description: "Personalized wellness journey, smarter engagement, higher retention",
+    description: "Consistent patient engagement, higher retention, and transparent billing.",
   },
   {
     icon: "🚑",
     title: "Ambulance Services",
-    description: "Faster emergency response, real-time dispatch, and safe tracking.",
+    description: "Faster emergency response, smoother billing, and better recovery rates.",
   },
   {
     icon: "♻️",
     title: "Waste Management in Healthcare",
-    description: "Transparent disposal record keeping and compliance.",
+    description: "ransparent disposal, no disputes, and trust in waste contractors.",
   },
 ]
 

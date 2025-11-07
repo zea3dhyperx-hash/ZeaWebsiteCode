@@ -17,15 +17,10 @@ export function RelationshipManagement() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-slate-300 text-lg leading-relaxed">
-                In healthcare, every interaction counts. Right from the first appointment looking to long-term patient
-                engagement, ZeoCRM helps hospitals, clinics, labs, and pharmacies nurture relationships with precision,
-                empathy, and speed.
+                In healthcare, every interaction counts. Right from the first appointment booking to long-term patient engagement. ZeaCRM helps hospitals, clinics, labs, and wellness centeras manage patient relationships with precision, empathy, and speed.
               </p>
               <p className="text-slate-300 text-lg leading-relaxed">
-                Built with AI automation, ZeoCRM simplifies operations that often overwhelm healthcare teams. From
-                scheduling and reminders to patient communication and record tracking, every process becomes smarter.
-                Healthcare teams no longer need to choose between efficiency and care—our staff can focus on care, not
-                coordination.
+                Built with AI automation, ZeaCRM simplifies operations that often overwhelm healthcare teams. From scheduling and reminders to patient communication and record tracking, every process becomes smoother, faster, and more reliable. This is so your staff can focus on care, not coordination.
               </p>
             </div>
 

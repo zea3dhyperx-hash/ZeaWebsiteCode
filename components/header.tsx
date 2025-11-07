@@ -289,13 +289,8 @@ export function Header() {
                 </div>
                 <Button
                   variant="outline"
-                  // onClick={() => {
-                  //   setIsSignInOpen(true)
-                  //   setIsOpen(false)
-                  // }}
-                  className="w-full bg-transparent hover:bg-primary/10"
+                  className="w-full bg-transparent hover:bg-primary"
                 >
-                  {/* <a href="/sign-in">Log In</a> */}
                   <Link href="/sign-in" >
                     Log In
                   </Link>
@@ -305,7 +300,7 @@ export function Header() {
                   //   setIsGetStartedOpen(true)
                   //   setIsOpen(false)
                   // }}
-                  className="w-full bg-primary hover:bg-primary/60 text-black font-semibold"
+                  className="w-full bg-primary text-black font-semibold"
                 >
                   <a href="/get-started">Get Started</a>
                 </Button>
