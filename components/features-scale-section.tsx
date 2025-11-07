@@ -9,16 +9,16 @@ export function FeaturesScaleSection() {
             Built to Scale with Your Business
           </h2>
           <p className="text-lg opacity-90 max-w-3xl mx-auto text-background">
-            From startups to enterprises, ZeaCRM grows with you
+            ZeaCRM evolves with you. Whether youre closing your first deal or scaling into new markets, we are with you every step of the way.
           </p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           {[
-            { label: "Contacts", value: "Unlimited", icon: Users },
-            { label: "Automation Rules", value: "Unlimited", icon: Workflow },
-            { label: "API Calls/Month", value: "10M+", icon: Globe },
-            { label: "Storage", value: "Unlimited", icon: Cpu },
+            { label: "Expand your database without extra cost.", value: "Unlimited Contacts & Pipelines ", icon: Users },
+            { label: "Add departments and manage permissions easily.", value: "Multi-Team Access ", icon: Workflow },
+            { label: "Tailor data tracking to your unique business needs.", value: "Advanced Custom Fields ", icon: Globe },
+            { label: "Handle thousands of leads without slowdown.", value: "High-Speed Performance ", icon: Cpu },
           ].map((item, idx) => {
             const Icon = item.icon
             return (
@@ -37,3 +37,4 @@ export function FeaturesScaleSection() {
     </div>
   )
 }
+

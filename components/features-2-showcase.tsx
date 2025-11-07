@@ -17,7 +17,7 @@ export function Features2Showcase() {
               opportunities to accelerate closure.
             </p>
             <ul className="space-y-4">
-              {["Drag-and-drop pipeline", "Predictive analytics", "Deal scoring", "Automated follow-ups"].map(
+              {["Track and update deal stages in real time", "Get AI recommendations on high-value leads", "Automate stage-based tasks and follow-ups", "Forecast revenue and conversion trends instantly"].map(
                 (item, i) => (
                   <li key={i} className="flex items-center gap-3 text-foreground">
                     <span className="text-primary text-xl">✓</span>
@@ -43,3 +43,4 @@ export function Features2Showcase() {
     </section>
   )
 }
+

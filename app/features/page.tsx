@@ -8,7 +8,6 @@ import { FeaturesResultsSection } from "@/components/features-results-section"
 import { FeaturesAutomationSection } from "@/components/features-automation-section"
 import { FeaturesMobileSection } from "@/components/features-mobile-section"
 import { FeaturesScaleSection } from "@/components/features-scale-section"
-import { FeaturesIntegrationsSection } from "@/components/features-integrations-section"
 import { Features2Grid } from "@/components/features-2-grid"
 import { Features2Hero } from "@/components/features-2-hero"
 import { Features2CTA } from "@/components/features-2-cta"
@@ -41,7 +40,6 @@ export default function FeaturesPage() {
       <Features2Integration />
       <Features2CTA />
       <FeaturesScaleSection />
-      <FeaturesIntegrationsSection />
       <Footer />
       <ChatWidget />
     </main>

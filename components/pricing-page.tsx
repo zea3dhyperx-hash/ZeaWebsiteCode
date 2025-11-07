@@ -63,19 +63,26 @@ export function PricingPage() {
     },
   ]
 
-  const faqItems = [
+    const faqItems = [
     {
       question: "Can I try ZeaCRM for free before choosing a plan?",
-      answer: "Yes! All plans come with a 14-day free trial. No credit card required to get started.",
+      answer: "Yes, you can explore ZeaCRM with a free trial with no credit card required. Test the features, automation tools, and dashboard to see how it fits your workflow before making a commitment.",
     },
     {
       question: "Can I upgrade or downgrade anytime?",
-      answer: "Absolutely. You can upgrade or downgrade your plan at any time. Changes take effect immediately.",
+      answer: "Yes, ZeaCRM is built with flexibility in mind. You can upgrade, downgrade, or cancel anytime directly from your dashboard without losing your data or settings.",
     },
     {
       question: "Is my data safe?",
-      answer:
-        "Your data security is our top priority. We use enterprise-grade encryption and comply with HIPAA and other industry standards.",
+      answer: "Your security is our top priority. ZeaCRM uses advanced encryption, secure cloud hosting, and multi-layer authentication to protect your business and customer data at every step. We comply with global privacy standards to ensure complete peace of mind.",
+    },
+    {
+      question: "Does ZeaCRM offer support or onboarding help?",
+      answer: "Yes, our onboarding team helps you get started, migrate data, and set up automations at no extra cost. You can reach out to our team for help 24/7 before, during, and after your onboarding process.",
+    },
+    {
+      question: "Can multiple users access the same account?",
+      answer: "Yes, ZeaCRM supports multiple team members. Your entire team can collaborate across sales, marketing, and operations seamlessly at the same time.",
     },
   ]
 
@@ -85,21 +92,18 @@ export function PricingPage() {
       <section className="py-16 md:py-24 px-4 md:px-8 pt-24 pb-0 animate-slide-up">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Pricing</h1>
-          <p className="text-xl text-amber-400 mb-8 animate-slide-up">Simple, Transparent, and Scalable Plans</p>
+          <p className="text-xl text-amber-400 mb-8 animate-slide-up">One Powerful Platform. Simple Pricing</p>
           <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
-              ZeaCRM offers flexible pricing designed to fit businesses of all sizes. Whether you're just starting out or
-              scaling across industries, we have a plan that matches your growth journey.
+              No hidden costs, no complex tiers. Just transparent plans that give you everything you need to grow, automate, and connect with your customers.
           </p>
           {/* <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Pricing</h1> */}
           {/* <p className="text-gray-400 text-lg">
-            ZeaCRM offers flexible pricing designed to fit businesses of all sizes. Whether you're just starting out or
-            scaling across industries, we have a plan that matches your growth journey.
+            No hidden costs, no complex tiers. Just transparent plans that give you everything you need to grow, automate, and connect with your customers.
           </p> */}
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="py-0 md:py-0 px-4 md:px-8">
+      {/* Pricing Cards */}\n<section className="py-0 md:py-0 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {pricingPlans.map((plan, index) => (
@@ -225,3 +229,7 @@ export function PricingPage() {
     </div>
   )
 }
+
+
+
+

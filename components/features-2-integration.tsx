@@ -1,12 +1,12 @@
 export function Features2Integration() {
-  const integrations = ["Slack", "Gmail", "Outlook", "Salesforce", "HubSpot", "Zapier", "Stripe", "Quickbooks"]
+  const integrations = ["Slack","Microsoft Outlook","Gmail","WhatsApp Business","Google Calendar","Zapier","Zoom","HubSpot"]
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-primary mb-4 text-balance">Integrates with Your Favorite Tools</h2>
+        <h2 className="text-4xl font-bold text-primary mb-4 text-balance">ZeaCRM Plays Well with Everything You Use</h2>
         <p className="text-lg text-foreground mb-12 max-w-2xl mx-auto">
-          Connect zeaCRM with the tools you already use to create a seamless workflow
+          Connect your workflows seamlessly. No switching tabs or juggling logins. ZeaCRM syncs with leading business apps for effortless collaboration.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -24,3 +24,4 @@ export function Features2Integration() {
     </section>
   )
 }
+
