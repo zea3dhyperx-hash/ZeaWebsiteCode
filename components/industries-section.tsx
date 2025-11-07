@@ -3,14 +3,14 @@
 import { Building2, Home, ShoppingCart, Briefcase, BookOpen, Heart, Zap, MoreHorizontal } from "lucide-react"
 
 const industries = [
-  { name: "Healthcare", icon: Heart },
-  { name: "Real Estate", icon: Home },
-  { name: "Retail & E-Commerce", icon: ShoppingCart },
-  { name: "Professional Services", icon: Briefcase },
-  { name: "Education & Training", icon: BookOpen },
-  { name: "Finance & Insurance", icon: Zap },
-  { name: "Automotive & Manufacturing", icon: Building2 },
-  { name: "Other Industries", icon: MoreHorizontal },
+  { name: "Healthcare", icon: Heart, href: "/healthcare" },
+  { name: "Real Estate", icon: Home, href: "/realestate" },
+  { name: "Retail & E-Commerce", icon: ShoppingCart, href: "/retail" },
+  { name: "Professional Services", icon: Briefcase, href: "/professional" },
+  { name: "Education & Training", icon: BookOpen, href: "/education" },
+  { name: "Finance & Insurance", icon: Zap, href: "/finance" },
+  { name: "Automotive & Manufacturing", icon: Building2, href: "/automotive" },
+  { name: "Other Industries", icon: MoreHorizontal, href: "/industries" },
 ]
 
 export function IndustriesSection() {
@@ -31,13 +31,14 @@ export function IndustriesSection() {
           {industries.map((industry, index) => {
             const Icon = industry.icon
             return (
-              <div
+              <a
                 key={index}
-                className="bg-black rounded-lg p-6 flex items-center gap-4 hover:shadow-lg transition-shadow cursor-pointer group"
+                href={industry.href}
+                className="bg-black rounded-lg p-6 flex items-center gap-4 hover:shadow-lg transition-shadow group"
               >
                 <Icon className="w-8 h-8 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="text-white font-semibold text-lg">{industry.name}</span>
-              </div>
+              </a>
             )
           })}
         </div>

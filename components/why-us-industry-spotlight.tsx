@@ -56,7 +56,7 @@ export function WhyUsIndustrySpotlight() {
         </Card>
       </div>
 
-      <div className="text-center">\n        <p className="text-primary font-semibold">ZeaCRM powers better patient care, higher sales, and clear reporting. The best part is this is all through AI-driven automation.</p>\n      </div>
+      <div className="text-center">        <p className="text-primary font-semibold">ZeaCRM powers better patient care, higher sales, and clear reporting. The best part is this is all through AI-driven automation.</p>      </div>
     </div>
   )
 }

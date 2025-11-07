@@ -30,6 +30,16 @@ export function Features2Grid() {
       title: "Mobile CRM ",
       description: "Access your data, deals, and updates on the go anytime, anywhere.",
     },
+    {
+      icon: "👥",
+      title: "Lead Management",
+      description: "Your business can easily capture and qualify leads automatically from forms, chats, or calls.",
+    },
+    {
+      icon: "🔗",
+      title: "Integration Hub",
+      description: "You can connect with Gmail, WhatsApp, Slack, or your favorite business apps in one place.",
+    },
   ]
 
   return (

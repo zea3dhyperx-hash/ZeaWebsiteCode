@@ -2,30 +2,27 @@ export function StatsSection() {
   const stats = [
     {
       number: "75%",
-      label: "Reduction in Wait Times",
+      label: "Reduction in Manual Work",
     },
     {
       number: "90%",
-      label: "Patient Satisfaction",
+      label: "Customer Satisfaction Rate",
     },
     {
-      number: "5,000+",
-      label: "Healthcare Providers",
+      number: "1000+",
+      label: "Businesses Growing with ZeaCRM",
     },
     {
-      number: "HIPAA",
-      label: "Compliant & Secure",
+      number: "99.9%",
+      label: "Data Security & Uptime Reliability",
     },
   ]
 
   return (
-    <section className="relative bg-gradient-to-b from-slate-950 to-slate-900 py-20">
+    <section className="relative bg-gradient-to-b from-slate-950 to-slate-900 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-            ZeaCRM
-          </h2>
           <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
             What Is ZeaCRM?
           </h2>

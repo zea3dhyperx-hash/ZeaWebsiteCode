@@ -72,7 +72,7 @@ export function IntegrationsSection() {
           {integrations.map((integration, index) => (
             <div
               key={index}
-              className="bg-primary text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors cursor-pointer"
+              className="bg-primary text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary/60 transition-colors cursor-pointer"
             >
               {integration}
             </div>

@@ -14,7 +14,6 @@ const pricingPlans = [
       "2 Workflows",
       "Basic Reporting",
       "WhatsApp Support",
-      "WhatsApp Integration",
     ],
     buttonText: "Start Free Trial",
     buttonStyle: "bg-primary text-black hover:bg-primary",

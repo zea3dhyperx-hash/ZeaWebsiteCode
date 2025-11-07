@@ -20,7 +20,7 @@ export function PricingPage() {
         "2 Workflows",
         "Basic Reporting",
         "WhatsApp Support",
-        "WhatsApp Integration",
+        "",
       ],
       buttonText: "Start Free Trial",
       buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
@@ -103,7 +103,7 @@ export function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Cards */}\n<section className="py-0 md:py-0 px-4 md:px-8">
+      {/* Pricing Cards */}<section className="py-0 md:py-0 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {pricingPlans.map((plan, index) => (

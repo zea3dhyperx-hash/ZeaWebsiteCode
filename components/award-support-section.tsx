@@ -18,10 +18,9 @@ export function AwardSupportSection() {
 
           {/* Right Side - Content */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">Award-Winning Support</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">Dedicated Support You Can Rely On</h2>
             <p className="text-black text-sm mb-6">
-              Experience world-class customer support that goes beyond expectations. Our dedicated team is here to
-              ensure your success.
+              We don’t just give you a CRM — we back it with real people who care about your success.
             </p>
 
             {/* Support Features */}
@@ -29,9 +28,9 @@ export function AwardSupportSection() {
               <div className="flex gap-3">
                 <CheckCircle2 className="w-6 h-6 text-black flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-black mb-1">24/7 Dedicated Support Team</h3>
+                  <h3 className="font-semibold text-black mb-1">24/7 Expert Assistance</h3>
                   <p className="text-sm text-black">
-                    Round-the-clock assistance from our expert support specialists ready to help you succeed.
+                    Get round-the-clock help from our dedicated support team whenever you need it.
                   </p>
                 </div>
               </div>
@@ -39,9 +38,9 @@ export function AwardSupportSection() {
               <div className="flex gap-3">
                 <CheckCircle2 className="w-6 h-6 text-black flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-black mb-1">Seamless Integration Support</h3>
+                  <h3 className="font-semibold text-black mb-1">Smooth Onboarding & Integration</h3>
                   <p className="text-sm text-black">
-                    Expert guidance to integrate ZeaCRM with your existing tools and workflows effortlessly.
+                    Easily connect ZeaCRM with your favorite tools and workflows — guided by our experts.
                   </p>
                 </div>
               </div>
@@ -49,9 +48,9 @@ export function AwardSupportSection() {
               <div className="flex gap-3">
                 <CheckCircle2 className="w-6 h-6 text-black flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-black mb-1">Priority Response Times</h3>
+                  <h3 className="font-semibold text-black mb-1">Fast Priority Responses</h3>
                   <p className="text-sm text-black">
-                    Get quick resolutions with our priority support queue ensuring minimal downtime.
+                    Receive quick resolutions and proactive updates so your business never slows down.
                   </p>
                 </div>
               </div>

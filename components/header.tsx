@@ -131,7 +131,7 @@ export function Header() {
                   Automotive & Manufacturing
                 </Link>
                 <Link
-                  href="/industries#finance"
+                  href="/industries"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
                   Other Industries
@@ -249,19 +249,16 @@ export function Header() {
                         Professional Services
                       </Link>
                       <Link href="/education" className="text-foreground hover:text-primary transition-colors">
-                        Education
+                        Education & Training
                       </Link>
                       <Link href="/finance" className="text-foreground hover:text-primary transition-colors">
-                        Finance & Banking
+                        Finance & Insurance
                       </Link>
                       <Link href="/automotive" className="text-foreground hover:text-primary transition-colors">
-                        Automotive
+                        Automotive & Manufacturing
                       </Link>
-                      <Link href="/allIndustries/travel" className="text-foreground hover:text-primary transition-colors">
-                        Travel & Hospitality
-                      </Link>
-                      <Link href="/allIndustries/realestate" className="text-foreground hover:text-primary transition-colors">
-                        Real Estate
+                      <Link href="/industries" className="text-foreground hover:text-primary transition-colors">
+                        Other Industries
                       </Link>
                     </div>
                   )}
@@ -308,7 +305,7 @@ export function Header() {
                   //   setIsGetStartedOpen(true)
                   //   setIsOpen(false)
                   // }}
-                  className="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold"
+                  className="w-full bg-primary hover:bg-primary/60 text-black font-semibold"
                 >
                   <a href="/get-started">Get Started</a>
                 </Button>

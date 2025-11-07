@@ -21,12 +21,11 @@ export function CTATransformSection() {
           {/* Left Content */}
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-              Ready to Transform Your Healthcare Practice?
+              Ready to Transform How You Manage Sales and Customers?
             </h2>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-              Join 5,000+ healthcare providers who have revolutionized their practice with ZeaCRM's AI-powered
-              solutions. Streamline operations, improve patient satisfaction, and grow your business.
+              Join 5,000+ growing businesses already using ZeaCRM to automate tasks, organize leads, and close deals faster. Streamline your workflow, boost productivity, and grow smarter with AI-powered automation.
             </p>
 
             {/* Buttons */}

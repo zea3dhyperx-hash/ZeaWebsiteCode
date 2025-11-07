@@ -7,31 +7,31 @@ export function FeatureCardsSection() {
   const features = [
     {
       title: "Capture: Smart Lead Collection",
-      description: "Turn every click into a potential customer.",
+      description: "Bring leads from every channel into one place.",
       items: [
-        "Auto-import leads from web & social.",
-        "Engage instantly with smart forms.",
-        "Track every source in one view.",
+        "Auto-import from website, social, and campaigns",
+        "Quick, conversion-ready forms and chat",
+        "Track every source (UTM & channel) in one view",
       ],
       image: "/images/capture.png",
     },
     {
       title: "Nurture: Automated Relationship Building",
-      description: "Stay connected without manual effort.",
+      description: "Follow up automatically—personal and on time.",
       items: [
-        "Send timed emails & reminders.",
-        "Build trust with follow-up flows.",
-        "Personalize every interaction.",
+        "Email/SMS sequences with scheduled reminders",
+        "Smart follow-ups that keep conversations moving",
+        "Personalization at scale with dynamic fields",
       ],
       image: "/images/Nurture.png",
     },
     {
       title: "Convert: Insight-Driven Sales Acceleration",
-      description: "Close deals faster with real-time data.",
+      description: "Close deals faster with live data and AI guidance.",
       items: [
-        "View live pipeline performance.",
-        "Optimize what converts best.",
-        "Get AI tips for faster wins.",
+        "Real-time pipeline visibility across stages",
+        "Spot what converts and fix what doesn’t",
+        "Next-best-action tips to win more deals",
       ],
       image: "/images/convert.png",
     },

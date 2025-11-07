@@ -34,7 +34,7 @@ export default function Home() {
         <AIToolsSection />
         <FourStepsSection />
         <FeatureCardsSection />
-        <FeaturesSlider2 />
+        {/* <FeaturesSlider2 /> */}
         <FeaturesHubSection />
         <AwardSupportSection />
         <IntegrationsSection />

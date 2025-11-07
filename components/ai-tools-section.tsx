@@ -3,7 +3,7 @@ import AniRobot from "./ani-robot";
 
 export function AIToolsSection() {
   return (
-    <section className="relative py-20 px-4 bg-background overflow-hidden">
+    <section className="relative pt-20 px-4 bg-background overflow-hidden">
       {/* Robot illustration area */}
       <div className="flex justify-center mb-16">
         <AniRobot />
@@ -55,10 +55,9 @@ export function AIToolsSection() {
           <div className="flex items-start gap-4">
             <div className="w-3 h-3 rounded-full bg-foreground mt-2 flex-shrink-0" />
             <div className="text-left">
-              <h3 className="text-xl font-semibold text-foreground mb-2">Do you want more customers?</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Do you want to get more leads without spending all day chasing them?</h3>
               <p className="text-muted-foreground">
-                Our AI-powered lead generation and qualification system helps you identify and convert high-value
-                prospects faster than ever before.
+                ZeaCRM finds and organizes the right prospects for you, so you can focus on closing more deals.
               </p>
             </div>
           </div>
@@ -66,10 +65,9 @@ export function AIToolsSection() {
           <div className="flex items-start gap-4">
             <div className="w-3 h-3 rounded-full bg-foreground mt-2 flex-shrink-0" />
             <div className="text-left">
-              <h3 className="text-xl font-semibold text-foreground mb-2">Do you want to keep your clients longer?</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Do you wish your customers stayed longer and happier?</h3>
               <p className="text-muted-foreground">
-                Automate customer engagement, track satisfaction metrics, and proactively address issues to maximize
-                lifetime value and retention.
+                Automated reminders and follow-ups help you stay in touch and build strong relationships that last.
               </p>
             </div>
           </div>
@@ -77,10 +75,9 @@ export function AIToolsSection() {
           <div className="flex items-start gap-4">
             <div className="w-3 h-3 rounded-full bg-foreground mt-2 flex-shrink-0" />
             <div className="text-left">
-              <h3 className="text-xl font-semibold text-foreground mb-2">Do you want to scale your business?</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Do you want to grow your business without adding extra work?</h3>
               <p className="text-muted-foreground">
-                Streamline operations with intelligent automation, reduce manual work, and empower your team to focus on
-                strategic growth initiatives.
+                Let AI handle the boring stuff — automate tasks, save time, and grow faster with less effort.
               </p>
             </div>
           </div>

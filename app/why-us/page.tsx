@@ -24,11 +24,11 @@ export default function WhyUsPage() {
       <div className="space-y-0">
         <WhyUs2Hero />
         <WhyChooseUsHero />
-        <FeaturesComparisonTable />
+        {/* <FeaturesComparisonTable /> */}
         <WhyUsMainReasons />
         <WhyUsIndustrySpotlight />
-        <WhyUsIndustriesSection />
         <WhyUsComparisonSection />
+        <WhyUsIndustriesSection />
         <WhyUsTestimonialsSection />
       </div>
       <Footer />
