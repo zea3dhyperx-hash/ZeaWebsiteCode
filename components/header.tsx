@@ -115,7 +115,8 @@ export function Header() {
                   Education & Training
                 </Link>
                 <Link
-                  href="/allIndustries/finance"
+                  href="/finance"
+                  // href="/allIndustries/finance"
                   // href="/Industries2/finance/index.html"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
                 >
@@ -250,7 +251,7 @@ export function Header() {
                       <Link href="/allIndustries/education" className="text-foreground hover:text-primary transition-colors">
                         Education
                       </Link>
-                      <Link href="/allIndustries/finance" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/finance" className="text-foreground hover:text-primary transition-colors">
                         Finance & Banking
                       </Link>
                       <Link href="/automotive" className="text-foreground hover:text-primary transition-colors">
