@@ -14,7 +14,7 @@ export function MobileAISection() {
           {/* Phone Mockup */}
           <div className="flex justify-center">
             <Image
-              src="/images/design-mode/Add%20a%20subheading%20%282%29.png"
+              src="/images/img1.png"
               alt="AI-powered CRM mobile app showing faster bookings, customer transparency, and more closures"
               width={600}
               height={600}
