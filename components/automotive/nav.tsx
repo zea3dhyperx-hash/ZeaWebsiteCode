@@ -21,9 +21,9 @@ export function AutomotiveNav() {
   }
 
   return (
-    <section className="sticky top-0 z-50 bg-black py-8 shadow-lg">
+    <section className="bg-black py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="flex justify-center items-center gap-12 text-xl">
+        <nav className="flex justify-center items-center gap-12">
           {navItems.map((item) => (
             <button
               key={item}
