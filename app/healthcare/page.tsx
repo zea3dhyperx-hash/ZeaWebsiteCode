@@ -12,9 +12,9 @@ import { WhoWeHelp } from "@/components/healthcare/who-we-help";
 
 
 export const metadata = {
-  title: "Zea CRM - AI-Powered CRM for the Future of Business",
+  title: " ",
   description:
-    "Manage customers, automate workflows, and grow your business with zeaCRM",
+    "",
 };
 
 export default function Healthcare() {
