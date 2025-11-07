@@ -6,9 +6,9 @@ export function WhyUsMainReasons() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Main Why Choose Section */}
       <div className="text-center space-y-4 mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">Why Choose ZeaCRM Features?</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">Powerful Features That Drive Performance</h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance">
-          Most CRMs add complexity. ZeaCRM removes it. Our automation-first design means you get:
+          ZeaCRM combines smart automation, real-time analytics, and intuitive design to help you win faster.
         </p>
       </div>
 
@@ -17,20 +17,20 @@ export function WhyUsMainReasons() {
         <Card className="p-8 border border-primary/30 bg-card/50">
           <div className="flex items-start gap-3 mb-4">
             <Zap className="w-6 h-6 text-primary flex-shrink-0" />
-            <h3 className="text-lg font-bold text-foreground">Simple setup that your team can use from day one</h3>
+            <h3 className="text-lg font-bold text-foreground">Smart Workflows</h3>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            No complex configurations. No steep learning curve. Start managing customers in minutes.
+            Automate follow-ups, reminders, and tasks to save hours every week.
           </p>
         </Card>
 
         <Card className="p-8 border border-primary/30 bg-card/50">
           <div className="flex items-start gap-3 mb-4">
             <Lightbulb className="w-6 h-6 text-primary flex-shrink-0" />
-            <h3 className="text-lg font-bold text-foreground">AI intelligence built into every feature</h3>
+            <h3 className="text-lg font-bold text-foreground">Unified Dashboard</h3>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            From lead scoring to predictive analytics, AI works behind the scenes to make you smarter.
+            Monitor leads, emails, calls, and deals in one easy view.
           </p>
         </Card>
 
@@ -38,11 +38,11 @@ export function WhyUsMainReasons() {
           <div className="flex items-start gap-3 mb-4">
             <Puzzle className="w-6 h-6 text-primary flex-shrink-0" />
             <h3 className="text-lg font-bold text-foreground">
-              Flexibility to adapt to healthcare, retail, real estate, and more
+              Insight-Driven AI
             </h3>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Whether you're a startup or enterprise, ZeaCRM scales with your business needs.
+            Get recommendations on the next best action for every customer or lead.
           </p>
         </Card>
       </div>
@@ -50,12 +50,10 @@ export function WhyUsMainReasons() {
       {/* Bottom Statement */}
       <div className="text-center mt-16">
         <p className="text-lg text-foreground">
-          <span className="text-primary font-bold">
-            ✨ With ZeaCRM, you don't just manage customers—you automate your entire business workflow.
-          </span>
-        </p>
+          All your team has to do is simplify, automate, and accelerate their growth by focusing on the tasks that matter.</p>
       </div>
     </div>
   )
 }
+
 

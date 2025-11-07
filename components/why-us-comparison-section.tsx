@@ -4,28 +4,28 @@ export function WhyUsComparisonSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">ZeaCRM vs Traditional CRMs</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">See why leading companies choose ZeaCRM</p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">See Why Leading Companies Choose ZeaCRM</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="p-8 bg-card/50 rounded-lg border border-border text-center">
             <div className="text-5xl font-bold text-primary mb-3">10x</div>
             <h3 className="font-bold text-foreground mb-2">Faster Setup</h3>
-            <p className="text-sm text-muted-foreground">Minutes instead of weeks to get started</p>
+            <p className="text-sm text-muted-foreground">Get started in minutes with our intuitive, AI-assisted dashboard</p>
           </div>
           <div className="p-8 bg-card/50 rounded-lg border border-border text-center">
             <div className="text-5xl font-bold text-primary mb-3">500+</div>
-            <h3 className="font-bold text-foreground mb-2">Integrations</h3>
-            <p className="text-sm text-muted-foreground">Connect with all your favorite tools</p>
+            <h3 className="font-bold text-foreground mb-2">Tools Integrated</h3>
+            <p className="text-sm text-muted-foreground">Connect instantly with your favorite apps</p>
           </div>
           <div className="p-8 bg-card/50 rounded-lg border border-border text-center">
             <div className="text-5xl font-bold text-primary mb-3">50%</div>
-            <h3 className="font-bold text-foreground mb-2">Cost Savings</h3>
-            <p className="text-sm text-muted-foreground">Compared to traditional enterprise CRMs</p>
+            <h3 className="font-bold text-foreground mb-2">Lower Cost</h3>
+            <p className="text-sm text-muted-foreground">All features included with built-in smart workflows</p>
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        {/* <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="border-b border-border">
@@ -60,7 +60,7 @@ export function WhyUsComparisonSection() {
                 <td className="text-center py-4 px-4 text-muted-foreground">Steep</td>
               </tr>
               <tr className="border-b border-border/50 hover:bg-card/50 transition-colors">
-                <td className="py-4 px-4 text-foreground">Integrations</td>
+                <td className="py-4 px-4 text-foreground">Tools Integrated</td>
                 <td className="text-center py-4 px-4 text-primary font-bold">500+</td>
                 <td className="text-center py-4 px-4 text-muted-foreground">100+</td>
               </tr>
@@ -76,8 +76,9 @@ export function WhyUsComparisonSection() {
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> */}
       </div>
     </div>
   )
 }
+

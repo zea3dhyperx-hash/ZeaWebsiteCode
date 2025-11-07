@@ -7,7 +7,7 @@ export function WhyUsIndustriesSection() {
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-balance text-background">Built for Every Industry</h2>
           <p className="text-lg opacity-90 max-w-3xl mx-auto text-background">
-            Proven success across diverse business sectors
+            One Platform, Limitless Possibilities
           </p>
         </div>
 
@@ -16,22 +16,22 @@ export function WhyUsIndustriesSection() {
             {
               industry: "Real Estate",
               icon: "🏠",
-              benefits: ["Property pipeline management", "Automated follow-ups", "Document management"],
+              benefits: ["Capture, nurture, and close property leads faster with automated follow-ups and instant analytics."],
             },
             {
-              industry: "E-commerce",
+              industry: "Retail & E-Commerce",
               icon: "🛍️",
-              benefits: ["Customer lifecycle tracking", "Abandoned cart recovery", "Loyalty programs"],
+              benefits: ["Deliver personalized campaigns, track customer purchases, and boost repeat sales effortlessly."],
             },
             {
-              industry: "Financial Services",
+              industry: "Finance & Insurance",
               icon: "💰",
-              benefits: ["Compliance tracking", "Client portfolio management", "Regulatory reporting"],
+              benefits: ["Automate client onboarding, manage compliance data, and simplify follow-ups securely."],
             },
             {
-              industry: "Education",
+              industry: "Education & Training",
               icon: "🎓",
-              benefits: ["Student enrollment tracking", "Course management", "Alumni engagement"],
+              benefits: ["Track student inquiries, automate enrollments, and course communications efficiently."],
             },
           ].map((item, idx) => (
             <div
@@ -54,3 +54,4 @@ export function WhyUsIndustriesSection() {
     </div>
   )
 }
+
