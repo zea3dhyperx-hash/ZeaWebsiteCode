@@ -18,9 +18,10 @@ export function RealEstateDemo() {
             {/* Video Demo */}
             <div className="flex justify-center">
               <div
-                className="relative w-[562px] h-[390px] bg-gradient-to-br from-blue-400 to-blue-300 rounded-lg shadow-2xl cursor-pointer hover:shadow-3xl transition-shadow flex items-center justify-center group"
+                className="relative w-[562px] h-[390px] bg-gradient-to-br from-blue-400 to-blue-300 rounded-lg shadow-2xl cursor-pointer hover:shadow-3xl transition-shadow flex items-center justify-center group overflow-hidden"
                 onClick={() => setShowModal(true)}
               >
+                <img src="https://img.youtube.com/vi/BVZpMDhZNlg/hqdefault.jpg" alt="Video thumbnail" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 rounded-lg transition-all" />
                 <button className="relative z-10 w-20 h-20 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-all group-hover:scale-110">
                   <svg className="w-8 h-8 text-blue-500 ml-1" fill="currentColor" viewBox="0 0 24 24">
@@ -61,12 +62,13 @@ export function RealEstateDemo() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="bg-gradient-to-br from-blue-400 to-blue-300 rounded-lg w-full aspect-video flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
-                <svg className="w-8 h-8 text-blue-500 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
+            <div className="aspect-video bg-slate-800">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/BVZpMDhZNlg?si=ejUKwhpGBY2CPjxv"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>

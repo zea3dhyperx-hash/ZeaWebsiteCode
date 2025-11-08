@@ -59,7 +59,8 @@ export function FinanceVideoSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
           >
-            <div className="relative aspect-video bg-gradient-to-br from-slate-700 to-slate-600 rounded-lg overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-500">
+            <div className="relative aspect-video bg-gradient-to-br from-slate-700 to-slate-600 rounded-lg overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-500" onClick={() => window.open('https://www.youtube.com/embed/BVZpMDhZNlg?si=ejUKwhpGBY2CPjxv','_blank')}>
+              <img src="https://img.youtube.com/vi/BVZpMDhZNlg/hqdefault.jpg" alt="Video thumbnail" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Play className="w-10 h-10 text-slate-700 ml-1" fill="currentColor" />

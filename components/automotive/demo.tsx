@@ -16,11 +16,18 @@ export function AutomotiveDemo() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Video Container */}
+            {/* Video Container with Thumbnail */}
             <div
-              className="relative rounded-lg overflow-hidden bg-slate-800 w-full lg:w-[562px] h-64 sm:h-80 lg:h-[390px] cursor-pointer group transition-all duration-300 mx-auto lg:mx-0"
+              className="relative rounded-lg overflow-hidden bg-primary w-full lg:w-[562px] h-64 sm:h-80 lg:h-[390px] cursor-pointer group transition-all duration-300 mx-auto lg:mx-0"
               onClick={() => setShowVideoModal(true)}
             >
+              {/* YouTube thumbnail for BVZpMDhZNlg */}
+              <img
+                src="https://img.youtube.com/vi/BVZpMDhZNlg/hqdefault.jpg"
+                alt="Video thumbnail"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent" />
               <button className="absolute inset-0 flex items-center justify-center hover:scale-110 transition-transform duration-300">
                 <div className="w-20 h-20 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-all">
@@ -56,7 +63,7 @@ export function AutomotiveDemo() {
             <div className="aspect-video bg-slate-800">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src="https://www.youtube.com/embed/BVZpMDhZNlg?si=ejUKwhpGBY2CPjxv"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

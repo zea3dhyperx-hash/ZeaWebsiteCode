@@ -46,14 +46,13 @@ export function VideoModal({ isOpen, onClose }: VideoModalProps) {
           </svg>
         </button>
 
-        {/* Video player placeholder */}
-        <div className="w-full h-full flex flex-col items-center justify-center">
-          <svg className="w-24 h-24 text-amber-400 mb-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path>
-          </svg>
-          <p className="text-slate-300 text-lg">Your Video Demo Here</p>
-          <p className="text-slate-500 text-sm mt-2">Replace with your video URL</p>
-        </div>
+        {/* Video player */}
+        <iframe
+          className="w-full h-full"
+          src="https://www.youtube.com/embed/BVZpMDhZNlg?si=ejUKwhpGBY2CPjxv"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
       </div>
     </div>
   )

@@ -42,9 +42,12 @@ export function RetailVideoSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
             }`}
           >
-            <div className="relative aspect-video bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center group cursor-pointer hover:shadow-2xl hover:shadow-amber-500/20 transition-all">
-              <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Play className="w-10 h-10 text-white ml-1" fill="white" />
+            <div className="relative aspect-video bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center group cursor-pointer hover:shadow-2xl hover:shadow-amber-500/20 transition-all overflow-hidden" onClick={() => window.open('https://www.youtube.com/embed/BVZpMDhZNlg?si=ejUKwhpGBY2CPjxv','_blank')}>
+              <img src="https://img.youtube.com/vi/BVZpMDhZNlg/hqdefault.jpg" alt="Video thumbnail" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play className="w-10 h-10 text-white ml-1" fill="white" />
+                </div>
               </div>
             </div>
           </div>

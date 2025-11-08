@@ -8,13 +8,14 @@ export function RelationshipSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-12 items-center">
           {/* Video Placeholder */}
-          <div className="bg-slate-800 rounded-lg aspect-video lg:aspect-auto lg:h-96 flex items-center justify-center group cursor-pointer hover:bg-slate-700 transition-colors">
+          
+          {/* <div className="bg-slate-800 rounded-lg aspect-video lg:aspect-auto lg:h-96 flex items-center justify-center group cursor-pointer hover:bg-slate-700 transition-colors">
             <button className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center group-hover:bg-amber-600 transition-colors shadow-lg">
               <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
               </svg>
             </button>
-          </div>
+          </div> */}
 
           {/* Text Content */}
           <div className="space-y-6">
