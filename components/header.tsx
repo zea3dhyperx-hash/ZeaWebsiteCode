@@ -24,10 +24,8 @@ export function Header() {
   }
 
   const navLinks = [
+    { href: "/", label: "Why Us" },
     { href: "/features", label: "Features" },
-    // { href: "/features-2", label: "Features 2" },
-    { href: "/why-us", label: "Why Us" },
-    // { href: "/why-us-2", label: "Why Us 2" },
     { href: "/pricing", label: "Pricing" },
   ]
 
@@ -35,8 +33,8 @@ export function Header() {
     <>
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 hover-lift">
-            {/* <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-amber-400">
+          <Link href="/" className="flex items-center gap-2 hover:scale-110 transition-all duration-300">
+            {/* <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-primary">
               <span className="text-primary-foreground font-bold text-lg">Z</span>
             </div> */}
             {/* <span className="font-bold text-xl text-foreground">ZeaCRM</span> */}
@@ -162,12 +160,7 @@ export function Header() {
                 >
                   Guides
                 </Link> */}
-                {/* <Link
-                  href="/guides-2"
-                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
-                >
-                  Guides
-                </Link> */}
+                
                 <Link
                   href="/demo"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
@@ -188,13 +181,13 @@ export function Header() {
             <Button
               // variant="outline"
               // onClick={() => setIsSignInOpen(true)}
-              className="hover-lift hover:bg-primary/10 hover:text-primary transition-all duration-300"
+              className="hover-lift hover:scale-110 hover:bg-primary/10 hover:text-primary transition-all duration-300"
             >
               <a href="sign-in">Login</a>
             </Button>
             <Button
               // onClick={() => setIsGetStartedOpen(true)}
-              className="bg-amber-400 hover:bg-amber-500 text-black font-semibold hover-lift transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/50"
+              className="bg-primary  hover:scale-110 text-black font-semibold transition-all duration-300 "
             >
               <a href="get-started">Start Free Trial</a>
             </Button>

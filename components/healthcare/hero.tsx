@@ -1,7 +1,9 @@
 "use client"
 import { Button } from "@/components/ui/button"
+import { useNavigate } from "react-router-dom";
 
 export function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden">
       {/* Background Image */}
@@ -16,10 +18,11 @@ export function Hero() {
           Your All-in-One AI-Powered CRM for Healthcare Professionals
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-amber-400 hover:bg-amber-500 text-slate-950 font-semibold px-8 py-3 text-lg rounded-lg">
+          <Button onClick={() => navigate("/demo")} className="bg-amber-400 hover:bg-amber-500 text-slate-950 font-semibold px-8 py-3 text-lg rounded-lg">
             Request Demo
           </Button>
           <Button
+            onClick={() => navigate("/")}
             variant="outline"
             className="border-slate-600 text-white hover:bg-slate-800 font-semibold px-8 py-3 text-lg rounded-lg bg-transparent"
           >

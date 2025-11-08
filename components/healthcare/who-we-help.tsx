@@ -75,7 +75,7 @@ export function WhoWeHelp() {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="bg-amber-50 text-slate-900 rounded-lg p-8 hover:shadow-2xl hover:scale-105 hover:bg-amber-100 transition-all duration-300 cursor-pointer flex flex-col items-center text-center"
+              className="bg-primary text-slate-900 rounded-lg p-8 hover:shadow-2xl hover:scale-105 hover:bg-primary transition-all duration-300 cursor-pointer flex flex-col items-center text-center"
             >
               <div className="text-5xl mb-4">{service.icon}</div>
               <h3 className="text-lg font-semibold mb-3">{service.title}</h3>

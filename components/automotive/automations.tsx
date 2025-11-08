@@ -24,9 +24,9 @@ export function Automations() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Keep customers save time and grow with Easy
+           Retain customers, boost efficiency, and scale faster
           </h2>
-          <p className="text-white text-2xl font-semibold">Automations like:</p>
+          <p className="text-white text-2xl font-semibold">with smart automation</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

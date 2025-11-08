@@ -29,7 +29,7 @@ export function AutomotiveHero() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Automotive & Manufacturing
             </h1>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">AI-Powered CRM for Faster Growth</p>
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">AI-Powered CRM Solutions for Dealers, Distributors, and Manufacturers</p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">

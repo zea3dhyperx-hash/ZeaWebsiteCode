@@ -6,8 +6,8 @@ import { AutomotiveDemo } from "@/components/automotive/demo";
 import { AutomotiveHero } from "@/components/automotive/hero";
 import { HowItWorks } from "@/components/automotive/how-it-works";
 import { AutomotiveNav } from "@/components/automotive/nav";
-import { AllInOne } from "@/components/healthcare/all-in-one";
-import { PrinciplesCTA } from "@/components/realestate/principles-cta";
+import { AllInOne } from "@/components/automotive/all-in-one";
+import { PrinciplesCTA } from "@/components/automotive/principles-cta";
 
 
 export const metadata = {

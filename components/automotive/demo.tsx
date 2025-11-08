@@ -11,8 +11,8 @@ export function AutomotiveDemo() {
       <section id="video" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-amber-400 mb-4">A purpose-built Management Software</h2>
-            <p className="text-2xl text-primary">for your entire customer journey</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-amber-400 mb-4">Smarter Operations and Customer Management for Industrial Growth</h2>
+            
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -33,12 +33,10 @@ export function AutomotiveDemo() {
             <div className="space-y-6">
               <h3 className="text-2xl sm:text-3xl font-bold text-white">Centralize, engage, and convert customers</h3>
               <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                Drive your conversations with the most advanced CRM built specifically for the automotive industry.
-                Personalize and nurture every interaction.
+                In the automotive and manufacturing sectors, efficiency is everything. It matters a lot right from lead generation to after-sales service. With this in mind, ZeaCRM helps manufacturers, suppliers, and dealerships automate processes, track performance, and maintain strong relationships across their entire value chain.
               </p>
               <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                Drive your conversations with the most advanced CRM built specifically for the automotive industry.
-                Personalize and nurture every interaction.
+                Whether you’re managing B2B contracts, dealer networks, or end-customer engagement, ZeaCRM gives you full visibility and control. With AI automation, you can streamline sales cycles, improve production coordination, and build lasting business relationships that drive growth and loyalty.
               </p>
             </div>
           </div>

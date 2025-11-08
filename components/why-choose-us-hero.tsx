@@ -3,7 +3,7 @@ import { CheckCircle2 } from "lucide-react"
 
 export function WhyChooseUsHero() {
   return (
-    <section className="bg-amber-400 text-black py-20 md:py-24">
+    <section className="bg-primary text-black pt-20 md:pt-24 justify-center items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -42,14 +42,14 @@ export function WhyChooseUsHero() {
               </div>
             </div>
 
-            <Button className="bg-black text-amber-400 hover:bg-black/90 font-semibold px-8 py-6 text-base">
+            {/* <Button className="bg-black text-amber-400 hover:bg-black/90 font-semibold px-8 py-6 text-base">
               <a href="/get-started"> TRY OUR FREE TRIAL</a>
-            </Button>
+            </Button> */}
           </div>
 
           {/* Right Illustration */}
-          <div className="flex items-center justify-center">
-            <img src="/images/WhyUs.png" alt="" />
+          <div className="flex justify-center scale-110">
+            <img src="/images/WhyUs.png" alt="People image" />
             {/* <div className="relative w-full h-96 bg-white/10 rounded-lg flex items-center justify-center border-2 border-black/20">
               <div className="text-center">
                 <p className="text-black/50 font-semibold">Team Illustration</p>

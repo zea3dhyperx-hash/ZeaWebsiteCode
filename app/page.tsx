@@ -17,6 +17,11 @@ import { IntegrationsLogosSection } from "@/components/integrations-logos-sectio
 import { FeaturesSlider2 } from "@/components/features-slider2"
 import FlowerMenu from "@/components/animata/list/flower-menu"
 import ChatWidget from "@/components/chatbot"
+import { WhyUsTestimonialsSection } from "@/components/why-us-testimonials-section"
+import { WhyUsComparisonSection } from "@/components/why-us-comparison-section"
+import { FeaturesComparisonTable } from "@/components/features-comparison-table"
+import { WhyChooseUsHero } from "@/components/why-choose-us-hero"
+import ComparisonTable from "@/components/comparisontable"
 
 export const metadata = {
   title: "Zea CRM - AI-Powered CRM for the Future of Business",
@@ -38,8 +43,13 @@ export default function Home() {
         <FeaturesHubSection />
         <AwardSupportSection />
         <IntegrationsSection />
+        <WhyChooseUsHero />
+        {/* <FeaturesComparisonTable />  */}
+        <ComparisonTable />
         <IndustriesSection />
+        <WhyUsTestimonialsSection />
         <PricingSection />
+        <WhyUsComparisonSection />
         <CTATransformSection />
         <ChatWidget />
         {/* <IntegrationsLogosSection /> */}

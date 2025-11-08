@@ -5,7 +5,7 @@ export function HowItWorks() {
     {
       title: "Dealers & Showrooms",
       features: ["Test drive booking via WhatsApp", "Auto service/warranty reminders", "Digital payments & invoices"],
-      image: "/auto.png",
+      image: "/automotive-dealership-showroom-with-luxury-car.jpg",
     },
     {
       title: "Spare Parts Retailers",
@@ -14,12 +14,12 @@ export function HowItWorks() {
         "Digital billing & repeat order reminders",
         "Loyalty campaigns for mechanics/customers",
       ],
-      image: "/auto2.png",
+      image: "/spare-parts-retail-warehouse-shop.jpg",
     },
     {
       title: "Equipment Manufacturers",
       features: ["Dealer-OEM order workflows", "Maintenance alerts for equipment", "Sales analytics dashboards"],
-      image: "/auto3.png",
+      image: "/manufacturing-equipment-factory-floor.jpg",
     },
   ]
 
@@ -28,7 +28,7 @@ export function HowItWorks() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            AI-Powered CRM for Faster Growth
+            Smarter CRM Built to Accelerate Your Business
           </h2>
         </div>
 
