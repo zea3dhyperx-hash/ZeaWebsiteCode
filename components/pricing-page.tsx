@@ -20,7 +20,7 @@ export function PricingPage() {
         "2 Workflows",
         "Basic Reporting",
         "WhatsApp Support",
-        "",
+        "WhatsApp Integration",
       ],
       buttonText: "Start Free Trial",
       buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
@@ -126,12 +126,21 @@ export function PricingPage() {
                 </div>
 
                 <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300">{feature}</span>
-                    </li>
-                  ))}
+                  {plan.features.map((feature, featureIndex) => {
+                    const isStandard = plan.name === "Standard";
+                    const isLast = featureIndex === plan.features.length - 1;
+                    const showAsUnavailable = isStandard && isLast && feature.toLowerCase().includes("whatsapp integration");
+                    return (
+                      <li key={featureIndex} className="flex items-start gap-3">
+                        {showAsUnavailable ? (
+                          <span className="w-5 h-5 mt-0.5 flex items-center justify-center text-red-500">✕</span>
+                        ) : (
+                          <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                        )}
+                        <span className={showAsUnavailable ? "text-gray-400 line-through" : "text-gray-300"}>{feature}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 {plan.href ? (
