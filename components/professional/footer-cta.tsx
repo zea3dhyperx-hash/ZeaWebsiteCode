@@ -1,10 +1,11 @@
 "use client"
-
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
+import { useRouter } from "next/navigation";
 
 export function FooterCTA() {
+  const router = useRouter();
   const sectionRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -31,7 +32,7 @@ export function FooterCTA() {
 
   return (
     <section
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-amber-600 to-amber-500 relative overflow-hidden"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r bg-primary relative overflow-hidden"
       ref={sectionRef}
     >
       {/* Decorative Element */}
@@ -48,11 +49,12 @@ export function FooterCTA() {
         <div
           className={`flex justify-center gap-4 flex-wrap transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
         >
-          <Button size="lg" className="bg-black hover:bg-gray-900 text-white font-semibold px-8">
+          <Button size="lg" onClick={() => router.push("/get-started")} className="bg-black hover:bg-gray-900 text-white font-semibold px-8">
             Get Started Today
           </Button>
           <Button
             size="lg"
+            onClick={() => router.push("/demo")}
             variant="outline"
             className="border-2 border-black text-black hover:bg-black hover:text-white font-semibold px-8 bg-transparent"
           >

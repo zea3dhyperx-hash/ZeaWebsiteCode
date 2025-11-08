@@ -1,8 +1,10 @@
 "use client"
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button"
 
 export function ProfessionalHero() {
+  const router = useRouter();
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Image with Overlay */}
@@ -24,13 +26,16 @@ export function ProfessionalHero() {
           AI-Powered CRM Solutions for Consultants, Agencies, and Service Firms.
         </p>
         <div className="flex flex-wrap gap-4 justify-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
-          <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8">
+          <Button 
+            onClick={() => router.push("/demo")}
+            size="lg" className="bg-primary hover:scale-110 text-black font-semibold px-8">
             Request Demo
           </Button>
           <Button
+            onClick={() => router.push("/")}
             size="lg"
             variant="outline"
-            className="border-amber-500 text-amber-500 hover:bg-amber-500/10 font-semibold px-8 bg-transparent"
+            className="border-primary text-primary hover:scale-110 font-semibold px-8 bg-transparent"
           >
             Learn More
           </Button>

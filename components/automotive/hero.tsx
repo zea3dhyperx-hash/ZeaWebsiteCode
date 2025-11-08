@@ -1,8 +1,9 @@
 "use client"
-
+import { useRouter } from "next/navigation";
 import { useState } from "react"
 
 export function AutomotiveHero() {
+  const router = useRouter();
   const [showVideoModal, setShowVideoModal] = useState(false)
 
   return (
@@ -34,12 +35,12 @@ export function AutomotiveHero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <button
-                onClick={() => setShowVideoModal(true)}
-                className="px-8 py-3 bg-amber-400 hover:bg-amber-500 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+                onClick={() => router.push("/demo")}
+                className="px-8 py-3 bg-primary hover:scale-110 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
               >
                 Request Demo
               </button>
-              <button className="px-8 py-3 bg-amber-400 hover:bg-amber-500 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
+              <button onClick={() => router.push("/")} className="px-8 py-3 bg-primary hover:scale-110 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
                 Learn More
               </button>
             </div>

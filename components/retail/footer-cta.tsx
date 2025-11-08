@@ -2,8 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
+import { useRouter } from "next/navigation";
 
 export function RetailFooterCTA() {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -27,7 +29,7 @@ export function RetailFooterCTA() {
   return (
     <section
       ref={sectionRef}
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-amber-600 to-amber-500 relative overflow-hidden"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r bg-primary relative overflow-hidden"
     >
       <div
         className={`max-w-4xl mx-auto text-center relative z-10 transition-all duration-700 ${
@@ -38,10 +40,13 @@ export function RetailFooterCTA() {
           Experience how ZeaCRM can power your retail and e-commerce business with automation, insights, and effortless communication
         </h2>
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button size="lg" className="bg-black hover:bg-gray-900 text-white font-semibold px-8">
+          <Button 
+            onClick={() => router.push("/get-started")}
+            size="lg" className="bg-black hover:bg-gray-900 text-white font-semibold px-8">
             Get Started Today
           </Button>
           <Button
+            onClick={() => router.push("/demo")}
             size="lg"
             variant="outline"
             className="border-2 border-black text-black hover:bg-black hover:text-white font-semibold px-8 bg-transparent transition-all"

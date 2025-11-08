@@ -1,8 +1,10 @@
 "use client"
+import { useRouter } from "next/navigation";
 
 import { useEffect, useState } from "react"
 
 export function PrinciplesSection() {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -12,11 +14,11 @@ export function PrinciplesSection() {
   return (
     <section
       id="solutions"
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-amber-500/20"
+      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-primary/20"
     >
       <div className="max-w-7xl mx-auto">
         <h2
-          className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-amber-400 mb-8 text-center transition-all duration-1000 ${
+          className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-8 text-center transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
           }`}
         >
@@ -59,7 +61,7 @@ export function PrinciplesSection() {
         </div>
 
         <div
-          className={`mt-12 bg-amber-500 rounded-lg p-8 text-center transition-all duration-1000 delay-500 hover:bg-amber-600 hover:scale-[1.02] hover:shadow-2xl ${
+          className={`mt-12 bg-primary rounded-lg p-8 text-center transition-all duration-1000 delay-500 hover:bg-primary hover:scale-[1.02] hover:shadow-2xl ${
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
@@ -67,7 +69,7 @@ export function PrinciplesSection() {
             <p className="text-white font-bold text-lg">
               "Experience how ZeaCRM can change your healthcare organization with intelligent automation."
             </p>
-            <button className="bg-white text-amber-500 hover:bg-gray-100 font-bold px-8 py-3 rounded-lg transition-all duration-300 whitespace-nowrap hover:scale-105 hover:shadow-lg">
+            <button onClick={() => router.push("/get-started")} className="bg-white text-primary hover:bg-gray-100 font-bold px-8 py-3 rounded-lg transition-all duration-300 whitespace-nowrap hover:scale-105 hover:shadow-lg">
               Sign Up
             </button>
           </div>

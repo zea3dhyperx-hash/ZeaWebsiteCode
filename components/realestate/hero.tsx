@@ -1,6 +1,8 @@
 "use client"
+import { useRouter } from "next/navigation";
 
 export function RealEstateHero() {
+  const router = useRouter();
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Image */}
@@ -19,10 +21,14 @@ export function RealEstateHero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
+          <button 
+          onClick={() => router.push("/demo")}
+          className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
             Request Demo
           </button>
-          <button className="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
+          <button 
+          onClick={() => router.push("/")}
+          className="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
             Learn More
           </button>
         </div>

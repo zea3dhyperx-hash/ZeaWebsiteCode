@@ -2,8 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useRouter } from "next/navigation";
 
 export function RetailHero() {
+  const router = useRouter();
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Image */}
@@ -27,10 +29,14 @@ export function RetailHero() {
           AI-Powered CRM Solutions for Stores, Brands, and Online Businesses
         </p>
         <div className="flex flex-wrap gap-4 justify-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
-          <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 text-lg">
+          <Button 
+            onClick={() => router.push("/demo")}
+            size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 text-lg">
             Request Demo
           </Button>
-          <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 text-lg">
+          <Button 
+            onClick={() => router.push("/")}
+            size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 text-lg">
             Learn More 
           </Button>
         </div>

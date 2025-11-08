@@ -2,8 +2,9 @@
 
 import { Button } from "@/components/ui/button"
 import { useState, useEffect, useRef } from "react"
-
+import { useRouter } from "next/navigation";
 export function FinanceFooterCTA() {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
 
@@ -27,11 +28,11 @@ export function FinanceFooterCTA() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-amber-600 to-amber-500 overflow-hidden"
+      className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r bg-primary overflow-hidden"
     >
       {/* Decorative Element */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 rounded-full -mr-48 -mt-48" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-700/10 rounded-full -ml-32 -mb-32" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full -mr-48 -mt-48" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary rounded-full -ml-32 -mb-32" />
 
       <div
         className={`relative max-w-4xl mx-auto text-center transition-all duration-700 ${
@@ -42,11 +43,12 @@ export function FinanceFooterCTA() {
           Find out how ZeaCRM can transform your finance or insurance operations with automation
         </h2>
         <div className="flex flex-wrap justify-center gap-3">
-          <Button size="lg" className="bg-black hover:bg-gray-900 text-white font-semibold px-8">
+          <Button size="lg" onClick={() => router.push("/get-started")} className="bg-black hover:bg-gray-900 text-white font-semibold px-8">
             Get Started Today
           </Button>
           <Button
             size="lg"
+            onClick={() => router.push("/demo")}
             variant="outline"
             className="border-2 border-black text-black hover:bg-black hover:text-white font-semibold px-8 bg-transparent"
           >

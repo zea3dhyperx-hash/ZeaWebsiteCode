@@ -1,4 +1,8 @@
+"use client"
+import { useRouter } from "next/navigation";
+
 export function EducationHero() {
+  const router = useRouter();
   return (
     <section
       className="relative w-full py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
@@ -19,17 +23,17 @@ export function EducationHero() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
             Education &amp; Training
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-amber-50 max-w-2xl">
+          <p className="text-lg sm:text-xl lg:text-2xl text-primary max-w-2xl">
             AI-Powered CRM Solutions for Schools, Colleges, Institutes, and EdTech Platforms
           </p>
         </div>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-16">
-          <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-4 rounded-lg transition-colors shadow-lg">
+          <button onClick={() => router.push("/demo")} className="bg-primary hover:scale-110 text-white font-bold px-8 py-4 rounded-lg transition-colors shadow-lg">
             Request Demo
           </button>
-          <button className="bg-transparent border-2 border-amber-500 hover:bg-amber-500 text-amber-500 hover:text-white font-bold px-8 py-4 rounded-lg transition-all shadow-lg">
+          <button onClick={() => router.push("/")} className="bg-transparent border-2 border-primary hover:scale-110 text-primary hover:text-white font-bold px-8 py-4 rounded-lg transition-all shadow-lg">
             Learn More
           </button>
         </div>

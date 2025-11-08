@@ -1,5 +1,5 @@
 import ChatWidget from "@/components/chatbot";
-import { CTA } from "@/components/cta";
+import { CTA } from "@/components/healthcare/cta";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { AllInOne } from "@/components/healthcare/all-in-one";
