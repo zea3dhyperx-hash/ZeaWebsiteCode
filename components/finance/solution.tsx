@@ -55,12 +55,11 @@ export function FinanceSolution() {
             }`}
           >
             <div className="relative aspect-video rounded-lg overflow-hidden">
-              <Image
-                src="/images/design-mode/Gemini_Generated_Image_ktb18ektb18ektb1.png"
-                alt="Business professionals in modern office"
-                fill
-                className="object-cover transition-transform duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/20 cursor-pointer"
-              />
+              <img
+              src="allinone.png"
+              alt="Healthcare team collaboration"
+              className="w-full h-full object-cover"
+            />
             </div>
           </div>
         </div>

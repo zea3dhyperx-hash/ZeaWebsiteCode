@@ -2,7 +2,16 @@
 
 import Image from "next/image"
 
-const useCases = [
+type UseCase = {
+  title: string
+  description: string
+  details: string[]
+  features: string[]
+  imagePosition: "left" | "right"
+  imageSrc: string
+}
+
+const useCases: UseCase[] = [
   {
     title: "Consultants & Agencies",
     description: "Nurture every lead with smart, timely follow-ups",
@@ -11,6 +20,7 @@ const useCases = [
     ],
     features: ["Demo booking", "Billing Reminders", "Support ticket tracking"],
     imagePosition: "left" as const,
+    imageSrc: "/block1.png",
   },
   {
     title: "IT & SaaS Providers",
@@ -20,6 +30,7 @@ const useCases = [
     ],
     features: ["Demo booking", "Billing Reminders", "Support ticket tracking"],
     imagePosition: "right" as const,
+    imageSrc: "/block2.png",
   },
   {
     title: "Legal & Accounting Firms",
@@ -29,6 +40,7 @@ const useCases = [
     ],
     features: ["Cases booking", "Deadline reminders", "Document storage", "E-signing"],
     imagePosition: "left" as const,
+    imageSrc: "/block3.png",
   },
 ]
 
@@ -52,7 +64,7 @@ export function UseCasesSection() {
             <div className={useCase.imagePosition === "right" ? "lg:col-start-2" : ""}>
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/20 cursor-pointer">
                 <Image
-                  src="/images/design-mode/img2.png"
+                  src={useCase.imageSrc}
                   alt={useCase.title}
                   fill
                   className="object-cover"

@@ -3,21 +3,31 @@
 import { Building2, Shield, TrendingUp } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
-const benefits = [
+type Benefit = {
+  icon: JSX.Element
+  title: string
+  description: string
+  imageSrc: string
+}
+
+const benefits: Benefit[] = [
   {
     icon: <Building2 className="w-8 h-8" />,
     title: "Banks & NBFCs",
     description: "Faster loan approvals & reduced defaults",
+    imageSrc: "/images/finance/banks-nbfcs.jpg",
   },
   {
     icon: <Shield className="w-8 h-8" />,
     title: "Insurance Providers",
     description: "More renewals & loyal customers",
+    imageSrc: "/images/finance/insurance-providers.jpg",
   },
   {
     icon: <TrendingUp className="w-8 h-8" />,
     title: "Wealth & Loan Advisors",
     description: "Increased client satisfaction",
+    imageSrc: "/images/finance/wealth-loan-advisors.jpg",
   },
 ]
 
@@ -71,6 +81,17 @@ export function FinanceBenefits() {
               }`}
               style={{ transitionDelay: `${(idx + 3) * 100}ms` }}
             >
+              {benefit.imageSrc && (
+                <div className="mb-6 -mx-8 -mt-8 mb-6">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  {/* <img
+                    src={benefit.imageSrc}
+                    alt={benefit.title}
+                    className="w-full h-40 object-cover rounded-t-lg border-b border-slate-700"
+                    loading="lazy"
+                  /> */}
+                </div>
+              )}
               <div className="w-16 h-16 rounded-full bg-amber-500 flex items-center justify-center mb-6 text-black transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-amber-500/50">
                 {benefit.icon}
               </div>

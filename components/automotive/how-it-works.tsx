@@ -5,7 +5,7 @@ export function HowItWorks() {
     {
       title: "Dealers & Showrooms",
       features: ["Test drive booking via WhatsApp", "Auto service/warranty reminders", "Digital payments & invoices"],
-      image: "/automotive-dealership-showroom-with-luxury-car.jpg",
+      image: "/auto.png",
     },
     {
       title: "Spare Parts Retailers",
@@ -14,12 +14,12 @@ export function HowItWorks() {
         "Digital billing & repeat order reminders",
         "Loyalty campaigns for mechanics/customers",
       ],
-      image: "/spare-parts-retail-warehouse-shop.jpg",
+      image: "/auto2.png",
     },
     {
       title: "Equipment Manufacturers",
       features: ["Dealer-OEM order workflows", "Maintenance alerts for equipment", "Sales analytics dashboards"],
-      image: "/manufacturing-equipment-factory-floor.jpg",
+      image: "/auto3.png",
     },
   ]
 

@@ -4,14 +4,13 @@ export function RealEstateHero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Image */}
-      {/* Background Image */}
       <div className="absolute inset-0 object-cover opacity-60 flex">
-        <img src="realestatebg.png" alt="healthcare background image" />
+        <img src="realestatebg.png" alt="real estate background image" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
       </div>
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950 z-10" />
+      {/* Dark Overlay
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950 z-10" /> */}
 
       {/* Content */}
       <div className="relative z-20 max-w-4xl mx-auto text-center">

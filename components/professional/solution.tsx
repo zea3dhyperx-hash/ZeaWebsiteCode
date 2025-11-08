@@ -55,11 +55,10 @@ export function SolutionSection() {
           <div
             className={`relative aspect-video rounded-lg overflow-hidden transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-8 scale-95"}`}
           >
-            <Image
-              src="/business-team-meeting-office-collaboration.jpg"
-              alt="Business team collaboration"
-              fill
-              className="object-cover"
+            <img
+              src="allinone.png"
+              alt="Healthcare team collaboration"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>

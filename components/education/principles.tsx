@@ -50,7 +50,11 @@ export function PrinciplesSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
             }`}
           >
-            <span className="text-gray-400">Image Placeholder</span>
+            <img
+              src="allinone.png"
+              alt="Healthcare team collaboration"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 

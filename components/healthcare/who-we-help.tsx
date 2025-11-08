@@ -67,7 +67,7 @@ const services: ServiceCard[] = [
 
 export function WhoWeHelp() {
   return (
-    <section id="usecases" className="py-20 px-4 sm:px-6 lg:px-8 bg-red-950">
+    <section id="usecases" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-16 text-amber-500">Who We Help</h2>
 

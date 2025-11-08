@@ -8,7 +8,7 @@ const useCases = [
     number: "01",
     title: "Banks & NBFCs",
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_gn3l5kgn3l5kgn3l%201-ALU4VFTmlHViPHfyLFxxkiB24CV6Gi.png",
+      "/finance.png",
     imagePosition: "left" as const,
     features: [
       "Loan inquiry tracking & auto follow-ups",
@@ -20,7 +20,7 @@ const useCases = [
     number: "02",
     title: "Insurance Providers",
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_gn3l5kgn3l5kgn3l%201-ALU4VFTmlHViPHfyLFxxkiB24CV6Gi.png",
+      "finance2.png",
     imagePosition: "right" as const,
     features: ["Auto policy renewal reminders", "Digital claim status updates", "Cross-sell offers using AI insights"],
   },
@@ -28,7 +28,7 @@ const useCases = [
     number: "03",
     title: "Wealth & Loan Advisors",
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_gn3l5kgn3l5kgn3l%201-ALU4VFTmlHViPHfyLFxxkiB24CV6Gi.png",
+      "finance3.png",
     imagePosition: "left" as const,
     features: ["Appointment automation", "Portfolio tracking & updates", "Document management & compliance tracking"],
   },
