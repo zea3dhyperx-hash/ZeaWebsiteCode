@@ -9,13 +9,6 @@ import { PrinciplesCTA } from "@/components/realestate/principles-cta";
 import {Header} from "@/components/header";
 import {Footer} from "@/components/footer";
 
-
-export const metadata = {
-  title: " ",
-  description:
-    "",
-};
-
 export default function RealEstate() {
   return (
     <>
@@ -33,4 +26,10 @@ export default function RealEstate() {
       <Footer />
     </>
   )
+}
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Real Estate",
+  description: "Real estate CRM for agents and teams: lead capture, follow-ups, and pipeline automation.",
 }

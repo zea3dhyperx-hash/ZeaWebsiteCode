@@ -1,6 +1,7 @@
 
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+
 import { HeroSection } from "@/components/hero-section"
 import { StatsSection } from "@/components/stats-section"
 import { AIToolsSection } from "@/components/ai-tools-section"
@@ -15,7 +16,6 @@ import { PricingSection } from "@/components/pricing-section"
 import { CTATransformSection } from "@/components/cta-transform-section"
 import { IntegrationsLogosSection } from "@/components/integrations-logos-section"
 import { FeaturesSlider2 } from "@/components/features-slider2"
-import FlowerMenu from "@/components/animata/list/flower-menu"
 import ChatWidget from "@/components/chatbot"
 import { WhyUsTestimonialsSection } from "@/components/why-us-testimonials-section"
 import { WhyUsComparisonSection } from "@/components/why-us-comparison-section"

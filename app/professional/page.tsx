@@ -9,13 +9,6 @@ import { SolutionSection } from "@/components/professional/solution";
 import { UseCasesSection } from "@/components/professional/use-cases";
 import { VideoSection } from "@/components/professional/video-section";
 
-
-export const metadata = {
-  title: " ",
-  description:
-    "",
-};
-
 export default function ProfessionalServices() {
   return (
     <>
@@ -33,4 +26,10 @@ export default function ProfessionalServices() {
       <Footer />
     </>
   )
+}
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Professional Services",
+  description: "CRM for professional services: proposals, invoicing, scheduling, and client follow-ups — all in one place.",
 }

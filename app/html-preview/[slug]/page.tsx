@@ -37,3 +37,9 @@ export default function HtmlPreviewPage({ params }: Props) {
     </>
   )
 }
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "HTML Preview | ZeaCRM",
+  description: "Preview HTML content by slug with a simple viewer.",
+}

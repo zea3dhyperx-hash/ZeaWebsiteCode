@@ -7,7 +7,7 @@ import ChatWidget from "@/components/chatbot";
 export const metadata = {
   title: "Other Industries | Zea CRM",
   description:
-    "Zea CRM automates workflows across industries like real estate, finance, education, and healthcare — helping teams scale with smart automation.",
+    "Explore all the other Industries our products is use in",
 };
 
 export default function IndustriesPageRoute() {

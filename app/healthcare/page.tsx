@@ -9,14 +9,6 @@ import { RelationshipManagement } from "@/components/healthcare/relationship-man
 import { Solutions } from "@/components/healthcare/solutions";
 import { WhoWeHelp } from "@/components/healthcare/who-we-help";
 
-
-
-export const metadata = {
-  title: " ",
-  description:
-    "",
-};
-
 export default function Healthcare() {
   return (
     <>
@@ -34,4 +26,10 @@ export default function Healthcare() {
       <Footer />
     </>
   )
+}
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Healthcare",
+  description: "Healthcare CRM: patient engagement, appointment workflows, and care coordination with secure communications.",
 }

@@ -10,12 +10,6 @@ import { FinanceUseCases } from "@/components/finance/use-cases";
 import { FinanceVideoSection } from "@/components/finance/video-section";
 
 
-export const metadata = {
-  title: " ",
-  description:
-    "",
-};
-
 export default function Finance() {
   return (
     <>
@@ -33,4 +27,10 @@ export default function Finance() {
       <Footer />
     </>
   )
+}
+
+import type { Metadata } from "next"
+export const metadata: Metadata = {
+  title: "Finance & Insurance",
+  description: "Financial services and insurance solutions with automation, client engagement, and compliance-ready workflows.",
 }

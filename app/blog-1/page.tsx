@@ -11,11 +11,11 @@ import { Footer } from "@/components/footer"
 import ChatWidget from "@/components/chatbot"
 // import { RelatedBlogs } from "@/components/related-blogs" // optional
 
-export const metadata = {
-  title: "Zea CRM — Where Every Lead Becomes a Relationship | Blog",
-  description:
-    " Zea CRM — Where Every Lead Becomes a Relationship | Blog",
-}
+// export const metadata = {
+//   title: "Zea CRM — Where Every Lead Becomes a Relationship | Blog",
+//   description:
+//     " Zea CRM — Where Every Lead Becomes a Relationship | Blog",
+// }
 
 export default function BlogPage() {
   // Local FAQ for this page (independent)
@@ -271,4 +271,10 @@ export default function BlogPage() {
       <ChatWidget />
     </main>
   )
+}
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Zea CRM — Where Every Lead Becomes a Relationship | Blog",
+  description: "Zea CRM — Where Every Lead Becomes a Relationship | Blog",
 }

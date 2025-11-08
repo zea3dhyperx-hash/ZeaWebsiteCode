@@ -1,4 +1,24 @@
+"use client"
+import { useEffect } from "react";
+
 export function StatsSection() {
+  useEffect(() => {
+    const key = "scroll-healthcare";
+
+    // restore scroll when coming back
+    const saved = sessionStorage.getItem(key);
+    if (saved) window.scrollTo(0, parseInt(saved));
+
+    // save scroll on unload or navigation away
+    const handleScroll = () => {
+      sessionStorage.setItem(key, window.scrollY.toString());
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const stats = [
     {
       number: "75%",

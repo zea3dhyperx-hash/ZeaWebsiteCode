@@ -3,10 +3,29 @@
 import { Button } from "@/components/ui/button"
 import { Play } from "lucide-react"
 import AniHero from "./ani-hero"
+import { useEffect } from "react";
 import { GetStartedModal } from "./get-started-modal"
 import { SignInModal } from "./sign-in-modal"
 
 export function HeroSection() {
+  useEffect(() => {
+    const key = "scroll-healthcare";
+
+    // restore scroll when coming back
+    const saved = sessionStorage.getItem(key);
+    if (saved) window.scrollTo(0, parseInt(saved));
+
+    // save scroll on unload or navigation away
+    const handleScroll = () => {
+      sessionStorage.setItem(key, window.scrollY.toString());
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden pt-20 pb-20">
       {/* Animated background particles */}
@@ -71,59 +90,34 @@ export function HeroSection() {
               
               <Button
                 variant="outline"
-                onClick={() => window.location.href = "/demo#bookdemo"}
+                onClick={() => window.location.href = "/demo"}
                 className="border-2 border-blue-400 text-blue-400 hover:bg-primary font-semibold px-8 py-6 text-base rounded-lg flex items-center justify-center gap-2 bg-transparent"
               >
                   <Play size={18} />
                   Book a Demo
               </Button>
             </div>
-            {/* <AniHero /> */}
             
           </div>
-          <AniHero />
+          {/* Right Visual: Bot SVG */}
+          <div className="scale-110 relative h-96 lg:h-full flex items-center justify-center">
+            <img
+              src="/bot/bot3.gif"
+              alt="Animated assistant bot"
+              className="w-full h-auto max-h-[520px] object-contain"
+            />
+          </div>
+          {/* <AniHero /> */}
+          
 
           {/* Right - 3D Character Illustration */}
           <div className="relative h-96 lg:h-full flex items-center justify-center">
-            {/* <AniHero /> */}
-            {/* <img src="images/Hero2.png" alt="A girl handling lot of things easily with zeaCRM" /> */}
-            {/* <div className="relative w-full h-full flex items-center justify-center"> */}
-              {/* Placeholder for 3D character - using a styled div */}
-              {/* <div className="relative w-64 h-80"> */}
-                {/* Character body - simplified representation */}
-                {/* <div className="absolute inset-0 flex items-center justify-center"> */}
-                  {/* <svg viewBox="0 0 200 300" className="w-full h-full" preserveAspectRatio="xMidYMid meet"> */}
-                    {/* Head */}
-                    {/* <circle cx="100" cy="60" r="35" fill="#f59e0b" /> */}
-                    {/* Hair */}
-                    {/* <path d="M 65 40 Q 65 20 100 15 Q 135 20 135 40" fill="#f59e0b" /> */}
-                    {/* Eyes */}
-                    {/* <circle cx="90" cy="55" r="4" fill="#1f2937" />
-                    <circle cx="110" cy="55" r="4" fill="#1f2937" /> */}
-                    {/* Smile */}
-                    {/* <path d="M 90 70 Q 100 75 110 70" stroke="#1f2937" strokeWidth="2" fill="none" /> */}
-                    {/* Body - Pink shirt */}
-                    {/* <rect x="75" y="100" width="50" height="60" rx="5" fill="#ec4899" /> */}
-                    {/* Arms */}
-                    {/* <rect x="50" y="110" width="25" height="15" rx="7" fill="#f59e0b" />
-                    <rect x="125" y="110" width="25" height="15" rx="7" fill="#f59e0b" /> */}
-                    {/* Blue pants */}
-                    {/* <rect x="80" y="160" width="40" height="50" rx="3" fill="#3b82f6" /> */}
-                    {/* Shoes */}
-                    {/* <ellipse cx="90" cy="215" rx="8" ry="6" fill="#1f2937" />
-                    <ellipse cx="110" cy="215" rx="8" ry="6" fill="#1f2937" /> */}
-                    {/* Briefcase */}
-                    {/* <rect x="130" y="140" width="35" height="40" rx="3" fill="#ef4444" />
-                    <rect x="135" y="135" width="25" height="8" rx="2" fill="#fbbf24" /> */}
-                    {/* Shield on briefcase */}
-                    {/* <path d="M 145 150 L 155 150 L 155 165 Q 150 170 145 165 Z" fill="#3b82f6" /> */}
-                  {/* </svg> */}
-                {/* </div> */}
-              {/* </div> */}
-            {/* </div> */}
+            
           </div>
         </div>
       </div>
     </section>
   )
 }
+
+

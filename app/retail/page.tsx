@@ -9,13 +9,6 @@ import { RetailSolution } from "@/components/retail/solution";
 import { RetailUseCases } from "@/components/retail/use-cases";
 import { RetailVideoSection } from "@/components/retail/video-section";
 
-
-export const metadata = {
-  title: " ",
-  description:
-    "",
-};
-
 export default function Retail() {
   return (
     <>
@@ -33,4 +26,10 @@ export default function Retail() {
       <Footer />
     </>
   )
+}
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Retail & E-Commerce",
+  description: "Retail and e-commerce CRM: customer engagement, promotions, and purchase journey automation.",
 }

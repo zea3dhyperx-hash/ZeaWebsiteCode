@@ -12,10 +12,12 @@ import { RelationshipSection } from "@/components/education/relationship";
 import { StudentEngagementSection } from "@/components/education/student-engagement";
 
 
-export const metadata = {
-  title: " ",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Education & Training | ZeaCRM",
   description:
-    "",
+    "Engage students, streamline admissions, manage relationships, and enhance learning outcomes with ZeaCRM for education. Features include student engagement, institution management, admissions workflows, and more.",
 };
 
 export default function Education() {
