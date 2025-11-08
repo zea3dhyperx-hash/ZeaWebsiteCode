@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 
 export function RetailVideoSection() {
   const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
