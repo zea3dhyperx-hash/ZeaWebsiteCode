@@ -107,7 +107,7 @@ export function Blogs2Page() {
         </section>
 
         {/* Category + Author Filters */}
-        <section className="py-8 px-4 md:px-8 border-b border-border">
+        {/* <section className="py-8 px-4 md:px-8 border-b border-border">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-wrap gap-2 mb-3">
               {categories.map((category, i) => (
@@ -142,7 +142,7 @@ export function Blogs2Page() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* All Articles Grid */}
         <section className="py-16 md:py-24 px-4 md:px-8">
