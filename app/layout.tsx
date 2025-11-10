@@ -22,11 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.className} font-sans antialiased`}>
-          {children}
-          <ScrollToTop />
-          {children}
-          <Analytics />
-          
+        {children}
+        <ScrollToTop />
+        <Analytics />
       </body>
     </html>
   )
