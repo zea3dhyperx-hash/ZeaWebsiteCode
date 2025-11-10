@@ -189,8 +189,21 @@ export function IndustriesPage() {
   return (
     <main className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="py-25 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
+      <section className="relative overflow-hidden py-25 px-4 sm:px-6 lg:px-8">
+        {/* Background video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/herobg4.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+        />
+        {/* Dark overlay to improve text contrast */}
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+
+        <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h1 className="text-5xl py-10 sm:text-6xl font-bold text-white scale-130 mb-4 animate-slide-up">Other Industries</h1>
           <p className="text-xl text-amber-400 mb-6 animate-slide-up">AI-Powered CRM Solutions for Every Business Sector</p>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8 animate-slide-up">
