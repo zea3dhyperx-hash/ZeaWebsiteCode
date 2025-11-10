@@ -9,6 +9,7 @@ import React from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import ChatWidget from "@/components/chatbot"
+import GhlCalendar from "@/components/GhlCalendar"
 // import { RelatedBlogs } from "@/components/related-blogs" // optional
 
 // export const metadata = {
@@ -263,8 +264,17 @@ export default function BlogPage() {
             </div>
           </div>
 
-          {/* === TABLE OF CONTENTS === */}
-          <TableOfContents sections={blogData.content.sections} />
+          {/* === SIDEBAR: CALENDAR ABOVE TOC (sticky) === */}
+
+          <aside className="w-full lg:w-[380px] xl:w-[420px]">
+            <div className="sticky top-24 space-y-6">
+              <div className="rounded-lg border border-border p-3">
+                <h3 className="text-base font-semibold mb-3">Book a Demo</h3>
+                <GhlCalendar />
+              </div>
+              {/* <TableOfContents sections={blogData.content.sections} /> */}
+            </div>
+          </aside>
         </div>
       </div>
       <Footer />

@@ -1,5 +1,7 @@
 "use client"
 
+import AniRealEstate from "../animations/ani-realestate"
+
 export function LeadCaptureSection() {
   return (
     <section id="solutions" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950">
@@ -19,11 +21,12 @@ export function LeadCaptureSection() {
           {/* Image */}
           <div className="flex justify-center leading-3 tracking-normal text-left items-start gap-3.5">
             <div className="relative w-full max-w-md h-72 rounded-lg overflow-hidden shadow-2xl">
-              <img
+              {/* <img
               src="allinone.png"
               alt="Healthcare team collaboration"
               className="w-full h-full object-cover"
-            />
+            /> */}
+              <AniRealEstate />
             </div>
           </div>
         </div>

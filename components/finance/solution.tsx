@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
+import AniFinance from "../animations/ani-finance"
 
 export function FinanceSolution() {
   const [isVisible, setIsVisible] = useState(false)
@@ -55,11 +56,12 @@ export function FinanceSolution() {
             }`}
           >
             <div className="relative aspect-video rounded-lg overflow-hidden">
-              <img
+              {/* <img
               src="allinone.png"
               alt="Healthcare team collaboration"
               className="w-full h-full object-cover"
-            />
+            /> */}
+            <AniFinance/>
             </div>
           </div>
         </div>

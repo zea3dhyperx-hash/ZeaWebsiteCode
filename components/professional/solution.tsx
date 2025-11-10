@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
+import AniProf from "../animations/ani-prof"
 
 export function SolutionSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -55,11 +56,12 @@ export function SolutionSection() {
           <div
             className={`relative aspect-video rounded-lg overflow-hidden transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-8 scale-95"}`}
           >
-            <img
+            <AniProf />
+            {/* <img
               src="allinone.png"
               alt="Healthcare team collaboration"
               className="w-full h-full object-cover"
-            />
+            /> */}
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Play } from "lucide-react"
-import AniHero from "./ani-hero"
+import AniHero from "./animations/ani-hero"
 import { useEffect } from "react";
 import { GetStartedModal } from "./get-started-modal"
 import { SignInModal } from "./sign-in-modal"

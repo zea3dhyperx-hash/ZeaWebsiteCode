@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 
 import { useEffect, useState } from "react"
+import AniEdu from "../animations/ani-edu";
 
 export function PrinciplesSection() {
   const router = useRouter();
@@ -52,11 +53,12 @@ export function PrinciplesSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
             }`}
           >
-            <img
+            {/* <img
               src="allinone.png"
               alt="Healthcare team collaboration"
               className="w-full h-full object-cover"
-            />
+            /> */}
+            <AniEdu />
           </div>
         </div>
 

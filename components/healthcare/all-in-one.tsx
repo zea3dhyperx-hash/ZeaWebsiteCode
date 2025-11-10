@@ -1,3 +1,7 @@
+"use client"
+
+import AniHealthcare from "../animations/ani-health"
+
 export function AllInOne() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950" id="solutions">
@@ -17,11 +21,12 @@ export function AllInOne() {
           </div>
 
           <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-slate-600 to-slate-800">
-            <img
+            {/* <img
               src="allinone.png"
               alt="Healthcare team collaboration"
               className="w-full h-full object-cover"
-            />
+            /> */}
+            <AniHealthcare />
           </div>
         </div>
       </div>

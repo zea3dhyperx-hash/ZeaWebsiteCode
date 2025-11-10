@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import AniRetail from "../animations/ani-retail"
 
 export function RetailAISection() {
   return (
@@ -27,12 +28,13 @@ export function RetailAISection() {
 
           {/* Image */}
           <div className="relative aspect-video rounded-lg overflow-hidden">
-            <Image
+            {/* <Image
               src="/images/design-mode/Gemini_Generated_Image_a4h3z2a4h3z2a4h3.png"
               alt="Business professionals with digital technology overlay"
               fill
               className="object-cover"
-            />
+            /> */}
+            <AniRetail />
           </div>
         </div>
       </div>
