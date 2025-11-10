@@ -14,7 +14,7 @@ export interface AniHeroProps {
 }
 
 export default function AniRealEstate({
-  src = "https://lottie.host/fc73fd08-bf9d-4a0e-a298-b78e13992441/As7Vaqh3nU.lottie",
+  src = "https://lottie.host/d16c08dc-9382-415f-96fc-bc65e8a978a6/C2qRK7k8u0.lottie",
   loop = true,
   autoplay = true,
   width = "100%",
