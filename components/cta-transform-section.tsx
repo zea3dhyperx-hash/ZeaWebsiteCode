@@ -3,6 +3,7 @@
 import { CheckCircle2 } from "lucide-react"
 import { Image } from "lucide-react"
 import { useEffect, useRef } from "react"
+import Anim1 from "./animations/anim1"
 
 export function CTATransformSection() {
   const containerRef = useRef(null)
@@ -61,11 +62,12 @@ export function CTATransformSection() {
 
           {/* Right Side - Animated Illustration */}
           <div ref={containerRef} className="hidden md:flex items-center justify-center">
-            <img
+            <Anim1 />
+            {/* <img
                   src="/images/contact12.jpg"
                   alt="Award Winning Support Illustration"
                   className="w-full h-auto rounded-lg"
-                />
+                /> */}
             {/* <div className="w-full h-80 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg flex items-center justify-center border border-primary/20 relative overflow-hidden">
               <svg
                 className="w-48 h-48 animate-pulse"

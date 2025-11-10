@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
@@ -23,6 +22,8 @@ import { FeaturesComparisonTable } from "@/components/features-comparison-table"
 import { WhyChooseUsHero } from "@/components/why-choose-us-hero"
 import ComparisonTable from "@/components/comparisontable"
 
+import {ScrollRestoration} from "react-router-dom"
+
 export const metadata = {
   title: "Zea CRM - AI-Powered CRM for the Future of Business",
   description:
@@ -32,29 +33,33 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <Header />
-      <main className="min-h-screen">
-        <HeroSection />
-        <StatsSection />
-        <AIToolsSection />
-        <FourStepsSection />
-        <FeatureCardsSection />
-        {/* <FeaturesSlider2 /> */}
-        <FeaturesHubSection />
-        <AwardSupportSection />
-        <IntegrationsSection />
-        <WhyChooseUsHero />
-        {/* <FeaturesComparisonTable />  */}
-        <ComparisonTable />
-        <IndustriesSection />
-        <WhyUsTestimonialsSection />
-        <PricingSection />
-        <WhyUsComparisonSection />
-        <CTATransformSection />
-        <ChatWidget />
-        {/* <IntegrationsLogosSection /> */}
-      </main>
+      {/* <ClientScrollRestore> */}
+
+        <Header />
+        <main className="min-h-screen">
+          <HeroSection />
+          <StatsSection />
+          <AIToolsSection />
+          <FourStepsSection />
+          <FeatureCardsSection />
+          {/* <FeaturesSlider2 /> */}
+          <FeaturesHubSection />
+          <AwardSupportSection />
+          <IntegrationsSection />
+          <WhyChooseUsHero />
+          {/* <FeaturesComparisonTable */}
+          <ComparisonTable />
+          <IndustriesSection />
+          <WhyUsTestimonialsSection />
+          <PricingSection />
+          <WhyUsComparisonSection />
+          <CTATransformSection />
+          <ChatWidget />
+          {/* <IntegrationsLogosSection /> */}
+        </main>
+      {/* </ClientScrollRestore> */}
       <Footer />
     </>
   )
 }
+ 

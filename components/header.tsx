@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -9,7 +9,15 @@ import { SignInModal } from "./sign-in-modal"
 import { GetStartedModal } from "./get-started-modal"
 import Image from "next/image"
 
+
 export function Header() {
+
+  useEffect(()=>  {
+        if ("scrollRestoration" in window.history) {
+            window.history.scrollRestoration = "manual"
+          }
+    },[]);
+  
   const [isOpen, setIsOpen] = useState(false)
   const [isPlaybooksOpen, setIsPlaybooksOpen] = useState(false)
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false)
@@ -308,3 +316,7 @@ export function Header() {
     </>
   )
 }
+// function useEffect(arg0: () => void, arg1: never[]) {
+//   throw new Error("Function not implemented.")
+// }
+

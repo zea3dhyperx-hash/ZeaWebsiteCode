@@ -1,4 +1,4 @@
-
+// Server component with client wrapper
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
@@ -26,22 +26,24 @@ export const metadata = {
 export default function FeaturesPage() {
   return (
     <main className="min-h-screen">
-      <Header />
-      <Features2Hero />
-      
-      <Features2Grid />
-      <FeaturesSlider />
-      {/* <FeaturesHeroSection /> */}
-      {/* <FeaturesCardsSection /> */}
-      <FeaturesResultsSection />
-      {/* <FeaturesAutomationSection /> */}
-      <FeaturesMobileSection />
-      <Features2Showcase />
-      <Features2Integration />
-      <Features2CTA />
-      <FeaturesScaleSection />
-      <Footer />
-      <ChatWidget />
+      {/* <ClientScrollRestore> */}
+        <Header />
+        <Features2Hero />
+        
+        <Features2Grid />
+        <FeaturesSlider />
+        {/* <FeaturesHeroSection /> */}
+        {/* <FeaturesCardsSection /> */}
+        <FeaturesResultsSection />
+        {/* <FeaturesAutomationSection */}
+        <FeaturesMobileSection />
+        <Features2Showcase />
+        <Features2Integration />
+        <Features2CTA />
+        <FeaturesScaleSection />
+        <Footer />
+        <ChatWidget />
+      {/* </ClientScrollRestore> */}
     </main>
   )
 }

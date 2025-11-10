@@ -3,6 +3,7 @@
 import { Check, ChevronDown } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
+import Anim3 from "./animations/anim3"
 
 
 export function PricingPage() {

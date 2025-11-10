@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ScrollToTop } from "@/components/scroll-to-top"
-import { ScrollRestoration } from "@/components/scroll-restoration"
+import { ScrollRestoration } from "react-router-dom"
 import "./globals.css"
 
 const dmSans = DM_Sans({ subsets: ["latin"] })
@@ -22,10 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.className} font-sans antialiased`}>
-        <ScrollRestoration />
-        <ScrollToTop />
-        {children}
-        <Analytics />
+          {children}
+          <ScrollToTop />
+          {children}
+          <Analytics />
+          
       </body>
     </html>
   )

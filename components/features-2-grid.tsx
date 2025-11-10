@@ -43,7 +43,7 @@ export function Features2Grid() {
   ]
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
+    <section id="features-grid" className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-background mb-4 text-balance">Core Features That Drive Growth</h2>
         <p className="text-center text-background text-lg mb-16 max-w-2xl mx-auto">Here are some features that help your business thrive:</p>

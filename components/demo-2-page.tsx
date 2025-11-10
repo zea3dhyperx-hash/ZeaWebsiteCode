@@ -63,8 +63,21 @@ export function Demo2Page() {
       <Header />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/10 to-background py-0 md:py-24 px-4 md:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="relative overflow-hidden py-0 md:py-24 px-4 md:px-8">
+          {/* Background video */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            src="/videos/herobg3.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+          />
+          {/* Dark overlay to improve text contrast */}
+          <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
             {/* <div className="flex justify-center mb-6 animate-fade-in">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/68c6c410024cf8ec47d6e3a7%281%29-zH93U9LGERy9pNBqMr2KDpBbblZtgX.png"
