@@ -1,6 +1,14 @@
 export function Features2Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background to-card/30 py-20">
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background/60 via-background/60 to-card/30 py-20"
+      style={{
+        backgroundImage: "url('images/featuresbg.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity:'1',
+      }}
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />

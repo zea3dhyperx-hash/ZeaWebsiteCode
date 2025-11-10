@@ -49,7 +49,7 @@ export function PrinciplesSection() {
           </div>
 
           <div
-            className={`bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg aspect-square lg:aspect-auto lg:h-96 flex items-center justify-center leading-7 tracking-normal transition-all duration-1000 delay-300 hover:scale-105 hover:shadow-2xl hover:from-blue-500/30 hover:to-purple-500/30 ${
+            className={`  lg:h-96 flex items-center justify-center leading-7 tracking-normal transition-all duration-1000 delay-300 hover:scale-105 hover:shadow-2xl hover:from-blue-500/30 hover:to-purple-500/30 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
             }`}
           >
