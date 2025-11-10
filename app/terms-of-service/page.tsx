@@ -15,17 +15,94 @@ export default function TermsOfServicePage() {
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-foreground mb-8">Terms of Service</h1>
+          <p className="text-muted-foreground py-2">These Terms of Service ("Terms") govern your access to and use of ZeaCRM (“Service”), provided by Zea Technologies FZC. By accessing or using ZeaCRM, you agree to be bound by these Terms.</p>
 
           <div className="prose prose-invert max-w-none space-y-6">
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">1. Agreement to Terms</h2>
-              <p className="text-muted-foreground">
-                By accessing and using the ZeaCRM website and service, you accept and agree to be bound by the terms and
-                provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+              <h2 className="text-2xl font-bold text-foreground mb-4">Eligibility</h2>
+              <p className="text-muted-foreground py-2">
+                You must be at least 18 years old and capable of entering into a binding agreement. If you are using ZeaCRM on behalf of a business, you represent that you have the authority to bind that business.
               </p>
             </section>
 
             <section>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Account Registration</h2>
+              <p className="text-muted-foreground py-2">
+                To use ZeaCRM, you must create an account by providing accurate, complete, and current information. You are responsible for maintaining the confidentiality of your login credentials and for all activities under your account.
+              </p>
+              <p className="text-muted-foreground py-2">
+                By using our website and services, you agree to:
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 mt-4">
+                <li>Use ZeaCRM only for lawful purposes.</li>
+                <li>Not to misuse, reverse-engineer, or disrupt the platform.</li>
+                <li>Comply with all applicable local and international laws.</li>
+                <li>Not to upload or transmit any viruses, spam, or unauthorized data.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Subscription & Payment</h2>
+              <p className="text-muted-foreground py-2">
+                ZeaCRM operates on a transparent, subscription-based model designed to offer flexibility and scalability for every business size. All payments are processed securely through trusted third-party payment gateways using industry-standard encryption.
+              </p>
+              <p className="text-muted-foreground py-2">
+                Subscription fees are billed according to the plan you select and are non-refundable, except as expressly stated in a written agreement or under special promotional terms. ZeaCRM reserves the right to modify pricing, add new plans, or update features with prior notice.
+              </p>
+              <p className="text-muted-foreground py-2">
+                Any failure to make timely payments may result in temporary suspension or termination of access to your account until dues are cleared. Renewal notices and payment reminders will be communicated in advance to ensure seamless continuity of services.
+              </p>
+            </section>
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Intellectual Property</h2>
+              <p className="text-muted-foreground py-2">
+                All intellectual property rights, including but not limited to software, design elements, trademarks, logos, databases, documentation, and user interfaces, remain the sole property of Zea Technologies FZC. By using ZeaCRM, you are granted a limited, non-exclusive, and non-transferable license to access and use the platform strictly for legitimate business purposes.
+              </p>
+              <p className="text-muted-foreground py-2">
+                You may not reproduce, distribute, modify, or create derivative works from any part of ZeaCRM without explicit written consent. Any unauthorized use or infringement of ZeaCRM’s intellectual property may result in legal action.
+              </p>
+            </section>
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Termination</h2>
+              <p className="text-muted-foreground py-2">
+                ZeaCRM reserves the right to suspend, restrict, or permanently terminate your access if you violate these Terms of Service, engage in fraudulent activity, or misuse the platform in any way that compromises performance, security, or other users’ rights.
+              </p>
+              <p className="text-muted-foreground py-2">
+                Upon termination, your access to all associated data, integrations, and features will be discontinued. However, you may request data export prior to account deactivation. ZeaCRM also retains the right to terminate inactive or delinquent accounts following reasonable notice.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Limitation of Liability</h2>
+              <p className="text-muted-foreground py-2">
+                To the fullest extent permitted by law, ZeaCRM shall not be held liable for any indirect, incidental, special, or consequential damages, including loss of data, revenue, or profits resulting from the use or inability to use the platform.
+              </p>
+              <p className="text-muted-foreground py-2">
+                In all cases, ZeaCRM’s total cumulative liability shall not exceed the total amount paid by you for services during the six (6) months immediately preceding the claim. You acknowledge that ZeaCRM is not responsible for delays, interruptions, or data loss resulting from factors beyond its control, including third-party integrations or network issues.
+              </p>
+            </section>
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Indemnification</h2>
+              <p className="text-muted-foreground py-2">
+                You agree to indemnify, defend, and hold Zea Technologies FZC, its affiliates, directors, and employees harmless from any and all claims, losses, liabilities, or expenses arising from your breach of these Terms, unauthorized use of the platform, or violation of applicable laws. This includes attorney fees and damages related to misuse of data, intellectual property infringement, or non-compliance with security practices.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Governing Law</h2>
+              <p className="text-muted-foreground py-2">
+                These Terms of Service are governed and interpreted in accordance with the laws of the United States of America, without regard to conflict of law principles. Any disputes or claims arising from your use of ZeaCRM or related policies shall be exclusively resolved through the appropriate courts within the jurisdiction of the United States. By using ZeaCRM, you consent to the jurisdiction and venue of these courts for any such legal matters.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Contact</h2>
+              <p className="text-muted-foreground py-2">
+                If you have any questions about this Policy, please contact support@zeacrm.com.
+              </p>
+            </section>
+
+            {/* <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">2. Use License</h2>
               <p className="text-muted-foreground">
                 Permission is granted to temporarily download one copy of the materials (information or software) on
@@ -93,7 +170,7 @@ export default function TermsOfServicePage() {
                 in which ZeaCRM operates, and you irrevocably submit to the exclusive jurisdiction of the courts in that
                 location.
               </p>
-            </section>
+            </section> */}
           </div>
         </div>
       </main>

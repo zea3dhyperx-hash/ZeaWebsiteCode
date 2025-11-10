@@ -100,13 +100,22 @@ export function HeroSection() {
             
           </div>
           {/* Right Visual: Bot SVG */}
-          <div className="scale-110 relative h-96 lg:h-full flex items-center justify-center">
+          <div className="scale-120 relative h-96 lg:h-full flex items-center justify-center">
             <img
               src="/bot/bot3.gif"
               alt="Animated assistant bot"
               className="w-full h-auto max-h-[520px] object-contain"
             />
-          </div>
+            {/* <video
+              className="absolute inset-0 w-full h-full object-cover"
+              src="/videos/hero13.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-hidden="true"
+            />*/}
+          </div> 
           {/* <AniHero /> */}
           
 
