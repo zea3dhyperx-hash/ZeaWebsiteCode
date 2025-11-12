@@ -18,7 +18,7 @@ export default function FAQ({ title = 'Frequently Asked Questions', items, class
 
   return (
     <section className={className ?? 'mt-12 border-t border-border pt-8'}>
-      <h2 className="text-2xl font-bold mb-4">{title}</h2>
+      <h2 className="text-4xl text-center font-bold mb-4">{title}</h2>
       <div className="space-y-3">
         {items.map((item, i) => (
           <div key={i} className="rounded-md border border-border border-primary/75">

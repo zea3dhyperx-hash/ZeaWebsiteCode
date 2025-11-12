@@ -134,7 +134,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-slate-800 pt-8 text-center text-sm text-gray-500">
-          <p>© 2025 ZeaCRM | Powered by ZeaCRM Factory | All rights reserved</p>
+          <p>© 2025 ZeaCRM | Powered by URL-Factory | All rights reserved</p>
         </div>
       </div>
     </footer>

@@ -1,0 +1,407 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import ChatWidget from "@/components/chatbot";
+import FAQ from "@/components/faq";
+import Link from "next/link";
+
+export default function HealthcareCRM() {
+  const [expanded, setExpanded] = useState(false);
+  const [lockedOpen, setLockedOpen] = useState(false);
+  const [videoSrc, setVideoSrc] = useState("");
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [panelHeight, setPanelHeight] = useState(0);
+
+  // Measure panel height
+  useEffect(() => {
+    if (panelRef.current) setPanelHeight(panelRef.current.scrollHeight);
+  }, [expanded]);
+
+  // Load video URL once client-side
+  useEffect(() => {
+    setVideoSrc(
+      "https://www.youtube.com/embed/kRqQhG4am08?enablejsapi=1&rel=0&modestbranding=1&playsinline=1"
+    );
+  }, []);
+
+  // YouTube event listener
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (!event.origin.includes("youtube.com")) return;
+      let data: any = event.data;
+      try {
+        if (typeof data === "string") data = JSON.parse(data);
+      } catch {
+        return;
+      }
+      if (!data?.event) return;
+      const state =
+        data.info?.playerState !== undefined ? data.info.playerState : data.data;
+
+      if (state === 1) {
+        // playing
+        setLockedOpen(true);
+        setExpanded(true);
+      } else if (state === 0 || state === 2) {
+        // ended or paused
+        setLockedOpen(false);
+      }
+    };
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
+
+  // Wire YT iframe events
+  const onIframeLoad = () => {
+    const win = iframeRef.current?.contentWindow;
+    if (!win) return;
+    try {
+      win.postMessage(JSON.stringify({ event: "listening" }), "*");
+      win.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: "addEventListener",
+          args: ["onStateChange"],
+        }),
+        "*"
+      );
+    } catch {}
+  };
+
+  // Fullscreen trigger
+  const tryFullscreen = () => {
+    const el = iframeRef.current as any;
+    const go =
+      el?.requestFullscreen ||
+      el?.webkitRequestFullscreen ||
+      el?.msRequestFullscreen;
+    go?.call(el);
+  };
+
+  // Stop + reset video when closing
+  useEffect(() => {
+    if (!expanded && iframeRef.current && videoSrc) {
+      iframeRef.current.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "stopVideo", args: [] }),
+        "*"
+      );
+      iframeRef.current.src = videoSrc;
+    }
+  }, [expanded, videoSrc]);
+
+  return (
+    <>
+      <Header />
+
+      {/* --- Video Section --- */}
+      <section className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <button
+            onMouseEnter={() => setExpanded(true)}
+            onFocus={() => setExpanded(true)}
+            className="w-full py-3 font-semibold tracking-wide flex items-center justify-center gap-2"
+            aria-expanded={expanded}
+          >
+            Watch me
+            <span
+              className={`transition-transform ${
+                expanded ? "rotate-180" : "rotate-0"
+              }`}
+            >
+              ▼
+            </span>
+          </button>
+        </div>
+
+        <div
+          style={{ maxHeight: expanded ? panelHeight : 0 }}
+          className="transition-[max-height] duration-500 ease-out overflow-hidden bg-slate-950 border-t border-black/20"
+        >
+          <div
+            ref={panelRef}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"
+            onMouseEnter={() => setExpanded(true)}
+            onMouseLeave={() => !lockedOpen && setExpanded(false)}
+          >
+            <div
+              className="relative aspect-video bg-slate-800 rounded-xl overflow-hidden border border-slate-800"
+              onClick={tryFullscreen}
+            >
+              {videoSrc && (
+                <iframe
+                  ref={iframeRef}
+                  className="w-full h-full border-0"
+                  src={videoSrc}
+                  title="ZeaCRM Healthcare Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  allowFullScreen
+                  onLoad={onIframeLoad}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- Main Content --- */}
+      <main className="min-h-screen">
+        {/* Hero */}
+        <section className="border-b border-border bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+                Smarter Healthcare Relationship Management
+              </h1>
+              <p className="mt-4 text-muted-foreground text-lg">
+                Deliver seamless patient care with ZeaCRM — the all-in-one AI
+                platform designed for hospitals, clinics, labs, and wellness
+                professionals.
+              </p>
+              <div className="mt-8 flex gap-4">
+                <Button asChild size="lg">
+                  <Link href="/get-started">Book a Demo</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/sign-in">Start Free Trial</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="rounded-xl border border-border p-6 bg-card">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <li className="p-4 rounded-lg bg-muted">
+                  Smart Scheduling & Automated Reminders
+                </li>
+                <li className="p-4 rounded-lg bg-muted">
+                  Unified Patient Communication (WhatsApp, Email, SMS)
+                </li>
+                <li className="p-4 rounded-lg bg-muted">
+                  Intelligent Record Tracking (EMR Integration)
+                </li>
+                <li className="p-4 rounded-lg bg-muted">
+                  AI Analytics for Insight-Driven Decisions
+                </li>
+                <li className="p-4 rounded-lg bg-muted">
+                  Secure, Compliant, and Scalable
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 1 */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="md:w-4/5">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-primary text-center">
+              AI-Driven Care. Zero Chaos.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              In healthcare, every interaction matters — from the first
+              appointment to lifelong patient engagement. ZeaCRM empowers
+              healthcare providers to manage patients with precision, empathy,
+              and speed.
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              Built with advanced automation, ZeaCRM eliminates manual work from
+              scheduling, reminders, and communications so your staff can focus
+              on what truly matters: patient care.
+            </p>
+          </div>
+          <div className="mt-10 rounded-xl overflow-hidden border border-border">
+            <img
+              src="/healthbg.png"
+              alt="Healthcare background"
+              className="w-full h-auto"
+            />
+          </div>
+        </section>
+
+        {/* Section 2 */}
+        <section className="bg-muted/30 border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-primary text-center">
+              ZeaCRM supports the full healthcare ecosystem — connecting medical,
+              administrative, and patient operations in one place.
+            </h2>
+            <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                ["Hospitals", "Coordinate departments, track patient journeys, and automate follow-ups."],
+                ["Clinics", "Manage appointments, patient histories, and communication seamlessly."],
+                ["Labs", "Send test reports automatically and track client feedback in real time."],
+                ["Pharmacies", "Automate prescription refills, digital orders, and customer engagement."],
+                ["Nursing Homes", "Simplify care plans and automate family updates."],
+                ["Wellness Centers", "Personalize plans, reminders, and session logs."],
+                ["Medical Suppliers", "Manage leads, inventory, and client orders in one view."],
+                ["Insurance Providers", "Streamline claims and policy communication."],
+                ["Dental & Home Care", "Automate scheduling, recalls, and caregiver coordination."],
+                ["Telemedicine", "Integrate calls, chats, and consultations into a single system."],
+              ].map(([title, desc]) => (
+                <div key={title} className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary animate-in fade-in slide-in-from-bottom-2">
+                  <h3 className="font-semibold text-foreground">{title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3 */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              ["🏥 Hospitals", "Smarter Care, Less Paperwork.", "Automate bookings, prescriptions, payments, and follow-ups — reducing admin time and improving care quality."],
+              ["🩺 Clinics", "Patient-First Automation.", "Enable WhatsApp appointment booking, queue management, and digital records for a frictionless experience."],
+              ["🧪 Laboratories", "Digitally Connected Diagnostics.", "Automate test booking, report delivery, and billing for faster, more accurate workflows."],
+              ["💊 Pharmacies", "Connected Pharmacy Operations.", "Enable digital ordering, e-prescription syncing, and automated refill reminders for repeat sales."],
+              ["🌿 Wellness & Therapy", "Personalized Care at Scale.", "Provide digital care plans, automated follow-ups, and motivational nudges to boost engagement."],
+              ["🚑 Emergency & Ambulance", "Automation When Seconds Matter.", "Dispatch tracking, digital reports, and post-care reminders ensure faster recovery and operational accuracy."],
+            ].map(([label, subtitle, body]) => (
+              <div key={label} className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary animate-in fade-in slide-in-from-bottom-2">
+                <h3 className="text-lg font-semibold text-primary text-center">{label}</h3>
+                <p className="mt-1 text-sm text-foreground">{subtitle}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Section 4 */}
+        <section className="bg-muted/30 border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-primary text-center">
+              From Front Desk to Follow-Up — All in One System
+            </h2>
+            <p className="mt-4 text-muted-foreground md:w-4/5">
+              ZeaCRM connects every department — medical, administrative, and
+              support — with a single intelligent interface.
+            </p>
+            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                "Smart Workflows for Every Role",
+                "Centralized Patient Records (EMR)",
+                "AI Predictions for Patient Needs",
+                "Real-Time Analytics & Dashboards",
+                "Integrated UPI / QR Payments",
+                "Multi-Channel Messaging (WhatsApp, Email, SMS)",
+              ].map((item) => (
+                <div key={item} className="p-4 rounded-lg bg-card border border-border text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary animate-in fade-in slide-in-from-bottom-2">
+                  {item}
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-sm text-foreground">
+              Outcome: Higher efficiency, better coordination, and improved patient satisfaction.
+            </div>
+          </div>
+        </section>
+
+        {/* Section 5 */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-primary text-center">
+            Turn Care into Growth with Intelligent Marketing
+          </h2>
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              "Automated Health Campaigns & Checkup Offers",
+              "AI-Driven Engagement Sequences",
+              "Review & Feedback Automation",
+              "Analytics on Booking Trends & Conversions",
+              "Smart Retargeting for Patient Retention",
+            ].map((item) => (
+              <div key={item} className="p-4 rounded-lg bg-muted border border-border text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary animate-in fade-in slide-in-from-bottom-2">
+                {item}
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-muted-foreground md:w-4/5">
+            ZeaCRM bridges patient care and marketing — helping healthcare
+            organizations grow sustainably while maintaining trust and compliance.
+          </p>
+        </section>
+
+        {/* Section 6 */}
+        <section className="bg-muted/30 border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-primary text-center">
+              Designed for Healthcare. Engineered for Impact.
+            </h2>
+            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                ["AI-Powered", "Predict, automate, and personalize patient journeys."],
+                ["Automation-First", "Reduce manual work and increase accuracy."],
+                ["Secure & Compliant", "Built with data protection and healthcare compliance standards."],
+                ["Industry-Ready", "Tailored for hospitals, labs, and wellness providers."],
+                ["Proven Impact", "Real operational efficiency and measurable results."],
+              ].map(([title, desc]) => (
+                <div key={title} className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary animate-in fade-in slide-in-from-bottom-2">
+                  <h3 className="font-semibold text-foreground">{title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="rounded-xl border border-border bg-primary/5 p-8 text-center">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-primary text-center">
+              Let’s Simplify Healthcare Management
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-3xl mx-auto">
+              ZeaCRM transforms how healthcare organizations operate — combining
+              AI automation, secure data, and actionable insights into one
+              platform.
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-4">
+              <Button asChild size="lg">
+                <Link href="/get-started">Book a Demo</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link href="/sign-in">Start Free Trial</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="bg-muted/30 border-t border-border">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <FAQ
+              items={[
+                {
+                  q: "What is a Healthcare CRM?",
+                  a: "A Healthcare CRM like ZeaCRM helps automate appointments, communication, and patient management — improving efficiency and satisfaction.",
+                },
+                {
+                  q: "How does AI help in healthcare CRM?",
+                  a: "ZeaCRM uses AI to automate scheduling, follow-ups, and data management to reduce errors and boost engagement.",
+                },
+                {
+                  q: "Can ZeaCRM integrate with hospital systems?",
+                  a: "Yes. ZeaCRM connects with EMR, billing, and communication tools for a unified workflow.",
+                },
+                {
+                  q: "Is patient data secure?",
+                  a: "Absolutely. ZeaCRM follows strong encryption and compliance frameworks for full confidentiality.",
+                },
+                {
+                  q: "How can healthcare organizations grow?",
+                  a: "ZeaCRM automates marketing, reminders, and feedback — increasing retention and referrals.",
+                },
+              ]}
+            />
+          </div>
+        </section>
+
+        <ChatWidget />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+
+
