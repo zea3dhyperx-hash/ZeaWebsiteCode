@@ -23,8 +23,16 @@ export function RelationshipManagement() {
                 Built with AI automation, ZeaCRM simplifies operations that often overwhelm healthcare teams. From scheduling and reminders to patient communication and record tracking, every process becomes smoother, faster, and more reliable. This is so your staff can focus on care, not coordination.
               </p>
             </div>
+            <div className="aspect-video bg-slate-800">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/kRqQhG4am08?si=6w-w9Bcim4__EVpb"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
 
-            <div
+            {/* <div
               onClick={() => setIsVideoOpen(true)}
               className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-slate-800 flex items-center justify-center border border-slate-700 cursor-pointer hover:border-amber-400 hover:shadow-lg hover:shadow-amber-400/20 transition-all duration-300"
             >
@@ -41,7 +49,7 @@ export function RelationshipManagement() {
                 </div>
                 <p className="text-slate-400">Video Demo</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

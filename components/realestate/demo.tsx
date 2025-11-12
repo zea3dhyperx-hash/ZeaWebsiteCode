@@ -15,8 +15,16 @@ export function RealEstateDemo() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="aspect-video bg-slate-800">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/OTr-FSnv_vA?si=WwNuVNslymDjfmZs"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
             {/* Video Demo */}
-            <div className="flex justify-center">
+            {/* <div className="flex justify-center">
               <div
                 className="relative w-[562px] h-[390px] bg-gradient-to-br from-blue-400 to-blue-300 rounded-lg shadow-2xl cursor-pointer hover:shadow-3xl transition-shadow flex items-center justify-center group overflow-hidden"
                 onClick={() => setShowModal(true)}
@@ -29,7 +37,7 @@ export function RealEstateDemo() {
                   </svg>
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Text Content */}
             <div className="space-y-6">
@@ -65,7 +73,7 @@ export function RealEstateDemo() {
             <div className="aspect-video bg-slate-800">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/BVZpMDhZNlg?si=ejUKwhpGBY2CPjxv"
+                src="https://www.youtube.com/embed/OTr-FSnv_vA?si=WwNuVNslymDjfmZs"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

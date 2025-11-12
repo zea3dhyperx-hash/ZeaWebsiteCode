@@ -39,7 +39,15 @@ export function VideoSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Video Placeholder */}
-          <div
+          <div className="aspect-video bg-slate-800">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/IGLw-PVrPUg?si=f0UWGOOpXwgjankN"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          {/* <div
             className={`relative transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}
           >
             <div className="relative aspect-video bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg flex items-center justify-center overflow-hidden" onClick={() => window.open('https://www.youtube.com/embed/BVZpMDhZNlg?si=ejUKwhpGBY2CPjxv','_blank')}>
@@ -48,7 +56,7 @@ export function VideoSection() {
                 <Play className="w-10 h-10 text-white ml-1" />
               </button>
             </div>
-          </div>
+          </div> */}
 
           {/* Content */}
           <div

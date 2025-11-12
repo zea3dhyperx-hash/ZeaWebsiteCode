@@ -12,12 +12,20 @@ export function AutomotiveDemo() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-amber-400 mb-4">Smarter Operations and Customer Management for Industrial Growth</h2>
-            
+    
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Video Container with Thumbnail */}
-            <div
+            <div className="aspect-video bg-slate-800">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/uMWnFWuF1ew?si=bq9ErFpW5Kk8AsAq"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            {/* <div
               className="relative rounded-lg overflow-hidden bg-primary w-full lg:w-[562px] h-64 sm:h-80 lg:h-[390px] cursor-pointer group transition-all duration-300 mx-auto lg:mx-0"
               onClick={() => setShowVideoModal(true)}
             >
@@ -34,7 +42,7 @@ export function AutomotiveDemo() {
                   <Play className="w-8 h-8 text-white fill-white" />
                 </div>
               </button>
-            </div>
+            {/* </div>  */}
 
             {/* Text Content */}
             <div className="space-y-6">

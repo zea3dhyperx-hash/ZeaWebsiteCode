@@ -54,7 +54,15 @@ export function FinanceVideoSection() {
           </div>
 
           {/* Video Placeholder */}
-          <div
+          <div className="aspect-video bg-slate-800">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/wi0Ip3exvZY?si=CF8jSp1-f48Gwx3y"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          {/* <div
             className={`transition-all duration-700 delay-300 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
@@ -67,7 +75,7 @@ export function FinanceVideoSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           
         </div>
