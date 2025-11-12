@@ -81,7 +81,7 @@ export default function ContactUsPage() {
                         <div>
                           <h3 className="text-lg font-semibold mb-2 text-yellow-500">Call Us</h3>
                           <p className="text-lg text-gray-300 mb-1">Sales & Support Team</p>
-                          <p className="text-lg text-white font-medium">+91 94854 48291</p>
+                          <p className="text-lg text-white font-medium">+91 94884 48291</p>
                           <p className="text-sm text-gray-500">(Mon-Fri, 10am-6pm IST)</p>
                         </div>
                       </div>
@@ -93,8 +93,8 @@ export default function ContactUsPage() {
                         <div>
                           <h3 className="text-lg font-semibold mb-2 text-yellow-500">Office Address</h3>
                           <p className="text-lg text-gray-300">ZeaCRM HQ</p>
-                          <p className="text-lg text-white">123 Business Avenue,</p>
-                          <p className="text-lg text-white">Salem, Tamil Nadu, India</p>
+                          <p className="text-lg text-white">16, CPS Tower, Advaitha Ashram Rd, Fairlands,</p>
+                          <p className="text-lg text-white">Salem, Tamil Nadu 636004</p>
                         </div>
                       </div>
                     </div>
@@ -362,14 +362,14 @@ export default function ContactUsPage() {
               </p>
               <div className="space-y-2 text-foreground">
                 <p>
-                  <span className="font-semibold">Address:</span> 16, CPS Tower, Advitha Ashram Rd, FaIands, Salem, Tamilnadu 636016
+                  <span className="font-semibold">Address:</span> 16, CPS Tower, Advaitha Ashram Rd, Fairlands,Salem, Tamil Nadu 636004
                 </p>
                 <p>
-                  <span className="font-semibold">Hours:</span> Monday - Friday, 9:00 AM - 6:00 PM EST
+                  <span className="font-semibold">Hours:</span> Monday - Friday, 10:00 AM - 6:00 PM IST
                 </p>
-                <p>
+                {/* <p>
                   <span className="font-semibold">Parking:</span> Free parking available on-site
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
