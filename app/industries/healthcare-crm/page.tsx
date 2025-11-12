@@ -1,4 +1,4 @@
-import HealthcareCRM from "@/components/aatesting/page";
+import HealthcareCRM from "@/components/healthcare-page";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
