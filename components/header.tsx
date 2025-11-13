@@ -35,7 +35,7 @@ export function Header() {
     { href: "/", label: "Why Us" },
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/aatesting", label: "Testing" },
+    // { href: "/aatesting", label: "Testing" },
   ]
 
   return (
@@ -77,6 +77,62 @@ export function Header() {
             ))}
             {/* Industries Dropdown (Desktop) */}
             <div className="relative group">
+              <button className="flex items-center gap-1 text-foreground hover:text-primary transition-colors">
+                Industries
+                <ChevronDown size={16} className="group-hover:rotate-180 transition-transform" />
+              </button>
+              <div className="absolute left-0 mt-0 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <Link
+                  href="/industries/healthcare-crm"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-t-lg"
+                >
+                  Healthcare
+                </Link>
+                <Link
+                  href="/industries/real-estate-crm"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Real Estate
+                </Link>
+                <Link
+                  href="/industries/retail-ecommerce-crm"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Retail & E-commerce
+                </Link>
+                <Link
+                  href="/industries/professional-services-crm"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Professional Services
+                </Link>
+                <Link
+                  href="/industries/education-training-crm"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Education & Training
+                </Link>
+                <Link
+                  href="/industries/finance-insurance-crm"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Finance & Insurance
+                </Link>
+                <Link
+                  href="/industries/automotive-manufacturing-crm"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Automotive & Manufacturing
+                </Link>
+                <Link
+                  href="/industries/other-industries-crm"
+                  className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg border-t border-border"
+                >
+                  Other Industries
+                </Link>
+              </div>
+            </div>
+            {/* <div className="relative group">
               <button className="flex items-center gap-1 text-foreground hover:text-primary transition-colors">
                 Industries
                 <ChevronDown size={16} className="group-hover:rotate-180 transition-transform" />
@@ -144,7 +200,7 @@ export function Header() {
                   Other Industries
                 </Link>
               </div>
-            </div>
+            </div> */}
             <div className="relative group">
               <button className="flex items-center gap-1 text-foreground hover:text-primary transition-colors">
                 Playbooks
@@ -241,22 +297,22 @@ export function Header() {
                       <Link href="/industries/healthcare-crm" className="text-foreground hover:text-primary transition-colors">
                         Healthcare
                       </Link>
-                      <Link href="/industries/realestate" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/industries/real-estate-crm" className="text-foreground hover:text-primary transition-colors">
                         Real Estate
                       </Link>
-                      <Link href="/industries/retail" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/industries/retail-ecommerce-crm" className="text-foreground hover:text-primary transition-colors">
                         Retail & E-commerce
                       </Link>
-                      <Link href="/industries/professional" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/industries/professional-services-crm" className="text-foreground hover:text-primary transition-colors">
                         Professional Services
                       </Link>
-                      <Link href="/industries/education" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/industries/education-training-crm" className="text-foreground hover:text-primary transition-colors">
                         Education & Training
                       </Link>
-                      <Link href="/industries/finance" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/industries/finance-insurance-crm" className="text-foreground hover:text-primary transition-colors">
                         Finance & Insurance
                       </Link>
-                      <Link href="/industries/automotive" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/industries/automotive-manufacturing-crm" className="text-foreground hover:text-primary transition-colors">
                         Automotive & Manufacturing
                       </Link>
                       <Link href="/industries/other-industries" className="text-foreground hover:text-primary transition-colors">

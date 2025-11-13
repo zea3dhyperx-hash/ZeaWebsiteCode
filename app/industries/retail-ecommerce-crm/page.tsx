@@ -9,32 +9,16 @@ import HealthcareCRMAdvanced from "@/components/aatesting/page7.healthcare";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI-Powered Healthcare CRM | Smart Patient & Clinic Relationship Management",
+  title:
+    "AI-Powered CRM for Retail & E-Commerce | Boost Sales, Loyalty & Customer Engagement",
   description:
-    "ZeaCRM transforms healthcare operations with AI-driven automation for hospitals, clinics, labs, and wellness centers. Manage patients, staff, and communication seamlessly with one powerful CRM platform.",
-  keywords: [
-    "Healthcare CRM",
-    "medical CRM software",
-    "AI healthcare automation",
-    "patient management system",
-    "clinic CRM",
-    "hospital CRM",
-    "wellness CRM",
-    "healthcare marketing automation",
-    "digital patient engagement",
-  ],
-  openGraph: {
-    title: "Smarter Healthcare, Powered by ZeaCRM",
-    description:
-      "Streamline patient journeys, automate scheduling, and unify communication with ZeaCRM — the AI-powered CRM built for modern healthcare teams.",
-    type: "website",
-  },
+    "Enhance customer experience, automate marketing, and drive more repeat sales with ZeaCRM — the all-in-one AI CRM for online stores, retail chains, and e-commerce brands. Build loyalty, personalize engagement, and grow smarter.",
 };
 
 export default function Blogs2() {
   // return <HealthcareCRM />
-  return <RealEstateCRM />
-  // return <RetailEcomCRM />
+  // return <RealEstateCRM />
+  return <RetailEcomCRM />
   // return <ProfessionalServicesCRM />
   // return <EducationTrainingCRM />
   // return <FinanceInsuranceCRM />

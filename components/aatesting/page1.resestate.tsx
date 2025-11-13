@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -9,11 +8,7 @@ import FAQ from "@/components/faq";
 import Link from "next/link";
 import AniHealthcare from "../animations/ani-health";
 
-export const metadata: Metadata = {
-  title: "AI Real Estate CRM | Smart Automation for Builders, Agents & Property Managers",
-  description:
-    "Automate real estate sales, marketing, and property management with ZeaCRM. Capture leads, track deals, send rent reminders, and manage clients — all from one AI-powered platform built for modern real estate professionals.",
-};
+
 
 export default function RealEstateCRM() {
   const [expanded, setExpanded] = useState(false);
@@ -29,7 +24,7 @@ export default function RealEstateCRM() {
 
   useEffect(() => {
     setVideoSrc(
-      "https://www.youtube.com/embed/kRqQhG4am08?enablejsapi=1&rel=0&modestbranding=1&playsinline=1"
+      "https://www.youtube.com/embed/OTr-FSnv_vA?si=WwNuVNslymDjfmZs"
     );
   }, []);
 
@@ -185,37 +180,37 @@ export default function RealEstateCRM() {
             <div className="rounded-xl border border-border bg-card p-5">
               <h3 className="text-2xl font-semibold text-primary text-center">Builders & Developers – Automate Sales & Cash Flow</h3>
               <ul className="mt-4 space-y-2">
-                <li>Capture leads automatically from listings and ads</li>
-                <li>Send virtual tours and project updates via WhatsApp</li>
-                <li>Generate and sign digital booking forms</li>
-                <li>Track payment milestones and due dates</li>
+                <li className="text-center">Capture leads automatically from listings and ads</li>
+                <li className="text-center">Send virtual tours and project updates via WhatsApp</li>
+                <li className="text-center">Generate and sign digital booking forms</li>
+                <li className="text-center">Track payment milestones and due dates</li>
               </ul>
               <p className="mt-4 text-muted-foreground text-center">📈 Result: Faster sales cycles and smoother project cash flow</p>
             </div>
             <div className="rounded-xl border border-border bg-card p-5">
               <h3 className="text-2xl font-semibold text-primary text-center">Property Managers – Simplify Tenant Operations</h3>
               <ul className="mt-4 space-y-2">
-                <li>Onboard tenants with automated agreements</li>
-                <li>Send rent reminders through WhatsApp or SMS</li>
-                <li>Manage maintenance requests and service billing</li>
+                <li className="text-center">Onboard tenants with automated agreements</li>
+                <li className="text-center">Send rent reminders through WhatsApp or SMS</li>
+                <li className="text-center">Manage maintenance requests and service billing</li>
               </ul>
               <p className="mt-4 text-muted-foreground text-center">📈 Result: Transparent operations and satisfied tenants</p>
             </div>
             <div className="rounded-xl border border-border bg-card p-5">
               <h3 className="text-2xl font-semibold text-primary text-center">Brokers & Agencies – Close Deals Faster</h3>
               <ul className="mt-4 space-y-2">
-                <li>Import leads from property portals automatically</li>
-                <li>Match buyers to properties using AI suggestions</li>
-                <li>Send property details instantly via WhatsApp</li>
+                <li className="text-center">Import leads from property portals automatically</li>
+                <li className="text-center">Match buyers to properties using AI suggestions</li>
+                <li className="text-center">Send property details instantly via WhatsApp</li>
               </ul>
               <p className="mt-4 text-muted-foreground text-center">📈 Result: More conversions with less manual work</p>
             </div>
             <div className="rounded-xl border border-border bg-card p-5">
               <h3 className="text-2xl font-semibold text-primary text-center">Consultants & Advisors – Manage Clients Intelligently</h3>
               <ul className="mt-4 space-y-2">
-                <li>Organize buyer preferences and budgets in one place</li>
-                <li>Automate follow-ups, calls, and meeting reminders</li>
-                <li>Assign tasks and track every client conversation</li>
+                <li className="text-center">Organize buyer preferences and budgets in one place</li>
+                <li className="text-center">Automate follow-ups, calls, and meeting reminders</li>
+                <li className="text-center">Assign tasks and track every client conversation</li>
               </ul>
               <p className="mt-4 text-muted-foreground text-center">📈 Result: Stronger relationships and better close rates</p>
             </div>
