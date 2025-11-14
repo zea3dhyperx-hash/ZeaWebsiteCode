@@ -306,14 +306,15 @@ export default function AutomotiveManufacturingCRM() {
             </ul>
             <p className="mt-4 text-sm">Result: Reduced overhead, faster turnaround, higher lifetime value.</p>
           </div>
-          <div className="rounded-xl border border-border p-6 bg-card">
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <div className="absolute inset-0 grid grid-cols-4 gap-2 animate-pulse">
-                {[...Array(12)].map((_, i) => (
-                  <div key={i} className="rounded bg-muted/70" />
-                ))}
-              </div>
-            </div>
+          <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
+            <video
+              src="/videos/realvid.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>

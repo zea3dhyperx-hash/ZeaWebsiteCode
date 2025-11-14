@@ -27,7 +27,8 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden pt-20 pb-20">
+    // <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden pt-20 pb-20">
+    <section className="relative min-h-screen overflow-hidden pt-20 pb-20">
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden">
         <div
@@ -101,11 +102,21 @@ export function HeroSection() {
           </div>
           {/* Right Visual: Bot SVG */}
           <div className="scale-120 relative h-96 lg:h-full flex items-center justify-center">
-            <img
+            <div className="rounded-xl p-0 scale-70 object-contain bg-card overflow-hidden">
+                <video
+                  src="/videos/hero1.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto"
+                />
+              </div>
+            {/* <img
               src="/bot/bot3.gif"
               alt="Animated assistant bot"
               className="w-full h-auto max-h-[520px] object-contain"
-            />
+            /> */}
             {/* <video
               className="absolute inset-0 w-full h-full object-cover"
               src="/videos/hero13.mp4"

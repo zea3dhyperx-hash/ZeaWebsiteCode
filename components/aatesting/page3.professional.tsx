@@ -204,9 +204,9 @@ ZeaCRM brings precision, automation, and intelligence into every client interact
       {/* Who We Help */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Who We Help</h2>
-        <div className="mt-8 text-left md:w-2/3 mx-auto">
+        <div className="mt-8 text-center md:w-2/3 mb-4 mx-auto">
           <p>ZeaCRM adapts seamlessly across the professional services spectrum:</p>
-          <ol className="list-decimal list-inside space-y-2">
+          <ol className="list-decimal justify-center bg-card bg-muted rounded-lg px-20 py-10 list-inside space-y-2">
             <li>Consulting Firms – Manage clients, proposals, and follow-ups efficiently.</li>
             <li>Marketing & Creative Agencies – Automate reporting, campaigns, and approvals.</li>
             <li>Legal Practices – Streamline case management and client communication.</li>
@@ -238,20 +238,21 @@ Every proposal, project, and conversation is connected through AI — ensuring s
               <p className="mt-3">Deliver high-quality service while saving time, reducing errors, and increasing profit margins.</p>
             </div>
           </div>
-          <div className="rounded-xl border border-border p-6 bg-card">
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <div className="absolute inset-0 grid grid-cols-4 gap-2 animate-pulse">
-                {[...Array(12)].map((_, i) => (
-                  <div key={i} className="rounded bg-muted/70" />
-                ))}
-              </div>
-            </div>
+          <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
+            <video
+              src="/videos/realvid.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
 
       {/* Animated Timeline */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Client Lifecycle Timeline</h2>
         <div className="mt-10 relative">
           <div className="absolute left-4 top-0 bottom-0 w-1 bg-primary/30 rounded" />
@@ -271,7 +272,7 @@ Every proposal, project, and conversation is connected through AI — ensuring s
             ))}
           </ul>
         </div>
-      </section>
+      </section> */}
 
       {/* Automation Flow */}
       <section className="bg-muted/30 border-y border-border py-16 md:py-24">

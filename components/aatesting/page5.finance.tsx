@@ -230,14 +230,15 @@ export default function FinanceInsuranceCRM() {
               <li>•	Full data security and audit compliance</li>
             </ul>
         </div>
-          <div className="rounded-xl border border-border p-6 bg-card">
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <div className="absolute inset-0 grid grid-cols-3 gap-2 animate-pulse">
-                {[...Array(9)].map((_, i) => (
-                  <div key={i} className="rounded bg-muted/70" />
-                ))}
-              </div>
-            </div>
+          <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
+            <video
+              src="/videos/realvid.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>

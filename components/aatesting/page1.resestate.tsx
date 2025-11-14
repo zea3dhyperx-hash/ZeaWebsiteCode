@@ -7,6 +7,7 @@ import ChatWidget from "@/components/chatbot";
 import FAQ from "@/components/faq";
 import Link from "next/link";
 import AniHealthcare from "../animations/ani-health";
+import AniRealEstate from "../animations/ani-realestate";
 
 
 
@@ -149,8 +150,15 @@ export default function RealEstateCRM() {
               </Button>
             </div>
           </div>
-          <div className="rounded-xl border border-border p-0 bg-card overflow-hidden">
-            <img src="/realestatebg.jpg" alt="Real estate" className="w-full h-auto" />
+          <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
+            <video
+              src="/videos/realvid.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
@@ -248,17 +256,19 @@ export default function RealEstateCRM() {
 
       {/* Animation / Visual section (kept style) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-1 gap-10 items-center">
           <div className="text-center md:text-left">
-            <h2 className="text-5xl md:text-6xl font-extrabold text-primary">See AI in Action</h2>
-            <p className="mt-4 text-xl text-muted-foreground">
+            <h2 className="text-5xl md:text-6xl text-center font-extrabold text-primary">See AI in Action</h2>
+            <p className="mt-4 text-xl text-center text-muted-foreground">
               Engage prospects, automate tasks, and reduce errors with a friendly AI assistant embedded in your workflows.
             </p>
           </div>
-          <div className="rounded-xl border border-border bg-card p-4">
-            <AniHealthcare />
-          </div>
+          {/* <AniRealEstate /> */}
+          {/* <div className="rounded-xl border border-border bg-card p-4">
+            <AniRealEstate />
+          </div> */}
         </div>
+        <AniRealEstate />
       </section>
 
       {/* Section 4 – Why Real Estate Teams Choose ZeaCRM */}
@@ -361,4 +371,3 @@ export default function RealEstateCRM() {
     </>
   );
 }
-

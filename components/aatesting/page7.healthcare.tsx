@@ -4,6 +4,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+import AniHealthcare from "../animations/ani-health";
 
 
 export default function HealthcareCRMPage() {
@@ -268,15 +270,15 @@ export default function HealthcareCRMPage() {
                 </p>
               </div>
             </div>
-            <div className="rounded-xl border border-border p-6 bg-card">
-              <div className="relative h-64 overflow-hidden rounded-lg">
+            <AniHealthcare />
+            {/* <div className="">
+              <AniHealthcare /> */}
+              {/* <div className="relative h-64 overflow-hidden rounded-lg">
                 <div className="absolute inset-0 grid grid-cols-4 gap-2 animate-pulse">
-                  {[...Array(12)].map((_, i) => (
-                    <div key={i} className="rounded bg-muted/70" />
-                  ))}
+                  <AniHealthcare />
                 </div>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </div>
         </section>
 
@@ -297,13 +299,16 @@ export default function HealthcareCRMPage() {
                 💡 ZeaCRM bridges patient care and marketing — helping healthcare organizations grow sustainably while maintaining trust and compliance.
               </p>
             </div>
-            <div className="rounded-xl border border-border p-6 bg-card">
-              <div className="relative h-64 overflow-hidden rounded-lg">
-                <div className="absolute inset-0 grid grid-cols-3 gap-2 animate-pulse">
-                  {[...Array(9)].map((_, i) => (
-                    <div key={i} className="rounded bg-muted/70" />
-                  ))}
-                </div>
+            <div className="rounded-xl border border-border bg-card">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-lg">
+                <Image
+                  src="/health3.jpg"
+                  alt="Healthcare growth automation overview"
+                  fill
+                  // sizes="(min-width: 768px) 600px, 100vw"
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  priority
+                />
               </div>
             </div>
           </div>

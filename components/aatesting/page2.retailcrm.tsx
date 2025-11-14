@@ -200,8 +200,8 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Who We Help</h2>
         <div className="mt-8 space-y-2 text-center">
-          <p>ZeaCRM empowers the full retail ecosystem:</p>
-          <ol className="text-left md:w-2/3 mx-auto list-decimal list-inside space-y-2">
+          <p className="pb-5">ZeaCRM empowers the full retail ecosystem:</p>
+          <ol className="text-left md:w-2/3 mx-auto justify-center bg-card bg-muted rounded-lg px-20 py-10 list-decimal list-inside space-y-2">
             <li>Online Stores – Automate campaigns, order updates & customer feedback.</li>
             <li>Retail Chains – Manage multiple locations with unified customer data.</li>
             <li>Fashion & Apparel Brands – Personalize recommendations & loyalty rewards.</li>
@@ -231,20 +231,21 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
             </ul>
             <p className="mt-4 text-sm">📈 Result: Connected teams, loyal customers, and accelerated revenue growth.</p>
           </div>
-          <div className="rounded-xl border border-border p-6 bg-card">
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <div className="absolute inset-0 grid grid-cols-3 gap-2 animate-pulse">
-                {[...Array(9)].map((_, i) => (
-                  <div key={i} className="rounded bg-muted/70" />
-                ))}
-              </div>
-            </div>
+          <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
+            <video
+              src="/videos/retailvid.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
 
       {/* Animated Timeline (loop) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Customer Journey Timeline</h2>
         <div className="mt-10 relative">
           <div className="absolute left-4 top-0 bottom-0 w-1 bg-primary/30 rounded" />
@@ -264,10 +265,10 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
             ))}
           </ul>
         </div>
-      </section>
+      </section> */}
 
       {/* Flowchart (looping shimmer) */}
-      <section className="bg-muted/30 border-y border-border py-16 md:py-24">
+      {/* <section className="bg-muted/30 border-y border-border py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Automation Flow</h2>
           <div className="mt-10 grid md:grid-cols-4 gap-4">
@@ -288,14 +289,14 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why ZeaCRM */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Why ZeaCRM?</h2>
         <div className="md:w-2/3 mx-auto">
-          <p className="text-center text-muted-foreground">Our platform is built on five foundations that drive retail transformation:</p>
-          <ul className="mt-4 space-y-2">
+          <p className="text-center py-2 text-muted-foreground">Our platform is built on five foundations that drive retail transformation:</p>
+          <ul className="mt-4 space-y-2 justify-center bg-card bg-muted rounded-lg px-20 py-10">
             <li>•	AI-Powered — Predict, personalize, and perform.</li>
             <li>•	Automation-First — Save time, scale faster.</li>
             <li>•	Secure & Compliant — Enterprise-grade protection for customer data.</li>
