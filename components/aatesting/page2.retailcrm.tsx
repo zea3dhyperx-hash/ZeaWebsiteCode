@@ -4,6 +4,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import AniRetail from "../animations/ani-retail";
 
 export default function RetailEcomCRM() {
   // Keep video reveal UX consistent with aatesting pages
@@ -13,10 +14,20 @@ export default function RetailEcomCRM() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const [panelHeight, setPanelHeight] = useState(0);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (panelRef.current) setPanelHeight(panelRef.current.scrollHeight);
   }, [expanded]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     setVideoSrc(
@@ -73,10 +84,46 @@ export default function RetailEcomCRM() {
       <Header />
 
       {/* Keep video + effects at top */}
-      <section className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900">
+      <section 
+        className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900"
+        onMouseEnter={() => {
+          // Clear any existing timeout
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+          }
+          // Set timeout to open after 1 second
+          hoverTimeoutRef.current = setTimeout(() => {
+            setExpanded(true);
+          }, 1000);
+        }}
+        onMouseLeave={(e) => {
+          // Clear the timeout if mouse leaves before 1 second
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+            hoverTimeoutRef.current = null;
+          }
+          
+          // Never close if video is playing
+          if (lockedOpen) return;
+          
+          // Check where mouse is moving
+          const relatedTarget = e.relatedTarget as HTMLElement | null;
+          if (relatedTarget) {
+            // Close if moving to header (video not playing)
+            if (relatedTarget.closest('header')) {
+              setExpanded(false);
+              return;
+            }
+            // Don't close if still within this section
+            if (relatedTarget.closest('section.bg-gradient-to-r')) return;
+          }
+          
+          // Close if mouse truly left the section
+          setExpanded(false);
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
-            onMouseEnter={() => setExpanded(true)}
             onFocus={() => setExpanded(true)}
             className="w-full py-3 font-semibold tracking-wide flex items-center justify-center gap-2"
             aria-expanded={expanded}
@@ -92,8 +139,6 @@ export default function RetailEcomCRM() {
           <div
             ref={panelRef}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"
-            onMouseEnter={() => setExpanded(true)}
-            onMouseLeave={() => !lockedOpen && setExpanded(false)}
           >
             <div className="relative aspect-video bg-slate-800 rounded-xl overflow-hidden border border-slate-800">
               <button
@@ -126,11 +171,11 @@ export default function RetailEcomCRM() {
       <section className="border-b border-border bg-background py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
           <div className="text-center md:text-left">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-primary">Retail & E-Commerce CRM</h1>
-            <p className="mt-3 text-muted-foreground text-xl">Boost Sales. Build Loyalty. Automate Everything.</p>
-            <p className="mt-3 text-muted-foreground text-xl">Deliver seamless, personalized shopping experiences with ZeaCRM — the AI-powered platform that connects your stores, customers, and campaigns in one place.</p>
-            <p className="mt-3 text-muted-foreground text-xl">Automate marketing, track orders, manage loyalty, and grow globally — all from a single dashboard.</p>
-            <p className="mt-3 text-muted-foreground text-xl">🎯 Transform browsing into buying with automation that never sleeps.</p>
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">Retail & E-Commerce CRM</h1>
+            <p className="mt-3 text-muted-foreground text-lg">Boost Sales. Build Loyalty. Automate Everything.</p>
+            <p className="mt-3 text-muted-foreground text-lg">Deliver seamless, personalized shopping experiences with ZeaCRM — the AI-powered platform that connects your stores, customers, and campaigns in one place.</p>
+            <p className="mt-3 text-muted-foreground text-lg">Automate marketing, track orders, manage loyalty, and grow globally — all from a single dashboard.</p>
+            <p className="mt-3 text-muted-foreground text-lg">🎯 Transform browsing into buying with automation that never sleeps.</p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
                 <Link href="/demo">Book a Demo</Link>
@@ -155,7 +200,7 @@ export default function RetailEcomCRM() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Solutions by Business Type</h2>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
-          <div className="group rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">Online Stores</h3>
             <ul className="mt-4 space-y-2 text-muted-foreground">
               <li>Automated order confirmations & real-time shipping updates via WhatsApp and Email</li>
@@ -164,7 +209,7 @@ export default function RetailEcomCRM() {
             </ul>
             <p className="mt-4 text-sm">📈 Result: More conversions and repeat orders</p>
           </div>
-          <div className="group rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">Supermarkets & Retail Chains</h3>
             <ul className="mt-4 space-y-2 text-muted-foreground">
               <li>Centralized inventory sync with auto low-stock alerts</li>
@@ -173,7 +218,7 @@ export default function RetailEcomCRM() {
             </ul>
             <p className="mt-4 text-sm">📈 Result: More repeat buyers and optimized operations</p>
           </div>
-          <div className="group rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">Franchise Outlets</h3>
             <ul className="mt-4 space-y-2 text-muted-foreground">
               <li>Unified CRM and marketing dashboards across all branches</li>
@@ -189,7 +234,7 @@ export default function RetailEcomCRM() {
       <section className="bg-muted/30 border-y border-border py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary">AI‑Powered CRM for Modern Commerce</h2>
-          <p className="mt-4 text-xl text-muted-foreground">Smarter engagement across every channel</p>
+          <p className="mt-4 text-lg text-muted-foreground">Smarter engagement across every channel</p>
           <p className="mt-3 text-muted-foreground text-lg">ZeaCRM bridges online and offline retail with automation and intelligence.
 Manage all customer interactions, marketing campaigns, and order journeys — all in one place.
 Our AI predicts buying behavior, suggests next-best offers, and ensures every message hits at the perfect moment.</p>
@@ -231,16 +276,9 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
             </ul>
             <p className="mt-4 text-sm">📈 Result: Connected teams, loyal customers, and accelerated revenue growth.</p>
           </div>
-          <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
-            <video
-              src="/videos/retailvid.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-auto"
-            />
-          </div>
+          {/* <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden"> */}
+            <AniRetail />
+          {/* </div> */}
         </div>
       </section>
 
@@ -293,9 +331,9 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
 
       {/* Why ZeaCRM */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Why ZeaCRM?</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Why ZeaCRM?</h2>
         <div className="md:w-2/3 mx-auto">
-          <p className="text-center py-2 text-muted-foreground">Our platform is built on five foundations that drive retail transformation:</p>
+          <p className="text-center py-2 text-muted-foreground text-lg">Our platform is built on five foundations that drive retail transformation:</p>
           <ul className="mt-4 space-y-2 justify-center bg-card bg-muted rounded-lg px-20 py-10">
             <li>•	AI-Powered — Predict, personalize, and perform.</li>
             <li>•	Automation-First — Save time, scale faster.</li>

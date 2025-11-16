@@ -4,6 +4,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import AniProf from "../animations/ani-prof";
 
 
 
@@ -14,10 +15,20 @@ export default function ProfessionalServicesCRM() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const [panelHeight, setPanelHeight] = useState(0);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (panelRef.current) setPanelHeight(panelRef.current.scrollHeight);
   }, [expanded]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     setVideoSrc(
@@ -74,10 +85,46 @@ export default function ProfessionalServicesCRM() {
       <Header />
 
       {/* Video section retained at top */}
-      <section className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900">
+      <section 
+        className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900"
+        onMouseEnter={() => {
+          // Clear any existing timeout
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+          }
+          // Set timeout to open after 1 second
+          hoverTimeoutRef.current = setTimeout(() => {
+            setExpanded(true);
+          }, 1000);
+        }}
+        onMouseLeave={(e) => {
+          // Clear the timeout if mouse leaves before 1 second
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+            hoverTimeoutRef.current = null;
+          }
+          
+          // Never close if video is playing
+          if (lockedOpen) return;
+          
+          // Check where mouse is moving
+          const relatedTarget = e.relatedTarget as HTMLElement | null;
+          if (relatedTarget) {
+            // Close if moving to header (video not playing)
+            if (relatedTarget.closest('header')) {
+              setExpanded(false);
+              return;
+            }
+            // Don't close if still within this section
+            if (relatedTarget.closest('section.bg-gradient-to-r')) return;
+          }
+          
+          // Close if mouse truly left the section
+          setExpanded(false);
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
-            onMouseEnter={() => setExpanded(true)}
             onFocus={() => setExpanded(true)}
             className="w-full py-3 font-semibold tracking-wide flex items-center justify-center gap-2"
             aria-expanded={expanded}
@@ -93,8 +140,6 @@ export default function ProfessionalServicesCRM() {
           <div
             ref={panelRef}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"
-            onMouseEnter={() => setExpanded(true)}
-            onMouseLeave={() => !lockedOpen && setExpanded(false)}
           >
             <div className="relative aspect-video bg-slate-800 rounded-xl overflow-hidden border border-slate-800">
               <button
@@ -127,9 +172,9 @@ export default function ProfessionalServicesCRM() {
       <section className="border-b border-border bg-background py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
           <div className="text-center md:text-left">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-primary">Professional Services Automation</h1>
-            <p className="mt-3 text-muted-foreground text-xl">Smarter Client, Project, and Workflow Management – Powered by AI</p>
-            <p className="mt-3 text-muted-foreground text-xl">ZeaCRM helps consultants, agencies, and professional service firms automate every client interaction — from proposal to payment. Manage deals, projects, and communication effortlessly while your AI assistant keeps operations running smoothly.</p>
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">Professional Services Automation</h1>
+            <p className="mt-3 text-muted-foreground text-lg">Smarter Client, Project, and Workflow Management – Powered by AI</p>
+            <p className="mt-3 text-muted-foreground text-lg">ZeaCRM helps consultants, agencies, and professional service firms automate every client interaction — from proposal to payment. Manage deals, projects, and communication effortlessly while your AI assistant keeps operations running smoothly.</p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
                 <Link href="/demo">Book a Demo</Link>
@@ -154,7 +199,7 @@ export default function ProfessionalServicesCRM() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Smart Solutions for Every Service Professional</h2>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
-          <div className="group rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">Consultants & Agencies</h3>
             <ul className="mt-4 space-y-2 text-muted-foreground">
               <li>Automated proposal & invoice generation</li>
@@ -163,7 +208,7 @@ export default function ProfessionalServicesCRM() {
             </ul>
             <p className="mt-4 text-sm">📈 Result: Faster deals & stronger relationships</p>
           </div>
-          <div className="group rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">IT & SaaS Providers</h3>
             <ul className="mt-4 space-y-2 text-muted-foreground">
               <li>Auto demo/trial scheduling & follow-up</li>
@@ -172,7 +217,7 @@ export default function ProfessionalServicesCRM() {
             </ul>
             <p className="mt-4 text-sm">📈 Result: Improved customer retention & smoother onboarding</p>
           </div>
-          <div className="group rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">Legal & Accounting Firms</h3>
             <ul className="mt-4 space-y-2 text-muted-foreground">
               <li>Workflow automation for cases & projects</li>
@@ -190,11 +235,11 @@ export default function ProfessionalServicesCRM() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary">Why ZeaCRM?</h2>
           <p className="mt-4 text-muted-foreground text-lg">ZeaCRM is built on five core pillars to transform your professional service operations:</p>
           <ul className="mt-8 grid sm:grid-cols-2 gap-4 text-left">
-            <li className="p-4 rounded-lg bg-card border border-border">1.	AI-Powered Intelligence – Predictive insights, lead scoring & automation triggers.</li>
-            <li className="p-4 rounded-lg bg-card border border-border">2.	Automation-First Design – Reduce manual tasks and human follow-ups.</li>
-            <li className="p-4 rounded-lg bg-card border border-border">3.	Secure & Compliant – Enterprise-grade data encryption & privacy.</li>
-            <li className="p-4 rounded-lg bg-card border border-border">4.	Industry-Ready – Pre-built modules for every service vertical.</li>
-            <li className="p-4 rounded-lg bg-card border border-border">5.	Proven Impact – Faster deals, stronger relationships, higher ROI.</li>
+            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">1.	AI-Powered Intelligence – Predictive insights, lead scoring & automation triggers.</li>
+            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">2.	Automation-First Design – Reduce manual tasks and human follow-ups.</li>
+            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">3.	Secure & Compliant – Enterprise-grade data encryption & privacy.</li>
+            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">4.	Industry-Ready – Pre-built modules for every service vertical.</li>
+            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">5.	Proven Impact – Faster deals, stronger relationships, higher ROI.</li>
           </ul>
           <p className="mt-6 text-muted-foreground">Your industry is evolving — your CRM should evolve with it.
 ZeaCRM brings precision, automation, and intelligence into every client interaction.</p>
@@ -238,8 +283,9 @@ Every proposal, project, and conversation is connected through AI — ensuring s
               <p className="mt-3">Deliver high-quality service while saving time, reducing errors, and increasing profit margins.</p>
             </div>
           </div>
-          <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
-            <video
+          {/* <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden"> */}
+          <div className="rounded-xl p-0 overflow-hidden">
+            {/* <video
               src="/videos/realvid.mp4"
               autoPlay
               muted
@@ -247,6 +293,8 @@ Every proposal, project, and conversation is connected through AI — ensuring s
               playsInline
               className="w-full h-auto"
             />
+            */}
+            <AniProf />
           </div>
         </div>
       </section>
@@ -286,7 +334,7 @@ Every proposal, project, and conversation is connected through AI — ensuring s
               { t: "Act", d: "Sequences" },
               { t: "Measure", d: "Dashboards" },
             ].map((n, i) => (
-              <div key={n.t} className="relative p-6 rounded-xl border border-border bg-card overflow-hidden">
+              <div key={n.t} className="relative p-6 rounded-xl border border-border bg-card overflow-hidden hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <div className="absolute inset-0 animate-[pulse_2s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-primary/5 to-transparent" />
                 <h3 className="relative text-xl font-semibold">{n.t}</h3>
                 <p className="relative text-muted-foreground">{n.d}</p>

@@ -15,10 +15,20 @@ export default function HealthcareCRMPage() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const [panelHeight, setPanelHeight] = useState(0);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (panelRef.current) setPanelHeight(panelRef.current.scrollHeight);
   }, [expanded]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     setVideoSrc(
@@ -75,10 +85,46 @@ export default function HealthcareCRMPage() {
       <Header />
 
       {/* Top Video Reveal */}
-      <section className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900">
+      <section 
+        className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900"
+        onMouseEnter={() => {
+          // Clear any existing timeout
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+          }
+          // Set timeout to open after 1 second
+          hoverTimeoutRef.current = setTimeout(() => {
+            setExpanded(true);
+          }, 1000);
+        }}
+        onMouseLeave={(e) => {
+          // Clear the timeout if mouse leaves before 1 second
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+            hoverTimeoutRef.current = null;
+          }
+          
+          // Never close if video is playing
+          if (lockedOpen) return;
+          
+          // Check where mouse is moving
+          const relatedTarget = e.relatedTarget as HTMLElement | null;
+          if (relatedTarget) {
+            // Close if moving to header (video not playing)
+            if (relatedTarget.closest('header')) {
+              setExpanded(false);
+              return;
+            }
+            // Don't close if still within this section
+            if (relatedTarget.closest('section.bg-gradient-to-r')) return;
+          }
+          
+          // Close if mouse truly left the section
+          setExpanded(false);
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
-            onMouseEnter={() => setExpanded(true)}
             onFocus={() => setExpanded(true)}
             className="w-full py-3 font-semibold tracking-wide flex items-center justify-center gap-2 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             aria-expanded={expanded}
@@ -94,8 +140,6 @@ export default function HealthcareCRMPage() {
           <div
             ref={panelRef}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"
-            onMouseEnter={() => setExpanded(true)}
-            onMouseLeave={() => !lockedOpen && setExpanded(false)}
           >
             <div className="relative aspect-video bg-slate-800 rounded-xl overflow-hidden border border-slate-800">
               <button
@@ -129,10 +173,10 @@ export default function HealthcareCRMPage() {
         <section className="border-b border-border bg-background py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
             <div className="text-center md:text-left">
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-primary">
+              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">
                 Smarter Healthcare Relationship Management
               </h1>
-              <p className="mt-3 text-muted-foreground text-xl">
+              <p className="mt-3 text-muted-foreground text-lg">
                 Deliver seamless patient care with ZeaCRM — the all-in-one AI platform designed for hospitals, clinics, labs, and wellness professionals.
               </p>
               <div className="mt-8 flex gap-4 justify-center md:justify-start">
@@ -198,7 +242,7 @@ export default function HealthcareCRMPage() {
                 { sector: "Dental & Home Care", help: "Automate scheduling, recalls, and caregiver coordination." },
                 { sector: "Telemedicine", help: "Integrate calls, chats, and consultations into a single system." },
               ].map((item) => (
-                <div key={item.sector} className="p-5 hover:scale-105 transition transition-all hover:border-primary rounded-xl border border-border bg-card">
+                <div key={item.sector} className="p-5 hover:scale-105 hover:shadow-lg transition-all duration-300 hover:border-primary rounded-xl border border-border bg-card">
                   <h3 className="text-lg text-center font-semibold">{item.sector}</h3>
                   <p className="text-muted-foreground">{item.help}</p>
                 </div>
@@ -237,7 +281,7 @@ export default function HealthcareCRMPage() {
                 d: "Automation When Seconds Matter.\nDispatch tracking, digital reports, and post-care reminders ensure faster recovery and operational accuracy.",
               },
             ].map((card) => (
-              <div key={card.t} className="relative hover:scale-105 transition transition-all border border-border hover:border-primary p-6 rounded-xl border border-border bg-card overflow-hidden">
+              <div key={card.t} className="relative hover:scale-105 hover:shadow-lg transition-all duration-300 border border-border hover:border-primary p-6 rounded-xl border border-border bg-card overflow-hidden">
                 <div className="absolute inset-0 animate-[pulse_2s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-primary/5 to-transparent" />
                 <h3 className="relative text-xl font-semibold">{card.t}</h3>
                 <p className="relative text-muted-foreground whitespace-pre-line">{card.d}</p>
@@ -251,7 +295,7 @@ export default function HealthcareCRMPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-primary">Unified Platform for Modern Healthcare Teams</h2>
-              <h3 className="mt-4 text-2xl font-semibold text-primary">From Front Desk to Follow-Up — All in One System</h3>
+              <p className="mt-4 text-xl font-semibold text-primary">From Front Desk to Follow-Up — All in One System</p>
               <p className="mt-4 text-muted-foreground text-lg">
                 ZeaCRM connects every department — medical, administrative, and support — with a single intelligent interface. AI automation ensures no task is missed, no patient forgotten, and no record misplaced.
               </p>
@@ -287,7 +331,7 @@ export default function HealthcareCRMPage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-primary">Beyond Management: Growth Automation</h2>
-              <h3 className="mt-4 text-2xl font-semibold text-primary">Turn Care into Growth with Intelligent Marketing</h3>
+              <p className="mt-4 text-xl font-semibold text-primary">Turn Care into Growth with Intelligent Marketing</p>
               <ul className="mt-6 space-y-3 text-muted-foreground text-lg">
                 <li>• Automated Health Campaigns & Checkup Offers</li>
                 <li>• AI-Driven Engagement Sequences</li>
@@ -318,7 +362,7 @@ export default function HealthcareCRMPage() {
         <section className="bg-muted/30 border-y border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-primary">Why Choose ZeaCRM</h2>
-            <h3 className="mt-4 text-2xl font-semibold text-primary">Designed for Healthcare. Engineered for Impact.</h3>
+            <p className="mt-4 text-xl font-semibold text-primary">Designed for Healthcare. Engineered for Impact.</p>
             <div className="mt-8 grid sm:grid-cols-2 gap-4 text-left max-w-5xl mx-auto">
               {[
                 {
@@ -342,7 +386,7 @@ export default function HealthcareCRMPage() {
                   meaning: "Real operational efficiency and measurable results.",
                 },
               ].map((item) => (
-                <div key={item.principle} className="p-4 rounded-lg hover:scale-105 transition transition-all bg-card border border-border">
+                <div key={item.principle} className="p-4 rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300 bg-card border border-border">
                   {/* <p className="font-semibold text-center">Principle</p> */}
                   <p className="text-center">{item.principle}</p>
                   <p className="text-muted-foreground text-center">{item.meaning}</p>

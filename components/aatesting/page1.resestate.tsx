@@ -18,10 +18,20 @@ export default function RealEstateCRM() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const [panelHeight, setPanelHeight] = useState(0);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (panelRef.current) setPanelHeight(panelRef.current.scrollHeight);
   }, [expanded]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     setVideoSrc(
@@ -78,10 +88,46 @@ export default function RealEstateCRM() {
       <Header />
 
       {/* Top Video Reveal */}
-      <section className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900">
+      <section 
+        className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900"
+        onMouseEnter={() => {
+          // Clear any existing timeout
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+          }
+          // Set timeout to open after 1 second
+          hoverTimeoutRef.current = setTimeout(() => {
+            setExpanded(true);
+          }, 1000);
+        }}
+        onMouseLeave={(e) => {
+          // Clear the timeout if mouse leaves before 1 second
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+            hoverTimeoutRef.current = null;
+          }
+          
+          // Never close if video is playing
+          if (lockedOpen) return;
+          
+          // Check where mouse is moving
+          const relatedTarget = e.relatedTarget as HTMLElement | null;
+          if (relatedTarget) {
+            // Close if moving to header (video not playing)
+            if (relatedTarget.closest('header')) {
+              setExpanded(false);
+              return;
+            }
+            // Don't close if still within this section
+            if (relatedTarget.closest('section.bg-gradient-to-r')) return;
+          }
+          
+          // Close if mouse truly left the section
+          setExpanded(false);
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
-            onMouseEnter={() => setExpanded(true)}
             onFocus={() => setExpanded(true)}
             className="w-full py-3 font-semibold tracking-wide flex items-center justify-center gap-2"
             aria-expanded={expanded}
@@ -97,8 +143,6 @@ export default function RealEstateCRM() {
           <div
             ref={panelRef}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"
-            onMouseEnter={() => setExpanded(true)}
-            onMouseLeave={() => !lockedOpen && setExpanded(false)}
           >
             <div className="relative aspect-video bg-slate-800 rounded-xl overflow-hidden border border-slate-800">
               <button
@@ -131,14 +175,14 @@ export default function RealEstateCRM() {
       <section className="border-b border-border bg-background py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
           <div className="text-center md:text-left">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-primary">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">
               Real Estate CRM Powered by AI
             </h1>
-            <p className="mt-4 text-muted-foreground text-xl">Smarter Sales, Faster Deals, Happier Clients.</p>
-            <p className="mt-3 text-muted-foreground text-xl">
+            <p className="mt-4 text-muted-foreground text-lg">Smarter Sales, Faster Deals, Happier Clients.</p>
+            <p className="mt-3 text-muted-foreground text-lg">
               Manage listings, inquiries, payments, and tenants from one powerful dashboard.
             </p>
-            <p className="mt-3 text-muted-foreground text-xl">
+            <p className="mt-3 text-muted-foreground text-lg">
               ZeaCRM empowers real estate professionals to automate everything — from lead capture to closing day.
             </p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
@@ -166,16 +210,16 @@ export default function RealEstateCRM() {
       {/* Section 1 – The New Era of Real Estate Automation */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <div className="md:w-4/5 mx-auto">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-primary">The New Era of Real Estate Automation</h2>
-          <p className="mt-4 text-muted-foreground text-xl">In real estate, speed and relationships drive every deal.</p>
-          <p className="mt-3 text-muted-foreground text-xl">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary">The New Era of Real Estate Automation</h2>
+          <p className="mt-4 text-muted-foreground text-lg">In real estate, speed and relationships drive every deal.</p>
+          <p className="mt-3 text-muted-foreground text-lg">
             ZeaCRM helps you work smarter — capturing leads instantly, automating follow-ups, and giving you a complete view of every project and client.
           </p>
           <ul className="mt-8 grid sm:grid-cols-2 gap-4 text-left">
-            <li className="p-4 rounded-lg bg-muted">Centralize all your sales, rentals, and project data.</li>
-            <li className="p-4 rounded-lg bg-muted">Automate communication across WhatsApp, email, and SMS.</li>
-            <li className="p-4 rounded-lg bg-muted">Predict conversions using AI-powered insights.</li>
-            <li className="p-4 rounded-lg bg-muted">Save hours of manual work every week.</li>
+            <li className="p-4 rounded-lg bg-muted hover:scale-105 hover:shadow-lg transition-all duration-300">Centralize all your sales, rentals, and project data.</li>
+            <li className="p-4 rounded-lg bg-muted hover:scale-105 hover:shadow-lg transition-all duration-300">Automate communication across WhatsApp, email, and SMS.</li>
+            <li className="p-4 rounded-lg bg-muted hover:scale-105 hover:shadow-lg transition-all duration-300">Predict conversions using AI-powered insights.</li>
+            <li className="p-4 rounded-lg bg-muted hover:scale-105 hover:shadow-lg transition-all duration-300">Save hours of manual work every week.</li>
           </ul>
         </div>
       </section>
@@ -183,10 +227,10 @@ export default function RealEstateCRM() {
       {/* Section 2 – Tailored Solutions for Every Role */}
       <section className="bg-muted/30 border-y border-border py-16 md:py-24 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-primary text-center">Tailored Solutions for Every Role</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Tailored Solutions for Every Role</h2>
           <div className="mt-10 grid md:grid-cols-2 gap-6 text-left">
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h3 className="text-2xl font-semibold text-primary text-center">Builders & Developers – Automate Sales & Cash Flow</h3>
+            <div className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl font-semibold text-primary text-center">Builders & Developers – Automate Sales & Cash Flow</h3>
               <ul className="mt-4 space-y-2">
                 <li className="text-center">Capture leads automatically from listings and ads</li>
                 <li className="text-center">Send virtual tours and project updates via WhatsApp</li>
@@ -195,8 +239,8 @@ export default function RealEstateCRM() {
               </ul>
               <p className="mt-4 text-muted-foreground text-center">📈 Result: Faster sales cycles and smoother project cash flow</p>
             </div>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h3 className="text-2xl font-semibold text-primary text-center">Property Managers – Simplify Tenant Operations</h3>
+            <div className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl font-semibold text-primary text-center">Property Managers – Simplify Tenant Operations</h3>
               <ul className="mt-4 space-y-2">
                 <li className="text-center">Onboard tenants with automated agreements</li>
                 <li className="text-center">Send rent reminders through WhatsApp or SMS</li>
@@ -204,8 +248,8 @@ export default function RealEstateCRM() {
               </ul>
               <p className="mt-4 text-muted-foreground text-center">📈 Result: Transparent operations and satisfied tenants</p>
             </div>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h3 className="text-2xl font-semibold text-primary text-center">Brokers & Agencies – Close Deals Faster</h3>
+            <div className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl font-semibold text-primary text-center">Brokers & Agencies – Close Deals Faster</h3>
               <ul className="mt-4 space-y-2">
                 <li className="text-center">Import leads from property portals automatically</li>
                 <li className="text-center">Match buyers to properties using AI suggestions</li>
@@ -213,8 +257,8 @@ export default function RealEstateCRM() {
               </ul>
               <p className="mt-4 text-muted-foreground text-center">📈 Result: More conversions with less manual work</p>
             </div>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h3 className="text-2xl font-semibold text-primary text-center">Consultants & Advisors – Manage Clients Intelligently</h3>
+            <div className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl font-semibold text-primary text-center">Consultants & Advisors – Manage Clients Intelligently</h3>
               <ul className="mt-4 space-y-2">
                 <li className="text-center">Organize buyer preferences and budgets in one place</li>
                 <li className="text-center">Automate follow-ups, calls, and meeting reminders</li>
@@ -233,8 +277,8 @@ export default function RealEstateCRM() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/90" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-primary">One Platform, Endless Possibilities</h2>
-          <p className="mt-4 text-muted-foreground text-xl">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary">One Platform, Endless Possibilities</h2>
+          <p className="mt-4 text-muted-foreground text-lg">
             ZeaCRM connects your sales, marketing, service, and property management in one place.
             No spreadsheets. No manual updates. No lost leads.
           </p>
@@ -246,7 +290,7 @@ export default function RealEstateCRM() {
               "Digital documentation and e-signatures",
               "Centralized project and payment dashboards",
             ].map((item) => (
-              <div key={item} className="p-4 rounded-lg bg-card border border-border text-lg">
+              <div key={item} className="p-4 rounded-lg bg-card border border-border text-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
                 {item}
               </div>
             ))}
@@ -258,8 +302,8 @@ export default function RealEstateCRM() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid md:grid-cols-1 gap-10 items-center">
           <div className="text-center md:text-left">
-            <h2 className="text-5xl md:text-6xl text-center font-extrabold text-primary">See AI in Action</h2>
-            <p className="mt-4 text-xl text-center text-muted-foreground">
+            <h2 className="text-4xl md:text-5xl text-center font-extrabold text-primary">See AI in Action</h2>
+            <p className="mt-4 text-lg text-center text-muted-foreground">
               Engage prospects, automate tasks, and reduce errors with a friendly AI assistant embedded in your workflows.
             </p>
           </div>
@@ -274,7 +318,7 @@ export default function RealEstateCRM() {
       {/* Section 4 – Why Real Estate Teams Choose ZeaCRM */}
       <section className="bg-muted/30 border-y border-border py-16 md:py-24 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-primary text-center">Why Real Estate Teams Choose ZeaCRM</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Why Real Estate Teams Choose ZeaCRM</h2>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
             {[
               ["AI-Powered Insights", "Predict conversion potential and focus on high-value leads."],
@@ -283,8 +327,8 @@ export default function RealEstateCRM() {
               ["Industry-Ready Design", "Tailored for property sales, rentals, and management."],
               ["Scalable Growth", "From individual agents to enterprise developers — ZeaCRM scales effortlessly."],
             ].map(([title, desc]) => (
-              <div key={title as string} className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-2xl font-semibold text-primary text-center">{title as string}</h3>
+              <div key={title as string} className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <h3 className="text-xl font-semibold text-primary text-center">{title as string}</h3>
                 <p className="mt-2 text-lg text-muted-foreground">{desc as string}</p>
               </div>
             ))}
@@ -294,7 +338,7 @@ export default function RealEstateCRM() {
 
       {/* Section 5 – Ecosystem */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-        <h2 className="text-5xl md:text-6xl font-extrabold text-primary text-center">Designed for the Entire Real Estate Ecosystem</h2>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Designed for the Entire Real Estate Ecosystem</h2>
         <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left text-lg">
           {[
             "Real Estate Agencies",
@@ -309,7 +353,7 @@ export default function RealEstateCRM() {
             "Real Estate Investors",
             "Housing Societies",
           ].map((item) => (
-            <li key={item} className="p-4 rounded-lg bg-muted border border-border">{item}</li>
+            <li key={item} className="p-4 rounded-lg bg-muted border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">{item}</li>
           ))}
         </ul>
       </section>
@@ -317,8 +361,8 @@ export default function RealEstateCRM() {
       {/* Section 6 – Closing CTA */}
       <section className="bg-muted/30 border-y border-border py-16 md:py-24 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-primary text-center">Transform the Way You Manage Real Estate</h2>
-          <p className="mt-4 text-muted-foreground text-xl">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Transform the Way You Manage Real Estate</h2>
+          <p className="mt-4 text-muted-foreground text-lg">
             From first inquiry to final handover — ZeaCRM keeps everything connected, automated, and measurable.
             Experience the next generation of real estate management with complete visibility and control.
           </p>

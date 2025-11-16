@@ -20,7 +20,7 @@ export default function AniFinance({
   width = "100%",
   height = "100%",
   
-  className,
+  className = "scale-120",
   style,
 }: AniHeroProps) {
   return (

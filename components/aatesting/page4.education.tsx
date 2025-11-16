@@ -4,6 +4,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import AniEdu from "../animations/ani-edu";
 
 
 
@@ -14,10 +15,20 @@ export default function EducationTrainingCRM() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const [panelHeight, setPanelHeight] = useState(0);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (panelRef.current) setPanelHeight(panelRef.current.scrollHeight);
   }, [expanded]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     setVideoSrc(
@@ -74,10 +85,46 @@ export default function EducationTrainingCRM() {
       <Header />
 
       {/* Top Video Reveal */}
-      <section className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900">
+      <section 
+        className="bg-gradient-to-r from-amber-400 via-pink-500 to-indigo-600 text-slate-900"
+        onMouseEnter={() => {
+          // Clear any existing timeout
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+          }
+          // Set timeout to open after 1 second
+          hoverTimeoutRef.current = setTimeout(() => {
+            setExpanded(true);
+          }, 1000);
+        }}
+        onMouseLeave={(e) => {
+          // Clear the timeout if mouse leaves before 1 second
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+            hoverTimeoutRef.current = null;
+          }
+          
+          // Never close if video is playing
+          if (lockedOpen) return;
+          
+          // Check where mouse is moving
+          const relatedTarget = e.relatedTarget as HTMLElement | null;
+          if (relatedTarget) {
+            // Close if moving to header (video not playing)
+            if (relatedTarget.closest('header')) {
+              setExpanded(false);
+              return;
+            }
+            // Don't close if still within this section
+            if (relatedTarget.closest('section.bg-gradient-to-r')) return;
+          }
+          
+          // Close if mouse truly left the section
+          setExpanded(false);
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
-            onMouseEnter={() => setExpanded(true)}
             onFocus={() => setExpanded(true)}
             className="w-full py-3 font-semibold tracking-wide flex items-center justify-center gap-2"
             aria-expanded={expanded}
@@ -93,8 +140,6 @@ export default function EducationTrainingCRM() {
           <div
             ref={panelRef}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"
-            onMouseEnter={() => setExpanded(true)}
-            onMouseLeave={() => !lockedOpen && setExpanded(false)}
           >
             <div className="relative aspect-video bg-slate-800 rounded-xl overflow-hidden border border-slate-800">
               <button
@@ -127,11 +172,11 @@ export default function EducationTrainingCRM() {
       <section className="border-b border-border bg-background py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
           <div className="text-center md:text-left">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-primary">Education & Training CRM</h1>
-            <p className="mt-3 text-muted-foreground text-xl">Transform Learning Management with AI‑Powered Automation</p>
-            <p className="mt-3 text-muted-foreground text-xl">Admissions · Engagement · Retention — all in one intelligent platform</p>
-            <p className="mt-3 text-muted-foreground text-xl">ZeaCRM helps educational institutions build smarter relationships with students and parents through automation, analytics, and AI.</p>
-            <p className="mt-3 text-muted-foreground text-xl">From the first inquiry to alumni engagement, every interaction is organized, tracked, and optimized — so your team focuses on learning, not logistics.</p>
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">Education & Training CRM</h1>
+            <p className="mt-3 text-muted-foreground text-lg">Transform Learning Management with AI‑Powered Automation</p>
+            <p className="mt-3 text-muted-foreground text-lg">Admissions · Engagement · Retention — all in one intelligent platform</p>
+            <p className="mt-3 text-muted-foreground text-lg">ZeaCRM helps educational institutions build smarter relationships with students and parents through automation, analytics, and AI.</p>
+            <p className="mt-3 text-muted-foreground text-lg">From the first inquiry to alumni engagement, every interaction is organized, tracked, and optimized — so your team focuses on learning, not logistics.</p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg" variant="outline">
                 <Link href="/get-started">Start Free Trial</Link>
@@ -141,7 +186,7 @@ export default function EducationTrainingCRM() {
               </Button>
             </div>
           </div>
-          <div className="rounded-xl border border-border p-6 bg-card">
+          {/* <div className="rounded-xl border border-border p-6 bg-card">
             <div className="grid grid-cols-2 gap-4">
               {[
                 "Automated admissions",
@@ -152,7 +197,8 @@ export default function EducationTrainingCRM() {
                 <div key={t} className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">{t}</div>
               ))}
             </div>
-          </div>
+          </div> */}
+          <AniEdu />
         </div>
       </section>
 
@@ -160,7 +206,7 @@ export default function EducationTrainingCRM() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Smarter Solutions for Every Learning Environment</h2>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
-          <div className="group rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">Schools & Colleges</h3>
             <p className="mt-2 text-muted-foreground">Digitize the entire admissions journey — from inquiry to enrollment.</p>
             <ul className="mt-4 space-y-2 text-muted-foreground">
@@ -170,7 +216,7 @@ export default function EducationTrainingCRM() {
             </ul>
             <p className="mt-4 text-sm">Result: Faster admissions and transparent communication</p>
           </div>
-          <div className="group rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">Coaching & Training Institutes</h3>
             <p className="mt-2 text-muted-foreground">Simplify daily operations and improve student engagement.</p>
             <ul className="mt-4 space-y-2 text-muted-foreground">
@@ -180,7 +226,7 @@ export default function EducationTrainingCRM() {
             </ul>
             <p className="mt-4 text-sm">Result: Streamlined management and consistent progress</p>
           </div>
-          <div className="group rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">EdTech & Online Platforms</h3>
             <p className="mt-2 text-muted-foreground">Scale learning and retention with AI‑driven insights.</p>
             <ul className="mt-4 space-y-2 text-muted-foreground">
@@ -207,7 +253,7 @@ export default function EducationTrainingCRM() {
               "Engagement Analytics: Monitor attendance, feedback, and conversion rates.",
               "Reporting & Insights: Track ROI across admissions and marketing.",
             ].map((txt) => (
-              <li key={txt} className="p-4 rounded-lg bg-card border border-border">{txt}</li>
+              <li key={txt} className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">{txt}</li>
             ))}
           </ul>
           <p className="mt-6 text-muted-foreground">Built for humans, powered by AI.</p>
@@ -227,7 +273,7 @@ export default function EducationTrainingCRM() {
             "Corporate Training Providers",
             "Language Academies and Institutes",
           ].map((item) => (
-            <li key={item} className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background transition-transform hover:scale-[1.02]">
+            <li key={item} className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background transition-all duration-300 hover:scale-105 hover:shadow-lg">
               {item}
             </li>
           ))}
@@ -246,7 +292,7 @@ export default function EducationTrainingCRM() {
               "Built for Education – Purpose‑built modules, not generic add‑ons.",
               "Proven Impact – Growth in enrollments and retention.",
             ].map((n, i) => (
-              <div key={n} className="relative p-6 rounded-xl border border-border bg-card overflow-hidden">
+              <div key={n} className="relative p-6 rounded-xl border border-border bg-card overflow-hidden hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <div className="absolute inset-0 animate-[pulse_2s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-primary/5 to-transparent" />
                 <p className="relative text-sm">{n}</p>
                 {i < 4 && (

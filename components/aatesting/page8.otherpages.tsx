@@ -15,13 +15,13 @@ export default function OtherIndustriesCRMPage() {
         {/* Hero */}
         <section className="border-b border-border bg-background py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-primary text-center">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary text-center">
               AI-Powered CRM Solutions for Every Business
             </h1>
-            <h2 className="mt-3 text-xl md:text-2xl font-semibold text-center">
+            <h2 className="mt-3 text-lg md:text-xl font-semibold text-center">
               Smarter Relationship Management for Every Sector
             </h2>
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground text-center md:w-3/4 mx-auto">
+            <p className="mt-6 text-lg text-muted-foreground text-center md:w-3/4 mx-auto">
               Every business thrives on relationships. ZeaCRM simplifies how you manage them ,automating communication, tracking performance, and personalizing engagement across industries. From travel to logistics, non-profits to entertainment, ZeaCRM adapts to your unique workflows, ensuring operational efficiency and consistent growth.
             </p>
           </div>
@@ -34,7 +34,7 @@ export default function OtherIndustriesCRMPage() {
 
             <div className="mt-10 grid md:grid-cols-2 gap-6">
               {/* 1. Hospitality & Travel */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">1. Hospitality & Travel</h4>
                 <p className="mt-1">Deliver seamless guest experiences and manage reservations effortlessly.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -46,7 +46,7 @@ export default function OtherIndustriesCRMPage() {
               </div>
 
               {/* 2. Logistics & Supply Chain */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">2. Logistics & Supply Chain</h4>
                 <p className="mt-1">Boost coordination across operations and vendors.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -58,7 +58,7 @@ export default function OtherIndustriesCRMPage() {
               </div>
 
               {/* 3. Non-Profit Organizations */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">3. Non-Profit Organizations</h4>
                 <p className="mt-1">Build lasting donor relationships and maximize campaign impact.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -70,7 +70,7 @@ export default function OtherIndustriesCRMPage() {
               </div>
 
               {/* 4. Events & Entertainment */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">4. Events & Entertainment</h4>
                 <p className="mt-1">Streamline event planning and maximize audience engagement.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -82,7 +82,7 @@ export default function OtherIndustriesCRMPage() {
               </div>
 
               {/* 5. Energy & Utilities */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">5. Energy & Utilities</h4>
                 <p className="mt-1">Manage services, billing, and customer communication with precision.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -94,7 +94,7 @@ export default function OtherIndustriesCRMPage() {
               </div>
 
               {/* 6. Construction & Real Estate Services */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">6. Construction & Real Estate Services</h4>
                 <p className="mt-1">Stay on top of projects and client relationships.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -106,7 +106,7 @@ export default function OtherIndustriesCRMPage() {
               </div>
 
               {/* 7. Agriculture & Agri-Tech */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">7. Agriculture & Agri-Tech</h4>
                 <p className="mt-1">Support farmers, distributors, and partners with smart data tools.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -118,7 +118,7 @@ export default function OtherIndustriesCRMPage() {
               </div>
 
               {/* 8. Government & Public Services */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">8. Government & Public Services</h4>
                 <p className="mt-1">Improve efficiency and transparency in citizen engagement.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -130,7 +130,7 @@ export default function OtherIndustriesCRMPage() {
               </div>
 
               {/* 9. Telecommunications */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">9. Telecommunications</h4>
                 <p className="mt-1">Maintain customer connections with proactive automation.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -142,7 +142,7 @@ export default function OtherIndustriesCRMPage() {
               </div>
 
               {/* 10. Recruitment & Staffing */}
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-border bg-card p-6 hover:scale-105 hover:shadow-lg transition-all duration-300">
                 <h4 className="text-xl font-semibold">10. Recruitment & Staffing</h4>
                 <p className="mt-1">Streamline hiring workflows and candidate engagement.</p>
                 <ul className="mt-3 list-disc list-inside text-muted-foreground">
@@ -174,11 +174,11 @@ export default function OtherIndustriesCRMPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-3xl md:text-4xl font-extrabold text-primary text-center">Core Advantages</h3>
             <ul className="mt-6 grid sm:grid-cols-2 gap-4 text-left text-lg">
-              <li className="p-4 rounded-lg bg-card border border-border">? AI-Powered Intelligence  - Predict behavior and automate next actions</li>
-              <li className="p-4 rounded-lg bg-card border border-border">? Automation-First Design  - Eliminate repetitive manual tasks</li>
-              <li className="p-4 rounded-lg bg-card border border-border">? Secure & Compliant  - Built for privacy, safety, and control</li>
-              <li className="p-4 rounded-lg bg-card border border-border">? Industry-Ready Templates  - Pre-built flows for rapid setup</li>
-              <li className="p-4 rounded-lg bg-card border border-border">? Proven Growth Impact  - Drive measurable ROI across teams</li>
+              <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">? AI-Powered Intelligence  - Predict behavior and automate next actions</li>
+              <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">? Automation-First Design  - Eliminate repetitive manual tasks</li>
+              <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">? Secure & Compliant  - Built for privacy, safety, and control</li>
+              <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">? Industry-Ready Templates  - Pre-built flows for rapid setup</li>
+              <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">? Proven Growth Impact  - Drive measurable ROI across teams</li>
             </ul>
           </div>
         </section>

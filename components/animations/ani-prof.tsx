@@ -20,7 +20,7 @@ export default function AniProf({
   width = "100%",
   height = "100%",
   
-  className,
+  className = "rounded-xl p-0 overflow-hidden object-cover",
   style,
 }: AniHeroProps) {
   return (
