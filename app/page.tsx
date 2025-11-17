@@ -47,8 +47,7 @@ export default function Home() {
           <AwardSupportSection />
           <IntegrationsSection />
           <WhyChooseUsHero />
-          {/* <FeaturesComparisonTable */}
-          <ComparisonTable />
+          {/* <ComparisonTable /> */}
           {/* <IndustriesSection /> */}
           <WhyUsTestimonialsSection />
           <PricingSection />
