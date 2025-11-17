@@ -214,7 +214,7 @@ export function Header() {
                   Blogs
                 </Link> */}
                 <Link
-                  href="/playbook/blogs"
+                  href="/playbooks/blogs"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
                 >
                   Blogs
