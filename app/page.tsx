@@ -49,7 +49,7 @@ export default function Home() {
           <WhyChooseUsHero />
           {/* <FeaturesComparisonTable */}
           <ComparisonTable />
-          <IndustriesSection />
+          {/* <IndustriesSection /> */}
           <WhyUsTestimonialsSection />
           <PricingSection />
           <WhyUsComparisonSection />
