@@ -26,7 +26,7 @@ export const BLOG_POSTS: BlogPost[] = [
   //   featured: true,
   // },
   {
-    slug: "banana-url",
+    slug: "zea-crm-intro",
     title: "Zea CRM — Where Every Lead Becomes a Relationship",
     author: "Sherly Angel",
     date: "Nov 06, 2025",

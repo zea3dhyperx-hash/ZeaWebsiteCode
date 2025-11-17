@@ -95,7 +95,7 @@ export default function FinanceInsuranceCRM() {
           // Set timeout to open after 1 second
           hoverTimeoutRef.current = setTimeout(() => {
             setExpanded(true);
-          }, 1000);
+          }, 0);
         }}
         onMouseLeave={(e) => {
           // Clear the timeout if mouse leaves before 1 second
@@ -108,8 +108,8 @@ export default function FinanceInsuranceCRM() {
           if (lockedOpen) return;
           
           // Check where mouse is moving
-          const relatedTarget = e.relatedTarget as HTMLElement | null;
-          if (relatedTarget) {
+          const relatedTarget = e.relatedTarget;
+          if (relatedTarget && relatedTarget instanceof HTMLElement) {
             // Close if moving to header (video not playing)
             if (relatedTarget.closest('header')) {
               setExpanded(false);

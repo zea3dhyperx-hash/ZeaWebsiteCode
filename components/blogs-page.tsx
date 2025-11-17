@@ -177,19 +177,26 @@ export function BlogsPage() {
                 </button>
               ))}
             </div>
+            <p className="mt-8 text-base md:text-lg text-muted-foreground max-w-3xl">
+              Explore all of our latest articles below. Each post dives deeper into these topics with practical tips,
+              real-world examples, and step-by-step guidance you can apply directly in your business.
+            </p>
           </div>
         </section>
 
         {/* All Articles Grid */}
         <section className="py-16 md:py-24 px-4 md:px-8">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto bg-card/60 border border-border rounded-2xl shadow-sm p-6 md:p-8">
             <h2 className="text-3xl font-bold text-foreground mb-4">
               {searchQuery || selectedCategory !== "All" ? "Search Results" : "All Articles"}
             </h2>
             {filteredArticles.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 min-h-[260px]">
                 {filteredArticles.map((article) => (
-                  <article key={article.id} className="flex gap-4 pb-8 border-b border-border last:border-b-0">
+                  <article
+                    key={article.id}
+                    className="flex gap-4 pb-8 border-b border-border last:border-b-0 min-h-[180px]"
+                  >
                     <img
                       src={article.image || "/placeholder.svg"}
                       alt={article.title}

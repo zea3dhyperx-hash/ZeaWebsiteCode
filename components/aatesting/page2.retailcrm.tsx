@@ -94,7 +94,7 @@ export default function RetailEcomCRM() {
           // Set timeout to open after 1 second
           hoverTimeoutRef.current = setTimeout(() => {
             setExpanded(true);
-          }, 1000);
+          }, 0);
         }}
         onMouseLeave={(e) => {
           // Clear the timeout if mouse leaves before 1 second

@@ -1,0 +1,181 @@
+HOW TO CREATE A NEW BLOG POST IN THIS PROJECT
+============================================
+
+This project uses a combination of:
+- a blogs listing page at `app/blogs/page.tsx` (rendered by `components/blogs-2-page.tsx`)
+- shared blog metadata in `lib/blogs.ts` (`BLOG_POSTS`)
+- one-off full-page blog layouts in `app/blog-1/page.tsx` and supporting components
+
+Follow the steps below to add a new blog so it appears on the Blogs page and links to a full article.
+
+------------------------------------------------------------
+1. Decide the new blog's slug and route
+------------------------------------------------------------
+
+1) Pick a URL slug (lowercase, no spaces), for example:
+   - `ai-powered-customer-insights`
+   - `crm-automation-best-practices`
+
+2) To write the full article:
+   - Re‑use the existing `app/blog-1/page.tsx` layout pattern
+     - Duplicate `app/blog-1` to a new folder and then customize content.
+
+Note: The Blogs listing page (`/blogs`) currently reads from `BLOG_POSTS` in `lib/blogs.ts` and expects each post to have a `slug` and optionally an `htmlPath` that points to the route for the full article.
+
+------------------------------------------------------------
+2. Create the full blog page (content)
+------------------------------------------------------------
+
+Option A – Create a new dedicated blog route:
+
+1) Create a new folder under `app` with your slug name:
+   - Example:
+     - Folder: `app/ai-powered-customer-insights`
+     - File:   `app/ai-powered-customer-insights/page.tsx`
+
+2) Use `app/blog-1/page.tsx` as a reference for structure:
+   - It imports:
+     - `BlogHeader` from `@/components/blog-header`
+     - `BlogImage` from `@/components/blog-image`
+     - `BlogContent` from `@/components/blog-content`
+     - Optional extras like `FAQ`, `TableOfContents`, etc.
+   - Copy the key pattern:
+     - Define a `blogData` object with fields:
+       - `tag`, `title`, `author`, `date`, `time`, `image`
+       - `content.intro` (string)
+       - `content.sections` (array with `title` + `blocks`)
+     - Render components using `blogData` (header, image, content).
+
+3) Adjust text, images, and FAQ to match your new article.
+   - Update the `blogData` values.
+   - Update any FAQ content or remove the FAQ section if not needed.
+
+Option B – Reuse `app/blog-1` directly:
+
+1) If your new blog content is very similar, you can:
+   - Edit `app/blog-1/page.tsx` and its `blogData` to match the new blog.
+   - In `lib/blogs.ts`, make sure the `htmlPath` for that blog points to `"blog-1"`.
+
+2) This is quick for demos, but Option A (separate folder per blog) is cleaner for production.
+
+------------------------------------------------------------
+3. Register the blog in `lib/blogs.ts`
+------------------------------------------------------------
+
+1) Open `lib/blogs.ts`.
+
+2) Add a new `BlogPost` object to the `BLOG_POSTS` array.
+   - Use the existing example as a template:
+
+   {
+     slug: "ai-powered-customer-insights",
+     title: "AI-Powered Customer Insights",
+     author: "Your Name",
+     date: "Nov 15, 2025",
+     category: "AI & Technology",
+     image: "/ai-customer-insights.jpg",       // should exist under /public
+     excerpt: "Short teaser used on the listing page.",
+     content: "<p>Optional short HTML content if you want to render directly.</p>",
+     htmlPath: "ai-powered-customer-insights", // app folder name, no leading slash
+     featured: true,                           // true = show in Featured section
+   },
+
+   - Important fields:
+     - `slug`      → used to identify the post in code
+     - `title`     → shown in the listing and blog cards
+     - `author`    → used by the Blogs page filters
+     - `date`      → displayed in the listing
+     - `category`  → must match one of the categories used in `components/blogs-2-page.tsx`
+     - `image`     → path under `/public`, e.g. `/images/my-blog.png`
+     - `excerpt`   → short description visible in the All Articles section
+     - `htmlPath`  → route segment for the full page (e.g. `"ai-powered-customer-insights"` or `"blog-1"`)
+     - `featured`  → if `true`, the blog appears in the Featured Articles carousel on `/blogs`
+
+3) Save the file.
+
+------------------------------------------------------------
+4. How the Blogs listing page uses your new post
+------------------------------------------------------------
+
+The listing page at `/blogs` is implemented in:
+  - `app/blogs/page.tsx` → `components/blogs-2-page.tsx`
+
+`components/blogs-2-page.tsx` does the following:
+  - Imports `BLOG_POSTS` from `@/lib/blogs`.
+  - Builds `featuredArticles` and `allArticles` arrays from `BLOG_POSTS`.
+  - Renders:
+    - Featured section (top 3 posts with `featured: true`)
+    - Filters (category, author, search)
+    - All Articles grid with cards showing image, title, date, category, and `excerpt`.
+
+Once you add your post to `BLOG_POSTS`, it will:
+  - Automatically appear in the All Articles list (if it matches the current filters).
+  - Appear in the Featured section if `featured: true`.
+  - Be searchable by title and excerpt.
+
+------------------------------------------------------------
+5. Link behavior from the Blogs page
+------------------------------------------------------------
+
+For each card on the Blogs page, the `href` should:
+  - Match the `htmlPath` (or slug) you configured.
+  - Example:
+    - If `htmlPath: "ai-powered-customer-insights"`,
+      then the link should go to `/ai-powered-customer-insights`.
+
+If you add new posts and want to ensure the links are correct:
+  - Open `components/blogs-2-page.tsx`.
+  - Check the `Link` components for Featured and All Articles.
+  - Confirm that they use something like:
+    - `href={\`/${article.htmlPath ?? article.slug}\`}`
+
+If it does not yet behave this way, update the `href` generation to follow that pattern.
+
+------------------------------------------------------------
+6. Adding images for your blog
+------------------------------------------------------------
+
+1) Place your blog images under `public/`:
+   - Example:
+     - `public/images/ai-insights-hero.png`
+
+2) Reference them in:
+   - `lib/blogs.ts` (`image` field), e.g.:
+     - `image: "/images/ai-insights-hero.png"`
+   - Inside your blog page content (`app/<slug>/page.tsx`) if you use `<img>` or Next/Image.
+
+------------------------------------------------------------
+7. Preview and verify
+------------------------------------------------------------
+
+1) Run the dev server (if not already running):
+   - `npm run dev`
+
+2) In your browser:
+   - Visit `/blogs`:
+     - Confirm your new blog appears in:
+       - Featured (if `featured: true`)
+       - All Articles list
+       - Search results (try searching its title or keywords from `excerpt`)
+   - Click your blog card:
+     - Confirm it navigates to the correct route (e.g. `/ai-powered-customer-insights`).
+     - Confirm the page content, FAQ, images, and layout look good.
+
+3) If something does not show:
+   - Double‑check the `slug`, `category`, `author`, and `htmlPath` in `lib/blogs.ts`.
+   - Verify that the route folder under `app/` matches `htmlPath`.
+   - Make sure image paths start with `/` and refer to files in `public/`.
+
+------------------------------------------------------------
+8. Quick checklist for every new blog
+------------------------------------------------------------
+
+- [ ] Created a new route under `app/<slug>/page.tsx` OR decided to reuse `app/blog-1`.
+- [ ] Added a `BlogPost` entry in `lib/blogs.ts` with:
+      `slug`, `title`, `author`, `date`, `category`, `image`, `excerpt`, `htmlPath`, `featured?`.
+- [ ] Placed any images under `public/` and referenced them correctly.
+- [ ] Confirmed the `/blogs` page shows the new post and the link navigates to the full article.
+- [ ] Proofread the content and checked layout on desktop and mobile.
+
+With these steps, you can consistently add new blogs and have them show up correctly on the main Blogs page and their own detail pages.
+
