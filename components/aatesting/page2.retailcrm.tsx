@@ -107,8 +107,8 @@ export default function RetailEcomCRM() {
           if (lockedOpen) return;
           
           // Check where mouse is moving
-          const relatedTarget = e.relatedTarget as HTMLElement | null;
-          if (relatedTarget) {
+          const relatedTarget = e.relatedTarget;
+          if (relatedTarget instanceof Element) {
             // Close if moving to header (video not playing)
             if (relatedTarget.closest('header')) {
               setExpanded(false);
