@@ -7,7 +7,7 @@ import type React from "react"
 import Link from "next/link"
 import ChatWidget from "./chatbot"
 
-export function Demo2Page() {
+export function VideosPage() {
   const [selectedFeature, setSelectedFeature] = useState(0)
   const [bookDemoForm, setBookDemoForm] = useState({
     name: "",
@@ -87,46 +87,98 @@ export function Demo2Page() {
             </div> */}
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Videos</h1>
             <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
-              Experience the power of AI-driven CRM with our interactive demonstration
+              Learn how to use ZeaCRM with quick product videos and step-by-step tutorials.
             </p>
-            <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold hover-lift animate-slide-up">
-              <a href = "https://api.leadconnectorhq.com/widget/bookings/zeacrm-demo-booking-calender">Watch Demo Video </a>
-
-            </button>
           </div>
         </section>
 
-        {/* Features Showcase
-        <section className="py-16 md:py-24 px-4 md:px-8">
+        {/* Videos Section */}
+        {/* <section className="py-16 md:py-20 px-4 md:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-12 animate-slide-up">Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {features.map((feature, i) => (
-                <div
-                  key={feature.id}
-                  onClick={() => setSelectedFeature(i)}
-                  className={`p-8 rounded-lg border-2 transition-all duration-300 cursor-pointer hover-lift animate-fade-in ${
-                    selectedFeature === i
-                      ? "bg-primary/10 border-primary"
-                      : "bg-card border-border hover:border-primary"
-                  }`}
-                  style={{ animationDelay: `${i * 100}ms` }}
-                >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </div>
-              ))}
+            <h2 className="text-3xl font-bold text-foreground mb-6">Product Videos</h2>
+            <p className="text-muted-foreground mb-10 max-w-2xl">
+              Watch short videos that walk through key parts of ZeaCRM—from pipeline management to automation—so you can
+              see the platform in action.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-card border border-border rounded-xl p-5">
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Getting Started with ZeaCRM</h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  A quick overview of the dashboard, pipelines, and core navigation.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-5">
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Automation & Workflows</h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  See how to build workflow automations that save your team hours every week.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-5">
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Reporting & Insights</h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Learn how to track performance with dashboards and reports.
+                </p>
+              </div>
             </div>
           </div>
         </section> */}
-        {/* Book a Demo Form Section */}
-        {/* <section className="py-5 md:py-10 px-4 md:px-8">
-          <div className="max-w-2xl mx-auto ">
-            <h2 id="bookdemo" className="text-3xl font-bold text-foreground mb-4 text-center animate-slide-up">Schedule Your Demo</h2>
-            <p className="text-muted-foreground text-center mb-8 animate-slide-up ">
-              Get a personalized walkthrough of ZeaCRM tailored to your business needs apple
-            </p> */}
+
+        {/* Tutorials Section */}
+        {/* <section className="py-0 md:py-10 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-foreground mb-6">Tutorials & How‑tos</h2>
+            <p className="text-muted-foreground mb-10 max-w-2xl">
+              Follow along with step‑by‑step tutorials to set up real-world use cases inside ZeaCRM.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-card border border-border rounded-xl p-5">
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Set Up Your Sales Pipeline</h3>
+                <p className="text-sm text-muted-foreground">
+                  Learn how to create stages, move deals, and keep your pipeline clean.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-5">
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Create Your First Automation</h3>
+                <p className="text-sm text-muted-foreground">
+                  Build an automation that nurtures new leads and sends tasks to your team.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section> */}
+
+        {/* Embedded Videos */}
+        <section className="py-8 md:py-16 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Watch Now</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-card border border-border rounded-xl p-4 md:p-5">
+                <h3 className="text-lg font-semibold text-foreground mb-3">ZeaCRM Overview</h3>
+                <div className="aspect-video w-full overflow-hidden rounded-lg bg-black/60">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/wi0Ip3exvZY"
+                    title="ZeaCRM Overview"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+              {/* <div className="bg-card border border-border rounded-xl p-4 md:p-5">
+                <h3 className="text-lg font-semibold text-foreground mb-3">Workflow Automation Example</h3>
+                <div className="aspect-video w-full overflow-hidden rounded-lg bg-black/60">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Workflow Automation Example"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div> */}
+            </div>
+          </div>
+        </section>
             {/* <form
               onSubmit={handleBookDemoSubmit}
                className="bg-card border border-border border-primary rounded-lg p-8 space-y-6 animate-slide-up"

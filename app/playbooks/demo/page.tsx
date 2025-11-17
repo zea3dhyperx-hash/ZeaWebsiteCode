@@ -1,5 +1,4 @@
 import { Demo2Page } from "@/components/demo-2-page"
-import { VideosPage } from "@/components/videos-page";
 
 export const metadata = {
   title: " Demo | ZeaCRM",
@@ -8,5 +7,5 @@ export const metadata = {
 };
 
 export default function Demo2() {
-  return <VideosPage />
+  return <Demo2Page />
 }

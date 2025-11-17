@@ -265,7 +265,7 @@ export function IndustriesPage() {
                     <h3 className="text-2xl font-bold text-white">{industry.name}</h3>
                   </div>
                   <p className="text-gray-300 leading-relaxed">{industry.description}</p>
-                  <Button className="mt-6 bg-amber-400 text-black hover:bg-amber-300"><a href={industry.link}>Book a Demo</a></Button>
+                  <Button className="mt-6 bg-amber-400 text-black hover:bg-amber-300"><a href={industry.link}>Watch Demo Video</a></Button>
                 </div>
               )
             })}
@@ -344,7 +344,7 @@ export function IndustriesPage() {
             See how ZeaCRM can adapt to your industry and empower your team with smarter automation and insights.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-6 text-lg"><a href="/playbooks/videos">Book a Demo</a></Button>
+            <Button className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-6 text-lg"><a href="/playbooks/videos">Watch Demo Video</a></Button>
             <Button
               variant="outline"
               className="border-amber-400 text-amber-400 hover:bg-amber-400 px-8 py-6 text-lg bg-transparent"

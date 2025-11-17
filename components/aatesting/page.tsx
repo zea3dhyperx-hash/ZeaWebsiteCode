@@ -163,7 +163,7 @@ export default function HealthcareCRM() {
               </p>
               <div className="mt-8 flex gap-4">
                 <Button asChild size="lg">
-                  <Link href="/playbooks/videos">Book a Demo</Link>
+                  <Link href="/playbooks/videos">Watch Demo Video</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
                   <Link href="/get-started">Start Free Trial</Link>
@@ -428,7 +428,7 @@ export default function HealthcareCRM() {
             </p>
             <div className="mt-6 flex items-center  justify-center gap-4">
               <Button asChild size="lg" className="hover:scale-110 text-xl">
-                <Link href="/playbooks/videos">Book a Demo</Link>
+                <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
               <Button asChild size="lg" className="hover:scale-110 text-xl" variant="outline">
                 <Link href="/get-started">Start Free Trial</Link>
@@ -473,7 +473,6 @@ export default function HealthcareCRM() {
     </>
   );
 }
-
 
 
 

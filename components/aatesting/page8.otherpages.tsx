@@ -189,7 +189,7 @@ export default function OtherIndustriesCRMPage() {
             <h3 className="text-3xl md:text-4xl font-extrabold">Your Business, Simplified with ZeaCRM</h3>
             <p className="mt-4 text-lg">ZeaCRM adapts to your industry so you can focus on growth, not guesswork. Start automating your workflows, personalizing engagement, and making smarter decisions ,today.</p>
             <div className="mt-8 flex gap-4 justify-center">
-              <Link href="/playbooks/videos" className="inline-flex items-center rounded-md bg-background text-primary px-5 py-2.5 font-semibold transition-transform hover:scale-[1.03] active:scale-95">Book a Demo</Link>
+              <Link href="/playbooks/videos" className="inline-flex items-center rounded-md bg-background text-primary px-5 py-2.5 font-semibold transition-transform hover:scale-[1.03] active:scale-95">Watch Demo Video</Link>
               <Link href="/get-started" className="inline-flex items-center rounded-md border border-background/80 px-5 py-2.5 font-semibold bg-transparent text-background transition-transform hover:scale-[1.03] active:scale-95">Start Free Trial</Link>
             </div>
           </div>

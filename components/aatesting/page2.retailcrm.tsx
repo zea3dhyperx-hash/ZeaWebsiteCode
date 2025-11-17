@@ -178,7 +178,7 @@ export default function RetailEcomCRM() {
             <p className="mt-3 text-muted-foreground text-lg">🎯 Transform browsing into buying with automation that never sleeps.</p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
-                <Link href="/playbooks/videos">Book a Demo</Link>
+                <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="/get-started">Start Free Trial</Link>
@@ -351,7 +351,7 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
           <p className="mt-4 text-lg">See how ZeaCRM transforms engagement into growth.</p>
           <div className="mt-8 flex gap-4 justify-center">
             <Button asChild size="lg" variant="secondary">
-              <Link href="/playbooks/videos">Book a Demo</Link>
+              <Link href="/playbooks/videos">Watch Demo Video</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background">
               <Link href="/get-started">Start Free Trial</Link>

@@ -25,7 +25,7 @@ export function WhyUs2Hero() {
             <a href="/get-started"> Start Free Trial</a>
           </button>
           <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
-            <a href="/playbooks/videos"> Book a Demo</a>
+            <a href="/playbooks/videos"> Watch Demo Video</a>
           </button>
         </div>
       </div>
