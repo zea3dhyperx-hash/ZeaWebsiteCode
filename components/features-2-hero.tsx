@@ -32,7 +32,7 @@ export function Features2Hero() {
             <a href="#features-grid">Explore All Features</a>
           </button>
           <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
-            <a href="demo">Request Demo</a>
+            <a href="/playbooks/videos">Request Demo</a>
           </button>
         </div>
       </div>

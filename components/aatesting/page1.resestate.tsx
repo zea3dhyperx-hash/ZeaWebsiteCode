@@ -187,10 +187,10 @@ export default function RealEstateCRM() {
             </p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
-                <Link href="/get-started">Watch Demo Video</Link>
+                <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/sign-in">Start Free Trial</Link>
+                <Link href="/get-started">Start Free Trial</Link>
               </Button>
             </div>
           </div>
@@ -368,10 +368,10 @@ export default function RealEstateCRM() {
           </p>
           <div className="mt-8 flex items-center justify-center gap-4">
             <Button asChild size="lg">
-              <Link href="/get-started">Watch Demo Video</Link>
+              <Link href="/playbooks/videos">Watch Demo Video</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="/sign-in">Start Free Trial</Link>
+              <Link href="/get-started">Start Free Trial</Link>
             </Button>
           </div>
         </div>
