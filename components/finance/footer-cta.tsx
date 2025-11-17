@@ -48,7 +48,7 @@ export function FinanceFooterCTA() {
           </Button>
           <Button
             size="lg"
-            onClick={() => router.push("/demo")}
+            onClick={() => router.push("/playbooks/videos")}
             variant="outline"
             className="border-2 border-black text-black hover:bg-black hover:text-white font-semibold px-8 bg-transparent"
           >

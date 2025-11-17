@@ -21,7 +21,7 @@ export function PrinciplesCTA() {
               Get Started
             </button>
             <button 
-              onClick={() => router.push("/demo")}
+              onClick={() => router.push("/playbooks/videos")}
               className="bg-background hover:scale-110 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
               Schedule Demo
             </button>

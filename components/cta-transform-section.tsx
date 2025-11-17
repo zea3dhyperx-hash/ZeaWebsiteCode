@@ -35,7 +35,7 @@ export function CTATransformSection() {
                 <a href="/get-started">Start Free Trial</a>
               </button>
               <button className="border-2 border-primary text-primary hover:bg-primary hover:text-black font-semibold px-8 py-3 rounded-lg transition-colors">
-                <a href="/demo">Schedule a Demo</a>
+                <a href="/playbooks/videos">Schedule a Demo</a>
               </button>
             </div>
 

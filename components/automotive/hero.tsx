@@ -35,7 +35,7 @@ export function AutomotiveHero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <button
-                onClick={() => router.push("/demo")}
+                onClick={() => router.push("/playbooks/videos")}
                 className="px-8 py-3 bg-primary hover:scale-110 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
               >
                 Request Demo

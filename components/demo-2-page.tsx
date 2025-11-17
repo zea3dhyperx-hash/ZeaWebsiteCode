@@ -85,7 +85,7 @@ export function Demo2Page() {
                 className="h-12 w-auto"
               />
             </div> */}
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Demo</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Videos</h1>
             <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
               Experience the power of AI-driven CRM with our interactive demonstration
             </p>

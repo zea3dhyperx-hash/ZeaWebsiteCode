@@ -30,7 +30,7 @@ export function EducationHero() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-16">
-          <button onClick={() => router.push("/demo")} className="bg-primary hover:scale-110 text-white font-bold px-8 py-4 rounded-lg transition-colors shadow-lg">
+          <button onClick={() => router.push("/playbooks/videos")} className="bg-primary hover:scale-110 text-white font-bold px-8 py-4 rounded-lg transition-colors shadow-lg">
             Request Demo
           </button>
           <button onClick={() => router.push("/")} className="bg-transparent border-2 border-primary hover:scale-110 text-primary hover:text-white font-bold px-8 py-4 rounded-lg transition-all shadow-lg">

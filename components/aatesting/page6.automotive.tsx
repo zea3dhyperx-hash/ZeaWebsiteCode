@@ -189,7 +189,7 @@ export default function AutomotiveManufacturingCRM() {
             <p className="mt-3 text-muted-foreground text-lg">From dealer management to production coordination, simplify workflows, boost efficiency, and strengthen customer relationships.</p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
-                <Link href="/demo">Book a Demo</Link>
+                <Link href="/playbooks/videos">Book a Demo</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="/get-started">Start Free Trial</Link>
@@ -392,7 +392,7 @@ export default function AutomotiveManufacturingCRM() {
           <p className="mt-4 text-lg">With AI automation, integrated data, and predictive analytics, your organization becomes more agile, data-driven, and future-ready.</p>
           <div className="mt-8 flex gap-4 justify-center">
             <Button asChild size="lg" variant="secondary" className="hover:scale-105 transition transition-all">
-              <Link href="/demo">Book a Demo</Link>
+              <Link href="/playbooks/videos">Book a Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background">
               <Link href="/get-started">Start Free Trial</Link>

@@ -30,7 +30,7 @@ export function RetailHero() {
         </p>
         <div className="flex flex-wrap gap-4 justify-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
           <Button 
-            onClick={() => router.push("/demo")}
+            onClick={() => router.push("/playbooks/videos")}
             size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 text-lg">
             Request Demo
           </Button>

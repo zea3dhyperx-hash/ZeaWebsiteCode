@@ -91,7 +91,7 @@ export function HeroSection() {
               
               <Button
                 variant="outline"
-                onClick={() => window.location.href = "/demo"}
+                onClick={() => window.location.href = "/playbooks/videos"}
                 className="border-2 border-blue-400 text-blue-400 hover:bg-primary font-semibold px-8 py-6 text-base rounded-lg flex items-center justify-center gap-2 bg-transparent"
               >
                   <Play size={18} />

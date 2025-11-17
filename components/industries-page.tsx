@@ -76,21 +76,21 @@ const industries = [
   // {
   //   name: "Hospitality (Hotels, Restaurants, Travel)",
   //   icon: MoreHorizontal,
-  //   link: "/demo",
+  //   link: "/playbooks/videos",
   //   description:
   //     "Online booking & reservation reminders, Feedback & review automation, Loyalty & referral programs",
   // },
   // {
   //   name: "NGOs & Nonprofits",
   //   icon: MoreHorizontal,
-  //   link: "/demo",
+  //   link: "/playbooks/videos",
   //   description:
   //     "Donation campaign automation, Donor engagement reminders, Transparent reports for accountability",
   // },
   // {
   //   name: "Events & Entertainment",
   //   icon: MoreHorizontal,
-  //   link: "/demo",
+  //   link: "/playbooks/videos",
   //   description:
   //     "Online registration & e-ticketing, Auto event reminders to attendees, Post-event surveys & engagement campaigns",
   // },
@@ -98,77 +98,77 @@ const industries = [
   {
     name: "Hospitality & Travel",
     icon: MoreHorizontal,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Manage guest bookings, loyalty programs, and personalized experiences.",
   },
   {
     name: "Logistics & Supply Chain",
     icon: Truck,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Track shipments, automate updates, and manage vendor communication.",
   },
   {
     name: "Non-Profit Organizations",
     icon: HeartHandshake,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Handle donor management, campaigns, and volunteer coordination.",
   },
   {
     name: "Media & Entertainment",
     icon: Film,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Manage talent, projects, sponsorships, and audience engagement.",
   },
   {
     name: "Event Management Companies",
     icon: CalendarClock,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Track clients, vendors, and event workflows easily.",
   },
   {
     name: "Energy & Utilities",
     icon: Zap,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Manage service requests, billing, and customer support efficiently.",
   },
   {
     name: "Construction & Real Estate Services",
     icon: Hammer,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Oversee leads, contracts, and project milestones.",
   },
   {
     name: "Agriculture & Agri-Tech",
     icon: Leaf,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Track distributors, farmers, and seasonal demand cycles.",
   },
   {
     name: "Public Sector & Government Projects",
     icon: Building2,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Manage citizen services, feedback, and communication records.",
   },
   {
     name: "Telecommunication Providers",
     icon: Radio,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Automate service updates, renewal alerts, and customer outreach.",
   },
   {
     name: "Recruitment & Staffing Firms",
     icon: Users2,
-    link: "/demo",
+    link: "/playbooks/videos",
     description:
       "Manage job openings, candidate pipelines, and employer relationships.",
   },
@@ -344,7 +344,7 @@ export function IndustriesPage() {
             See how ZeaCRM can adapt to your industry and empower your team with smarter automation and insights.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-6 text-lg"><a href="/demo">Book a Demo</a></Button>
+            <Button className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-6 text-lg"><a href="/playbooks/videos">Book a Demo</a></Button>
             <Button
               variant="outline"
               className="border-amber-400 text-amber-400 hover:bg-amber-400 px-8 py-6 text-lg bg-transparent"

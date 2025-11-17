@@ -46,7 +46,7 @@ export function RetailFooterCTA() {
             Get Started Today
           </Button>
           <Button
-            onClick={() => router.push("/demo")}
+            onClick={() => router.push("/playbooks/videos")}
             size="lg"
             variant="outline"
             className="border-2 border-black text-black hover:bg-black hover:text-white font-semibold px-8 bg-transparent transition-all"

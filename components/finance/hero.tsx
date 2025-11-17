@@ -29,7 +29,7 @@ export function FinanceHero() {
         </p>
         
         <div className="flex flex-wrap gap-4 justify-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-400">
-          <Button size="lg" onClick={() => router.push("/demo")} className="bg-primary hover:scale-110 text-black font-semibold px-8 text-lg">
+          <Button size="lg" onClick={() => router.push("/playbooks/videos")} className="bg-primary hover:scale-110 text-black font-semibold px-8 text-lg">
             Request Demo
           </Button>
           <Button size="lg" onClick={() => router.push("/")} className="bg-primary hover:scale-110 text-black font-semibold px-8 text-lg">

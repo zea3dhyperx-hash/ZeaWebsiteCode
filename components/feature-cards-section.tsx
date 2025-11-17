@@ -64,7 +64,7 @@ export function FeatureCardsSection() {
                 </ul>
 
                 <a
-                  href="/demo"
+                  href="/playbooks/videos"
                   className="inline-block text-primary font-semibold hover:text-primary transition-colors text-sm md:text-base"
                 >
                   WANT TO KNOW MORE BOOK A DEMO HERE →

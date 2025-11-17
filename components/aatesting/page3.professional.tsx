@@ -177,7 +177,7 @@ export default function ProfessionalServicesCRM() {
             <p className="mt-3 text-muted-foreground text-lg">ZeaCRM helps consultants, agencies, and professional service firms automate every client interaction — from proposal to payment. Manage deals, projects, and communication effortlessly while your AI assistant keeps operations running smoothly.</p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
-                <Link href="/demo">Book a Demo</Link>
+                <Link href="/playbooks/videos">Book a Demo</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="/get-started">Start Free Trial</Link>
@@ -355,7 +355,7 @@ Every proposal, project, and conversation is connected through AI — ensuring s
 Let ZeaCRM handle the busywork — so you can focus on building relationships that last.</p>
           <div className="mt-8 flex gap-4 justify-center">
             <Button asChild size="lg" variant="secondary">
-              <Link href="/demo">Book a Demo</Link>
+              <Link href="/playbooks/videos">Book a Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background">
               <Link href="/get-started">Start Free Trial</Link>

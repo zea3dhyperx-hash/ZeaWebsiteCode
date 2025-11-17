@@ -214,7 +214,7 @@ export function Header() {
                   Blogs
                 </Link> */}
                 <Link
-                  href="/blogs"
+                  href="playbooks/blogs"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
                 >
                   Blogs
@@ -227,10 +227,10 @@ export function Header() {
                 </Link> */}
                 
                 <Link
-                  href="/demo"
+                  href="/playbooks/videos"
                   className="block px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-colors border-t border-border"
                 >
-                  Demo
+                  Videos
                 </Link>
                 {/* <Link
                   href="/demo-2"
@@ -336,11 +336,11 @@ export function Header() {
                   </button>
                   {isPlaybooksOpen && (
                     <div className="flex flex-col gap-2 mt-2 pl-4 border-l border-border">
-                      <Link href="/blogs" className="text-foreground hover:text-primary transition-colors">
+                      <Link href="/playbooks/blogs" className="text-foreground hover:text-primary transition-colors">
                         Blogs
                       </Link>
-                      <Link href="/demo" className="text-foreground hover:text-primary transition-colors">
-                        Demo
+                      <Link href="/playbooks/videos" className="text-foreground hover:text-primary transition-colors">
+                        Videos
                       </Link>
                     </div>
                   )}

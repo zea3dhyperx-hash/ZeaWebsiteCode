@@ -17,7 +17,7 @@ export function CTA() {
             Get Started
           </Button>
           <Button
-            onClick={() => router.push("/demo")}
+            onClick={() => router.push("/playbooks/videos")}
             variant="outline"
             className="border-slate-950 text-slate-950 hover:bg-slate-950 hover:text-white font-semibold px-8 py-3 text-lg rounded-lg bg-transparent"
           >

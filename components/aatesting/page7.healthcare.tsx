@@ -181,7 +181,7 @@ export default function HealthcareCRMPage() {
               </p>
               <div className="mt-8 flex gap-4 justify-center md:justify-start">
                 <Button asChild size="lg" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
-                  <Link href="/demo">Book a Demo</Link>
+                  <Link href="/playbooks/videos">Book a Demo</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
                   <Link href="/get-started">Start Free Trial</Link>
@@ -405,7 +405,7 @@ export default function HealthcareCRMPage() {
             </p>
             <div className="mt-8 flex gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
-                <Link href="/demo">Book a Demo</Link>
+                <Link href="/playbooks/videos">Book a Demo</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background transition-transform duration-200 hover:scale-[1.03] active:scale-95">
                 <Link href="/get-started">Start Free Trial</Link>

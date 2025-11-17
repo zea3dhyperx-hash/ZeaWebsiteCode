@@ -182,7 +182,7 @@ export default function EducationTrainingCRM() {
                 <Link href="/get-started">Start Free Trial</Link>
               </Button>
               <Button asChild size="lg">
-                <Link href="/demo">Book a Demo</Link>
+                <Link href="/playbooks/videos">Book a Demo</Link>
               </Button>
             </div>
           </div>
@@ -315,7 +315,7 @@ Spend less time on manual coordination and more time shaping learning outcomes.
         <p className="mt-6 text-center text-background">Smarter Workflows | Happier Students | Proven Results</p>
           <div className="mt-8 flex gap-4 justify-center">
             <Button asChild size="lg" className="bg-background text-primary hover:scale-105 hover:bg-background transition transition-all">
-              <Link href="/demo">Book a Demo</Link>
+              <Link href="/playbooks/videos">Book a Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background hover:scale-105 transition transition-all">
               <Link href="/get-started">Start Free Trial</Link>

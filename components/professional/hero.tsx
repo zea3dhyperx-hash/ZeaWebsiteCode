@@ -27,7 +27,7 @@ export function ProfessionalHero() {
         </p>
         <div className="flex flex-wrap gap-4 justify-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
           <Button 
-            onClick={() => router.push("/demo")}
+            onClick={() => router.push("/playbooks/videos")}
             size="lg" className="bg-primary hover:scale-110 text-black font-semibold px-8">
             Request Demo
           </Button>

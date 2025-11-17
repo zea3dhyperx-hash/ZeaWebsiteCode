@@ -177,7 +177,7 @@ export default function FinanceInsuranceCRM() {
             <p className="mt-3 text-muted-foreground text-lg">ZeaCRM empowers banks, insurance providers, and advisors to manage every client relationship with precision and speed.</p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
-                <Link href="/demo">Book a Demo</Link>
+                <Link href="/playbooks/videos">Book a Demo</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="/get-started">Start Free Trial</Link>
@@ -314,7 +314,7 @@ ZeaCRM ensures every transaction, message, and signature happens securely—meet
           <p className="mt-4 text-lg">Automate what slows you down and focus on what matters most: building lasting client relationships.</p>
           <div className="mt-8 flex gap-4 justify-center">
             <Button asChild size="lg" variant="secondary">
-              <Link href="/demo">Book a Demo</Link>
+              <Link href="/playbooks/videos">Book a Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background">
               <Link href="/get-started">Start Free Trial</Link>

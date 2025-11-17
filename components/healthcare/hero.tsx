@@ -19,7 +19,7 @@ export function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
-            onClick={() => router.push("/demo")}
+            onClick={() => router.push("/playbooks/videos")}
             className="bg-amber-400 hover:bg-amber-500 text-slate-950 font-semibold px-8 py-3 text-lg rounded-lg">
             Request Demo
           </Button>
