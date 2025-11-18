@@ -273,7 +273,7 @@ export default function RealEstateCRM() {
       {/* Section 3 – One Platform, Endless Possibilities (Real Estate background) */}
       <section className="relative py-16 md:py-24">
         <div className="absolute inset-0 -z-10">
-          <img src="/realestatebg.jpg" alt="" className="h-full w-full object-cover opacity-15" aria-hidden="true" />
+          <img src="/realestatebg.jpg" alt="real estate image" className="h-full w-full object-cover opacity-15" aria-hidden="true" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/90" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

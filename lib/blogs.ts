@@ -34,7 +34,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/ai-customer-insights.jpg",
     excerpt:
       "Designed for the Way You Work",
-    content: "<p>Zea CRM automatically collects, assigns, and tracks leads from every source — website forms, phone calls, campaigns, or social media.</p>",
+    content: "Zea CRM automatically collects, assigns, and tracks leads from every source — website forms, phone calls, campaigns, or social media.",
     // Example using external html file under public/blogs/banana-url.html
     htmlPath: "blog-1",
     featured: true,
