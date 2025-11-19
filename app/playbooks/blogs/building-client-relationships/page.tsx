@@ -60,7 +60,7 @@ export default function BlogPage() {
     author: "Sherly Angel",
     date: "November 6, 2025",
     time: "8:30 AM",
-    image: "images/blogimg1.png",
+    image: "/images/blogimg1.png",
     content: {
       intro:
         "In business, it’s easy to get caught up chasing numbers.\n Leads. Deals. Targets. Reports. \n But growth isn’t just about collecting contacts — it’s about building meaningful relationships that last. \n \n That’s what Zea CRM is built for. \n It helps businesses turn every lead, call, or message into a real connection — one that moves your team forward and your customers closer.",

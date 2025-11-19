@@ -49,7 +49,7 @@ export function WhyChooseUsHero() {
 
           {/* Right Illustration */}
           <div className="flex justify-center scale-110">
-            <img src="/images/WhyUs.png" alt="People image" />
+            <img src="/images/WhyUs.png" alt="People image" className="flex justify-center" />
             {/* <div className="relative w-full h-96 bg-white/10 rounded-lg flex items-center justify-center border-2 border-black/20">
               <div className="text-center">
                 <p className="text-black/50 font-semibold">Team Illustration</p>

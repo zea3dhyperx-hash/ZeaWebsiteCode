@@ -36,7 +36,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Designed for the Way You Work",
     content: "Zea CRM automatically collects, assigns, and tracks leads from every source — website forms, phone calls, campaigns, or social media.",
     // Example using external html file under public/blogs/banana-url.html
-    htmlPath: "blog-1",
+    htmlPath: "/playbooks/blogs/building-client-relationships",
     featured: true,
   },
 ]

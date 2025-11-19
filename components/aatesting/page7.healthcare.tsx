@@ -98,29 +98,30 @@ export default function HealthcareCRMPage() {
           }, 0);
         }}
         onMouseLeave={(e) => {
-          // Clear the timeout if mouse leaves before 1 second
           if (hoverTimeoutRef.current) {
             clearTimeout(hoverTimeoutRef.current);
             hoverTimeoutRef.current = null;
           }
-          
-          // Never close if video is playing
+
           if (lockedOpen) return;
-          
-          // Check where mouse is moving
+
           const relatedTarget = e.relatedTarget as HTMLElement | null;
-          if (relatedTarget) {
-            // Close if moving to header (video not playing)
-            if (relatedTarget.closest('header')) {
+
+          // Prevent collapse when entering iframe
+          if (
+            relatedTarget === null ||
+            (iframeRef.current && iframeRef.current.contains(relatedTarget))
+          ) {
+            return;
+          }
+
+          // Close only when moving to header
+          if (relatedTarget && typeof relatedTarget.closest === "function") {
+            if (relatedTarget.closest("header")) {
               setExpanded(false);
               return;
             }
-            // Don't close if still within this section
-            if (relatedTarget.closest('section.bg-gradient-to-r')) return;
           }
-          
-          // Close if mouse truly left the section
-          setExpanded(false);
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

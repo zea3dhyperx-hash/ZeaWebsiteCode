@@ -101,7 +101,7 @@ export function HeroSection() {
             
           </div>
           {/* Right Visual: Bot SVG */}
-          <div className="scale-120 relative h-96 lg:h-full flex items-center justify-center">
+          <div className="scale-120 relative h-96 h-full items-center justify-center">
             <div className="rounded-xl p-0 scale-70 object-contain bg-card overflow-hidden">
                 <video
                   src="/videos/hero1.mp4"
@@ -131,9 +131,9 @@ export function HeroSection() {
           
 
           {/* Right - 3D Character Illustration */}
-          <div className="relative h-96 lg:h-full flex items-center justify-center">
+          {/* <div className="relative h-96 lg:h-full flex items-center justify-center">
             
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

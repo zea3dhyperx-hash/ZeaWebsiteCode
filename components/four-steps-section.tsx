@@ -1,15 +1,15 @@
 export function FourStepsSection() {
   return (
-    <section className="relative py-0 px-4 rounded-3xl mx-4 md:mx-8 lg:mx-16 my-16 bg-primary">
+    <section className="relative px-4 rounded-3xl mx-4 md:mx-8 lg:mx-16 my-12 md:my-16 py-8 md:py-10 bg-primary">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left side - Illustration */}
-          <div className="flex justify-center">
-            <div className="relative w-150 h-150 py-18 flex justify-center alignItems:center">
+          <div className="flex justify-center mb-8 md:mb-0">
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg flex justify-center">
               <img 
                 src="/images/3 steps.png" 
                 alt="Simlified illustration of 4 people" 
-                style={{ width: '100%', borderRadius: '10px' }}
+                className="w-full h-auto rounded-xl object-contain"
               />
               {/* Simplified illustration of 4 people */}
               {/* <svg viewBox="0 0 300 300" className="w-full h-full" xmlns="http://www.w3.org/2000/svg"> */}
@@ -37,57 +37,61 @@ export function FourStepsSection() {
           </div>
 
           {/* Right side - Content */}
-          <div>
+          <div className="text-center md:text-left">
             <div className="mb-8">
-              
-              
-              <h3 className="text-2xl md:text-3xl font-semibold text-primary-foreground mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary-foreground mb-3 sm:mb-4">
                 How it Works
               </h3>
-              <p className="text-primary-foreground/80 mb-8">
+              <p className="text-sm sm:text-base md:text-lg text-primary-foreground/80 mb-6 sm:mb-8">
                 We make it so easy, your business runs on autopilot. Our process involves:
               </p>
             </div>
 
             {/* Steps list */}
-            <div className="space-y-6">
-              <div className="flex gap-4">
+            <div className="space-y-5 sm:space-y-6">
+              <div className="flex gap-3 sm:gap-4 items-start">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-8 w-8 rounded-full bg-primary-foreground text-primary font-bold">
+                  <div className="flex items-center justify-center h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-primary-foreground text-primary overflow-hidden text-sm sm:text-base font-bold">
                     1
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-primary-foreground mb-1">Capture</h4>
-                  <p className="text-primary-foreground/80">
+                  <h4 className="text-base sm:text-lg font-semibold text-primary-foreground mb-1">
+                    Capture
+                  </h4>
+                  <p className="text-sm sm:text-base text-primary-foreground/80">
                     Automatically import leads from your website, social channels, or campaigns.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4 items-start">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-8 w-8 rounded-full bg-primary-foreground text-primary font-bold">
+                  <div className="flex items-center justify-center h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-primary-foreground text-primary text-sm sm:text-base font-bold">
                     2
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-primary-foreground mb-1">Nurture</h4>
-                  <p className="text-primary-foreground/80">
+                  <h4 className="text-base sm:text-lg font-semibold text-primary-foreground mb-1">
+                    Nurture
+                  </h4>
+                  <p className="text-sm sm:text-base text-primary-foreground/80">
                     Automate emails, reminders, and workflows to build stronger connections.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4 items-start">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-8 w-8 rounded-full bg-primary-foreground text-primary font-bold">
+                  <div className="flex items-center justify-center h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-primary-foreground text-primary text-sm sm:text-base font-bold">
                     3
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-primary-foreground mb-1">Convert</h4>
-                  <p className="text-primary-foreground/80">
+                  <h4 className="text-base sm:text-lg font-semibold text-primary-foreground mb-1">
+                    Convert
+                  </h4>
+                  <p className="text-sm sm:text-base text-primary-foreground/80">
                     Use AI insights and real-time analytics to close deals faster and smarter.
                   </p>
                 </div>
