@@ -62,6 +62,11 @@ export function Footer() {
                   PlayBooks
                 </Link>
               </li>
+              <li>
+                <Link href="/about-us" className="text-gray-400 hover:text-amber-400 transition-colors">
+                  About Us
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -134,7 +139,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-slate-800 pt-8 text-center text-sm text-gray-500">
-          <p>© 2025 ZeaCRM | Powered by URL-Factory | All rights reserved</p>
+          <p>© 2025 ZeaCRM | Powered by <a href="https://url-factory.com/" className="text-gray-300 hover:text-amber-400 transition-colors">URL-Factory</a> | All rights reserved</p>
         </div>
       </div>
     </footer>

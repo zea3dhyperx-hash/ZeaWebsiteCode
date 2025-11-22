@@ -32,7 +32,7 @@ export function Header() {
   }
 
   const navLinks = [
-    { href: "/", label: "Why Us" },
+    { href: "/why-us", label: "Why Us" },
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
     // { href: "/aatesting", label: "Testing" },
@@ -42,7 +42,7 @@ export function Header() {
     <>
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 hover:scale-110 transition-all duration-300">
+          <Link href="https://zeacrm.com/template/" className="flex items-center gap-2 hover:scale-110 transition-all duration-300">
             {/* <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-primary">
               <span className="text-primary-foreground font-bold text-lg">Z</span>
             </div> */}
