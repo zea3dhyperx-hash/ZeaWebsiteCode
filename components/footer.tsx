@@ -104,7 +104,7 @@ export function Footer() {
               <a href="https://www.facebook.com/people/ZEA-CRM/61580373855637/" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="https://www.instagram.com/zea_crm/?next=%2F" className="text-gray-400 hover:text-amber-400 transition-colors">
+              <a href="https://www.instagram.com/zea_crm_official?igsh=ODhhODdwZjA5ZmYx" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Instagram size={20} />
               </a>
               <a href="https://linkedin.com/company/zea-crm" className="text-gray-400 hover:text-amber-400 transition-colors">
