@@ -28,7 +28,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "zea-crm-intro",
     title: "Zea CRM — Where Every Lead Becomes a Relationship",
-    author: "Sherly Angel",
+    author: "Soujanya Rao",
     date: "Nov 06, 2025",
     category: "ZeaCRM",
     image: "/ai-customer-insights.jpg",

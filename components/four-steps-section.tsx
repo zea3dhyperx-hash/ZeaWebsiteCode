@@ -15,7 +15,7 @@ export function FourStepsSection() {
               {/* <svg viewBox="0 0 300 300" className="w-full h-full" xmlns="http://www.w3.org/2000/svg"> */}
                 {/* Person 1 - Left */}
                 {/* <circle cx="60" cy="80" r="15" fill="#8b6f47" />
-                <rect x="45" y="100" width="30" height="40" fill="#d4af37" rx="2" />
+                <rect x="45" y="100" width="30" img="40" fill="#d4af37" rx="2" />
                 <rect x="40" y="140" width="40" height="35" fill="#6b5d47" rx="2" /> */}
 
                 {/* Person 2 - Center-left */}

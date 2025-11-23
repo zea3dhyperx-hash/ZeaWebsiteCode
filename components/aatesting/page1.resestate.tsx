@@ -35,7 +35,7 @@ export default function RealEstateCRM() {
 
   useEffect(() => {
     setVideoSrc(
-      "https://www.youtube.com/embed/OTr-FSnv_vA?si=WwNuVNslymDjfmZs"
+      "https://www.youtube.com/embed/OTr-FSnv_vA?autoplay=0&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1&enablejsapi=1&disablekb=1"
     );
   }, []);
 

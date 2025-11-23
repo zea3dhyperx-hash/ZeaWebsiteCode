@@ -23,7 +23,7 @@ export function FeatureCardsSection() {
         "Smart follow-ups that keep conversations moving",
         "Personalization at scale with dynamic fields",
       ],
-      image: "/images/Nurture.png",
+      image: "/images/Nurture1.png",
     },
     {
       title: "Convert: Insight-Driven Sales Acceleration",
@@ -74,7 +74,7 @@ export function FeatureCardsSection() {
 
             {/* Image Section */}
             <div className="flex-1 flex justify-center">
-              <div className="relative w-full max-w-sm hover:scale-105 transition-transform duration-500 ease-out">
+              <div className="relative w-full max-w-sm scale-120 transition-transform duration-500 ease-out">
                 <Image
                   src={feature.image}
                   alt={feature.title}

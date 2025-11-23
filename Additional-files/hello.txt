@@ -1,0 +1,10 @@
+"Industries We Empower section" In the all section in page.tsx file
+
+In the Finance page i change "hero section" and  Section 1"Smarter Financial Relationship Management " In the all section in page.tsx file
+
+In the Education & Training  i change "hero section" and  "Unified CRM  section " In the all section in page.tsx file
+
+In the Professional Services  i change "hero section" and  "Who We Help  section " In the all section in page.tsx file
+
+In the Professional Services  i change "hero section" and  "Who We Help  section " In the all section in page.tsx file
+

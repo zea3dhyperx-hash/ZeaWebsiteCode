@@ -57,7 +57,7 @@ export default function BlogPage() {
   const blogData = {
     tag: "ZeaCRM",
     title: "Zea CRM — Where Every Lead Becomes a Relationship",
-    author: "Sherly Angel",
+    author: "Soujanya Rao",
     date: "November 6, 2025",
     time: "8:30 AM",
     image: "/images/blogimg1.png",

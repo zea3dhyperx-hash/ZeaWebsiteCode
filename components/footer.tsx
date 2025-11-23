@@ -40,7 +40,7 @@ export function Footer() {
 
           {/* Product */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-white">PRODUCT</h4>
+            <h4 className="font-semibold text-white">RESOURCES</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/about-us" className="text-gray-400 hover:text-amber-400 transition-colors">
