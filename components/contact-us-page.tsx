@@ -358,7 +358,7 @@ export default function ContactUsPage() {
             <div className="mt-6 p-6 bg-card border border-border rounded-lg animate-slide-up">
               <h3 className="font-bold text-lg text-primary mb-2">Our Office</h3>
               <p className="text-muted-foreground mb-4">
-                Visit our headquarters to meet the team and learn more about zeaCRM in person.
+                Visit our headquarters to meet the team and learn more about Zea CRM in person.
               </p>
               <div className="space-y-2 text-foreground">
                 <p>

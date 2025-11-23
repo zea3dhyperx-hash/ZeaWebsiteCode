@@ -1,5 +1,14 @@
 export function Features2Integration() {
-  const integrations = ["Slack","Microsoft Outlook","Gmail","WhatsApp Business","Google Calendar","Zapier","Zoom","HubSpot"]
+  const integrations = [
+    { name: "Slack", logo: "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg" },
+    { name: "LinkedIn", logo: "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" },
+    { name: "Gmail", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" },
+    { name: "WhatsApp Business", logo: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" },
+    { name: "Google Calendar", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" },
+    { name: "Zapier", logo: "https://cdn.worldvectorlogo.com/logos/zapier-1.svg" },
+    { name: "Zoom", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" },
+    { name: "HubSpot", logo: "https://cdn.worldvectorlogo.com/logos/hubspot-1.svg" },
+  ]
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
@@ -16,7 +25,15 @@ export function Features2Integration() {
               className="p-6 bg-card rounded-lg border border-border transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              <p className="font-semibold text-foreground">{integration}</p>
+              <div className="flex flex-col items-center justify-center gap-3">
+                <img
+                  src={integration.logo}
+                  alt={integration.name}
+                  className="h-10 w-auto max-w-[140px] object-contain"
+                  loading="lazy"
+                />
+                <p className="text-sm font-semibold text-foreground">{integration.name}</p>
+              </div>
             </div>
           ))}
         </div>

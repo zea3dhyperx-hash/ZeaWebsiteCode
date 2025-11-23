@@ -1,4 +1,13 @@
+ "use client"
+ 
 export function Features2Hero() {
+  const scrollToFeatures = () => {
+    const target = document.getElementById("features")
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background/60 via-background/60 to-card/30 py-20"
@@ -28,12 +37,18 @@ export function Features2Hero() {
         <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">Work Smarter, Sell Faster, Grow Bigger</h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance max-w-5xl mx-auto">ZeaCRM gives you everything you need to automate workflows, manage relationships, and close deals. All in one intelligent, easy-to-use platform. Whether you’re a solopreneur or a growing enterprise, you’ll experience business agility powered by AI.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover-lift hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
-            <a href="#features-grid">Explore All Features</a>
+          <button
+            onClick={scrollToFeatures}
+            className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover-lift hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
+          >
+            Explore All Features
           </button>
-          <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
-            <a href="/playbooks/videos">Request Demo</a>
-          </button>
+          <a
+            href="/playbooks/videos"
+            className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300 inline-flex items-center justify-center"
+          >
+            Request Demo
+          </a>
         </div>
       </div>
     </section>

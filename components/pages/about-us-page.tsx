@@ -107,6 +107,13 @@ const leaders = [
 ]
 
 export default function AboutUsPageContent() {
+  const scrollToLeader = (slug: string) => {
+    const target = document.getElementById(`leader-${slug}`)
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
   return (
     <>
       <Header />
@@ -253,12 +260,12 @@ export default function AboutUsPageContent() {
                     role="link"
                     tabIndex={0}
                     onClick={() => {
-                      window.location.hash = `leader-${member.slug}`
+                      scrollToLeader(member.slug)
                     }}
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault()
-                        window.location.hash = `leader-${member.slug}`
+                        scrollToLeader(member.slug)
                       }
                     }}
                     className="group relative h-80 w-full [perspective:1000px] focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-2xl"
@@ -287,18 +294,20 @@ export default function AboutUsPageContent() {
                     </div>
                   </div>
                   <div className="space-y-1">
-                    <a
-                      href={`#leader-${member.slug}`}
-                      className="block text-white font-semibold text-lg leading-tight hover:text-amber-200 transition-colors"
+                    <button
+                      type="button"
+                      onClick={() => scrollToLeader(member.slug)}
+                      className="block w-full text-white font-semibold text-lg leading-tight hover:text-amber-200 transition-colors"
                     >
                       {member.name}
-                    </a>
-                    <a
-                      href={`#leader-${member.slug}`}
-                      className="block text-gray-300 text-sm leading-snug hover:text-amber-200 transition-colors"
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => scrollToLeader(member.slug)}
+                      className="block w-full text-gray-300 text-sm leading-snug hover:text-amber-200 transition-colors"
                     >
                       {member.role}
-                    </a>
+                    </button>
                   </div>
                 </div>
               ))}

@@ -29,7 +29,6 @@ export default function FeaturesPage() {
       {/* <ClientScrollRestore> */}
         <Header />
         <Features2Hero />
-        
         <Features2Grid />
         <FeaturesSlider />
         {/* <FeaturesHeroSection /> */}

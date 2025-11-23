@@ -64,7 +64,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/playbooks/blogs" className="text-gray-400 hover:text-amber-400 transition-colors">
-                  PlayBooks
+                  Videos
                 </Link>
               </li>
             </ul>

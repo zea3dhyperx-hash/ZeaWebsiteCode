@@ -220,9 +220,9 @@ export default function BlogPage() {
     <main className="min-h-screen bg-background">
       <Header />
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-16 lg:px-8">
-        <div className="flex gap-8">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start">
           {/* === MAIN CONTENT === */}
-          <div className="flex-1 min-w-0">
+          <div className="w-full min-w-0 lg:flex-1">
             <div className="max-w-4xl">
               <BlogHeader
                 tag={blogData.tag}
@@ -267,8 +267,8 @@ export default function BlogPage() {
           {/* === SIDEBAR: CALENDAR ABOVE TOC (sticky) === */}
 
           <aside className="w-full lg:w-[380px] xl:w-[420px]">
-            <div className="sticky top-24 space-y-6">
-              <div className="rounded-lg border border-border p-3">
+            <div className="space-y-6 lg:sticky lg:top-24">
+              <div className="rounded-lg border border-border p-4 md:p-5">
                 <h3 className="text-base font-semibold mb-3">Watch Demo Video</h3>
                 <GhlCalendar />
               </div>

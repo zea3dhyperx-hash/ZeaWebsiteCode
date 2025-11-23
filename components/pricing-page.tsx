@@ -1,6 +1,6 @@
 "use client"
 
-import { Check, ChevronDown } from "lucide-react"
+import { Check, ChevronDown, BadgeCheck, Scale, TrendingUp } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
 import Anim3 from "./animations/anim3"
@@ -183,12 +183,14 @@ export function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 hover:scale-105 transition-transform">
             {[
-              { title: "Transparent monthly billing", icon: "✓" },
-              { title: "No hidden costs", icon: "✓" },
-              { title: "Scales with your business needs", icon: "✓" },
+              { title: "Transparent monthly billing", icon: BadgeCheck },
+              { title: "No hidden costs", icon: Scale },
+              { title: "Scales with your business needs", icon: TrendingUp },
             ].map((item, index) => (
               <div key={index} className="bg-black p-6 rounded-lg border border-gray-700 text-center">
-                <div className="text-3xl text-amber-400 mb-3">{item.icon}</div>
+                <div className="flex justify-center mb-3 text-amber-400">
+                  <item.icon className="h-8 w-8" />
+                </div>
                 <h3 className="text-lg font-semibold text-white">{item.title}</h3>
               </div>
             ))}
