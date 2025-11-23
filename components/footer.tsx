@@ -43,6 +43,11 @@ export function Footer() {
             <h4 className="font-semibold text-white">PRODUCT</h4>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link href="/about-us" className="text-gray-400 hover:text-amber-400 transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
                 <Link href="/features" className="text-gray-400 hover:text-amber-400 transition-colors">
                   Features
                 </Link>
@@ -60,11 +65,6 @@ export function Footer() {
               <li>
                 <Link href="/playbooks/blogs" className="text-gray-400 hover:text-amber-400 transition-colors">
                   PlayBooks
-                </Link>
-              </li>
-              <li>
-                <Link href="/about-us" className="text-gray-400 hover:text-amber-400 transition-colors">
-                  About Us
                 </Link>
               </li>
             </ul>
