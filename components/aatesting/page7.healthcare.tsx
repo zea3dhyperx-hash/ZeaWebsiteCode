@@ -185,7 +185,7 @@ export default function HealthcareCRMPage() {
                   <Link href="/playbooks/videos">Watch Demo Video</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
-                  <Link href="/get-started">Start Free Trial</Link>
+              <Link href="/get-started">Book a Demo</Link>
                 </Button>
               </div>
             </div>
@@ -409,7 +409,7 @@ export default function HealthcareCRMPage() {
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background transition-transform duration-200 hover:scale-[1.03] active:scale-95">
-                <Link href="/get-started">Start Free Trial</Link>
+                <Link href="/get-started">Book a Demo</Link>
               </Button>
             </div>
           </div>

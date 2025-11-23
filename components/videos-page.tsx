@@ -311,7 +311,7 @@ export function VideosPage() {
             </p>
             <div className="flex gap-4 justify-center animate-slide-up">
               {/* <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold hover-lift">
-                Start Free Trial
+                Book a Demo
               </button> */}
               <Link
                 href="/contact-us"

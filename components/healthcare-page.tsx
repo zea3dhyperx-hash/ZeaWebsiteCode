@@ -166,7 +166,7 @@ export default function HealthcareCRM() {
                   <Link href="/playbooks/videos">Watch Demo Video</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link href="/get-started">Start Free Trial</Link>
+                  <Link href="/get-started">Book a Demo</Link>
                 </Button>
               </div>
             </div>
@@ -431,7 +431,7 @@ export default function HealthcareCRM() {
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
               <Button asChild size="lg" className="hover:scale-110 text-xl" variant="outline">
-                <Link href="/get-started">Start Free Trial</Link>
+                <Link href="/get-started">Book a Demo</Link>
               </Button>
             </div>
         </section>

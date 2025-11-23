@@ -180,7 +180,7 @@ export default function EducationTrainingCRM() {
             <p className="mt-3 text-muted-foreground text-lg">From the first inquiry to alumni engagement, every interaction is organized, tracked, and optimized — so your team focuses on learning, not logistics.</p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg" variant="outline">
-                <Link href="/get-started">Start Free Trial</Link>
+                <Link href="/get-started">Book a Demo</Link>
               </Button>
               <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
@@ -319,7 +319,7 @@ Spend less time on manual coordination and more time shaping learning outcomes.
               <Link href="/playbooks/videos">Watch Demo Video</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background hover:scale-105 transition transition-all">
-              <Link href="/get-started">Start Free Trial</Link>
+              <Link href="/get-started">Book a Demo</Link>
             </Button>
           </div>
         </div>

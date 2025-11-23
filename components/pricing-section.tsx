@@ -19,7 +19,7 @@ const pricingPlans = [
       "Reporting",
       "Up to 5 Users",
     ],
-    buttonText: "Start Free Trial",
+    buttonText: "Book a Demo",
     buttonStyle: "bg-primary text-black hover:bg-primary",
     highlighted: false,
   },

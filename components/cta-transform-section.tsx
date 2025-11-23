@@ -32,7 +32,7 @@ export function CTATransformSection() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button className="bg-primary hover:bg-primary text-black font-semibold px-8 py-3 rounded-lg transition-colors">
-                <a href="/get-started">Start Free Trial</a>
+                <a href="/get-started">Book a Demo</a>
               </button>
               <button className="border-2 border-primary text-primary hover:bg-primary hover:text-black font-semibold px-8 py-3 rounded-lg transition-colors">
                 <a href="/playbooks/videos">Schedule a Demo</a>

@@ -349,7 +349,7 @@ export function IndustriesPage() {
               variant="outline"
               className="border-amber-400 text-amber-400 hover:bg-amber-400 px-8 py-6 text-lg bg-transparent"
             >
-              <a href="/get-started">Start Free Trial</a>
+                <a href="/get-started">Book a Demo</a>
             </Button>
           </div>
         </div>

@@ -254,7 +254,7 @@ export function Header() {
               // onClick={() => setIsGetStartedOpen(true)}
               className="bg-primary  hover:scale-110 text-black font-semibold transition-all duration-300 "
             >
-              <a href="/get-started">Start Free Trial</a>
+              <a href="/demo">Book a Demo</a>
             </Button>
           </div>
 

@@ -26,7 +26,7 @@ export function PricingPage() {
         "Reporting",
         "Up to 5 Users",
       ],
-      buttonText: "Start Free Trial",
+      buttonText: "Book a Demo",
       buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
       highlighted: false,
     },

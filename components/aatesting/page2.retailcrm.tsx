@@ -182,7 +182,7 @@ export default function RetailEcomCRM() {
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/get-started">Start Free Trial</Link>
+                <Link href="/get-started">Book a Demo</Link>
               </Button>
             </div>
           </div>
@@ -355,7 +355,7 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
               <Link href="/playbooks/videos">Watch Demo Video</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background">
-              <Link href="/get-started">Start Free Trial</Link>
+              <Link href="/get-started">Book a Demo</Link>
             </Button>
           </div>
         </div>

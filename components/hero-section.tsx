@@ -86,7 +86,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 className="bg-primary hover:bg-primary text-black font-semibold px-8 py-6 text-base rounded-lg">
-                <a href="/get-started">Start Free Trial</a>
+                <a href="/get-started">Book a Demo</a>
               </Button>
               
               <Button
