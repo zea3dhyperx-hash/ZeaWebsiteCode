@@ -104,18 +104,21 @@ export default function RetailEcomCRM() {
 
           if (lockedOpen) return;
 
-          const relatedTarget = e.relatedTarget as HTMLElement | null;
+          const relatedTarget = e.relatedTarget as EventTarget | null;
+
+          if (!relatedTarget || !(relatedTarget instanceof Node)) {
+            return;
+          }
 
           // Prevent collapse when entering iframe
           if (
-            relatedTarget === null ||
             (iframeRef.current && iframeRef.current.contains(relatedTarget))
           ) {
             return;
           }
 
           // Close only when moving to header
-          if (relatedTarget && typeof relatedTarget.closest === "function") {
+          if (relatedTarget instanceof Element && typeof relatedTarget.closest === "function") {
             if (relatedTarget.closest("header")) {
               setExpanded(false);
               return;
@@ -186,13 +189,16 @@ export default function RetailEcomCRM() {
               </Button>
             </div>
           </div>
-          <div className="rounded-xl border border-border p-6 bg-card">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Automation that never sleeps</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Unified customer data across channels</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Order + loyalty in one view</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Predictive offers with AI</li>
-            </ul>
+          <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
+            <video
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/grok-video-66fc1576-fe90-4b85-877c-186c4c7c6ca1-iY2kJjWcoyYzOVbLzWLhYpravliowa.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
@@ -244,22 +250,106 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
 
       {/* Who We Help */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Who We Help</h2>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-balance text-[rgba(223,168,34,1)]">Who We Help</h2>
         <div className="mt-8 space-y-2 text-center">
-          <p className="pb-5">ZeaCRM empowers the full retail ecosystem:</p>
-          <ol className="text-left md:w-2/3 mx-auto justify-center bg-card bg-muted rounded-lg px-20 py-10 list-decimal list-inside space-y-2">
-            <li>Online Stores – Automate campaigns, order updates & customer feedback.</li>
-            <li>Retail Chains – Manage multiple locations with unified customer data.</li>
-            <li>Fashion & Apparel Brands – Personalize recommendations & loyalty rewards.</li>
-            <li>Grocery & FMCG Stores – Enable automated reorders & product notifications.</li>
-            <li>Electronics Retailers – Manage warranties, repairs & service tickets.</li>
-            <li>Luxury & Lifestyle Brands – Design VIP programs & exclusive engagement.</li>
-            <li>Beauty & Wellness Brands – Automate reminders & after-care follow-ups.</li>
-            <li>Home & Interior Stores – Track high-value projects & lead pipelines.</li>
-            <li>E-Commerce Marketplaces – Connect chat, feedback, and customer support.</li>
-            <li>Subscription Businesses – Automate renewals, upsells, and recurring engagement.</li>
-            <li>Franchise Networks – Maintain centralized control over customer experience.</li>
-          </ol>
+          <p className="pb-5 leading-9">ZeaCRM empowers the full retail ecosystem:</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left leading-8">
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">🏪</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Online Stores</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Automate campaigns, order updates & customer feedback.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">🏬</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Retail Chains</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Manage multiple locations with unified customer data.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">💎</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Fashion & Apparel Brands</h3>
+                <p className="text-sm text-muted-foreground mt-1">Personalize recommendations & loyalty rewards.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-[400ms]">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">🛒</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Grocery & FMCG Stores</h3>
+                <p className="text-sm text-muted-foreground mt-1">Enable automated reorders & product notifications.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">📱</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Electronics Retailers</h3>
+                <p className="text-sm text-muted-foreground mt-1">Manage warranties, repairs & service tickets.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-600">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">💍</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Luxury & Lifestyle Brands</h3>
+                <p className="text-sm text-muted-foreground mt-1">Design VIP programs & exclusive engagement.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">🌸</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Beauty & Wellness Brands</h3>
+                <p className="text-sm text-muted-foreground mt-1">Automate reminders & after-care follow-ups.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-800">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">🏠</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Home & Interior Stores</h3>
+                <p className="text-sm text-muted-foreground mt-1">Track high-value projects & lead pipelines.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-900">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">💻</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">E-Commerce Marketplaces</h3>
+                <p className="text-sm text-muted-foreground mt-1">Connect chat, feedback, and customer support.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-1000">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">▶️</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Subscription Businesses</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Automate renewals, upsells, and recurring engagement.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-1100">
+              <div className="text-5xl text-[#DFA822] flex-shrink-0">🏪</div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Franchise Networks</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Maintain centralized control over customer experience.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
