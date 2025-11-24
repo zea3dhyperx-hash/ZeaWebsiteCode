@@ -1,5 +1,1 @@
 I have a file called blog-authoring-instructions.txt use that to create new blogs.
-
-https://miro.com/welcomeonboard/OGFTK29TZDNQRWZBZXJiQUVTY2R1WUNWbmtVdzh6a0VHdDlhQWZZdThac2RxMDhZbGhPRFF2Vk84OWZvMGZWQ21abWlhdDRteUw5MTRjTmdQSUJmTUsxVzRJMnZIU1ZTbTM0QW03WDhOY3lIbVBmbkYxTDNpeEdTZXQyV3dsZFhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=534316017268
-
-https://trello.com/invite/b/6912f8aefb4a437a93c83818/ATTId501284d0fa1157019ed545a0d0a43a56DAABC0F/work
