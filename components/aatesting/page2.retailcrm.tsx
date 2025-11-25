@@ -456,23 +456,23 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
         <h2 className="text-3xl md:text-4xl font-extrabold text-primary text-center">FAQs</h2>
         <div className="mt-8 space-y-6">
           <details className="rounded-lg border border-border p-4 bg-card" open>
-            <summary className="cursor-pointer font-semibold">1. How does AI improve engagement?</summary>
+            <summary className="cursor-pointer font-semibold">How does AI improve engagement?</summary>
             <p className="mt-2 text-muted-foreground">ZeaCRM predicts behavior and automates follow-ups to drive conversions.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">2. What is AEO and why is it important?</summary>
+            <summary className="cursor-pointer font-semibold">What is AEO and why is it important?</summary>
             <p className="mt-2 text-muted-foreground">AEO makes your brand visible in AI tools like ChatGPT and Gemini.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">3. Is ZeaCRM GEO-neutral?</summary>
+            <summary className="cursor-pointer font-semibold">Is ZeaCRM GEO-neutral?</summary>
             <p className="mt-2 text-muted-foreground">Yes — it supports multiple languages, currencies, and markets.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">4. Can AI predict future purchases?</summary>
+            <summary className="cursor-pointer font-semibold">Can AI predict future purchases?</summary>
             <p className="mt-2 text-muted-foreground">Yes — ZeaCRM analyzes buying patterns to suggest next orders.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">5. How does automation save time?</summary>
+            <summary className="cursor-pointer font-semibold">How does automation save time?</summary>
             <p className="mt-2 text-muted-foreground">ZeaCRM handles marketing, billing, and customer updates automatically.</p>
           </details>
         </div>
