@@ -1,4 +1,3 @@
-import AboutUsPageContent from "@/components/pages/about-us-page"
 import AboutUsPageContentAlt from "@/components/pages/about-us-page-alt"
 
 export const metadata = {
@@ -7,7 +6,6 @@ export const metadata = {
     "Learn how ZeaCRM blends intelligent automation with human-centered design to streamline customer workflows and enhance team productivity. Discover our story and vision.",
 }
 
-export default function AboutUsPage() {
-  return <AboutUsPageContent />
-  // return <AboutUsPageContentAlt />
+export default function AboutUsPageAlt() {
+  return <AboutUsPageContentAlt />
 }

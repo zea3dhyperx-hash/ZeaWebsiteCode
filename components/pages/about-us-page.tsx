@@ -495,6 +495,30 @@ export default function AboutUsPageContent() {
         </section>
 
         <section className="max-w-6xl mx-auto px-4 pb-20">
+          <div className="text-center space-y-4 mb-10">
+            <p className="text-amber-400 font-semibold">Meet the Team</p>
+            <h3 className="text-3xl font-bold text-white">The people building ZeaCRM</h3>
+            <p className="text-gray-300 max-w-3xl mx-auto">
+              Builders, designers, and operators focused on keeping every customer relationship human.
+            </p>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {team.map((member) => (
+              <div key={member.name} className="rounded-xl border border-slate-800 bg-slate-900/70 p-5 flex flex-col items-center gap-3">
+                <div className="h-28 w-28 overflow-hidden rounded-full border border-slate-800">
+                  <img src={member.img} alt={member.name} className="h-full w-full object-cover" />
+                </div>
+                <div className="text-center space-y-1">
+                  <p className="text-white font-semibold text-lg">{member.name}</p>
+                  <p className="text-gray-300 text-sm">{member.role}</p>
+                  <p className="text-gray-400 text-xs leading-relaxed">{member.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-6xl mx-auto px-4 pb-20">
           <FAQ
             title="About ZeaCRM"
             className="px-6 py-10 md:px-10 md:py-12"
