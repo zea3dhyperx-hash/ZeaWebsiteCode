@@ -349,7 +349,7 @@ export function Header() {
                   variant="outline"
                   className="w-full bg-transparent hover:bg-primary"
                 >
-                  <Link href="/sign-in" >
+                  <Link href="https://app.zeacrm.com/?logout=true" >
                     Log In
                   </Link>
                 </Button>

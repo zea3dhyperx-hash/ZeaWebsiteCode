@@ -151,7 +151,7 @@ const marqueeRows = [
       "/OfficeImages/IMG_5285.JPG",
       "/OfficeImages/IMG_5300.JPG",
       "/OfficeImages/IMG_5301.JPG",
-      "/OfficeImages/IMG_5307.JPG",,
+      "/OfficeImages/IMG_5307.JPG",
       "/OfficeImages/IMG_5300.JPG",
     ],
   },
