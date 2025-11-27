@@ -163,7 +163,7 @@ const leaders = [
     slug: "soujanya-rao",
     name: "Soujanya Rao",
     role: "Founder",
-    img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80",
+    img: "/about-us-images/founder1.jpg",
     slogan: "Build boldly, listen constantly.",
     copy:
       "Soujanya turned years of customer interviews into the first ZeaCRM prototype. She champions product clarity, reliable data foundations, and workflows that reduce busywork for every team. Her focus is making AI feel like a trusted teammate rather than a black box.",
