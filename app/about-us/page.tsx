@@ -8,6 +8,6 @@ export const metadata = {
 }
 
 export default function AboutUsPage() {
-  return <AboutUsPageContent />
-  // return <AboutUsPageContentAlt />
+  // return <AboutUsPageContent />
+  return <AboutUsPageContentAlt />
 }
