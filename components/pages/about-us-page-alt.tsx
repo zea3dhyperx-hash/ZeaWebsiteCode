@@ -11,7 +11,7 @@ import { Header } from "@/components/header"
 
 const team = [
   {
-    name: "Soujanya Rao",
+    name: "Katta Soujanya Rao",
     role: "Founder",
     bio: "Product-first founder who turned customer pain points into the blueprint for ZeaCRM.",
     img: "/about-us-images/founder11.jpg",
@@ -28,7 +28,7 @@ const team = [
     name: "Vinoth Kumar",
     role: "Founder",
     bio: "Operator focused on predictable delivery, secure scale, and measurable customer impact.",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+    img: "/about-us-images/founder21.png",
     slug: "vinoth-kumar",
     socials: {
       instagram: "https://instagram.com/vinoth-kumar",
@@ -161,7 +161,7 @@ const marqueeRows = [
 const leaders = [
   {
     slug: "soujanya-rao",
-    name: "Soujanya Rao",
+    name: "Katta Soujanya Rao",
     role: "Founder",
     img: "/about-us-images/founder1.jpg",
     slogan: "Build boldly, listen constantly.",
@@ -173,7 +173,7 @@ const leaders = [
     slug: "vinoth-kumar",
     name: "Vinoth Kumar",
     role: "Founder",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80",
+    img: "/about-us-images/founder22.jpg",
     slogan: "Steady delivery beats lucky sprints.",
     copy:
       "Vinoth leads operations and growth, ensuring every release is stable, compliant, and tied to customer ROI. He drives the cadence that keeps product, sales, and support moving together, with an eye on uptime and security.",
@@ -346,7 +346,7 @@ export default function AboutUsPageContentAlt() {
                 (Bio Here)
               </p> */}
             </div>
-            <div className="grid gap-8 sm:grid-cols-2 lg:mx-60 justify-items-center lg:grid-cols-2 ">
+            <div className="grid sm:grid-cols-2 lg:mx-60 justify-items-center lg:grid-cols-2 ">
               {team.map((member) => (
                 <div key={member.name} className="space-y-3 w-60 text-center">
                   <div
