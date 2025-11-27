@@ -13,7 +13,7 @@ const team = [
     name: "Soujanya Rao",
     role: "Founder",
     bio: "Product-first founder who turned customer pain points into the blueprint for ZeaCRM.",
-    img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+    img: "/about-us-images/founder1.jpg",
     slug: "soujanya-rao",
     socials: {
       instagram: "https://instagram.com/soujanya-rao",

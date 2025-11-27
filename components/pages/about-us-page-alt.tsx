@@ -14,7 +14,8 @@ const team = [
     name: "Soujanya Rao",
     role: "Founder",
     bio: "Product-first founder who turned customer pain points into the blueprint for ZeaCRM.",
-    img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+    img: "/about-us-images/founder11.jpg",
+    // img: "/about-us-images/founder1.jpg",
     slug: "soujanya-rao",
     socials: {
       instagram: "https://instagram.com/soujanya-rao",
@@ -99,6 +100,61 @@ const extendedTeam = [
     role: "QA Lead",
     bio: "Builds test suites that keep every release stable, fast, and user-friendly.",
     img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80&sat=-20",
+  },
+]
+
+const marqueeRows = [
+  {
+    direction: "left",
+    speed: 42,
+    images: [
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+    ],
+  },
+  {
+    direction: "right",
+    speed: 48,
+    images: [
+      "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+    ],
+  },
+  {
+    direction: "left",
+    speed: 46,
+    images: [
+      "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+    ],
+  },
+  {
+    direction: "right",
+    speed: 50,
+    images: [
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1476357471311-43c0db9fb2b4?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=80",
+    ],
   },
 ]
 
@@ -561,6 +617,38 @@ export default function AboutUsPageContentAlt() {
           </div>
         </section>
 
+        <section className="max-w-6xl mx-auto px-4 pb-20 space-y-8">
+          <div className="text-center space-y-3">
+            <p className="text-amber-400 font-semibold">Showcase</p>
+            <h3 className="text-3xl font-bold text-white">A moving gallery of our work</h3>
+            <p className="text-gray-300 max-w-3xl mx-auto">
+              Four subtle, alternating marquee rows glide past in an even rhythm for a premium, parallax feel.
+            </p>
+          </div>
+          <div className="space-y-6">
+            {marqueeRows.map((row, idx) => (
+              <div
+                key={row.direction + idx}
+                className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40 p-3"
+              >
+                <div
+                  className={`marquee-track ${row.direction === "left" ? "marquee-left" : "marquee-right"}`}
+                  style={{ ["--marquee-duration" as any]: `${row.speed}s` }}
+                >
+                  {[...row.images, ...row.images].map((src, imgIdx) => (
+                    <div
+                      key={`${idx}-${imgIdx}-${src}`}
+                      className="h-36 w-60 flex-shrink-0 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/60"
+                    >
+                      <img src={src} alt={`Gallery ${imgIdx + 1}`} className="h-full w-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="max-w-6xl mx-auto px-4 pb-20">
           <FAQ
             title="About ZeaCRM"
@@ -616,6 +704,34 @@ export default function AboutUsPageContentAlt() {
         </section>
       </main>
       <Footer />
+      <style jsx global>{`
+        .marquee-track {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          animation: marquee-left var(--marquee-duration, 45s) linear infinite;
+          will-change: transform;
+        }
+        .marquee-track.marquee-right {
+          animation-name: marquee-right;
+        }
+        @keyframes marquee-left {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+        @keyframes marquee-right {
+          from {
+            transform: translateX(-50%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </>
   )
 }
