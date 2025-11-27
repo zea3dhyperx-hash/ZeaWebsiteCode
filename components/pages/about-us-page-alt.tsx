@@ -11,6 +11,19 @@ import { Header } from "@/components/header"
 
 const team = [
   {
+    name: "Vinoth Kumar",
+    role: "Founder",
+    bio: "Operator focused on predictable delivery, secure scale, and measurable customer impact.",
+    img: "/about-us-images/founder21.png",
+    slug: "vinoth-kumar",
+    socials: {
+      instagram: "https://instagram.com/vinoth-kumar",
+      facebook: "https://facebook.com/vinoth.kumar",
+      twitter: "https://twitter.com/vinothk",
+      linkedin: "https://linkedin.com/in/vinothk",
+    },
+  },
+  {
     name: "Katta Soujanya Rao",
     role: "Founder",
     bio: "Product-first founder who turned customer pain points into the blueprint for ZeaCRM.",
@@ -22,19 +35,6 @@ const team = [
       facebook: "https://facebook.com/soujanya.rao",
       twitter: "https://twitter.com/soujanyarao",
       linkedin: "https://linkedin.com/in/soujanyarao",
-    },
-  },
-  {
-    name: "Vinoth Kumar",
-    role: "Founder",
-    bio: "Operator focused on predictable delivery, secure scale, and measurable customer impact.",
-    img: "/about-us-images/founder21.png",
-    slug: "vinoth-kumar",
-    socials: {
-      instagram: "https://instagram.com/vinoth-kumar",
-      facebook: "https://facebook.com/vinoth.kumar",
-      twitter: "https://twitter.com/vinothk",
-      linkedin: "https://linkedin.com/in/vinothk",
     },
   },
 ]
@@ -160,24 +160,24 @@ const marqueeRows = [
 
 const leaders = [
   {
-    slug: "soujanya-rao",
-    name: "Katta Soujanya Rao",
-    role: "Founder",
-    img: "/about-us-images/founder1.jpg",
-    slogan: "Build boldly, listen constantly.",
-    copy:
-      "Soujanya turned years of customer interviews into the first ZeaCRM prototype. She champions product clarity, reliable data foundations, and workflows that reduce busywork for every team. Her focus is making AI feel like a trusted teammate rather than a black box.",
-    motivation: "Why this work: she loves helping teams reclaim time for real conversations and decisions instead of manual follow-ups.",
-  },
-  {
     slug: "vinoth-kumar",
     name: "Vinoth Kumar",
     role: "Founder",
     img: "/about-us-images/founder22.jpg",
-    slogan: "Steady delivery beats lucky sprints.",
+    slogan: "Work with heart, finish what you start.",
     copy:
-      "Vinoth leads operations and growth, ensuring every release is stable, compliant, and tied to customer ROI. He drives the cadence that keeps product, sales, and support moving together, with an eye on uptime and security.",
-    motivation: "Why this work: he enjoys turning ambitious roadmaps into predictable outcomes customers can rely on every quarter.",
+    "Vinoth was born in Kancheepuram, Tamil Nadu, in a family rooted in traditional weaving - a place where discipline, craftsmanship, and hard work were a way of life. Growing up in a simple South Indian home, he learned to stay accountable, work honestly, and finish what he starts. Those values became the foundation of who he is today. \n\nEven though his passion was always sales, he followed the classic Tamil Nadu route and completed Engineering in 2010. Life moved forward, and he married Soujanya - now his co-founder - and together they are raising their son, Mithran. \n\nAfter nearly a decade in Bengaluru's fast urban life, Vinoth realised something important: businesses weren't failing due to lack of talent, but due to broken systems. So he left the city and settled in Salem with a mission to help small businesses automate, organise, and grow without chaos. \n\nWith just a laptop and long nights of figuring things out, he built URL Factory and later ZEA CRM - not just as tools, but as practical ecosystems that solve real operational problems. People come to Vinoth for clarity, workflows, and structure - and he rarely says no, a weakness that also makes him deeply trusted. His vision is simple: build strong systems, help founders breathe easier, and scale a company beyond $10M with honesty, discipline, and purpose.",
+    motivation: "",
+  },
+  {
+    slug: "soujanya-rao",
+    name: "Katta Soujanya Rao",
+    role: "Founder",
+    img: "/about-us-images/founder1.jpg",
+    slogan: "Helping teams operate with discipline, structure, and smart automation.",
+    copy:
+      "Katta Soujanya Rao is the Co-Founder of URL Factory and ZeaCRM, two rapidly growing technology ventures focused on helping businesses automate their operations, streamline workflows, and scale with confidence.\n\nWith over five years of experience in sales, marketing, and growth strategy, she brings a strong understanding of customer behavior, operational challenges, and the systems modern businesses need to perform efficiently. Her career across startups and multinational companies shaped her ability to build solutions that are practical, scalable, and easy for any business to adopt. Driven by this experience, Soujanya co-founded URL Factory to deliver digital solutions, workflow automation, voice AI, and operational systems that support service-based businesses. \n\nAs a co-founder of ZeaCRM, she leads product direction for a business management platform designed for growing companies - offering CRM and lead management, sales pipelines, communication tools, and automated workflows that simplify daily operations. Under her leadership, both platforms have expanded significantly, supporting industries across services, retail, education, healthcare, real estate, and blue-collar sectors. \n\nHer vision remains clear: to help businesses work smarter, automate faster, and grow consistently using modern AI and workflow technologies.",
+    motivation: "",
   },
   // {
   //   slug: "lena-brooks",
@@ -421,16 +421,20 @@ export default function AboutUsPageContentAlt() {
               const isEven = idx % 2 === 0
               return (
                 <div key={person.name} className={`grid items-center gap-8 md:grid-cols-2 ${isEven ? "" : "md:[&>div:first-child]:order-2"}`}>
-                  <div id={`leader-${person.slug}`} className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/70 h-full">
-                    <div className="relative w-full aspect-[14/16] md:aspect-[14/16]">
-                      <img src={person.img} alt={`Portrait of ${person.name}`} className="h-full w-full object-cover" />
+                  <div id={`leader-${person.slug}`} className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/70 h-[580px] md:h-[660px]">
+                    <div className="relative w-full h-full">
+                      <img src={person.img} alt={`Portrait of ${person.name}`} className="block h-full w-full object-cover" />
                     </div>
                   </div>
                   <div className="p-6 rounded-xl bg-slate-900 border border-slate-800">
                     <p className="text-amber-300 text-sm font-semibold mb-2">{person.role}</p>
                     <h3 className="text-2xl font-bold text-white mb-3">{person.name}</h3>
                     <p className="text-amber-200 text-sm font-semibold mb-2">{person.slogan}</p>
-                    <p className="text-gray-300 leading-relaxed mb-3">{person.copy}</p>
+                    {person.copy.split("\n\n").map((para, idx) => (
+                      <p key={idx} className="text-gray-300 leading-relaxed mb-3">
+                        {para}
+                      </p>
+                    ))}
                     <p className="text-gray-400 leading-relaxed">{person.motivation}</p>
                   </div>
                 </div>
@@ -472,7 +476,7 @@ export default function AboutUsPageContentAlt() {
                 { year: "2022", label: "Process Framework", desc: "Developed early automation modules and structured data pipelines to streamline tasks.", icon: ShieldCheck },
                 { year: "2023", label: "Platform Foundation", desc: "Built the core components and architecture that would later evolve into a unified system.", icon: Rocket },
                 { year: "2024", label: "Automation Exploration", desc: "Researched workflow automation and prepared the groundwork for a platform-level transformation.", icon: Brain },
-                { year: "2025", label: "Zea Platform \n (AI Era)", desc: "Launched the Zea ecosystem with AI-powered workflows, automation, and the first release of ZeaCRM Elite.", icon: Crown },
+                { year: "2025", label: "Zea Platform (AI Era)", desc: "Launched the Zea ecosystem with AI-powered workflows, automation, and the first release of ZeaCRM Elite.", icon: Crown },
               ].map((item) => {
                 const Icon = item.icon
                 return (
@@ -581,7 +585,7 @@ export default function AboutUsPageContentAlt() {
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto px-4 pb-20">
+        {/* <section className="max-w-6xl mx-auto px-4 pb-20">
           <div className="text-center space-y-4 mb-10">
             <p className="text-amber-400 font-semibold">Meet the Team</p>
             <h3 className="text-3xl font-bold text-white">The people building ZeaCRM</h3>
@@ -615,21 +619,24 @@ export default function AboutUsPageContentAlt() {
               {showAllTeam ? "Show fewer" : "See the whole team"}
             </button>
           </div>
-        </section>
+        </section> */}
 
         <section className="max-w-6xl mx-auto px-4 pb-20 space-y-8">
           <div className="text-center space-y-3">
-            <p className="text-amber-400 font-semibold">Showcase</p>
-            <h3 className="text-3xl font-bold text-white">A moving gallery of our work</h3>
+            <p className="text-amber-400 font-semibold">Meet the Team</p>
+            <h3 className="text-3xl font-bold text-white">The people building ZeaCRM</h3>
             <p className="text-gray-300 max-w-3xl mx-auto">
               Four subtle, alternating marquee rows glide past in an even rhythm for a premium, parallax feel.
+            </p>
+            <p className="text-gray-300 max-w-3xl mx-auto">
+              We are a global team of engineers, designers, and product thinkers committed to building software that feels modern, intuitive, and human-centered. Every feature we ship is shaped by real-world challenges and a deep focus on customer experience.
             </p>
           </div>
           <div className="space-y-6">
             {marqueeRows.map((row, idx) => (
               <div
                 key={row.direction + idx}
-                className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40 p-3"
+                className="overflow-hidden  border border-slate-800 bg-slate-900/40 p-3"
               >
                 <div
                   className={`marquee-track ${row.direction === "left" ? "marquee-left" : "marquee-right"}`}
@@ -638,7 +645,7 @@ export default function AboutUsPageContentAlt() {
                   {[...row.images, ...row.images].map((src, imgIdx) => (
                     <div
                       key={`${idx}-${imgIdx}-${src}`}
-                      className="h-36 w-60 flex-shrink-0 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/60"
+                      className="h-42 w-72 flex-shrink-0 overflow-hidden border border-slate-800 bg-slate-950/60"
                     >
                       <img src={src} alt={`Gallery ${imgIdx + 1}`} className="h-full w-full object-cover" />
                     </div>
