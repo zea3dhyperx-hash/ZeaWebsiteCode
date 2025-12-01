@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AniProf from "../animations/ani-prof";
+import { Briefcase, Building2, Compass, DollarSign, Dumbbell, Home, Megaphone, Scale, Users } from "lucide-react";
 
 
 
@@ -105,18 +106,20 @@ export default function ProfessionalServicesCRM() {
 
           if (lockedOpen) return;
 
-          const relatedTarget = e.relatedTarget as HTMLElement | null;
+          const relatedTarget = e.relatedTarget as EventTarget | null;
+
+          const isNode = relatedTarget instanceof Node;
 
           // Prevent collapse when entering iframe
           if (
             relatedTarget === null ||
-            (iframeRef.current && iframeRef.current.contains(relatedTarget))
+            (iframeRef.current && isNode && iframeRef.current.contains(relatedTarget))
           ) {
             return;
           }
 
           // Close only when moving to header
-          if (relatedTarget && typeof relatedTarget.closest === "function") {
+          if (relatedTarget instanceof Element && typeof relatedTarget.closest === "function") {
             if (relatedTarget.closest("header")) {
               setExpanded(false);
               return;
@@ -209,14 +212,14 @@ export default function ProfessionalServicesCRM() {
             </ul>
             <p className="mt-4 text-sm">📈 Result: Faster deals & stronger relationships</p>
           </div>
-          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
-            <h3 className="text-xl font-semibold">IT & SaaS Providers</h3>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
+          <div className="group rounded-xl border scale-105 border-border bg-card p-6 transition-all duration-300 bg-primary hover:shadow-lg hover:scale-108">
+            <h3 className="text-xl text-background font-semibold">IT & SaaS Providers</h3>
+            <ul className="mt-4 space-y-2 text-background">
               <li>Auto demo/trial scheduling & follow-up</li>
               <li>Subscription renewals & billing reminders</li>
               <li>CRM-integrated support ticket tracking</li>
             </ul>
-            <p className="mt-4 text-sm">📈 Result: Improved customer retention & smoother onboarding</p>
+            <p className="mt-4 text-background text-sm">📈 Result: Improved customer retention & smoother onboarding</p>
           </div>
           <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <h3 className="text-xl font-semibold">Legal & Accounting Firms</h3>
@@ -250,9 +253,9 @@ ZeaCRM brings precision, automation, and intelligence into every client interact
       {/* Who We Help */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Who We Help</h2>
-        <div className="mt-8 text-center md:w-2/3 mb-4 mx-auto">
+        <div className="m-8 text-center md:w-2/3 mb-4 mx-auto">
           <p>ZeaCRM adapts seamlessly across the professional services spectrum:</p>
-          <ol className="list-decimal justify-center bg-card bg-muted rounded-lg px-20 py-10 list-inside space-y-2">
+          {/* <ol className="list-decimal justify-center bg-card bg-muted rounded-lg px-20 py-10 list-inside space-y-2">
             <li>Consulting Firms – Manage clients, proposals, and follow-ups efficiently.</li>
             <li>Marketing & Creative Agencies – Automate reporting, campaigns, and approvals.</li>
             <li>Legal Practices – Streamline case management and client communication.</li>
@@ -262,8 +265,69 @@ ZeaCRM brings precision, automation, and intelligence into every client interact
             <li>Recruitment & HR Agencies – Simplify candidate and client tracking.</li>
             <li>Trainers & Coaches – Manage sessions, enrollments, and results.</li>
             <li>Event & PR Agencies – Coordinate vendors, client briefs, and outcomes.</li>
-          </ol>
+          </ol> */}
         </div>
+        <div className="rounded-2xl border border-border p-8 md:p-12 bg-[rgba(223,168,34,1)] opacity-100 text-popover-foreground">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-left text-background">
+                <Building2 className="w-12 h-12 mb-4 text-black" strokeWidth={1.5} />
+                <h3 className="text-xl font-semibold mb-2">{"Consulting Firms"}</h3>
+                <p className="text-sm text-black/80">{"Manage clients, proposals, and follow-ups efficiently."}</p>
+              </div>
+
+              <div className="text-left">
+                <Megaphone className="w-12 h-12 mb-4 text-black" strokeWidth={1.5} />
+                <h3 className="text-xl font-semibold mb-2 text-background">{"Marketing & Creative Agencies"}</h3>
+                <p className="text-sm text-black/80">{"Automate reporting, campaigns, and approvals."}</p>
+              </div>
+
+              <div className="text-left">
+                <Scale className="w-12 h-12 mb-4 text-black" strokeWidth={1.5} />
+                <h3 className="text-xl font-semibold mb-2 text-background">{"Legal Practices"}</h3>
+                <p className="text-sm text-black/80">{"Streamline case management and client communication."}</p>
+              </div>
+
+              <div className="text-left">
+                <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center mb-4">
+                  <DollarSign className="w-7 h-7 text-black" strokeWidth={2} />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-background">{"Financial & Accounting Firms"}</h3>
+                <p className="text-sm text-black/80">{"Automate billing, renewals, and reminders."}</p>
+              </div>
+
+              <div className="text-left">
+                <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center mb-4">
+                  <Users className="w-7 h-7 text-black" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-background">{"IT & Software Providers"}</h3>
+                <p className="text-sm text-black/80">{"Manage tickets, client onboarding, and renewals."}</p>
+              </div>
+
+              <div className="text-left">
+                <Compass className="w-12 h-12 mb-4 text-black" strokeWidth={1.5} />
+                <h3 className="text-xl font-semibold mb-2 text-background">{"Architects & Designers"}</h3>
+                <p className="text-sm text-black/80">{"Track leads, consultations, and project milestones."}</p>
+              </div>
+
+              <div className="text-left">
+                <Briefcase className="w-12 h-12 mb-4 text-black" strokeWidth={1.5} />
+                <h3 className="text-xl font-semibold mb-2 text-background">{"Recruitment & HR Agencies"}</h3>
+                <p className="text-sm text-black/80">{"Simplify candidate and client tracking."}</p>
+              </div>
+
+              <div className="text-left">
+                <Dumbbell className="w-12 h-12 mb-4 text-black" strokeWidth={1.5} />
+                <h3 className="text-xl font-semibold mb-2 text-background">{"Trainers & Coaches"}</h3>
+                <p className="text-sm text-black/80">{"Manage sessions, enrollments, and results."}</p>
+              </div>
+
+              <div className="text-left">
+                <Home className="w-12 h-12 mb-4 text-black" strokeWidth={1.5} />
+                <h3 className="text-xl font-semibold mb-2 text-background">{"Event & PR Agencies"}</h3>
+                <p className="text-sm text-black/80">{"Coordinate vendors, client briefs, and outcomes."}</p>
+              </div>
+            </div>
+          </div>
       </section>
 
       {/* All-in-One Platform */}
@@ -324,7 +388,7 @@ Every proposal, project, and conversation is connected through AI — ensuring s
       </section> */}
 
       {/* Automation Flow */}
-      <section className="bg-muted/30 border-y border-border py-16 md:py-24">
+      {/* <section className="bg-muted/30 border-y border-border py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Automation Flow</h2>
           <div className="mt-10 grid md:grid-cols-5 gap-4">
@@ -341,6 +405,32 @@ Every proposal, project, and conversation is connected through AI — ensuring s
                 <p className="relative text-muted-foreground">{n.d}</p>
                 {i < 4 && (
                   <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 text-3xl">→</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+      <section className="border-y py-16 md:py-24 bg-neutral-800 border-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-center text-[rgba(223,168,34,1)]">{"Automation Flow"}</h2>
+          <div className="mt-10 grid md:grid-cols-5 gap-4">
+            {[
+              { t: "Capture", d: "Forms/Integrations" },
+              { t: "Score", d: "AI Priority" },
+              { t: "Assign", d: "Auto Routing" },
+              { t: "Act", d: "Sequences" },
+              { t: "Measure", d: "Dashboards" },
+            ].map((n, i) => (
+              <div
+                key={n.t}
+                className="relative p-6 rounded-xl border border-border bg-card overflow-hidden hover:scale-105 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="absolute inset-0 animate-[pulse_2s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-primary/5 to-transparent bg-[rgba(223,168,34,1)]" />
+                <h3 className="relative text-xl font-semibold text-background">{n.t}</h3>
+                <p className="relative text-background">{n.d}</p>
+                {i < 4 && (
+                  <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 text-3xl">{"→"}</div>
                 )}
               </div>
             ))}
@@ -370,23 +460,23 @@ Let ZeaCRM handle the busywork — so you can focus on building relationships th
         <h2 className="text-3xl md:text-4xl font-extrabold text-primary text-center">FAQs</h2>
         <div className="mt-8 space-y-6">
           <details className="rounded-lg border border-border p-4 bg-card" open>
-            <summary className="cursor-pointer font-semibold">1. How does AI automation help consultants and agencies?</summary>
+            <summary className="cursor-pointer font-semibold">How does AI automation help consultants and agencies?</summary>
             <p className="mt-2 text-muted-foreground">AI automation in ZeaCRM streamlines repetitive tasks like follow-ups, reminders, and reporting — allowing consultants and agencies to focus on strategy and client growth.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">2. Can ZeaCRM integrate with other tools used by professional service firms?</summary>
+            <summary className="cursor-pointer font-semibold">Can ZeaCRM integrate with other tools used by professional service firms?</summary>
             <p className="mt-2 text-muted-foreground">Yes. ZeaCRM connects with your existing tools, ensuring a unified workflow across billing, scheduling, and communication without switching platforms.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">3. Is ZeaCRM suitable for both small agencies and large consulting firms?</summary>
+            <summary className="cursor-pointer font-semibold">Is ZeaCRM suitable for both small agencies and large consulting firms?</summary>
             <p className="mt-2 text-muted-foreground">Absolutely. ZeaCRM scales effortlessly — whether you’re a solo consultant or a multi-branch agency managing hundreds of clients.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">4. How does ZeaCRM improve client relationship management?</summary>
+            <summary className="cursor-pointer font-semibold">How does ZeaCRM improve client relationship management?</summary>
             <p className="mt-2 text-muted-foreground">By centralizing all communication, proposals, and project updates in one dashboard, ZeaCRM helps maintain consistent, transparent, and personalized client relationships.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">5. What makes ZeaCRM different for professional service automation?</summary>
+            <summary className="cursor-pointer font-semibold">What makes ZeaCRM different for professional service automation?</summary>
             <p className="mt-2 text-muted-foreground">Unlike generic CRMs, ZeaCRM is purpose-built for service industries — combining AI insights, automation, and secure collaboration to maximize client satisfaction and retention.</p>
           </details>
         </div>
