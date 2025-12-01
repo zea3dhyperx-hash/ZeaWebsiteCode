@@ -6,5 +6,5 @@ Sitemap: https://zeacrm.vercel.app/sitemap.xml
 User-agent: Googlebot
 Allow: /
 Disallow: /admin/
-Disallow: /api/ (except sitemap)
+Disallow: /api/ (except sitemap.xml)
 Crawl-delay: 1
