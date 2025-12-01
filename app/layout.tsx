@@ -7,6 +7,7 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 import { GAAnalytics } from "@/components/ga-analytics"
 import "./globals.css"
 import { GA_MEASUREMENT_ID } from "@/lib/gtag"
+import { Navigation } from "lucide-react"
 
 const dmSans = DM_Sans({ subsets: ["latin"] })
 
@@ -31,6 +32,8 @@ export default function RootLayout({
       </head>
       <body className={`${dmSans.className} font-sans antialiased`}>
         {/* Google Analytics */}
+         <Navigation />
+        {children}
         {GA_MEASUREMENT_ID && (
           <>
             <Script
