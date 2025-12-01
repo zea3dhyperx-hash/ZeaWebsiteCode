@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 
 import { Brain, Compass, Crown, Facebook, HandHeart, Heart, Instagram, Lightbulb, Linkedin, Rocket, ShieldCheck, Sparkles, Twitter, Users } from "lucide-react"
@@ -118,30 +118,30 @@ const marqueeRows = [
       "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e2861265b9ae55396.jpg",
       "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e286126ef23e55391.jpg",
       "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e0ff7763d4bf13648.jpg",
-      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e54c1564447e23f14.jpg",,
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e54c1564447e23f14.jpg",
     ],
   },
   {
     direction: "right",
     speed: 55,
     images: [
-      "/OfficeImages/IMG_6166.JPG",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e9743161b0d514bff.jpg",
       "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e54c1560cfae23f13.jpg",
-      "/OfficeImages/IMG_6398.JPG",
-      "/OfficeImages/IMG_6530.JPG",
-      "/OfficeImages/IMG_6543.JPG",
-      "/OfficeImages/IMG_6393.JPG",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309ebc52fe1145ee4e7e.jpg",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e28612600e4e55394.jpg",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309f0ff77663cbf1364c.jpg",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e54c156be2ee23f12.jpg",
       "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e0ff7766a22f13647.jpg",
       "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309fbc52fe125bee4e87.jpg",
-      "/OfficeImages/IMG_6300.JPG",
-      "/OfficeImages/IMG_6293.JPG",
-      "/OfficeImages/IMG_6292.JPG",
-      "/OfficeImages/IMG_6280.JPG",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309ebc52fe1511ee4e7c.jpg",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e974316b34d514bfe.jpg",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e9743168ed5514c00.jpg",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e0ff7767be6f13646.jpg",
       "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e54c156078ae23f17.jpg",
-      "/OfficeImages/IMG_6239.JPG",
-      "/OfficeImages/IMG_6219.JPG",
-      "/OfficeImages/IMG_6207.JPG",
-      "/OfficeImages/IMG_6166.JPG",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e2861263c5ae55393.jpg",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e28612651e9e55395.jpg",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e9743164926514bfc.jpg",
+      "https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/6929309e9743161b0d514bff.jpg",
     ],
   },
   {
@@ -215,6 +215,49 @@ const leaders = [
 
 export default function AboutUsPageContentAlt() {
   const [showAllTeam, setShowAllTeam] = useState(false)
+  const [marqueeActive, setMarqueeActive] = useState(false)
+  const marqueeRef = useRef<HTMLDivElement | null>(null)
+
+  const MAX_IMAGES_PER_ROW = 12
+  const optimizedRows = useMemo(
+    () =>
+      marqueeRows.map((row) => ({
+        ...row,
+        images: row.images.slice(0, MAX_IMAGES_PER_ROW),
+      })),
+    []
+  )
+
+  useEffect(() => {
+    const node = marqueeRef.current
+    if (!node || marqueeActive) return
+
+    const start = () => {
+      setMarqueeActive(true)
+      // Warm images in the background once we decide to render them
+      const urls = optimizedRows.flatMap((row) => row.images)
+      urls.forEach((src) => {
+        const img = new Image()
+        img.decoding = "async"
+        img.loading = "eager"
+        img.src = src
+      })
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const isVisible = entries.some((entry) => entry.isIntersecting)
+        if (isVisible) {
+          start()
+          observer.disconnect()
+        }
+      },
+      { rootMargin: "200px" }
+    )
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [marqueeActive, optimizedRows])
   const scrollToLeader = (slug: string) => {
     const target = document.getElementById(`leader-${slug}`)
     if (target) {
@@ -506,46 +549,31 @@ export default function AboutUsPageContentAlt() {
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto px-4 pb-20 space-y-6">
+        {/* <section className="max-w-6xl mx-auto px-4 pb-20 space-y-6">
           <div className="text-center space-y-3">
-            {/* <p className="text-amber-400 font-semibold">Snapshots from the journey</p> */}
-            {/* <h3 className="text-3xl font-bold text-white">Moments that shaped ZeaCRM</h3> */}
-            {/* <p className="text-gray-300 max-w-3xl mx-auto">
-              Hover to expand each milestone moment and see the story behind it.
-            </p> */}
           </div>
           <div className="flex h-[320px] sm:h-[360px] md:h-[420px] w-full gap-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40 p-1">
             {[
               {
                 title: "ZeaCRM Lauch day",
-                // image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&h=900&q=80",
                 image: "images(about us)/s1.png",
               },
               {
                 title: "Launch day",
-                // image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&h=900&q=80",
                 image: "images(about us)/s2.png",
               },
               {
                 title: "Success playbooks",
-                // image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&h=900&q=80",
                 image: "images(about us)/s3.png",
               },
               {
                 title: "Success Copy",
-                // image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&h=900&q=80",
                 image: "images(about us)/s4.png",
               },
               {
                 title: "Scale-up retrospective",
-                // image: "https://images.unsplash.com/photo-1504386106331-3e4e71712b38?auto=format&fit=crop&w=1600&h=900&q=80",
                 image: "images(about us)/s5.png",
               },
-            //   {
-            //     title: "Partner lab",
-                // image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&h=900&q=80",
-            //     image: "images(about us)/s6.png",
-            //   },
             ].map((card) => (
               <div
                 key={card.title}
@@ -569,7 +597,7 @@ export default function AboutUsPageContentAlt() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         <section className="max-w-6xl mx-auto px-4 pb-20">
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 px-6 py-10 md:px-10 md:py-12 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.6)]">
@@ -633,7 +661,7 @@ export default function AboutUsPageContentAlt() {
           </div>
         </section> */}
 
-        <section className="max-w-6xl mx-auto px-4 pb-20 space-y-8">
+        <section ref={marqueeRef} className="max-w-6xl mx-auto px-4 pb-20 space-y-8">
           <div className="text-center space-y-3">
             <p className="text-amber-400 font-semibold">Meet the Team</p>
             <h3 className="text-3xl font-bold text-white">The people building ZeaCRM</h3>
@@ -645,26 +673,44 @@ export default function AboutUsPageContentAlt() {
             </p>
           </div>
           <div className="space-y-6">
-            {marqueeRows.map((row, idx) => (
-              <div
-                key={row.direction + idx}
-                className="overflow-hidden  border border-slate-800 bg-slate-900/40 p-3"
-              >
+            {marqueeActive ? (
+              optimizedRows.map((row, idx) => (
                 <div
-                  className={`marquee-track ${row.direction === "left" ? "marquee-left" : "marquee-right"}`}
-                  style={{ ["--marquee-duration" as any]: `${row.speed}s` }}
+                  key={row.direction + idx}
+                  className="overflow-hidden border border-slate-800 bg-slate-900/40 p-3"
                 >
-                  {[...row.images, ...row.images].map((src, imgIdx) => (
-                    <div
-                      key={`${idx}-${imgIdx}-${src}`}
-                      className="h-42 w-72 flex-shrink-0 overflow-hidden border border-slate-800 bg-slate-950/60"
-                    >
-                      <img src={src} alt={`Gallery ${imgIdx + 1}`} className="h-full w-full object-cover" />
-                    </div>
-                  ))}
+                  <div
+                    className={`marquee-track ${row.direction === "left" ? "marquee-left" : "marquee-right"}`}
+                    style={{ ["--marquee-duration" as any]: `${row.speed}s` }}
+                  >
+                    {[...row.images, ...row.images].map((src, imgIdx) => (
+                      <div
+                        key={`${idx}-${imgIdx}-${src}`}
+                        className="h-42 w-72 flex-shrink-0 overflow-hidden border border-slate-800 bg-slate-950/60"
+                      >
+                        <img
+                          src={src}
+                          alt={`Gallery ${imgIdx + 1}`}
+                          loading="lazy"
+                          decoding="async"
+                          fetchPriority="low"
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              ))
+            ) : (
+              <div className="grid gap-4">
+                {[...Array(3)].map((_, idx) => (
+                  <div
+                    key={`placeholder-${idx}`}
+                    className="h-40 rounded-xl border border-slate-800 bg-slate-900/30 animate-pulse"
+                  />
+                ))}
               </div>
-            ))}
+            )}
           </div>
         </section>
 

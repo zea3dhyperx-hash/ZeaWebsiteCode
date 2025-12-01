@@ -248,7 +248,7 @@ export function Header() {
               // onClick={() => setIsSignInOpen(true)}
               className="hover-lift hover:scale-110 hover:bg-primary/10 hover:text-primary transition-all duration-300"
             >
-              <a href="/sign-in">Login</a>
+              <a href="https://app.zeacrm.com/">Login to App</a>
             </Button>
             <Button
               // onClick={() => setIsGetStartedOpen(true)}

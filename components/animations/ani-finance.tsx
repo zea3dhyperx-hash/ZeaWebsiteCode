@@ -17,8 +17,8 @@ export default function AniFinance({
   src = "https://lottie.host/3713c90d-dfec-4ad2-b8fa-84ac1f29ab06/47G8x8Vx18.lottie",
   loop = true,
   autoplay = true,
-  width = "100%",
-  height = "100%",
+  width = "105%",
+  height = "105%",
   
   className = "scale-120",
   style,

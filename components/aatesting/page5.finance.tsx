@@ -185,14 +185,10 @@ export default function FinanceInsuranceCRM() {
               </Button>
             </div>
           </div>
-          <div className="rounded-xl border border-border p-6 bg-card">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Secure KYC & e‑sign workflows</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Predictive reminders for renewals/EMIs</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Unified records across loan/policy/portfolio</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Omnichannel WhatsApp/SMS/Email updates</li>
-            </ul>
-          </div>
+          <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
+              <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/grok-video-b75c71d9-78b2-46cf-a8cc-91f57a051896-olFoyvo66WfcWRWS6d5mAjY2kmFkYa.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
         </div>
       </section>
 
@@ -203,6 +199,54 @@ export default function FinanceInsuranceCRM() {
           <p className="mt-4 text-muted-foreground text-lg">In the world of finance and insurance, timing and trust define success.</p>
           <p className="mt-3 text-muted-foreground text-lg">ZeaCRM brings automation and intelligence together—helping institutions deliver faster responses, personalized service, and seamless client journeys from enquiry to renewal.</p>
           <p className="mt-3 text-muted-foreground text-lg">With real-time insights, predictive reminders, and secure data management, your teams can focus on relationships while ZeaCRM handles the repetitive tasks.</p>
+
+        </div>
+        <div className="mt-12 max-w-4xl mx-auto rounded-2xl border border-border p-8 md:p-12 bg-background shadow-md">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex items-center gap-4 p-6 rounded-lg bg-primary">
+              <div className="flex-shrink-0">
+                <img
+                  src="/images/streamline-ultimate-color-responsive-design-hand.png"
+                  alt="Secure KYC workflows"
+                  className="w-12 h-12"
+                />
+              </div>
+              <div className="text-left">
+                <p className="font-medium text-background">Secure KYC & e-sign workflows</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-6 rounded-lg bg-primary">
+              <div className="flex-shrink-0">
+                <img src="/images/emojione-v1-reminder-ribbon.png" alt="Predictive reminders" className="w-12 h-12" />
+              </div>
+              <div className="text-left">
+                <p className="font-medium text-background">Predictive reminders for renewals/EMIs</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-6 rounded-lg bg-primary">
+              <div className="flex-shrink-0">
+                <img
+                  src="/images/streamline-sharp-color-move-file-flat.png"
+                  alt="Unified records"
+                  className="w-12 h-12"
+                />
+              </div>
+              <div className="text-left">
+                <p className="font-medium text-background">Unified records across loan/policy/portfolio</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-6 rounded-lg bg-primary">
+              <div className="flex-shrink-0">
+                <img src="/images/icon-park-update-rotation.png" alt="Omnichannel updates" className="w-12 h-12" />
+              </div>
+              <div className="text-left">
+                <p className="font-medium text-background">Omnichannel WhatsApp/SMS/Email updates</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -247,14 +291,14 @@ export default function FinanceInsuranceCRM() {
               ],
               result: "Smarter decisions, faster growth",
             }].map((card) => (
-              <div key={card.title} className="rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
-                <h3 className="text-xl font-semibold">{card.title}</h3>
-                <ul className="mt-4 space-y-2 text-muted-foreground">
+              <div key={card.title} className="rounded-xl bg-primary border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
+                <h3 className="text-xl font-semibold text-background">{card.title}</h3>
+                <ul className="mt-4 space-y-2 text-muted-background">
                   {card.bullets.map((b) => (
-                    <li key={b}>{b}</li>
+                    <li className="text-background" key={b}>{b}</li>
                   ))}
                 </ul>
-                <p className="mt-4 text-sm">📈 Result: {card.result}.</p>
+                <p className="mt-4 text-sm text-background">📈 Result: {card.result}.</p>
               </div>
             ))}
           </div>
@@ -277,17 +321,6 @@ export default function FinanceInsuranceCRM() {
             </ul>
         </div>
         <AniFinance />
-          <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
-            {/* <video
-              src="/videos/realvid.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-auto"
-            /> */}
-            {/* <AniFinance /> */}
-          </div>
         </div>
       </section>
 
