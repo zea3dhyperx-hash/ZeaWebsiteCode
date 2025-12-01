@@ -17,6 +17,9 @@ export default function AutomotiveManufacturingCRM() {
   const [panelHeight, setPanelHeight] = useState(0);
   const [helpHover, setHelpHover] = useState<{ i: number | null; x: number; y: number }>({ i: null, x: 0, y: 0 });
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [activeSlide, setActiveSlide] = useState(0)
+  const [industriesVisible, setIndustriesVisible] = useState(false)
+  const industriesRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (panelRef.current) setPanelHeight(panelRef.current.scrollHeight);
@@ -30,6 +33,51 @@ export default function AutomotiveManufacturingCRM() {
       }
     };
   }, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIndustriesVisible(true)
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+
+    if (industriesRef.current) {
+      observer.observe(industriesRef.current)
+    }
+
+    return () => {
+      if (industriesRef.current) {
+        observer.unobserve(industriesRef.current)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIndustriesVisible(true)
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+
+    if (industriesRef.current) {
+      observer.observe(industriesRef.current)
+    }
+
+    return () => {
+      if (industriesRef.current) {
+        observer.unobserve(industriesRef.current)
+      }
+    }
+  }, [])
 
   useEffect(() => {
     setVideoSrc(
@@ -209,7 +257,7 @@ export default function AutomotiveManufacturingCRM() {
       </section>
 
       {/* Industries We Empower */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Industries We Empower</h2>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {[{
@@ -249,6 +297,131 @@ export default function AutomotiveManufacturingCRM() {
               <p className="mt-4 text-sm">Result: {card.result}</p>
             </div>
           ))}
+        </div>
+      </section> */}
+
+      <section
+        ref={industriesRef}
+        className="max-w-7xl mx-auto px-4 rounded-lg sm:px-6 lg:px-8 py-16 md:py-24 text-card bg-foreground"
+      >
+        <h2
+          className={`text-4xl md:text-5xl font-extrabold text-center text-[rgba(223,168,34,1)] transition-all duration-1000 ${
+            industriesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          Industries We Empower
+        </h2>
+        <div className="mt-10 relative">
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+            >
+              {[
+                {
+                  title: "Dealers & Showrooms",
+                  bullets: [
+                    "Automated test drive bookings via WhatsApp/SMS",
+                    "Smart service and warranty reminders",
+                    "Instant digital billing and invoicing",
+                  ],
+                  result: "Higher conversions and repeat servicing",
+                },
+                {
+                  title: "Spare Parts Retailers",
+                  bullets: [
+                    "Real‑time inventory alerts and reorders",
+                    "Digital payments and loyalty programs",
+                    "Automated repeat purchase campaigns",
+                  ],
+                  result: "More repeat buyers and improved cycles",
+                },
+                {
+                  title: "Equipment & OEM Manufacturers",
+                  bullets: [
+                    "Streamlined dealer–OEM communication",
+                    "Predictive maintenance alerts",
+                    "Performance analytics dashboards",
+                  ],
+                  result: "Better forecasting and supply chain visibility",
+                },
+              ].map((card, index) => (
+                <div key={card.title} className="w-full flex-shrink-0 px-4">
+                  <div
+                    className={`max-w-5xl mx-auto rounded-2xl border-2 border-border overflow-hidden transition-all duration-700 bg-white shadow-2xl ${
+                      industriesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                    }`}
+                  >
+                    <div className="grid md:grid-cols-2 gap-0">
+                      {/* Left side - Content */}
+                      <div className="p-8 md:p-12 flex flex-col justify-center">
+                        <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{card.title}</h3>
+                        <ul className="space-y-4 mb-6">
+                          {card.bullets.map((bullet) => (
+                            <li key={bullet} className="flex items-start gap-3">
+                              <span className="text-slate-900 text-lg mt-1">•</span>
+                              <span className="text-slate-700 text-lg leading-relaxed">{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="text-lg font-semibold text-orange-600 mt-4">Result: {card.result}</p>
+                      </div>
+
+                      {/* Right side - Image */}
+                      <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-8">
+                        <div className="relative w-full h-full min-h-[300px] rounded-lg overflow-hidden shadow-xl">
+                          <img
+                            src={
+                              card.title === "Dealers & Showrooms"
+                                ? "/images/dealers-showrooms.png"
+                                : card.title === "Spare Parts Retailers"
+                                  ? "/images/untitled-20design-20-2814-29.png"
+                                  : "/images/equipment-oem.png"
+                            }
+                            alt={card.title}
+                            className="w-full h-full object-cover"
+                          />
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={() => setActiveSlide((prev) => (prev === 0 ? 2 : prev - 1))}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white hover:bg-gray-100 text-slate-900 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            aria-label="Previous slide"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={() => setActiveSlide((prev) => (prev === 2 ? 0 : prev + 1))}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white hover:bg-gray-100 text-slate-900 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10"
+            aria-label="Next slide"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <div className="flex items-center justify-center gap-3 mt-8">
+            {[0, 1, 2].map((index) => (
+              <button
+                key={index}
+                onClick={() => setActiveSlide(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  activeSlide === index ? "w-12 h-3 bg-orange-600" : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to slide ${index + 1}`} 
+              />
+            ))}
+          </div>
         </div>
       </section>
 
