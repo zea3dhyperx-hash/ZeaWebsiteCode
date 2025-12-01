@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="BxYXZLYni53vNv3vZiVyep3-9ooDd1CDpsyShUYaKcE" />
+      </head>
       <body className={`${dmSans.className} font-sans antialiased`}>
         {/* Google Analytics */}
         {GA_MEASUREMENT_ID && (
