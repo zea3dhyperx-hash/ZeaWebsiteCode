@@ -33,7 +33,6 @@ export default function RootLayout({
       <body className={`${dmSans.className} font-sans antialiased`}>
         {/* Google Analytics */}
          <Navigation />
-        {children}
         {GA_MEASUREMENT_ID && (
           <>
             <Script

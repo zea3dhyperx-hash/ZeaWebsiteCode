@@ -132,18 +132,20 @@ export default function HealthcareCRMPage() {
 
           if (lockedOpen) return;
 
-          const relatedTarget = e.relatedTarget as HTMLElement | null;
+          const relatedTarget = e.relatedTarget as EventTarget | null;
 
           // Prevent collapse when entering iframe
+          const isNode = relatedTarget instanceof Node;
+          const isElement = relatedTarget instanceof Element;
           if (
             relatedTarget === null ||
-            (iframeRef.current && iframeRef.current.contains(relatedTarget))
+            (iframeRef.current && isNode && iframeRef.current.contains(relatedTarget))
           ) {
             return;
           }
 
           // Close only when moving to header
-          if (relatedTarget && typeof relatedTarget.closest === "function") {
+          if (isElement) {
             if (relatedTarget.closest("header")) {
               setExpanded(false);
               return;

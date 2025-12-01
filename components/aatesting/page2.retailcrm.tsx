@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AniRetail from "../animations/ani-retail";
+import AniRetail1 from "../animations/ani-retail1";
 
 export default function RetailEcomCRM() {
   // Keep video reveal UX consistent with aatesting pages
@@ -196,7 +197,6 @@ export default function RetailEcomCRM() {
               muted
               loop
               playsInline
-              controls
               className="w-full h-auto"
             />
           </div>
@@ -208,26 +208,26 @@ export default function RetailEcomCRM() {
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Solutions by Business Type</h2>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
-            <h3 className="text-xl font-semibold">Online Stores</h3>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
+            <h3 className="text-xl font-background font-semibold">Online Stores</h3>
+            <ul className="mt-4 space-y-2 text-muted-background">
               <li>Automated order confirmations & real-time shipping updates via WhatsApp and Email</li>
               <li>AI-driven abandoned cart recovery & personalized promotions</li>
               <li>Seamless digital payments and billing workflows</li>
             </ul>
             <p className="mt-4 text-sm">📈 Result: More conversions and repeat orders</p>
           </div>
-          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
-            <h3 className="text-xl font-semibold">Supermarkets & Retail Chains</h3>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
+          <div className="group rounded-xl border border-border scale-105 bg-primary bg-card p-6 transition-all duration-300 hover:shadow-lg hover:scale-108">
+            <h3 className="text-xl text-background font-semibold">Supermarkets & Retail Chains</h3>
+            <ul className="mt-4 space-y-2 text-background">
               <li>Centralized inventory sync with auto low-stock alerts</li>
               <li>Automated loyalty rewards & personalized customer offers</li>
               <li>Feedback campaigns that boost satisfaction and retention</li>
             </ul>
-            <p className="mt-4 text-sm">📈 Result: More repeat buyers and optimized operations</p>
+            <p className="mt-4 text-background text-sm">📈 Result: More repeat buyers and optimized operations</p>
           </div>
           <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
-            <h3 className="text-xl font-semibold">Franchise Outlets</h3>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
+            <h3 className="text-xl font-background font-semibold">Franchise Outlets</h3>
+            <ul className="mt-4 space-y-2 text-muted-background">
               <li>Unified CRM and marketing dashboards across all branches</li>
               <li>Royalty tracking and performance analytics</li>
               <li>Consistent customer engagement & brand experience</li>
@@ -354,7 +354,7 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
       </section>
 
       {/* All-in-One Platform */}
-      <section className="bg-background border-t border-border py-16 md:py-24">
+      <section className="bg-background py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-primary">All‑in‑One Platform for Retail Growth</h2>
@@ -372,68 +372,34 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
           {/* </div> */}
         </div>
       </section>
-
-      {/* Animated Timeline (loop) */}
-      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Customer Journey Timeline</h2>
-        <div className="mt-10 relative">
-          <div className="absolute left-4 top-0 bottom-0 w-1 bg-primary/30 rounded" />
-          <ul className="space-y-8">
-            {[
-              { t: "Browse", d: "AI identifies intent and segments visitor" },
-              { t: "Engage", d: "Personalized offer via WhatsApp/Email/SMS" },
-              { t: "Purchase", d: "Payments + order sync with store" },
-              { t: "Delight", d: "Shipping updates + loyalty rewards" },
-              { t: "Repeat", d: "Predictive re‑orders and upsells" },
-            ].map((s, idx) => (
-              <li key={s.t} className="relative pl-14">
-                <span className="absolute left-0 top-1.5 inline-block h-8 w-8 rounded-full bg-primary text-background grid place-items-center animate-bounce">{idx + 1}</span>
-                <h3 className="text-xl font-semibold">{s.t}</h3>
-                <p className="text-muted-foreground">{s.d}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section> */}
-
-      {/* Flowchart (looping shimmer) */}
-      {/* <section className="bg-muted/30 border-y border-border py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Automation Flow</h2>
-          <div className="mt-10 grid md:grid-cols-4 gap-4">
-            {[
-              { t: "Segment", d: "AI cohorts" },
-              { t: "Trigger", d: "Behavior events" },
-              { t: "Message", d: "WhatsApp/Email/SMS" },
-              { t: "Measure", d: "A/B + ROI" },
-            ].map((n, i) => (
-              <div key={n.t} className="relative p-6 rounded-xl border border-border bg-card overflow-hidden">
-                <div className="absolute inset-0 animate-[pulse_2s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-primary/5 to-transparent" />
-                <h3 className="relative text-xl font-semibold">{n.t}</h3>
-                <p className="relative text-muted-foreground">{n.d}</p>
-                {i < 3 && (
-                  <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 text-3xl">→</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Why ZeaCRM */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      
+      <section className="bg-background py-10 md:py-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Why ZeaCRM?</h2>
-        <div className="md:w-2/3 mx-auto">
           <p className="text-center py-2 text-muted-foreground text-lg">Our platform is built on five foundations that drive retail transformation:</p>
-          <ul className="mt-4 space-y-2 justify-center bg-card bg-muted rounded-lg px-20 py-10">
-            <li>•	AI-Powered — Predict, personalize, and perform.</li>
-            <li>•	Automation-First — Save time, scale faster.</li>
-            <li>•	Secure & Compliant — Enterprise-grade protection for customer data.</li>
-            <li>•	Industry-Ready — Designed for retail and e-commerce challenges.</li>
-            <li>•	Proven Impact — Real-world performance, measurable outcomes.</li>
-          </ul>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+            <ul className="mt-2 space-y-2 justify-center bg-card bg-muted rounded-lg px-10 py-6">
+              <li>•	AI-Powered — Predict, personalize, and perform.</li>
+              <li>•	Automation-First — Save time, scale faster.</li>
+              <li>•	Secure & Compliant — Enterprise-grade protection for customer data.</li>
+              <li>•	Industry-Ready — Designed for retail and e-commerce challenges.</li>
+              <li>•	Proven Impact — Real-world performance, measurable outcomes.</li>
+            </ul>
+            <AniRetail1 />
         </div>
       </section>
+
+      
+
+      
+
+      {/* Why ZeaCRM */}
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="md:w-2/3 mx-auto">
+          <AniRetail1 />
+          
+        </div>
+        
+      </section> */}
 
       {/* CTA */}
       <section className="bg-primary text-background py-16 md:py-24">
