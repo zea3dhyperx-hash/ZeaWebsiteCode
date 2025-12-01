@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://zeacrm.vercel.app/sitemap.xml
+Sitemap: https://zeacrm.com/sitemap.xml
 
 # Googlebot-specific instructions
 User-agent: Googlebot
