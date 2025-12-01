@@ -8,10 +8,3 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/ (except sitemap)
 Crawl-delay: 1
-
-# /public/robots.txt
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /api/
-Sitemap: https://zeacrm.vercel.app/sitemap.xml
