@@ -123,19 +123,19 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       {/* Pricing Cards */}
       <section className="py-0 md:py-0 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="flex justify-end mb-6 -mt-2 pr-2">
-            <div className="inline-flex rounded-lg border border-gray-700 overflow-hidden shadow-sm">
+          <div className="flex justify-center mb-16 -mt-2 pr-2">
+            <div className="inline-flex rounded-lg border border-primary overflow-hidden shadow-sm">
               <button
                 className={`px-4 py-2 text-sm font-semibold ${currency === "USD" ? "bg-amber-400 text-black" : "text-white hover:bg-gray-800"}`}
                 onClick={() => setCurrency("USD")}
               >
-                US
+                USD
               </button>
               <button
                 className={`px-4 py-2 text-sm font-semibold border-l border-gray-700 ${currency === "INR" ? "bg-amber-400 text-black" : "text-white hover:bg-gray-800"}`}
                 onClick={() => setCurrency("INR")}
               >
-                IN
+                INR
               </button>
             </div>
           </div>

@@ -8,3 +8,11 @@ In the Professional Services  i change "hero section" and  "Who We Help  section
 
 In the Professional Services  i change "hero section" and  "Who We Help  section " In the all section in page.tsx file
 
+
+
+
+educaiton - https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783baaad91018447e726.mp4
+finance - https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783b2b865ef09d47b286.mp4
+retail - https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783b2b865e22f247b285.mp4
+automotive - https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783b82f4c5639389a57b.mp4
+Professional - https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783baaad912ebc47e727.mp4
