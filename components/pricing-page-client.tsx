@@ -5,12 +5,14 @@ import { useState } from "react"
 import Link from "next/link"
 
 interface PricingPageClientProps {
-  initialCountry: string
+  initialCountry?: string
 }
+
+type Currency = "USD" | "INR"
 
 export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
-  const [isIndia] = useState<boolean>(initialCountry?.toUpperCase() === "IN")
+  const [currency, setCurrency] = useState<Currency>(initialCountry?.toUpperCase() === "IN" ? "INR" : "USD")
 
   const pricingPlans = [
     {
@@ -103,7 +105,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
     },
   ]
 
-  const currencySymbol = isIndia ? "₹" : "$"
+  const currencySymbol = currency === "INR" ? "₹" : "$"
 
   return (
     <div className="bg-black">
@@ -121,6 +123,22 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       {/* Pricing Cards */}
       <section className="py-0 md:py-0 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
+          <div className="flex justify-end mb-6 -mt-2 pr-2">
+            <div className="inline-flex rounded-lg border border-gray-700 overflow-hidden shadow-sm">
+              <button
+                className={`px-4 py-2 text-sm font-semibold ${currency === "USD" ? "bg-amber-400 text-black" : "text-white hover:bg-gray-800"}`}
+                onClick={() => setCurrency("USD")}
+              >
+                US
+              </button>
+              <button
+                className={`px-4 py-2 text-sm font-semibold border-l border-gray-700 ${currency === "INR" ? "bg-amber-400 text-black" : "text-white hover:bg-gray-800"}`}
+                onClick={() => setCurrency("INR")}
+              >
+                IN
+              </button>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {pricingPlans.map((plan, index) => (
               <div
@@ -138,7 +156,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                   <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-bold text-white">
                       <span className="currency">{currencySymbol}</span>{" "}
-                      {isIndia ? plan.priceINR : plan.priceUSD}
+                      {currency === "INR" ? plan.priceINR : plan.priceUSD}
                     </span>
                     <span className="text-gray-400">{plan.period}</span>
                   </div>
