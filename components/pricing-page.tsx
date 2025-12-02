@@ -3,12 +3,11 @@
 import { Check, ChevronDown, BadgeCheck, Scale, TrendingUp } from "lucide-react"
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import Anim3 from "./animations/anim3"
-
 
 export function PricingPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
   const [isIndia, setIsIndia] = useState<boolean>(false) // default to USD
+  const [detectionDone, setDetectionDone] = useState<boolean>(false)
 
   useEffect(() => {
     // Lightweight geo hint using timezone/offset only (no network calls)
@@ -21,38 +20,67 @@ export function PricingPage() {
         offsetMinutes === -330 ||
         offsetMinutes === 330 || // guard for environments that flip the sign
         lowerTimeZone.includes("kolkata") ||
-        lowerTimeZone.includes("calcutta")
+        lowerTimeZone.includes("calcutta") ||
+        lowerTimeZone.includes("india")
 
       setIsIndia(inIndia)
+      setDetectionDone(true)
     } catch {
-      // ignore
+      setDetectionDone(true)
     }
   }, [])
 
   useEffect(() => {
-    // Secondary hint using IP-based country lookup (fast, low-bytes)
+    // Secondary hint using IP-based country lookup - only runs if first check suggests India
     const run = async () => {
-      if (isIndia) return
+      if (!isIndia || detectionDone) return // Only run if timezone suggests India
+      
       try {
         const offsetMinutes = new Date().getTimezoneOffset()
         const { timeZone = "" } = Intl.DateTimeFormat().resolvedOptions()
         const lowerTimeZone = timeZone.toLowerCase()
+        
+        // Re-check timezone (defensive)
         const timezoneLooksIndian =
           offsetMinutes === -330 ||
           offsetMinutes === 330 ||
           lowerTimeZone.includes("kolkata") ||
-          lowerTimeZone.includes("calcutta")
+          lowerTimeZone.includes("calcutta") ||
+          lowerTimeZone.includes("india")
 
-        const res = await fetch("https://ipapi.co/country/", { cache: "no-store" })
+        if (!timezoneLooksIndian) return
+
+        // Fast IP-based country check with timeout
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), 3000)
+        
+        const res = await fetch("https://ipapi.co/country/", { 
+          cache: "no-store",
+          signal: controller.signal
+        })
+        clearTimeout(timeoutId)
+        
         if (!res.ok) return
+        
         const country = (await res.text()).trim().toUpperCase()
-        if (country === "IN" && timezoneLooksIndian) setIsIndia(true)
+        
+        // Only switch to INR if BOTH signals indicate India
+        if (country === "IN") {
+          setIsIndia(true)
+        } else {
+          // IP says not India, revert to USD
+          setIsIndia(false)
+        }
       } catch {
-        // ignore network failures
+        // Network failures or timeouts - keep whatever we had from timezone detection
+        // (which was already suggesting India, but we can't confirm with IP)
+      } finally {
+        setDetectionDone(true)
       }
     }
+    
     run()
-  }, [isIndia])
+  }, [isIndia, detectionDone])
 
   const pricingPlans = [
     {
@@ -62,7 +90,6 @@ export function PricingPage() {
       period: "/ Month",
       description: "Essential tools for small teams",
       features: [
-        // "Features Included",
         "Contacts and Pipeline Management",
         "Invoicing Management",
         "Reputation Management",
@@ -83,7 +110,6 @@ export function PricingPage() {
       period: "/ Month",
       description: "Advanced automation for growing businesses",
       features: [
-        // "Features Included",
         "Contacts and Pipeline Management",
         "Invoicing Management",
         "Reputation Management",
@@ -107,7 +133,6 @@ export function PricingPage() {
       period: "/ Month",
       description: "All modules and premium support",
       features: [
-        // "Features Included",
         "All Modules with Unlimited Access",
         "Additional Storage Facility",
         "Dedicated Account Manager",
@@ -120,7 +145,7 @@ export function PricingPage() {
     },
   ]
 
-    const faqItems = [
+  const faqItems = [
     {
       question: "Can I try ZeaCRM for free before choosing a plan?",
       answer: "Yes, you can explore ZeaCRM with a free trial with no credit card required. Test the features, automation tools, and dashboard to see how it fits your workflow before making a commitment.",
@@ -143,6 +168,15 @@ export function PricingPage() {
     },
   ]
 
+  // Show loading state briefly while detecting
+  if (!detectionDone) {
+    return (
+      <div className="bg-black min-h-screen flex items-center justify-center">
+        <div className="text-white">Loading pricing...</div>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-black">
       {/* Hero Section */}
@@ -153,14 +187,11 @@ export function PricingPage() {
           <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
               No hidden costs, no complex tiers. Just transparent plans that give you everything you need to grow, automate, and connect with your customers.
           </p>
-          {/* <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Pricing</h1> */}
-          {/* <p className="text-gray-400 text-lg">
-            No hidden costs, no complex tiers. Just transparent plans that give you everything you need to grow, automate, and connect with your customers.
-          </p> */}
         </div>
       </section>
 
-      {/* Pricing Cards */}<section className="py-0 md:py-0 px-4 md:px-8">
+      {/* Pricing Cards */}
+      <section className="py-0 md:py-0 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {pricingPlans.map((plan, index) => (
@@ -178,8 +209,8 @@ export function PricingPage() {
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-bold text-white">
-                      <span className="currency">{isIndia === false ? "$" : "₹"}</span>{" "}
-                      {isIndia === false ? plan.priceUSD : plan.priceINR}
+                      <span className="currency">{isIndia ? "₹" : "$"}</span>{" "}
+                      {isIndia ? plan.priceINR : plan.priceUSD}
                     </span>
                     <span className="text-gray-400">{plan.period}</span>
                   </div>
@@ -259,7 +290,6 @@ export function PricingPage() {
               <div key={index} className="border border-primary rounded-lg overflow-hidden">
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                  // className="w-full px-6 py-7 flex items-center justify-between bg-gray-950 hover:bg-gray-900 transition-colors"
                   className="w-full px-6 py-7 flex items-center justify-between bg-background hover:bg-primary/10 transition-colors"
                 >
                   <span className="text-white hover:text-background font-semibold text-left">{item.question}</span>
@@ -300,7 +330,3 @@ export function PricingPage() {
     </div>
   )
 }
-
-
-
-
