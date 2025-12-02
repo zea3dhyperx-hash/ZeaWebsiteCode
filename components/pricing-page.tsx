@@ -8,25 +8,32 @@ import Anim3 from "./animations/anim3"
 
 export function PricingPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
-  const [isIndia, setIsIndia] = useState<boolean | null>(null)
+  const [isIndia, setIsIndia] = useState<boolean>(true) // default to INR
 
   useEffect(() => {
-    // Lightweight geo hint using timezone/locale only (no network calls)
+    // Lightweight geo hint using timezone/locale/offset (no network calls)
     try {
       const { timeZone = "", locale = "" } = Intl.DateTimeFormat().resolvedOptions()
-      if (timeZone.toLowerCase().includes("kolkata")) {
-        setIsIndia(true)
-        return
-      }
+      const offsetMinutes = new Date().getTimezoneOffset() // IST is -330
+      const lowerTimeZone = timeZone.toLowerCase()
       const lowerLocale = locale.toLowerCase()
-      if (lowerLocale.includes("-in") || lowerLocale.includes("hi-in") || lowerLocale.includes("en-in")) {
+
+      const inIndia =
+        offsetMinutes === -330 ||
+        lowerTimeZone.includes("kolkata") ||
+        lowerTimeZone.includes("calcutta") ||
+        lowerLocale.includes("-in") ||
+        lowerLocale.includes("hi-in") ||
+        lowerLocale.includes("en-in")
+
+      if (inIndia) {
         setIsIndia(true)
-        return
+      } else {
+        setIsIndia(false)
       }
     } catch {
       // ignore
     }
-    setIsIndia(false)
   }, [])
 
   const pricingPlans = [
