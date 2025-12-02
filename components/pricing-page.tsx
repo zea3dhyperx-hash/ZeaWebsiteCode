@@ -35,6 +35,21 @@ export function PricingPage() {
     }
   }, [])
 
+  useEffect(() => {
+    // Secondary hint using IP-based country lookup (fast, low-bytes)
+    const run = async () => {
+      if (isIndia) return
+      try {
+        const res = await fetch("https://ipapi.co/country/", { cache: "no-store" })
+        const country = (await res.text()).trim().toUpperCase()
+        if (country === "IN") setIsIndia(true)
+      } catch {
+        // ignore network failures
+      }
+    }
+    run()
+  }, [isIndia])
+
   const pricingPlans = [
     {
       name: "Standard",
