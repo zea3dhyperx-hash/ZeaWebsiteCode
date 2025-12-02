@@ -220,7 +220,7 @@ export default function HealthcareCRMPage() {
             </div>
             <div className="rounded-xl border border-border overflow-hidden bg-card">
               <video
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/grok-video-6b532146-4b1f-435c-91a1-9b44df87176b-d0DLKn0JAVYr0xCsLGWcF7bXkEYAwJ.mp4"
+                src="https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783baaad91a44b47e725.mp4"
                 autoPlay
                 muted
                 loop

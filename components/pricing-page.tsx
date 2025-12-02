@@ -1,18 +1,39 @@
 "use client"
 
 import { Check, ChevronDown, BadgeCheck, Scale, TrendingUp } from "lucide-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Anim3 from "./animations/anim3"
 
 
 export function PricingPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [isIndia, setIsIndia] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    // Lightweight geo hint using timezone/locale only (no network calls)
+    try {
+      const { timeZone = "", locale = "" } = Intl.DateTimeFormat().resolvedOptions()
+      if (timeZone.toLowerCase().includes("kolkata")) {
+        setIsIndia(true)
+        return
+      }
+      const lowerLocale = locale.toLowerCase()
+      if (lowerLocale.includes("-in") || lowerLocale.includes("hi-in") || lowerLocale.includes("en-in")) {
+        setIsIndia(true)
+        return
+      }
+    } catch {
+      // ignore
+    }
+    setIsIndia(false)
+  }, [])
 
   const pricingPlans = [
     {
       name: "Standard",
-      price: "5,499",
+      priceINR: "5,499",
+      priceUSD: "69",
       period: "/ Month",
       description: "Essential tools for small teams",
       features: [
@@ -32,7 +53,8 @@ export function PricingPage() {
     },
     {
       name: "Pro",
-      price: "10,999",
+      priceINR: "10,999",
+      priceUSD: "129",
       period: "/ Month",
       description: "Advanced automation for growing businesses",
       features: [
@@ -55,7 +77,8 @@ export function PricingPage() {
     },
     {
       name: "Enterprise",
-      price: "19,999",
+      priceINR: "19,999",
+      priceUSD: "249",
       period: "/ Month",
       description: "All modules and premium support",
       features: [
@@ -129,7 +152,10 @@ export function PricingPage() {
 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white"><span className="currency">₹</span> {plan.price}</span>
+                    <span className="text-4xl font-bold text-white">
+                      <span className="currency">{isIndia === false ? "$" : "₹"}</span>{" "}
+                      {isIndia === false ? plan.priceUSD : plan.priceINR}
+                    </span>
                     <span className="text-gray-400">{plan.period}</span>
                   </div>
                 </div>

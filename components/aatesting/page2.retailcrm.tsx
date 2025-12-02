@@ -192,7 +192,7 @@ export default function RetailEcomCRM() {
           </div>
           <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
             <video
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/grok-video-66fc1576-fe90-4b85-877c-186c4c7c6ca1-iY2kJjWcoyYzOVbLzWLhYpravliowa.mp4"
+              src="https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783b2b865e22f247b285.mp4"
               autoPlay
               muted
               loop

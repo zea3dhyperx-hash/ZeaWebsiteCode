@@ -256,6 +256,13 @@ export function Header() {
             >
               <a href="/demo">Book a Demo</a>
             </Button>
+
+            <Button
+              // onClick={() => setIsGetStartedOpen(true)}
+              className="bg-primary  hover:scale-110 text-black font-semibold transition-all duration-300 "
+            >
+              <a href="/demo">Testing</a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
