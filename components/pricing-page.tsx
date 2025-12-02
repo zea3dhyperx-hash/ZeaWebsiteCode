@@ -11,25 +11,19 @@ export function PricingPage() {
   const [isIndia, setIsIndia] = useState<boolean>(false) // default to USD
 
   useEffect(() => {
-    // Lightweight geo hint using timezone/locale/offset (no network calls)
+    // Lightweight geo hint using timezone/offset only (no network calls)
     try {
-      const { timeZone = "", locale = "" } = Intl.DateTimeFormat().resolvedOptions()
+      const { timeZone = "" } = Intl.DateTimeFormat().resolvedOptions()
       const offsetMinutes = new Date().getTimezoneOffset() // IST is -330
       const lowerTimeZone = timeZone.toLowerCase()
-      const lowerLocale = locale.toLowerCase()
 
       const inIndia =
         offsetMinutes === -330 ||
         offsetMinutes === 330 || // guard for environments that flip the sign
         lowerTimeZone.includes("kolkata") ||
-        lowerTimeZone.includes("calcutta") ||
-        lowerLocale.includes("-in") ||
-        lowerLocale.includes("hi-in") ||
-        lowerLocale.includes("en-in")
+        lowerTimeZone.includes("calcutta")
 
-      if (inIndia) {
-        setIsIndia(true)
-      }
+      setIsIndia(inIndia)
     } catch {
       // ignore
     }
@@ -40,9 +34,19 @@ export function PricingPage() {
     const run = async () => {
       if (isIndia) return
       try {
+        const offsetMinutes = new Date().getTimezoneOffset()
+        const { timeZone = "" } = Intl.DateTimeFormat().resolvedOptions()
+        const lowerTimeZone = timeZone.toLowerCase()
+        const timezoneLooksIndian =
+          offsetMinutes === -330 ||
+          offsetMinutes === 330 ||
+          lowerTimeZone.includes("kolkata") ||
+          lowerTimeZone.includes("calcutta")
+
         const res = await fetch("https://ipapi.co/country/", { cache: "no-store" })
+        if (!res.ok) return
         const country = (await res.text()).trim().toUpperCase()
-        if (country === "IN") setIsIndia(true)
+        if (country === "IN" && timezoneLooksIndian) setIsIndia(true)
       } catch {
         // ignore network failures
       }
