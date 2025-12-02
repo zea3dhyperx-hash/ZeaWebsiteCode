@@ -30,6 +30,95 @@ export function PricingPage() {
     }
   }, [])
 
+  // Add this temporary debug section
+useEffect(() => {
+  console.log("Component mounted - starting detection")
+  console.log("Initial isIndia state:", isIndia)
+}, [])
+
+useEffect(() => {
+  console.log("Timezone detection running...")
+  try {
+    const { timeZone = "" } = Intl.DateTimeFormat().resolvedOptions()
+    const offsetMinutes = new Date().getTimezoneOffset()
+    const lowerTimeZone = timeZone.toLowerCase()
+    
+    console.log("Detected timezone info:", {
+      timeZone,
+      offsetMinutes,
+      lowerTimeZone
+    })
+
+    const inIndia =
+      offsetMinutes === -330 ||
+      offsetMinutes === 330 ||
+      lowerTimeZone.includes("kolkata") ||
+      lowerTimeZone.includes("calcutta") ||
+      lowerTimeZone.includes("india")
+
+    console.log("Timezone suggests India:", inIndia)
+    setIsIndia(inIndia)
+    setDetectionDone(true)
+  } catch (error) {
+    console.error("Timezone detection error:", error)
+    setDetectionDone(true)
+  }
+}, [])
+
+useEffect(() => {
+  const run = async () => {
+    console.log("IP detection running. Current isIndia:", isIndia)
+    
+    if (!isIndia || detectionDone) {
+      console.log("Skipping IP detection - timezone doesn't suggest India or already done")
+      return
+    }
+    
+    try {
+      console.log("Making IP API call to ipapi.co...")
+      
+      // Test if ipapi.co is accessible first
+      const test = await fetch("https://ipapi.co/json/", { 
+        method: 'HEAD',
+        cache: 'no-cache'
+      })
+      console.log("IP API reachable:", test.ok)
+      
+      const res = await fetch("https://ipapi.co/country/", { 
+        cache: "no-store",
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+      })
+      
+      console.log("IP API response status:", res.status)
+      
+      if (!res.ok) {
+        console.error("IP API error:", res.status, res.statusText)
+        return
+      }
+      
+      const country = (await res.text()).trim().toUpperCase()
+      console.log("Detected country from IP:", country)
+      
+      if (country === "IN") {
+        console.log("IP confirms India - setting to INR")
+        setIsIndia(true)
+      } else {
+        console.log("IP says not India - keeping USD")
+        setIsIndia(false)
+      }
+    } catch (error) {
+      console.error("IP detection failed:", error)
+    } finally {
+      console.log("Detection complete")
+      setDetectionDone(true)
+    }
+  }
+  
+  run()
+}, [isIndia, detectionDone])
+
   useEffect(() => {
     // Secondary hint using IP-based country lookup - only runs if first check suggests India
     const run = async () => {
