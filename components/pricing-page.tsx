@@ -1,175 +1,16 @@
 "use client"
 
 import { Check, ChevronDown, BadgeCheck, Scale, TrendingUp } from "lucide-react"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Link from "next/link"
 
-export function PricingPage() {
+interface PricingPageClientProps {
+  initialCountry: string
+}
+
+export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
-  const [isIndia, setIsIndia] = useState<boolean>(false) // default to USD
-  const [detectionDone, setDetectionDone] = useState<boolean>(false)
-
-  useEffect(() => {
-    // Lightweight geo hint using timezone/offset only (no network calls)
-    try {
-      const { timeZone = "" } = Intl.DateTimeFormat().resolvedOptions()
-      const offsetMinutes = new Date().getTimezoneOffset() // IST is -330
-      const lowerTimeZone = timeZone.toLowerCase()
-
-      const inIndia =
-        offsetMinutes === -330 ||
-        offsetMinutes === 330 || // guard for environments that flip the sign
-        lowerTimeZone.includes("kolkata") ||
-        lowerTimeZone.includes("calcutta") ||
-        lowerTimeZone.includes("india")
-
-      setIsIndia(inIndia)
-      setDetectionDone(true)
-    } catch {
-      setDetectionDone(true)
-    }
-  }, [])
-
-  // Add this temporary debug section
-useEffect(() => {
-  console.log("Component mounted - starting detection")
-  console.log("Initial isIndia state:", isIndia)
-}, [])
-
-useEffect(() => {
-  console.log("Timezone detection running...")
-  try {
-    const { timeZone = "" } = Intl.DateTimeFormat().resolvedOptions()
-    const offsetMinutes = new Date().getTimezoneOffset()
-    const lowerTimeZone = timeZone.toLowerCase()
-    
-    console.log("Detected timezone info:", {
-      timeZone,
-      offsetMinutes,
-      lowerTimeZone
-    })
-
-    const inIndia =
-      offsetMinutes === -330 ||
-      offsetMinutes === 330 ||
-      lowerTimeZone.includes("kolkata") ||
-      lowerTimeZone.includes("calcutta") ||
-      lowerTimeZone.includes("india")
-
-    console.log("Timezone suggests India:", inIndia)
-    setIsIndia(inIndia)
-    setDetectionDone(true)
-  } catch (error) {
-    console.error("Timezone detection error:", error)
-    setDetectionDone(true)
-  }
-}, [])
-
-useEffect(() => {
-  const run = async () => {
-    console.log("IP detection running. Current isIndia:", isIndia)
-    
-    if (!isIndia || detectionDone) {
-      console.log("Skipping IP detection - timezone doesn't suggest India or already done")
-      return
-    }
-    
-    try {
-      console.log("Making IP API call to ipapi.co...")
-      
-      // Test if ipapi.co is accessible first
-      const test = await fetch("https://ipapi.co/json/", { 
-        method: 'HEAD',
-        cache: 'no-cache'
-      })
-      console.log("IP API reachable:", test.ok)
-      
-      const res = await fetch("https://ipapi.co/country/", { 
-        cache: "no-store",
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
-      })
-      
-      console.log("IP API response status:", res.status)
-      
-      if (!res.ok) {
-        console.error("IP API error:", res.status, res.statusText)
-        return
-      }
-      
-      const country = (await res.text()).trim().toUpperCase()
-      console.log("Detected country from IP:", country)
-      
-      if (country === "IN") {
-        console.log("IP confirms India - setting to INR")
-        setIsIndia(true)
-      } else {
-        console.log("IP says not India - keeping USD")
-        setIsIndia(false)
-      }
-    } catch (error) {
-      console.error("IP detection failed:", error)
-    } finally {
-      console.log("Detection complete")
-      setDetectionDone(true)
-    }
-  }
-  
-  run()
-}, [isIndia, detectionDone])
-
-  useEffect(() => {
-    // Secondary hint using IP-based country lookup - only runs if first check suggests India
-    const run = async () => {
-      if (!isIndia || detectionDone) return // Only run if timezone suggests India
-      
-      try {
-        const offsetMinutes = new Date().getTimezoneOffset()
-        const { timeZone = "" } = Intl.DateTimeFormat().resolvedOptions()
-        const lowerTimeZone = timeZone.toLowerCase()
-        
-        // Re-check timezone (defensive)
-        const timezoneLooksIndian =
-          offsetMinutes === -330 ||
-          offsetMinutes === 330 ||
-          lowerTimeZone.includes("kolkata") ||
-          lowerTimeZone.includes("calcutta") ||
-          lowerTimeZone.includes("india")
-
-        if (!timezoneLooksIndian) return
-
-        // Fast IP-based country check with timeout
-        const controller = new AbortController()
-        const timeoutId = setTimeout(() => controller.abort(), 3000)
-        
-        const res = await fetch("https://ipapi.co/country/", { 
-          cache: "no-store",
-          signal: controller.signal
-        })
-        clearTimeout(timeoutId)
-        
-        if (!res.ok) return
-        
-        const country = (await res.text()).trim().toUpperCase()
-        
-        // Only switch to INR if BOTH signals indicate India
-        if (country === "IN") {
-          setIsIndia(true)
-        } else {
-          // IP says not India, revert to USD
-          setIsIndia(false)
-        }
-      } catch {
-        // Network failures or timeouts - keep whatever we had from timezone detection
-        // (which was already suggesting India, but we can't confirm with IP)
-      } finally {
-        setDetectionDone(true)
-      }
-    }
-    
-    run()
-  }, [isIndia, detectionDone])
+  const [isIndia] = useState<boolean>(initialCountry?.toUpperCase() === "IN")
 
   const pricingPlans = [
     {
@@ -237,34 +78,32 @@ useEffect(() => {
   const faqItems = [
     {
       question: "Can I try ZeaCRM for free before choosing a plan?",
-      answer: "Yes, you can explore ZeaCRM with a free trial with no credit card required. Test the features, automation tools, and dashboard to see how it fits your workflow before making a commitment.",
+      answer:
+        "Yes, you can explore ZeaCRM with a free trial with no credit card required. Test the features, automation tools, and dashboard to see how it fits your workflow before making a commitment.",
     },
     {
       question: "Can I upgrade or downgrade anytime?",
-      answer: "Yes, ZeaCRM is built with flexibility in mind. You can upgrade, downgrade, or cancel anytime directly from your dashboard without losing your data or settings.",
+      answer:
+        "Yes, ZeaCRM is built with flexibility in mind. You can upgrade, downgrade, or cancel anytime directly from your dashboard without losing your data or settings.",
     },
     {
       question: "Is my data safe?",
-      answer: "Your security is our top priority. ZeaCRM uses advanced encryption, secure cloud hosting, and multi-layer authentication to protect your business and customer data at every step. We comply with global privacy standards to ensure complete peace of mind.",
+      answer:
+        "Your security is our top priority. ZeaCRM uses advanced encryption, secure cloud hosting, and multi-layer authentication to protect your business and customer data at every step. We comply with global privacy standards to ensure complete peace of mind.",
     },
     {
       question: "Does ZeaCRM offer support or onboarding help?",
-      answer: "Yes, our onboarding team helps you get started, migrate data, and set up automations at no extra cost. You can reach out to our team for help 24/7 before, during, and after your onboarding process.",
+      answer:
+        "Yes, our onboarding team helps you get started, migrate data, and set up automations at no extra cost. You can reach out to our team for help 24/7 before, during, and after your onboarding process.",
     },
     {
       question: "Can multiple users access the same account?",
-      answer: "Yes, ZeaCRM supports multiple team members. Your entire team can collaborate across sales, marketing, and operations seamlessly at the same time.",
+      answer:
+        "Yes, ZeaCRM supports multiple team members. Your entire team can collaborate across sales, marketing, and operations seamlessly at the same time.",
     },
   ]
 
-  // Show loading state briefly while detecting
-  if (!detectionDone) {
-    return (
-      <div className="bg-black min-h-screen flex items-center justify-center">
-        <div className="text-white">Loading pricing...</div>
-      </div>
-    )
-  }
+  const currencySymbol = isIndia ? "₹" : "$"
 
   return (
     <div className="bg-black">
@@ -274,7 +113,7 @@ useEffect(() => {
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Pricing</h1>
           <p className="text-xl text-amber-400 mb-8 animate-slide-up">One Powerful Platform. Simple Pricing</p>
           <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
-              No hidden costs, no complex tiers. Just transparent plans that give you everything you need to grow, automate, and connect with your customers.
+            No hidden costs, no complex tiers. Just transparent plans that give you everything you need to grow, automate, and connect with your customers.
           </p>
         </div>
       </section>
@@ -298,7 +137,7 @@ useEffect(() => {
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-bold text-white">
-                      <span className="currency">{isIndia ? "₹" : "$"}</span>{" "}
+                      <span className="currency">{currencySymbol}</span>{" "}
                       {isIndia ? plan.priceINR : plan.priceUSD}
                     </span>
                     <span className="text-gray-400">{plan.period}</span>
@@ -307,19 +146,19 @@ useEffect(() => {
 
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, featureIndex) => {
-                    const isStandard = plan.name === "Standard";
-                    const isLast = featureIndex === plan.features.length - 1;
-                    const showAsUnavailable = isStandard && isLast && feature.toLowerCase().includes("whatsapp integration");
+                    const isStandard = plan.name === "Standard"
+                    const isLast = featureIndex === plan.features.length - 1
+                    const showAsUnavailable = isStandard && isLast && feature.toLowerCase().includes("whatsapp integration")
                     return (
                       <li key={featureIndex} className="flex items-start gap-3">
                         {showAsUnavailable ? (
-                          <span className="w-5 h-5 mt-0.5 flex items-center justify-center text-red-500">✕</span>
+                          <span className="w-5 h-5 mt-0.5 flex items-center justify-center text-red-500">x</span>
                         ) : (
                           <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
                         )}
                         <span className={showAsUnavailable ? "text-gray-400 line-through" : "text-gray-300"}>{feature}</span>
                       </li>
-                    );
+                    )
                   })}
                 </ul>
 
