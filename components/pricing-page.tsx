@@ -8,7 +8,7 @@ import Anim3 from "./animations/anim3"
 
 export function PricingPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
-  const [isIndia, setIsIndia] = useState<boolean>(true) // default to INR
+  const [isIndia, setIsIndia] = useState<boolean>(false) // default to USD
 
   useEffect(() => {
     // Lightweight geo hint using timezone/locale/offset (no network calls)
@@ -20,6 +20,7 @@ export function PricingPage() {
 
       const inIndia =
         offsetMinutes === -330 ||
+        offsetMinutes === 330 || // guard for environments that flip the sign
         lowerTimeZone.includes("kolkata") ||
         lowerTimeZone.includes("calcutta") ||
         lowerLocale.includes("-in") ||
@@ -28,8 +29,6 @@ export function PricingPage() {
 
       if (inIndia) {
         setIsIndia(true)
-      } else {
-        setIsIndia(false)
       }
     } catch {
       // ignore
