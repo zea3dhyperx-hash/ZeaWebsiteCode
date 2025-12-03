@@ -173,170 +173,179 @@ export default function ContactUsPage() {
                 </div>
 
                 <Card className="p-8 bg-gray-900/50 border-amber-400 hover:scale-101 transition-smooth">
-                <div className="flex items-center space-x-3 mb-6">
+                <div className="flex items-center space-x-3">
                   <MessageCircle className="w-6 h-6 text-amber-400" />
                   <h2 className="text-2xl font-bold">Get in Touch Instantly</h2>
                 </div>
-                  <div className="mb-6 space-y-1">
-                    <h3 className="text-xl font-semibold">Request a call.</h3>
-                    <p className="text-sm text-gray-400">Give us some info so the right person can get back to you.</p>
-                  </div>
-                  <form className="space-y-5" id="contact-form" onSubmit={handleSubmit}>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-base font-medium mb-2">First name*</label>
-                        <Input
-                          name="firstName"
-                          value={formData.firstName}
-                          onChange={handleChange}
-                          className="bg-gray-800 border-gray-700 text-white"
-                          placeholder="First name"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-base font-medium mb-2">Last name*</label>
-                        <Input
-                          name="lastName"
-                          value={formData.lastName}
-                          onChange={handleChange}
-                          className="bg-gray-800 border-gray-700 text-white"
-                          placeholder="Last name"
-                          required
-                        />
-                      </div>
+                  {!submitted && (
+                    <div className="mb-6 space-y-1">
+                      <h3 className="text-xl font-semibold">Request a call.</h3>
+                      <p className="text-sm text-gray-400">Give us some info so the right person can get back to you.</p>
                     </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-base font-medium mb-2">Job Title</label>
-                        <select
-                          name="jobTitle"
-                          value={formData.jobTitle}
-                          onChange={handleChange}
-                          className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
-                        >
-                          <option value="">Select</option>
-                          <option>Founder / CXO</option>
-                          <option>Operations</option>
-                          <option>Sales</option>
-                          <option>Marketing</option>
-                          <option>IT / Systems</option>
-                          <option>Other</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-base font-medium mb-2">Work Email*</label>
-                        <Input
-                          name="workEmail"
-                          value={formData.workEmail}
-                          onChange={handleChange}
-                          type="email"
-                          className="bg-gray-800 border-gray-700 text-white"
-                          placeholder="name@company.com"
-                          required
-                        />
-                      </div>
+                  )}
+                  {submitted ? (
+                    <div className="flex flex-col items-center text-center space-y-4">
+                      <Image src="/form-image.jpg" alt="Thank you image" width={480} height={360} className="rounded-lg" />
+                      <h3 className="text-xl font-semibold text-foreground">Thank you!</h3>
+                      <p className="text-sm text-muted-foreground max-w-md">
+                        We&apos;ve received your details. Our team will reach out soon with the right next steps.
+                      </p>
                     </div>
+                  ) : (
+                    <form className="space-y-5" id="contact-form" onSubmit={handleSubmit}>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-base font-medium mb-2">First name*</label>
+                          <Input
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleChange}
+                            className="bg-gray-800 border-gray-700 text-white"
+                            placeholder="First name"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-base font-medium mb-2">Last name*</label>
+                          <Input
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleChange}
+                            className="bg-gray-800 border-gray-700 text-white"
+                            placeholder="Last name"
+                            required
+                          />
+                        </div>
+                      </div>
 
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-base font-medium mb-2">Company</label>
-                        <Input
-                          name="company"
-                          value={formData.company}
-                          onChange={handleChange}
-                          className="bg-gray-800 border-gray-700 text-white"
-                          placeholder="Company"
-                        />
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-base font-medium mb-2">Job Title</label>
+                          <select
+                            name="jobTitle"
+                            value={formData.jobTitle}
+                            onChange={handleChange}
+                            className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
+                          >
+                            <option value="">Select</option>
+                            <option>Founder / CXO</option>
+                            <option>Operations</option>
+                            <option>Sales</option>
+                            <option>Marketing</option>
+                            <option>IT / Systems</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-base font-medium mb-2">Work Email*</label>
+                          <Input
+                            name="workEmail"
+                            value={formData.workEmail}
+                            onChange={handleChange}
+                            type="email"
+                            className="bg-gray-800 border-gray-700 text-white"
+                            placeholder="name@company.com"
+                            required
+                          />
+                        </div>
                       </div>
-                      <div>
-                        <label className="block text-base font-medium mb-2">Employees</label>
-                        <select
-                          name="employees"
-                          value={formData.employees}
-                          onChange={handleChange}
-                          className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
-                        >
-                          <option value="">Select</option>
-                          <option>1-10</option>
-                          <option>11-50</option>
-                          <option>51-200</option>
-                          <option>201-500</option>
-                          <option>501-1000</option>
-                          <option>1000+</option>
-                        </select>
-                      </div>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-base font-medium mb-2">Phone</label>
-                        <Input
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          type="tel"
-                          className="bg-gray-800 border-gray-700 text-white"
-                          placeholder="+91 98765 43210"
-                        />
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-base font-medium mb-2">Company</label>
+                          <Input
+                            name="company"
+                            value={formData.company}
+                            onChange={handleChange}
+                            className="bg-gray-800 border-gray-700 text-white"
+                            placeholder="Company"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-base font-medium mb-2">Employees</label>
+                          <select
+                            name="employees"
+                            value={formData.employees}
+                            onChange={handleChange}
+                            className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
+                          >
+                            <option value="">Select</option>
+                            <option>1-10</option>
+                            <option>11-50</option>
+                            <option>51-200</option>
+                            <option>201-500</option>
+                            <option>501-1000</option>
+                            <option>1000+</option>
+                          </select>
+                        </div>
                       </div>
-                      <div>
-                        <label className="block text-base font-medium mb-2">Country/Region</label>
-                        <select
-                          name="country"
-                          value={formData.country}
-                          onChange={handleChange}
-                          className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
-                        >
-                          <option value="">Select</option>
-                          {countries.map((c) => (
-                            <option key={c}>{c}</option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
 
-                    <div className="space-y-4">
-                      <div>
-                        <label className="block text-base font-medium mb-2">Product Interest</label>
-                        <select
-                          name="productInterest"
-                          value={formData.productInterest}
-                          onChange={handleChange}
-                          className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
-                        >
-                          <option value="">Select</option>
-                          <option>ZeaCRM Core</option>
-                          <option>Voice / WhatsApp Automation</option>
-                          <option>Education CRM</option>
-                          <option>Healthcare CRM</option>
-                          <option>Custom Solutions</option>
-                        </select>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-base font-medium mb-2">Phone</label>
+                          <Input
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            type="tel"
+                            className="bg-gray-800 border-gray-700 text-white"
+                            placeholder="+91 98765 43210"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-base font-medium mb-2">Country/Region</label>
+                          <select
+                            name="country"
+                            value={formData.country}
+                            onChange={handleChange}
+                            className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
+                          >
+                            <option value="">Select</option>
+                            {countries.map((c) => (
+                              <option key={c}>{c}</option>
+                            ))}
+                          </select>
+                        </div>
                       </div>
-                      <div>
-                        <label className="block text-base font-medium mb-2">Questions/Comments</label>
-                        <Textarea
-                          name="comments"
-                          value={formData.comments}
-                          onChange={handleChange}
-                          className="bg-gray-800 border-gray-700 text-white min-h-28"
-                          placeholder="Tell us more about your needs"
-                        />
+
+                      <div className="space-y-4">
+                        <div>
+                          <label className="block text-base font-medium mb-2">Product Interest</label>
+                          <select
+                            name="productInterest"
+                            value={formData.productInterest}
+                            onChange={handleChange}
+                            className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
+                          >
+                            <option value="">Select</option>
+                            <option>ZeaCRM Core</option>
+                            <option>Voice / WhatsApp Automation</option>
+                            <option>Education CRM</option>
+                            <option>Healthcare CRM</option>
+                            <option>Custom Solutions</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-base font-medium mb-2">Questions/Comments</label>
+                          <Textarea
+                            name="comments"
+                            value={formData.comments}
+                            onChange={handleChange}
+                            className="bg-gray-800 border-gray-700 text-white min-h-28"
+                            placeholder="Tell us more about your needs"
+                          />
+                        </div>
                       </div>
-                    </div>
 
-                    <p className="text-xs text-gray-400">
-                      We value your privacy. To learn more, visit our <a href="/privacy-policy" className="underline text-amber-400">Privacy Statement</a>.
-                    </p>
+                      <p className="text-xs text-gray-400">
+                        We value your privacy. To learn more, visit our <a href="/privacy-policy" className="underline text-amber-400">Privacy Statement</a>.
+                      </p>
 
-                    <Button className="w-full bg-amber-400 text-black font-semibold text-lg">
-                      {submitting ? "Submitting..." : "Contact Me"}
-                    </Button>
-                    {submitted && (
-                      <p className="text-sm text-green-400 text-center">Thank you! We&apos;ll get back to you shortly.</p>
-                    )}
-                  </form>
+                      <Button className="w-full bg-amber-400 text-black font-semibold text-lg" disabled={submitting}>
+                        {submitting ? "Submitting..." : "Contact Me"}
+                      </Button>
+                    </form>
+                  )}
                 </Card>
               </div>
             </div>
@@ -552,6 +561,26 @@ export default function ContactUsPage() {
       </main>
       <Footer />
       <ChatWidget />
+      <style jsx global>{`
+        input, select, textarea {
+          background-color: #1f2937 !important;
+          color: #fff !important;
+          caret-color: #fff;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0px 1000px #1f2937 inset;
+          -webkit-text-fill-color: #fff;
+          caret-color: #fff;
+        }
+      `}</style>
     </>
   )
 }
