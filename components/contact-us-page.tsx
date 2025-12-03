@@ -55,6 +55,7 @@ export default function ContactUsPage() {
     comments: "",
   })
   const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -68,12 +69,14 @@ export default function ContactUsPage() {
     e.preventDefault()
     if (submitting) return
     setSubmitting(true)
+    setSubmitted(false)
     try {
       await fetch("https://n8n.urlfactory.website/webhook/Zeacrm-contacts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
+      setSubmitted(true)
     } catch (err) {
       console.error("Webhook submission failed", err)
     } finally {
@@ -327,8 +330,11 @@ export default function ContactUsPage() {
                     </p>
 
                     <Button className="w-full bg-amber-400 text-black font-semibold text-lg">
-                      Contact Me
+                      {submitting ? "Submitting..." : "Contact Me"}
                     </Button>
+                    {submitted && (
+                      <p className="text-sm text-green-400 text-center">Thank you! We&apos;ll get back to you shortly.</p>
+                    )}
                   </form>
                 </Card>
               </div>
