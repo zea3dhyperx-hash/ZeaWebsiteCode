@@ -831,7 +831,7 @@ export default function EducationTrainingCRM() {
                 <p className="relative p-6 rounded-xl border overflow-hidden hover:shadow-lg transition-all duration-300 leading-6 text-primary text-background bg-background">
                   {n}
                 </p>
-                {i < 4 && <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 text-3xl">→</div>}
+                {i < 4 && <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 text-3xl"></div>}
               </div>
             ))}
           </div>
