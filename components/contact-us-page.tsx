@@ -14,15 +14,49 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import ChatWidget from "./chatbot"
 
+const countries = [
+  "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan",
+  "Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi",
+  "Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Costa Rica","Côte d’Ivoire","Croatia","Cuba","Cyprus","Czechia",
+  "Democratic Republic of the Congo","Denmark","Djibouti","Dominica","Dominican Republic",
+  "Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia",
+  "Fiji","Finland","France",
+  "Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana",
+  "Haiti","Honduras","Hungary",
+  "Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy",
+  "Jamaica","Japan","Jordan",
+  "Kazakhstan","Kenya","Kiribati","Kuwait","Kyrgyzstan",
+  "Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg",
+  "Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar",
+  "Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway",
+  "Oman",
+  "Pakistan","Palau","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal",
+  "Qatar",
+  "Republic of the Congo","Romania","Russia","Rwanda",
+  "Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria",
+  "Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu",
+  "Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan",
+  "Vanuatu","Vatican City","Venezuela","Vietnam",
+  "Yemen",
+  "Zambia","Zimbabwe",
+]
+
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+    firstName: "",
+    lastName: "",
+    jobTitle: "",
+    workEmail: "",
+    company: "",
+    employees: "",
+    phone: "",
+    country: "",
+    productInterest: "",
+    comments: "",
   })
+  const [submitting, setSubmitting] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
       ...prev,
@@ -30,10 +64,21 @@ export default function ContactUsPage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Contact Form Submitted:", formData)
-    setFormData({ name: "", email: "", subject: "", message: "" })
+    if (submitting) return
+    setSubmitting(true)
+    try {
+      await fetch("https://n8n.urlfactory.website/webhook/Zeacrm-contacts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+    } catch (err) {
+      console.error("Webhook submission failed", err)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -124,42 +169,165 @@ export default function ContactUsPage() {
                 </div>
 
                 <Card className="p-8 bg-gray-900/50 border-amber-400 hover:scale-101 transition-smooth">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <MessageCircle className="w-6 h-6 text-amber-400" />
-                    <h2 className="text-2xl font-bold">Get in Touch Instantly</h2>
+                <div className="flex items-center space-x-3 mb-6">
+                  <MessageCircle className="w-6 h-6 text-amber-400" />
+                  <h2 className="text-2xl font-bold">Get in Touch Instantly</h2>
+                </div>
+                  <div className="mb-6 space-y-1">
+                    <h3 className="text-xl font-semibold">Request a call.</h3>
+                    <p className="text-sm text-gray-400">Give us some info so the right person can get back to you.</p>
                   </div>
-                  <form className="space-y-6" id="contact-form">
-                    <div>
-                      <label className="block text-base font-medium mb-2">Full Name*</label>
-                      <Input className="bg-gray-800 border-gray-700 text-white" placeholder="Your full name" required />
+                  <form className="space-y-5" id="contact-form" onSubmit={handleSubmit}>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-base font-medium mb-2">First name*</label>
+                        <Input
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleChange}
+                          className="bg-gray-800 border-gray-700 text-white"
+                          placeholder="First name"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-base font-medium mb-2">Last name*</label>
+                        <Input
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
+                          className="bg-gray-800 border-gray-700 text-white"
+                          placeholder="Last name"
+                          required
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <label className="block text-base font-medium mb-2">Email Address*</label>
-                      <Input
-                        type="email"
-                        className="bg-gray-800 border-gray-700 text-white"
-                        placeholder="your@company.com"
-                        required
-                      />
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-base font-medium mb-2">Job Title</label>
+                        <select
+                          name="jobTitle"
+                          value={formData.jobTitle}
+                          onChange={handleChange}
+                          className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
+                        >
+                          <option value="">Select</option>
+                          <option>Founder / CXO</option>
+                          <option>Operations</option>
+                          <option>Sales</option>
+                          <option>Marketing</option>
+                          <option>IT / Systems</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-base font-medium mb-2">Work Email*</label>
+                        <Input
+                          name="workEmail"
+                          value={formData.workEmail}
+                          onChange={handleChange}
+                          type="email"
+                          className="bg-gray-800 border-gray-700 text-white"
+                          placeholder="name@company.com"
+                          required
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <label className="block text-base font-medium mb-2">Phone Number</label>
-                      <Input type="tel" className="bg-gray-800 border-gray-700 text-white" placeholder="+91 98765 43210" />
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-base font-medium mb-2">Company</label>
+                        <Input
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          className="bg-gray-800 border-gray-700 text-white"
+                          placeholder="Company"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-base font-medium mb-2">Employees</label>
+                        <select
+                          name="employees"
+                          value={formData.employees}
+                          onChange={handleChange}
+                          className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
+                        >
+                          <option value="">Select</option>
+                          <option>1-10</option>
+                          <option>11-50</option>
+                          <option>51-200</option>
+                          <option>201-500</option>
+                          <option>501-1000</option>
+                          <option>1000+</option>
+                        </select>
+                      </div>
                     </div>
-                    <div>
-                      <label className="block text-base font-medium mb-2">Company Name</label>
-                      <Input className="bg-gray-800 border-gray-700 text-white" placeholder="Your company's name" />
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-base font-medium mb-2">Phone</label>
+                        <Input
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          type="tel"
+                          className="bg-gray-800 border-gray-700 text-white"
+                          placeholder="+91 98765 43210"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-base font-medium mb-2">Country/Region</label>
+                        <select
+                          name="country"
+                          value={formData.country}
+                          onChange={handleChange}
+                          className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
+                        >
+                          <option value="">Select</option>
+                          {countries.map((c) => (
+                            <option key={c}>{c}</option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
-                    <div>
-                      <label className="block text-base font-medium mb-2">Message*</label>
-                      <Textarea
-                        className="bg-gray-800 border-gray-700 text-white min-h-32"
-                        placeholder="How can we help you today?"
-                        required
-                      />
+
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-base font-medium mb-2">Product Interest</label>
+                        <select
+                          name="productInterest"
+                          value={formData.productInterest}
+                          onChange={handleChange}
+                          className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
+                        >
+                          <option value="">Select</option>
+                          <option>ZeaCRM Core</option>
+                          <option>Voice / WhatsApp Automation</option>
+                          <option>Education CRM</option>
+                          <option>Healthcare CRM</option>
+                          <option>Custom Solutions</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-base font-medium mb-2">Questions/Comments</label>
+                        <Textarea
+                          name="comments"
+                          value={formData.comments}
+                          onChange={handleChange}
+                          className="bg-gray-800 border-gray-700 text-white min-h-28"
+                          placeholder="Tell us more about your needs"
+                        />
+                      </div>
                     </div>
+
+                    <p className="text-xs text-gray-400">
+                      We value your privacy. To learn more, visit our <a href="/privacy-policy" className="underline text-amber-400">Privacy Statement</a>.
+                    </p>
+
                     <Button className="w-full bg-amber-400 text-black font-semibold text-lg">
-                      Send Message
+                      Contact Me
                     </Button>
                   </form>
                 </Card>
