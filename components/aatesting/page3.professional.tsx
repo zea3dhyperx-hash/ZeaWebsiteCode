@@ -5,7 +5,24 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AniProf from "../animations/ani-prof";
-import { Briefcase, Building2, Compass, DollarSign, Dumbbell, Home, Megaphone, Scale, Users } from "lucide-react";
+import {
+  Briefcase,
+  Building2,
+  Compass,
+  DollarSign,
+  Dumbbell,
+  Home,
+  Megaphone,
+  Scale,
+  Users,
+  Bot,
+  Sparkles,
+  ShieldCheck,
+  Workflow,
+  TrendingUp,
+  ClipboardCheck,
+  CheckCircle2,
+} from "lucide-react";
 
 
 
@@ -177,8 +194,20 @@ export default function ProfessionalServicesCRM() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">Professional Services Automation</h1>
-            <p className="mt-3 text-muted-foreground text-lg">Smarter Client, Project, and Workflow Management – Powered by AI</p>
-            <p className="mt-3 text-muted-foreground text-lg">ZeaCRM helps consultants, agencies, and professional service firms automate every client interaction — from proposal to payment. Manage deals, projects, and communication effortlessly while your AI assistant keeps operations running smoothly.</p>
+            <p className="mt-3 text-muted-foreground text-lg">Smarter Client, Project, and Workflow Management - Powered by AI</p>
+            <p className="mt-3 text-muted-foreground text-lg">ZeaCRM helps consultants, agencies, and professional service firms automate every client interaction - from proposal to payment. Manage deals, projects, and communication effortlessly while your AI assistant keeps operations running smoothly.</p>
+            <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
+              {[
+                { label: "AI assistant", Icon: Bot },
+                { label: "Secure docs", Icon: ShieldCheck },
+                { label: "Project clarity", Icon: ClipboardCheck },
+              ].map(({ label, Icon }) => (
+                <span key={label} className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-sm text-foreground/80 shadow-sm">
+                  <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
+                  {label}
+                </span>
+              ))}
+            </div>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
@@ -188,14 +217,17 @@ export default function ProfessionalServicesCRM() {
               </Button>
             </div>
           </div>
-          <div className="rounded-xl border border-border p-6 bg-card">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">AI proposal & invoice automation</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Appointment scheduling with reminders</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Smart follow‑ups that nurture clients</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Centralized project & client data</li>
-            </ul>
-          </div>
+          <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <video
+                src="https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783baaad912ebc47e727.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+                aria-label="Healthcare CRM demonstration video"
+              />
+            </div>
         </div>
       </section>
 
@@ -203,33 +235,58 @@ export default function ProfessionalServicesCRM() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Smart Solutions for Every Service Professional</h2>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
-          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
-            <h3 className="text-xl font-semibold">Consultants & Agencies</h3>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
-              <li>Automated proposal & invoice generation</li>
-              <li>Appointment scheduling with reminders</li>
-              <li>AI follow-ups that nurture clients automatically</li>
-            </ul>
-            <p className="mt-4 text-sm">📈 Result: Faster deals & stronger relationships</p>
-          </div>
-          <div className="group rounded-xl border scale-105 border-border bg-card p-6 transition-all duration-300 bg-primary hover:shadow-lg hover:scale-108">
-            <h3 className="text-xl text-background font-semibold">IT & SaaS Providers</h3>
-            <ul className="mt-4 space-y-2 text-background">
-              <li>Auto demo/trial scheduling & follow-up</li>
-              <li>Subscription renewals & billing reminders</li>
-              <li>CRM-integrated support ticket tracking</li>
-            </ul>
-            <p className="mt-4 text-background text-sm">📈 Result: Improved customer retention & smoother onboarding</p>
-          </div>
-          <div className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
-            <h3 className="text-xl font-semibold">Legal & Accounting Firms</h3>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
-              <li>Workflow automation for cases & projects</li>
-              <li>Compliance alerts & filing deadline reminders</li>
-              <li>Secure document management with e-signing</li>
-            </ul>
-            <p className="mt-4 text-sm">📈 Result: Fewer errors, more billable hours</p>
-          </div>
+          {[ 
+            {
+              title: "Consultants & Agencies",
+              bullets: [
+                "Automated proposal & invoice generation",
+                "Appointment scheduling with reminders",
+                "AI follow-ups that nurture clients automatically",
+              ],
+              result: "Result: Faster deals & stronger relationships",
+              Icon: Briefcase,
+            },
+            {
+              title: "IT & SaaS Providers",
+              bullets: [
+                "Auto demo/trial scheduling & follow-up",
+                "Subscription renewals & billing reminders",
+                "CRM-integrated support ticket tracking",
+              ],
+              result: "Result: Improved customer retention & smoother onboarding",
+              Icon: Megaphone,
+              accent: true,
+            },
+            {
+              title: "Legal & Accounting Firms",
+              bullets: [
+                "Workflow automation for cases & projects",
+                "Compliance alerts & filing deadline reminders",
+                "Secure document management with e-signing",
+              ],
+              result: "Result: Fewer errors, more billable hours",
+              Icon: Scale,
+            },
+          ].map(({ title, bullets, result, Icon, accent }) => (
+            <div
+              key={title}
+              className={`group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105 ${accent ? "scale-105" : ""}`}
+            >
+              <div className="flex items-center gap-2">
+                <Icon className={`h-6 w-6 ${accent ? "text-primary" : "text-primary"}`} aria-hidden="true" />
+                <h3 className="text-xl font-semibold text-foreground">{title}</h3>
+              </div>
+              <ul className="mt-4 space-y-2 text-muted-foreground">
+                {bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 mt-1 text-primary" aria-hidden="true" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm font-medium text-primary">{result}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -239,11 +296,20 @@ export default function ProfessionalServicesCRM() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary">Why ZeaCRM?</h2>
           <p className="mt-4 text-muted-foreground text-lg">ZeaCRM is built on five core pillars to transform your professional service operations:</p>
           <ul className="mt-8 grid sm:grid-cols-2 gap-4 text-left">
-            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">1.	AI-Powered Intelligence – Predictive insights, lead scoring & automation triggers.</li>
-            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">2.	Automation-First Design – Reduce manual tasks and human follow-ups.</li>
-            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">3.	Secure & Compliant – Enterprise-grade data encryption & privacy.</li>
-            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">4.	Industry-Ready – Pre-built modules for every service vertical.</li>
-            <li className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">5.	Proven Impact – Faster deals, stronger relationships, higher ROI.</li>
+            {[
+              { text: "AI-Powered Intelligence - Predictive insights, lead scoring & automation triggers.", Icon: Bot },
+              { text: "Automation-First Design - Reduce manual tasks and human follow-ups.", Icon: Workflow },
+              { text: "Secure & Compliant - Enterprise-grade data encryption & privacy.", Icon: ShieldCheck },
+              { text: "Industry-Ready - Pre-built modules for every service vertical.", Icon: Building2 },
+              { text: "Proven Impact - Faster deals, stronger relationships, higher ROI.", Icon: TrendingUp },
+            ].map(({ text, Icon }) => (
+              <li key={text} className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 border border-primary/30 text-primary">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span>{text}</span>
+              </li>
+            ))}
           </ul>
           <p className="mt-6 text-muted-foreground">Your industry is evolving — your CRM should evolve with it.
 ZeaCRM brings precision, automation, and intelligence into every client interaction.</p>
@@ -340,10 +406,19 @@ Every proposal, project, and conversation is connected through AI — ensuring s
             <div className="mt-4">
               <p>Empower your team to:</p>
               <ul className="mt-3 space-y-2 text-muted-foreground text-lg">
-                <li>✅ Collaborate in real time</li>
-                <li>✅ Automate repetitive reminders</li>
-                <li>✅ Centralize all client data securely</li>
-                <li>✅ Track progress with AI insights</li>
+                {[
+                  { text: "Collaborate in real time", Icon: Users },
+                  { text: "Automate repetitive reminders", Icon: Sparkles },
+                  { text: "Centralize all client data securely", Icon: ShieldCheck },
+                  { text: "Track progress with AI insights", Icon: TrendingUp },
+                ].map(({ text, Icon }) => (
+                  <li key={text} className="flex items-start gap-3">
+                    <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/15 border border-primary/30 text-primary">
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                    <span>{text}</span>
+                  </li>
+                ))}
               </ul>
               <p className="mt-3">Deliver high-quality service while saving time, reducing errors, and increasing profit margins.</p>
             </div>

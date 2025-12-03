@@ -5,6 +5,20 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AniAuto from "../animations/ani-auto";
+import {
+  Car,
+  Factory,
+  ShieldCheck,
+  Sparkles,
+  Gauge,
+  Wrench,
+  Workflow,
+  Users2,
+  Bot,
+  Zap,
+  BarChart4,
+  CheckCircle2,
+} from "lucide-react";
 
 
 
@@ -20,6 +34,7 @@ export default function AutomotiveManufacturingCRM() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [industriesVisible, setIndustriesVisible] = useState(false)
   const industriesRef = useRef<HTMLDivElement>(null)
+  const helpIcons = [Car, Factory, Wrench, Workflow, Users2, Bot, Zap, ShieldCheck, Gauge]
 
   useEffect(() => {
     if (panelRef.current) setPanelHeight(panelRef.current.scrollHeight);
@@ -164,18 +179,18 @@ export default function AutomotiveManufacturingCRM() {
 
           if (lockedOpen) return;
 
-          const relatedTarget = e.relatedTarget as HTMLElement | null;
+          const relatedTarget = e.relatedTarget as EventTarget | null;
 
           // Prevent collapse when entering iframe
           if (
             relatedTarget === null ||
-            (iframeRef.current && iframeRef.current.contains(relatedTarget))
+            (relatedTarget instanceof Node && iframeRef.current?.contains(relatedTarget))
           ) {
             return;
           }
 
           // Close only when moving to header
-          if (relatedTarget && typeof relatedTarget.closest === "function") {
+          if (relatedTarget instanceof Element && typeof relatedTarget.closest === "function") {
             if (relatedTarget.closest("header")) {
               setExpanded(false);
               return;
@@ -229,14 +244,24 @@ export default function AutomotiveManufacturingCRM() {
       </section>
 
       {/* Hero */}
-      <section className="border-b border-border bg-background py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
-          <div className="text-center md:text-left">
+      <section className="relative border-b border-border bg-background py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 " aria-hidden="true" />
+        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full" aria-hidden="true" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center relative z-10">
+          <div className="text-center md:text-left space-y-3">
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">Automotive & Manufacturing CRM</h1>
-            <p className="mt-3 text-muted-foreground text-lg">Streamline Sales, Service, and Supply Chain — All in One Platform</p>
-            <p className="mt-3 text-muted-foreground text-lg">ZeaCRM brings automation, intelligence, and visibility to every part of your automotive or manufacturing business.</p>
-            <p className="mt-3 text-muted-foreground text-lg">From dealer management to production coordination, simplify workflows, boost efficiency, and strengthen customer relationships.</p>
-            <div className="mt-8 flex gap-4 justify-center md:justify-start">
+            <p className="text-muted-foreground text-lg">Streamline Sales, Service, and Supply Chain - All in One Platform</p>
+            <p className="text-muted-foreground text-lg">ZeaCRM brings automation, intelligence, and visibility to every part of your automotive or manufacturing business.</p>
+            <p className="text-muted-foreground text-lg">From dealer management to production coordination, simplify workflows, boost efficiency, and strengthen customer relationships.</p>
+            {/* <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                <Sparkles className="h-4 w-4" /> Automation-first
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                <ShieldCheck className="h-4 w-4" /> Secure by design
+              </span>
+            </div> */}
+            <div className="mt-6 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
@@ -244,14 +269,36 @@ export default function AutomotiveManufacturingCRM() {
                 <Link href="/get-started">Book a Demo</Link>
               </Button>
             </div>
+            {/* <div className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
+              {[
+                { label: "AI insights", Icon: Bot },
+                { label: "Ops visibility", Icon: Gauge },
+                { label: "Faster service", Icon: Zap },
+              ].map((chip) => {
+                const Icon = chip.Icon;
+                return (
+                  <span key={chip.label} className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground/80 shadow-sm">
+                    <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
+                    {chip.label}
+                  </span>
+                );
+              })}
+            </div> */}
           </div>
-          <div className="rounded-xl border border-border p-6 bg-card">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Test drive booking automation</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Service & warranty reminders</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Inventory and order visibility</li>
-              <li className="p-4 rounded-lg bg-muted hover:bg-primary hover:text-background hover:scale-105 transform transition-transform">Omnichannel WhatsApp/SMS/Email</li>
-            </ul>
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl blur-2xl" aria-hidden="true" />
+            <div className="relative rounded-3xl border border-border overflow-hidden bg-card shadow-2xl">
+              <video
+                src="https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783b82f4c5639389a57b.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+                aria-label="Healthcare CRM demonstration video"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-background/20 to-transparent" />
+            </div>
           </div>
         </div>
       </section>
@@ -359,7 +406,7 @@ export default function AutomotiveManufacturingCRM() {
                         <ul className="space-y-4 mb-6">
                           {card.bullets.map((bullet) => (
                             <li key={bullet} className="flex items-start gap-3">
-                              <span className="text-slate-900 text-lg mt-1">•</span>
+                              <CheckCircle2 className="text-orange-600 h-5 w-5 mt-1" aria-hidden="true" />
                               <span className="text-slate-700 text-lg leading-relaxed">{bullet}</span>
                             </li>
                           ))}
@@ -485,12 +532,18 @@ export default function AutomotiveManufacturingCRM() {
                 }}
                 onMouseLeave={() => setHelpHover({ i: null, x: 0, y: 0 })}
               >
-                {/* Inner card – applies scaling but does NOT create stacking context */}
-                <div className="p-4 rounded-lg bg-muted transition-transform group-hover:scale-[1.02]">
-                  <div className="font-medium">{item.title}</div>
+                <div className="p-5 rounded-lg bg-card border border-border shadow-sm transition-all group-hover:-translate-y-1 group-hover:shadow-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/15 border border-primary/30 text-primary">
+                      {(() => {
+                        const Icon = helpIcons[i % helpIcons.length]
+                        return <Icon className="h-5 w-5" aria-hidden="true" />
+                      })()}
+                    </div>
+                    <div className="font-medium">{item.title}</div>
+                  </div>
                 </div>
 
-                {/* Floating tooltip */}
                 {helpHover.i === i && (
                   <div
                     className="pointer-events-none absolute z-[99999] min-w-[14rem] max-w-[18rem] rounded-md bg-primary text-background text-sm p-3 shadow-lg ring-1 ring-black/10"
@@ -517,11 +570,20 @@ export default function AutomotiveManufacturingCRM() {
             <h2 className="text-4xl md:text-5xl font-extrabold text-primary">Built for Smart, Scalable Growth</h2>
             <p className="mt-4 mb-4 text-muted-foreground text-lg">ZeaCRM empowers automotive and manufacturing businesses to run smarter operations:</p>
             <ul className="mt-6 space-y-3 text-muted-foreground text-lg">
-              <li>Unified CRM: Centralize leads, service records, and history</li>
-              <li>AI Insights: Forecast sales, demand, and maintenance cycles</li>
-              <li>Automation Engine: Replace manual tasks with workflows</li>
-              <li>Omnichannel: WhatsApp, Email, and SMS</li>
-              <li>Analytics Dashboard: Real‑time performance tracking</li>
+              {[
+                { text: "Unified CRM: Centralize leads, service records, and history", Icon: Users2 },
+                { text: "AI Insights: Forecast sales, demand, and maintenance cycles", Icon: Gauge },
+                { text: "Automation Engine: Replace manual tasks with workflows", Icon: Workflow },
+                { text: "Omnichannel: WhatsApp, Email, and SMS", Icon: Sparkles },
+                { text: "Analytics Dashboard: Real-time performance tracking", Icon: BarChart4 },
+              ].map(({ text, Icon }) => (
+                <li key={text} className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 border border-primary/30 text-primary">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <span className="leading-relaxed">{text}</span>
+                </li>
+              ))}
             </ul>
             <p className="mt-4 text-sm">Result: Reduced overhead, faster turnaround, higher lifetime value.</p>
           </div>
@@ -546,13 +608,18 @@ export default function AutomotiveManufacturingCRM() {
           <p className="text-lg mt-4 mb-4 text-muted-foreground">Our platform is engineered with five core principles:</p>
           <ul className="mt-8 grid sm:grid-cols-2 gap-4 text-left">
             {[
-              "AI‑Powered Intelligence – Learn from data to act faster",
-              "Automation‑First Design – Eliminate routine bottlenecks",
-              "Secure & Compliant Architecture – Enterprise‑grade safety",
-              "Industry‑Ready Customization – Tailored to automotive & industrial",
-              "Proven Performance Impact – Measurable efficiency and ROI",
-            ].map((txt) => (
-              <li key={txt} className="p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">{txt}</li>
+              { text: "AI-Powered Intelligence - Learn from data to act faster", Icon: Bot },
+              { text: "Automation-First Design - Eliminate routine bottlenecks", Icon: Workflow },
+              { text: "Secure & Compliant Architecture - Enterprise-grade safety", Icon: ShieldCheck },
+              { text: "Industry-Ready Customization - Tailored to automotive & industrial", Icon: Factory },
+              { text: "Proven Performance Impact - Measurable efficiency and ROI", Icon: BarChart4 },
+            ].map(({ text, Icon }) => (
+              <li key={text} className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/15 border border-primary/30 text-primary">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span>{text}</span>
+              </li>
             ))}
           </ul>
         </div>

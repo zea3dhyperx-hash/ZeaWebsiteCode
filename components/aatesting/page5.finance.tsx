@@ -5,6 +5,16 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AniFinance from "../animations/ani-finance";
+import {
+  ShieldCheck,
+  TrendingUp,
+  CreditCard,
+  MessageSquare,
+  Sparkles,
+  CheckCircle2,
+  Lock,
+  BarChart4,
+} from "lucide-react";
 
 
 
@@ -176,7 +186,19 @@ export default function FinanceInsuranceCRM() {
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">AI-Powered CRM for Financial Growth</h1>
             <p className="mt-3 text-muted-foreground text-lg">Automation. Compliance. Trust.</p>
             <p className="mt-3 text-muted-foreground text-lg">ZeaCRM empowers banks, insurance providers, and advisors to manage every client relationship with precision and speed.</p>
-            <div className="mt-8 flex gap-4 justify-center md:justify-start">
+            <div className="mt-4 flex flex-wrap gap-3 justify-center md:justify-start">
+              {[
+                { label: "Secure data", Icon: ShieldCheck },
+                { label: "Predictive risk", Icon: TrendingUp },
+                { label: "Smart reminders", Icon: MessageSquare },
+              ].map(({ label, Icon }) => (
+                <span key={label} className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-sm text-foreground/80 shadow-sm">
+                  <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
+                  {label}
+                </span>
+              ))}
+            </div>
+            <div className="mt-6 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
@@ -186,7 +208,7 @@ export default function FinanceInsuranceCRM() {
             </div>
           </div>
           <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
-              <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/grok-video-b75c71d9-78b2-46cf-a8cc-91f57a051896-olFoyvo66WfcWRWS6d5mAjY2kmFkYa.mp4" type="video/mp4" />
+              <source src="https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783b2b865ef09d47b286.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
         </div>
@@ -362,23 +384,23 @@ ZeaCRM ensures every transaction, message, and signature happens securely—meet
         <h2 className="text-3xl md:text-4xl font-extrabold text-primary text-center">FAQs</h2>
         <div className="mt-8 space-y-6">
           <details className="rounded-lg border border-border p-4 bg-card" open>
-            <summary className="cursor-pointer font-semibold">1. How does ZeaCRM improve financial service workflows?</summary>
+            <summary className="cursor-pointer font-semibold">How does ZeaCRM improve financial service workflows?</summary>
             <p className="mt-2 text-muted-foreground">ZeaCRM automates loan, policy, and investment workflows using AI—reducing manual follow-ups and improving customer turnaround time across all financial processes.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">2. Is ZeaCRM suitable for both banks and insurance providers?</summary>
+            <summary className="cursor-pointer font-semibold">Is ZeaCRM suitable for both banks and insurance providers?</summary>
             <p className="mt-2 text-muted-foreground">Yes. ZeaCRM offers flexible modules built for banking, insurance, and advisory teams to manage leads, renewals, and client records from one secure platform.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">3. Can I integrate ZeaCRM with existing financial systems?</summary>
+            <summary className="cursor-pointer font-semibold">Can I integrate ZeaCRM with existing financial systems?</summary>
             <p className="mt-2 text-muted-foreground">Absolutely. ZeaCRM supports API integrations with accounting tools, payment gateways, and communication platforms to keep your data unified.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">4. How does ZeaCRM ensure compliance and data security?</summary>
+            <summary className="cursor-pointer font-semibold">How does ZeaCRM ensure compliance and data security?</summary>
             <p className="mt-2 text-muted-foreground">All customer information is encrypted, role-restricted, and auditable—ensuring compliance with leading financial data standards.</p>
           </details>
           <details className="rounded-lg border border-border p-4 bg-card">
-            <summary className="cursor-pointer font-semibold">5. What results can financial institutions expect with ZeaCRM?</summary>
+            <summary className="cursor-pointer font-semibold">What results can financial institutions expect with ZeaCRM?</summary>
             <p className="mt-2 text-muted-foreground">Organizations typically see faster loan processing, higher policy renewals, reduced defaults, and improved customer satisfaction through automation and AI-driven engagement.</p>
           </details>
         </div>

@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AniEdu from "../animations/ani-edu";
+import { Brain, Cog, GraduationCap, ShieldCheck, TrendingUp } from "lucide-react";
 
 
 
@@ -170,6 +171,8 @@ export default function EducationTrainingCRM() {
         </div>
       </section>
 
+      
+
       {/* Hero */}
       <section className="border-b border-border bg-background py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
@@ -200,9 +203,54 @@ export default function EducationTrainingCRM() {
               ))}
             </div>
           </div> */}
-          <AniEdu />
+          <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <video
+                src="https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783baaad91018447e726.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+                aria-label="Healthcare CRM demonstration video"
+              />
+            </div>
+          {/* <AniEdu /> */}
         </div>
-      </section>
+      
+
+      {/* Visual Snapshots */}
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Campus storytelling",
+              image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
+              desc: "Showcase learning spaces, labs, and student life in one glance.",
+            },
+            {
+              title: "Hybrid classrooms",
+              image: "https://images.unsplash.com/photo-1516383969142-931cab67f5f1?auto=format&fit=crop&w=1200&q=80",
+              desc: "Stream sessions, share resources, and keep remote learners engaged.",
+            },
+            {
+              title: "Performance dashboards",
+              image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80",
+              desc: "Track attendance, outcomes, and cohort progress instantly.",
+            },
+          ].map((card) => (
+            <div key={card.title} className="overflow-hidden rounded-xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="h-52 overflow-hidden">
+                <img src={card.image} alt={card.title} className="h-full w-full object-cover transform transition-transform duration-500 hover:scale-105" loading="lazy" />
+              </div>
+              <div className="p-4 space-y-2">
+                <h3 className="text-lg font-semibold text-primary">{card.title}</h3>
+                <p className="text-sm text-muted-foreground">{card.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section> */}
+</section>
 
       {/* Smarter Solutions */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -263,7 +311,7 @@ export default function EducationTrainingCRM() {
       </section> */}
       <section className="border-y py-16 md:py-24 border-foreground bg-[rgba(223,168,34,1)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-primary">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-background">
             Unified CRM for the Entire Education Lifecycle
           </h2>
           <p className="mt-6 text-background">
@@ -817,19 +865,20 @@ export default function EducationTrainingCRM() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-center text-[rgba(223,168,34,1)]">Why ZeaCRM</h2>
           <div className="mt-10 grid md:grid-cols-5 gap-4 leading-5">
             {[
-              "AI‑Driven Precision – Predict trends and optimize student journeys.",
-              "Automation‑First Design – Replace manual tasks with smart workflows.",
-              "Secure & Compliant – Enterprise‑grade data protection for education.",
-              "Built for Education – Purpose‑built modules, not generic add‑ons.",
-              "Proven Impact – Growth in enrollments and retention.",
-            ].map((n, i) => (
+              { text: "AI-Driven Precision - Predict trends and optimize student journeys.", Icon: Brain },
+              { text: "Automation-First Design - Replace manual tasks with smart workflows.", Icon: Cog },
+              { text: "Secure & Compliant - Enterprise-grade data protection for education.", Icon: ShieldCheck },
+              { text: "Built for Education - Purpose-built modules, not generic add-ons.", Icon: GraduationCap },
+              { text: "Proven Impact - Growth in enrollments and retention.", Icon: TrendingUp },
+            ].map((item, i) => (
               <div
-                key={n}
-                className="relative p-6 rounded-xl border border-border overflow-hidden hover:shadow-lg transition-all duration-300 leading-6 bg-primary"
+                key={item.text}
+                className="relative p-6 rounded-xl border border-border overflow-hidden hover:shadow-lg transition-all duration-300 leading-6 bg-primary group min-h-[160px]"
               >
                 <div className="absolute inset-0 bg-primary opacity-0 rounded-xl transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [clip-path:circle(0%_at_50%_50%)] group-hover:opacity-100 group-hover:[clip-path:circle(140.9%_at_0_0)]" />
-                <p className="relative p-6 rounded-xl border overflow-hidden hover:shadow-lg transition-all duration-300 leading-6 text-primary text-background bg-background">
-                  {n}
+                <p className="relative mt-1 mb-2 flex h-full py-5 px-3 w-full flex-col items-center justify-center gap-3 rounded-xl border overflow-hidden hover:shadow-lg transition-all duration-300 leading-6 text-foreground font-bold text-center text-background bg-background">
+                  <item.Icon className="h-7 w-7 text-[rgba(223,168,34,1)]" aria-hidden="true" />
+                  <span>{item.text}</span>
                 </p>
                 {i < 4 && <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 text-3xl"></div>}
               </div>

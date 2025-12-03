@@ -6,6 +6,27 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AniRetail from "../animations/ani-retail";
 import AniRetail1 from "../animations/ani-retail1";
+import {
+  ShoppingBag,
+  Store,
+  Package,
+  Sparkles,
+  ShieldCheck,
+  Workflow,
+  TrendingUp,
+  Users2,
+  Bot,
+  Wrench,
+  CreditCard,
+  Globe2,
+  CheckCircle2,
+  Gift,
+  Truck,
+  Tag,
+  Megaphone,
+  ClipboardCheck,
+  RefreshCw,
+} from "lucide-react";
 
 export default function RetailEcomCRM() {
   // Keep video reveal UX consistent with aatesting pages
@@ -254,103 +275,30 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
         <div className="mt-8 space-y-2 text-center">
           <p className="pb-5 leading-9">ZeaCRM empowers the full retail ecosystem:</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left leading-8">
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">🏪</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Online Stores</h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Automate campaigns, order updates & customer feedback.
-                </p>
+            {[
+              { title: "Online Stores", desc: "Automate campaigns, order updates & customer feedback.", Icon: ShoppingBag },
+              { title: "Retail Chains", desc: "Manage multiple locations with unified customer data.", Icon: Store },
+              { title: "Fashion & Apparel Brands", desc: "Personalize recommendations & loyalty rewards.", Icon: Tag },
+              { title: "Grocery & FMCG Stores", desc: "Enable automated reorders & product notifications.", Icon: Package },
+              { title: "Electronics Retailers", desc: "Manage warranties, repairs & service tickets.", Icon: Wrench },
+              { title: "Luxury & Lifestyle Brands", desc: "Design VIP programs & exclusive engagement.", Icon: Gift },
+              { title: "Beauty & Wellness Brands", desc: "Automate reminders & after-care follow-ups.", Icon: Sparkles },
+              { title: "Home & Interior Stores", desc: "Track high-value projects & lead pipelines.", Icon: ClipboardCheck },
+              { title: "E-Commerce Marketplaces", desc: "Connect chat, feedback, and customer support.", Icon: Megaphone },
+              { title: "Subscription Businesses", desc: "Automate renewals, upsells, and recurring engagement.", Icon: RefreshCw },
+              { title: "Franchise Networks", desc: "Maintain centralized control over customer experience.", Icon: Users2 },
+            ].map(({ title, desc, Icon }, idx) => (
+              <div key={title} className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: `${100 + idx * 100}ms` }}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/15 border border-primary/30 text-primary flex-shrink-0">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1">{desc}</p>
+                </div>
               </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">🏬</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Retail Chains</h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Manage multiple locations with unified customer data.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">💎</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Fashion & Apparel Brands</h3>
-                <p className="text-sm text-muted-foreground mt-1">Personalize recommendations & loyalty rewards.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-[400ms]">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">🛒</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Grocery & FMCG Stores</h3>
-                <p className="text-sm text-muted-foreground mt-1">Enable automated reorders & product notifications.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">📱</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Electronics Retailers</h3>
-                <p className="text-sm text-muted-foreground mt-1">Manage warranties, repairs & service tickets.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-600">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">💍</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Luxury & Lifestyle Brands</h3>
-                <p className="text-sm text-muted-foreground mt-1">Design VIP programs & exclusive engagement.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">🌸</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Beauty & Wellness Brands</h3>
-                <p className="text-sm text-muted-foreground mt-1">Automate reminders & after-care follow-ups.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-800">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">🏠</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Home & Interior Stores</h3>
-                <p className="text-sm text-muted-foreground mt-1">Track high-value projects & lead pipelines.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-900">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">💻</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">E-Commerce Marketplaces</h3>
-                <p className="text-sm text-muted-foreground mt-1">Connect chat, feedback, and customer support.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-1000">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">▶️</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Subscription Businesses</h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Automate renewals, upsells, and recurring engagement.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-1100">
-              <div className="text-5xl text-[#DFA822] flex-shrink-0">🏪</div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Franchise Networks</h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Maintain centralized control over customer experience.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+            ))}
+          </div>        </div>
       </section>
 
       {/* All-in-One Platform */}

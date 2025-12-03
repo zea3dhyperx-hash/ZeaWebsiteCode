@@ -8,6 +8,22 @@ import FAQ from "@/components/faq";
 import Link from "next/link";
 import AniHealthcare from "../animations/ani-health";
 import AniRealEstate from "../animations/ani-realestate";
+import {
+  Home,
+  MapPin,
+  Sparkles,
+  Building2,
+  Wrench,
+  Workflow,
+  ShieldCheck,
+  Users2,
+  Bot,
+  TrendingUp,
+  KeyRound,
+  PhoneCall,
+  ClipboardCheck,
+  CheckCircle2,
+} from "lucide-react";
 
 
 
@@ -188,8 +204,20 @@ export default function RealEstateCRM() {
               Manage listings, inquiries, payments, and tenants from one powerful dashboard.
             </p>
             <p className="mt-3 text-muted-foreground text-lg">
-              ZeaCRM empowers real estate professionals to automate everything — from lead capture to closing day.
+              ZeaCRM empowers real estate professionals to automate everything - from lead capture to closing day.
             </p>
+            <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
+              {[
+                { label: "AI follow-ups", Icon: Bot },
+                { label: "Deal desk", Icon: ClipboardCheck },
+                { label: "Secure docs", Icon: ShieldCheck },
+              ].map(({ label, Icon }) => (
+                <span key={label} className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-sm text-foreground/80 shadow-sm">
+                  <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
+                  {label}
+                </span>
+              ))}
+            </div>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
               <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
@@ -218,13 +246,22 @@ export default function RealEstateCRM() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary">The New Era of Real Estate Automation</h2>
           <p className="mt-4 text-muted-foreground text-lg">In real estate, speed and relationships drive every deal.</p>
           <p className="mt-3 text-muted-foreground text-lg">
-            ZeaCRM helps you work smarter — capturing leads instantly, automating follow-ups, and giving you a complete view of every project and client.
+            ZeaCRM helps you work smarter - capturing leads instantly, automating follow-ups, and giving you a complete view of every project and client.
           </p>
           <ul className="mt-8 grid sm:grid-cols-2 gap-4 text-left">
-            <li className="p-4 rounded-lg bg-muted hover:scale-105 hover:shadow-lg transition-all duration-300">Centralize all your sales, rentals, and project data.</li>
-            <li className="p-4 rounded-lg bg-muted hover:scale-105 hover:shadow-lg transition-all duration-300">Automate communication across WhatsApp, email, and SMS.</li>
-            <li className="p-4 rounded-lg bg-muted hover:scale-105 hover:shadow-lg transition-all duration-300">Predict conversions using AI-powered insights.</li>
-            <li className="p-4 rounded-lg bg-muted hover:scale-105 hover:shadow-lg transition-all duration-300">Save hours of manual work every week.</li>
+            {[
+              { text: "Centralize all your sales, rentals, and project data.", Icon: Home },
+              { text: "Automate communication across WhatsApp, email, and SMS.", Icon: PhoneCall },
+              { text: "Predict conversions using AI-powered insights.", Icon: TrendingUp },
+              { text: "Save hours of manual work every week.", Icon: Sparkles },
+            ].map(({ text, Icon }) => (
+              <li key={text} className="p-4 rounded-lg bg-muted border border-border hover:scale-105 hover:shadow-lg transition-all duration-300 flex items-start gap-3">
+                <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 border border-primary/30 text-primary">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="leading-relaxed">{text}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -234,45 +271,66 @@ export default function RealEstateCRM() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Tailored Solutions for Every Role</h2>
           <div className="mt-10 grid md:grid-cols-2 gap-6 text-left">
-            <div className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl font-semibold text-primary text-center">Builders & Developers – Automate Sales & Cash Flow</h3>
-              <ul className="mt-4 space-y-2">
-                <li className="text-center">Capture leads automatically from listings and ads</li>
-                <li className="text-center">Send virtual tours and project updates via WhatsApp</li>
-                <li className="text-center">Generate and sign digital booking forms</li>
-                <li className="text-center">Track payment milestones and due dates</li>
-              </ul>
-              <p className="mt-4 text-muted-foreground text-center">📈 Result: Faster sales cycles and smoother project cash flow</p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl font-semibold text-primary text-center">Property Managers – Simplify Tenant Operations</h3>
-              <ul className="mt-4 space-y-2">
-                <li className="text-center">Onboard tenants with automated agreements</li>
-                <li className="text-center">Send rent reminders through WhatsApp or SMS</li>
-                <li className="text-center">Manage maintenance requests and service billing</li>
-              </ul>
-              <p className="mt-4 text-muted-foreground text-center">📈 Result: Transparent operations and satisfied tenants</p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl font-semibold text-primary text-center">Brokers & Agencies – Close Deals Faster</h3>
-              <ul className="mt-4 space-y-2">
-                <li className="text-center">Import leads from property portals automatically</li>
-                <li className="text-center">Match buyers to properties using AI suggestions</li>
-                <li className="text-center">Send property details instantly via WhatsApp</li>
-              </ul>
-              <p className="mt-4 text-muted-foreground text-center">📈 Result: More conversions with less manual work</p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl font-semibold text-primary text-center">Consultants & Advisors – Manage Clients Intelligently</h3>
-              <ul className="mt-4 space-y-2">
-                <li className="text-center">Organize buyer preferences and budgets in one place</li>
-                <li className="text-center">Automate follow-ups, calls, and meeting reminders</li>
-                <li className="text-center">Assign tasks and track every client conversation</li>
-              </ul>
-              <p className="mt-4 text-muted-foreground text-center">📈 Result: Stronger relationships and better close rates</p>
-            </div>
-          </div>
-        </div>
+            {[
+              {
+                title: "Builders & Developers - Automate Sales & Cash Flow",
+                bullets: [
+                  "Capture leads automatically from listings and ads",
+                  "Send virtual tours and project updates via WhatsApp",
+                  "Generate and sign digital booking forms",
+                  "Track payment milestones and due dates",
+                ],
+                result: "Result: Faster sales cycles and smoother project cash flow",
+                Icon: Building2,
+              },
+              {
+                title: "Property Managers - Simplify Tenant Operations",
+                bullets: [
+                  "Onboard tenants with automated agreements",
+                  "Send rent reminders through WhatsApp or SMS",
+                  "Manage maintenance requests and service billing",
+                ],
+                result: "Result: Transparent operations and satisfied tenants",
+                Icon: KeyRound,
+              },
+              {
+                title: "Brokers & Agencies - Close Deals Faster",
+                bullets: [
+                  "Import leads from property portals automatically",
+                  "Match buyers to properties using AI suggestions",
+                  "Send property details instantly via WhatsApp",
+                ],
+                result: "Result: More conversions with less manual work",
+                Icon: MapPin,
+              },
+              {
+                title: "Consultants & Advisors - Manage Clients Intelligently",
+                bullets: [
+                  "Organize buyer preferences and budgets in one place",
+                  "Automate follow-ups, calls, and meeting reminders",
+                  "Assign tasks and track every client conversation",
+                ],
+                result: "Result: Stronger relationships and better close rates",
+                Icon: Users2,
+              },
+            ].map(({ title, bullets, result, Icon }) => (
+              <div key={title} className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center justify-center gap-2">
+                  <Icon className="h-6 w-6 text-primary" aria-hidden="true" />
+                  <h3 className="text-xl font-semibold text-primary text-center">{title}</h3>
+                </div>
+                <ul className="mt-4 space-y-2">
+                  {bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2 text-center justify-center">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-1" aria-hidden="true" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-muted-foreground text-center">{result}</p>
+              </div>
+            ))}
+          </div>        </div>
       </section>
 
       {/* Section 3 – One Platform, Endless Possibilities (Real Estate background) */}
@@ -289,14 +347,17 @@ export default function RealEstateCRM() {
           </p>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
             {[
-              "Real-time deal and task tracking",
-              "WhatsApp & email integrations",
-              "Auto-reminder and notification workflows",
-              "Digital documentation and e-signatures",
-              "Centralized project and payment dashboards",
-            ].map((item) => (
-              <div key={item} className="p-4 rounded-lg bg-card border border-border text-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
-                {item}
+              { text: "Real-time deal and task tracking", Icon: ClipboardCheck },
+              { text: "WhatsApp & email integrations", Icon: PhoneCall },
+              { text: "Auto-reminder and notification workflows", Icon: Sparkles },
+              { text: "Digital documentation and e-signatures", Icon: KeyRound },
+              { text: "Centralized project and payment dashboards", Icon: TrendingUp },
+            ].map(({ text, Icon }) => (
+              <div key={text} className="p-4 rounded-lg bg-card border border-border text-lg hover:scale-105 hover:shadow-lg transition-all duration-300 flex items-start gap-3">
+                <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 border border-primary/30 text-primary">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="leading-relaxed">{text}</span>
               </div>
             ))}
           </div>
@@ -326,14 +387,17 @@ export default function RealEstateCRM() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-primary text-center">Why Real Estate Teams Choose ZeaCRM</h2>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
             {[
-              ["AI-Powered Insights", "Predict conversion potential and focus on high-value leads."],
-              ["Automation-First Workflows", "Eliminate repetitive tasks and save time."],
-              ["Data Security & Compliance", "Enterprise-grade encryption and user privacy built-in."],
-              ["Industry-Ready Design", "Tailored for property sales, rentals, and management."],
-              ["Scalable Growth", "From individual agents to enterprise developers — ZeaCRM scales effortlessly."],
-            ].map(([title, desc]) => (
+              { title: "AI-Powered Insights", desc: "Predict conversion potential and focus on high-value leads.", Icon: Bot },
+              { title: "Automation-First Workflows", desc: "Eliminate repetitive tasks and save time.", Icon: Workflow },
+              { title: "Data Security & Compliance", desc: "Enterprise-grade encryption and user privacy built-in.", Icon: ShieldCheck },
+              { title: "Industry-Ready Design", desc: "Tailored for property sales, rentals, and management.", Icon: Building2 },
+              { title: "Scalable Growth", desc: "From individual agents to enterprise developers - ZeaCRM scales effortlessly.", Icon: TrendingUp },
+            ].map(({ title, desc, Icon }) => (
               <div key={title as string} className="rounded-xl border border-border bg-card p-5 hover:scale-105 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-xl font-semibold text-primary text-center">{title as string}</h3>
+                <div className="flex items-center justify-center gap-2">
+                  <Icon className="h-6 w-6 text-primary" aria-hidden="true" />
+                  <h3 className="text-xl font-semibold text-primary text-center">{title as string}</h3>
+                </div>
                 <p className="mt-2 text-lg text-muted-foreground">{desc as string}</p>
               </div>
             ))}
@@ -358,7 +422,12 @@ export default function RealEstateCRM() {
             "Real Estate Investors",
             "Housing Societies",
           ].map((item) => (
-            <li key={item} className="p-4 rounded-lg bg-muted border border-border hover:scale-105 hover:shadow-lg transition-all duration-300">{item}</li>
+            <li key={item} className="p-4 rounded-lg bg-muted border border-border hover:scale-105 hover:shadow-lg transition-all duration-300 flex items-center gap-3">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/15 border border-primary/30 text-primary">
+                <Home className="h-4 w-4" aria-hidden="true" />
+              </span>
+              <span>{item}</span>
+            </li>
           ))}
         </ul>
       </section>
