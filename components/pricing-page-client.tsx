@@ -1,7 +1,7 @@
 "use client"
 
+import React, { useState } from "react"
 import { Check, ChevronDown, BadgeCheck, Scale, TrendingUp, X } from "lucide-react"
-import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -23,7 +23,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
     plan: "Standard",
     message: "",
     subscriber: false,
-    subscribed: null as string | null,
+    subscribed: "tac agreed" as string,
     terms: false,
   })
 
@@ -34,20 +34,38 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
   }
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const target = e.target as HTMLInputElement
-    const { name, value, type, checked } = target
+    const target = e.target
+
+    if (target instanceof HTMLInputElement) {
+      if (target.type === "checkbox") {
+        const { name, checked } = target
+        setFormData((prev) => ({
+          ...prev,
+          [name]: checked,
+          ...(name === "subscriber" ? { subscribed: checked ? "subscriber" : "tac agreed" } : {}),
+        }))
+        return
+      }
+
+      const { name, value } = target
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }))
+      return
+    }
+
+    const { name, value } = target as HTMLTextAreaElement | HTMLSelectElement
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
-      ...(name === "subscriber" ? { subscribed: checked ? "tac agreed" : null } : {}),
+      [name]: value,
     }))
   }
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      await fetch("https://n8n.urlfactory.website/webhook/Zeacrm-1pricing", {
-      // await fetch("https://n8n.urlfactory.website/webhook-test/Zeacrm-1pricing", {
+      await fetch("https://n8n.urlfactory.website/webhook-test/Zeacrm-1pricing", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

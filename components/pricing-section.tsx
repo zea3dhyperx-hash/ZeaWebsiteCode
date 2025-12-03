@@ -1,7 +1,9 @@
-"use client"
+﻿"use client"
 
-import { Check } from "lucide-react"
-import { useState } from "react"
+import React, { useState } from "react"
+import { Check, X } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
 
 type Currency = "USD" | "INR"
 
@@ -72,11 +74,74 @@ const pricingPlans = [
 
 export function PricingSection() {
   const [currency, setCurrency] = useState<Currency>("USD")
-  const currencySymbol = currency === "INR" ? "₹" : "$"
+  const [showForm, setShowForm] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    company: "",
+    plan: "Standard",
+    message: "",
+    subscriber: false,
+    subscribed: "tac agreed" as string,
+    terms: false,
+  })
+
+  const handleOpenForm = (plan: "Standard" | "Pro") => {
+    setFormData((prev) => ({ ...prev, plan }))
+    setSubmitted(false)
+    setShowForm(true)
+  }
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const target = e.target
+
+    if (target instanceof HTMLInputElement) {
+      if (target.type === "checkbox") {
+        const { name, checked } = target
+        setFormData((prev) => ({
+          ...prev,
+          [name]: checked,
+          ...(name === "subscriber" ? { subscribed: checked ? "subscriber" : "tac agreed" } : {}),
+        }))
+        return
+      }
+
+      const { name, value } = target
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }))
+      return
+    }
+
+    const { name, value } = target as HTMLTextAreaElement | HTMLSelectElement
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    try {
+      await fetch("https://n8n.urlfactory.website/webhook-test/Zeacrm-1pricing", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+    } catch (err) {
+      console.error("Pricing webhook failed", err)
+    } finally {
+      setSubmitted(true)
+    }
+  }
+  const currencySymbol = currency === "INR" ? "INR" : "$"
 
   return (
-    <section className="bg-black py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <section className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-2">PRICING</h2>
@@ -138,7 +203,7 @@ export function PricingSection() {
                   return (
                     <li key={featureIndex} className="flex items-start gap-3">
                       {showAsUnavailable ? (
-                        <span className="w-5 h-5 mt-0.5 flex items-center justify-center text-red-500">✕</span>
+                        <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                       ) : (
                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       )}
@@ -150,14 +215,146 @@ export function PricingSection() {
 
               {/* Button */}
               <div className="flex justify-center">
-                <button className={`px-6 py-3 rounded-lg font-semibold transition-all text-center ${plan.buttonStyle}`}>
+                <button
+                  className={`px-6 py-3 rounded-lg font-semibold transition-all text-center ${plan.buttonStyle}`}
+                  onClick={() => handleOpenForm(plan.name === "Pro" ? "Pro" : "Standard")}
+                >
                   {plan.buttonText}
                 </button>
               </div>
             </div>
           ))}
         </div>
+        </div>
+      </section>
+
+      {/* Pricing Form Modal */}
+      {showForm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4">
+          <div className="relative w-full max-w-3xl rounded-2xl border border-primary bg-gray-950 p-6 shadow-2xl">
+          <button
+            aria-label="Close"
+            className="absolute right-4 top-4 text-primary hover:text-amber-200"
+            onClick={() => setShowForm(false)}
+          >
+            <X className="h-6 w-6" />
+          </button>
+          {submitted ? (
+            <div className="flex flex-col items-center text-center space-y-4 py-6">
+              <Image src="/form-image.jpg" alt="Thank you" width={420} height={320} className="rounded-lg" />
+              <h3 className="text-xl font-semibold text-foreground">Thank you!</h3>
+              <p className="text-sm text-muted-foreground max-w-md">
+                We&apos;ve received your request for {formData.plan} pricing. Our team will reach out with tailored details shortly.
+              </p>
+            </div>
+          ) : (
+            <form className="space-y-4" onSubmit={handleFormSubmit}>
+              <div className="space-y-1 text-center">
+                <h3 className="text-2xl font-bold text-white">Get Your ZeaCRM Pricing</h3>
+                <p className="text-sm text-muted-foreground">
+                  Choose your plan - Standard or Pro - and get a tailored quote instantly.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Full Name*</label>
+                  <input
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Plan Interested In*</label>
+                  <select
+                    name="plan"
+                    value={formData.plan}
+                    onChange={handleFormChange}
+                    className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <option value="Standard">Standard</option>
+                    <option value="Pro">Pro</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Business Email*</label>
+                  <input
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="you@company.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Message / Requirements (optional)</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleFormChange}
+                    className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white min-h-[90px] focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Tell us if you have specific requirements"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Company Name (optional)</label>
+                  <input
+                    name="company"
+                    value={formData.company}
+                    onChange={handleFormChange}
+                    className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Your Company"
+                  />
+                </div>
+                <div className="flex items-center gap-2 md:col-span-2">
+                  <input
+                    name="subscriber"
+                    type="checkbox"
+                    checked={formData.subscriber}
+                    onChange={handleFormChange}
+                    className="h-4 w-4 rounded border border-border bg-gray-900 text-primary focus:ring-primary"
+                  />
+                  <span className="text-sm text-muted-foreground">
+                    I agree to receive communications from{" "}
+                    <Link href="/" target="_blank" rel="noreferrer" className="text-amber-400 underline">
+                      ZeaCRM
+                    </Link>
+                    .
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 md:col-span-2">
+                  <input
+                    name="terms"
+                    type="checkbox"
+                    required
+                    onChange={handleFormChange}
+                    className="h-4 w-4 rounded border border-border bg-gray-900 text-primary focus:ring-primary"
+                  />
+                  <span className="text-sm text-muted-foreground">
+                    I agree to the{" "}
+                    <Link href="/terms-of-service" target="_blank" rel="noreferrer" className="text-amber-400 underline">
+                      Terms &amp; Conditions
+                    </Link>
+                    .
+                  </span>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="w-full rounded-lg bg-primary px-4 py-3 font-semibold text-black hover:bg-amber-500 transition-colors"
+              >
+                Get Pricing
+              </button>
+            </form>
+          )}
+        </div>
       </div>
-    </section>
+      )}
+    </>
   )
 }
