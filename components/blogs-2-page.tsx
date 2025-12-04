@@ -108,7 +108,7 @@ export function Blogs2Page() {
 
         {/* Category + Author Filters */}
         {/* <section className="py-8 px-4 md:px-8 border-b border-border">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="flex flex-wrap gap-2 mb-3">
               {categories.map((category, i) => (
                 <button
@@ -155,21 +155,30 @@ export function Blogs2Page() {
                 {filteredArticles.map((article, i) => (
                   <article
                     key={article.id}
-                    className="flex gap-4 pb-8 border-b border-border last:border-b-0 hover:translate-x-1 transition-transform duration-300 animate-fade-in"
+                    className="bg-card w-85 border border-border rounded-lg overflow-hidden hover:shadow-lg hover:border-primary transition-all duration-300 animate-fade-in"
                     style={{ animationDelay: `${i * 50}ms` }}
                   >
-                    <img
-                      src={article.image || "/placeholder.svg"}
-                      alt={article.title}
-                      className="w-24 h-24 rounded-lg object-cover flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <div className="text-xs text-muted-foreground mb-2">{article.date}</div>
-                      <h3 className="text-lg font-bold text-foreground mb-2">{article.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{article.excerpt}</p>
+                    <Link href={(article as any).htmlPath || "#"} className="block">
+                      <img
+                        src={article.image || "/placeholder.svg"}
+                        alt={article.title}
+                        className="w-full h-48 object-cover"
+                      />
+                    </Link>
+                    <div className="p-5 space-y-3">
+                      <div className="flex items-center justify-between text-xs text-muted-foreground">
+                        <span>{article.date}</span>
+                        <span className="px-3 py-1 rounded-full border border-border text-[11px]">
+                          {article.category}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground">{article.title}</h3>
+                      <p className="text-base text-muted-foreground leading-6">
+                        {`${article.excerpt} Built for the way your team operates—unified communication, automation, and insights that keep deals moving. Focus on relationships, not admin. Smarter follow-ups, clearer pipeline visibility, and faster response times so every lead gets the attention it deserves.`}
+                      </p>
                       <Link
                         href={(article as any).htmlPath || "#"}
-                        className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
                       >
                         Read More →
                       </Link>
@@ -211,7 +220,7 @@ export function Blogs2Page() {
                     <h3 className="text-xl font-bold text-foreground mb-3">{article.title}</h3>
                     <p className="text-muted-foreground mb-4">{article.excerpt}</p>
                     <Link href={(article as any).htmlPath || "#"} className="text-primary hover:text-primary/80 font-semibold transition-colors">
-                      Read More →
+                      Read More
                     </Link>
                   </div>
                 </article>

@@ -157,10 +157,10 @@ export default function BlogPage() {
             {
               type: "list",
               items: [
-                "	✅ 60–70 % less manual work",
-                "	✅ 40 % faster lead response",
-                "	✅ 2× higher conversion rates",
-                "	✅ 100 % visibility across departments",
+                "	60–70 % less manual work",
+                "	40 % faster lead response",
+                "	2× higher conversion rates",
+                "	100 % visibility across departments",
               ],
             },
             {
