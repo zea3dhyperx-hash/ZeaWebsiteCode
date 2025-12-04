@@ -70,12 +70,12 @@ export function HeroSection() {
       </div> */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:col-span-7">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-                ZeaCRM: Smarter Relationships, Stronger Results
+                Smarter Relationships, Stronger Results
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Manage leads, automate sales, and turn conversations into conversions all from one intelligent platform. ZeaCRM helps growing businesses simplify customer management, automate routine tasks, and close deals faster with the power of AI.
@@ -101,7 +101,7 @@ export function HeroSection() {
             
           </div>
           {/* Right Visual: Bot SVG */}
-          <div className="scale-120 relative h-96 h-full items-center justify-center">
+          <div className="scale-120 relative h-96 h-full items-center justify-center lg:col-span-5">
             <div className="rounded-xl p-0 scale-70 object-contain bg-card overflow-hidden">
                 <video
                   src="/videos/hero1.mp4"

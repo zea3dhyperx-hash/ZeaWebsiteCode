@@ -18,12 +18,25 @@ export function DemoForm({ isOpen, onClose }: DemoFormProps) {
     company: "",
     phone: "",
     message: "",
+    communicationConsent: false,
+    agreement: false,
+    subscribe: "tac agreed",
   })
 
   if (!isOpen) return null
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+    const target = e.target
+    if (target instanceof HTMLInputElement && target.type === "checkbox") {
+      const { name, checked } = target
+      setFormData((prev) => ({
+        ...prev,
+        [name]: checked,
+        ...(name === "communicationConsent" ? { subscribe: checked ? "subscriber" : "tac agreed" } : {}),
+      }))
+      return
+    }
+    const { name, value } = target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
@@ -31,11 +44,19 @@ export function DemoForm({ isOpen, onClose }: DemoFormProps) {
     e.preventDefault()
     try {
       setSubmitError(false)
+      const payload = {
+        ...formData,
+        subscribe: formData.communicationConsent ? "subscriber" : "tac agreed",
+      }
       await fetch("https://n8n.urlfactory.website/webhook/Zeacrm-Demo", {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as Record<string, string>),
+        body: new URLSearchParams(
+          Object.fromEntries(
+            Object.entries(payload).map(([key, value]) => [key, typeof value === "boolean" ? String(value) : (value ?? "")])
+          ),
+        ),
       })
     } catch (err) {
       console.error("Demo webhook failed", err)
@@ -136,6 +157,31 @@ export function DemoForm({ isOpen, onClose }: DemoFormProps) {
                   placeholder="CRM features, automation, integrations, pricing, etc."
                 />
               </div>
+            </div>
+            <div className="space-y-2">
+              <label className="flex items-start gap-2 text-sm text-gray-300">
+                <input
+                  type="checkbox"
+                  name="communicationConsent"
+                  checked={formData.communicationConsent}
+                  onChange={handleChange}
+                  className="mt-1 h-4 w-4 rounded border border-gray-700 bg-gray-900 text-amber-400 focus:ring-amber-400"
+                />
+                <span>I agree to receive communications about ZeaCRM updates and offers.</span>
+              </label>
+              <label className="flex items-start gap-2 text-sm text-gray-300">
+                <input
+                  type="checkbox"
+                  name="agreement"
+                  checked={formData.agreement}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 h-4 w-4 rounded border border-gray-700 bg-gray-900 text-amber-400 focus:ring-amber-400"
+                />
+                <span>
+                  I agree to the <a href="/terms-of-service" className="text-amber-300 underline">Terms &amp; Conditions</a>.
+                </span>
+              </label>
             </div>
             <button
               type="submit"

@@ -25,13 +25,28 @@ export default function ContactUsPage() {
     scheduleTime: "",
 
     comments: "",
+    communicationConsent: false,
+    agreement: false,
+    subscribe: "tac agreed",
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
+    const target = e.target
+
+    if (target instanceof HTMLInputElement && target.type === "checkbox") {
+      const { name, checked } = target
+      setFormData((prev) => ({
+        ...prev,
+        [name]: checked,
+        ...(name === "communicationConsent" ? { subscribe: checked ? "subscriber" : "tac agreed" } : {}),
+      }))
+      return
+    }
+
+    const { name, value } = target
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -45,9 +60,14 @@ export default function ContactUsPage() {
     setSubmitted(false)
     setSubmitError(false)
     try {
-      const body = new URLSearchParams()
-      Object.entries(formData).forEach(([key, value]) => body.append(key, value ?? ""))
-
+      const body = new URLSearchParams(
+        Object.fromEntries(
+          Object.entries(formData).map(([key, value]) => [
+            key,
+            typeof value === "boolean" ? String(value) : (value ?? ""),
+          ])
+        )
+      )
       await fetch("https://n8n.urlfactory.website/webhook/Zeacrm-contacts", {
         method: "POST",
         mode: "no-cors",
@@ -257,6 +277,32 @@ export default function ContactUsPage() {
                             placeholder="Tell us more about your needs"
                           />
                         </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="flex items-start gap-2 text-sm text-gray-300">
+                          <input
+                            type="checkbox"
+                            name="communicationConsent"
+                            checked={formData.communicationConsent}
+                            onChange={handleChange}
+                            className="mt-1 h-4 w-4 rounded border border-gray-700 bg-gray-900 text-amber-400 focus:ring-amber-400"
+                          />
+                          <span>I agree to receive communications about ZeaCRM updates and offers.</span>
+                        </label>
+                        <label className="flex items-start gap-2 text-sm text-gray-300">
+                          <input
+                            type="checkbox"
+                            name="agreement"
+                            checked={formData.agreement}
+                            onChange={handleChange}
+                            required
+                            className="mt-1 h-4 w-4 rounded border border-gray-700 bg-gray-900 text-amber-400 focus:ring-amber-400"
+                          />
+                          <span>
+                            I agree to the <a href="/terms-of-service" className="text-amber-300 underline">Terms &amp; Conditions</a>.
+                          </span>
+                        </label>
                       </div>
 
                       <p className="text-xs text-gray-400">
