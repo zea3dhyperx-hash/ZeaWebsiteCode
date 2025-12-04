@@ -29,7 +29,7 @@ const features: Feature[] = [
 
 export default function ComparisonTable() {
   return (
-    <main className="min-h-screen bg-primary px-4 pb-12">
+    <section className="pb-16 pt-2 md:pb-24 bg-primary px-4">
       <div className="max-w-7xl mx-auto sm:px-6 md:px-[80px] lg:px-[150px]">
         {/* Header */}
         {/* <div className="mb-12 text-center">
@@ -95,6 +95,6 @@ export default function ComparisonTable() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   )
 }

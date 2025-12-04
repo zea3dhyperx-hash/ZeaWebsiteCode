@@ -28,9 +28,9 @@ export function HeroSection() {
 
   return (
     // <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden pt-20 pb-20">
-    <section className="relative min-h-screen overflow-hidden pt-20 pb-20">
+    <section className="relative overflow-hidden pt-6 pb-20">
       {/* Animated background particles */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute w-1 h-1 bg-white rounded-full opacity-30 animate-pulse"
           style={{ top: "10%", left: "10%" }}
@@ -51,10 +51,10 @@ export function HeroSection() {
           className="absolute w-1 h-1 bg-white rounded-full opacity-30 animate-pulse"
           style={{ top: "40%", left: "50%", animationDelay: "0.5s" }}
         ></div>
-      </div>
+      </div> */}
 
       {/* Tech visualization background */}
-      <div className="absolute inset-0 opacity-20">
+      {/* <div className="absolute inset-0 opacity-20">
         <svg className="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -67,7 +67,7 @@ export function HeroSection() {
           <circle cx="300" cy="200" r="2" fill="#3b82f6" opacity="0.4" />
           <circle cx="700" cy="280" r="2" fill="#3b82f6" opacity="0.4" />
         </svg>
-      </div>
+      </div> */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
