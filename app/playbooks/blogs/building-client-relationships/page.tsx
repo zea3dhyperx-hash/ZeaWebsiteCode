@@ -9,7 +9,7 @@ import React from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import ChatWidget from "@/components/chatbot"
-import GhlCalendar from "@/components/GhlCalendar"
+import { BlogDemoForm } from "@/components/blog-demo-form"
 // import { RelatedBlogs } from "@/components/related-blogs" // optional
 
 // export const metadata = {
@@ -222,8 +222,8 @@ export default function BlogPage() {
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-16 lg:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start">
           {/* === MAIN CONTENT === */}
-          <div className="w-full min-w-0 lg:flex-1">
-            <div className="max-w-4xl">
+          <div className="w-full min-w-0 lg:flex-[2]">
+            <div className="max-w-none">
               <BlogHeader
                 tag={blogData.tag}
                 title={blogData.title}
@@ -251,10 +251,10 @@ export default function BlogPage() {
               {/* FAQ Section (independent, bottom) */}
               <FAQ
                 items={[
-                  { q: "1️⃣ What makes Zea CRM different?", a: "It focuses on real connections — not just contacts — combining automation, communication, and AI to help teams work smarter." },
-                  { q: "2️⃣ Is Zea CRM good for small businesses?", a: "Yes! Zea CRM scales easily, making it perfect for startups, growing teams, and enterprises alike." },
-                  { q: "3️⃣ Does Zea CRM support multiple communication channels?", a: "Yes, you can manage emails, calls, WhatsApp, and chats — all from one dashboard." },
-                  { q: "4️⃣ How soon will I see results?", a: "Most users notice faster follow-ups and smoother workflows within the first few weeks." },
+                  { q: " What makes Zea CRM different?", a: "It focuses on real connections — not just contacts — combining automation, communication, and AI to help teams work smarter." },
+                  { q: " Is Zea CRM good for small businesses?", a: "Yes! Zea CRM scales easily, making it perfect for startups, growing teams, and enterprises alike." },
+                  { q: " Does Zea CRM support multiple communication channels?", a: "Yes, you can manage emails, calls, WhatsApp, and chats — all from one dashboard." },
+                  { q: " How soon will I see results?", a: "Most users notice faster follow-ups and smoother workflows within the first few weeks." },
                 ]}
               />
               {/* <BlogFooter author={blogData.author} /> */}
@@ -264,15 +264,19 @@ export default function BlogPage() {
             </div>
           </div>
 
-          {/* === SIDEBAR: CALENDAR ABOVE TOC (sticky) === */}
+          {/* === SIDEBAR:Form ABOVE TOC (sticky) === */}
 
-          <aside className="w-full lg:w-[380px] xl:w-[420px]">
-            <div className="space-y-6 lg:sticky lg:top-24">
-              <div className="rounded-lg border border-border p-4 md:p-5">
-                <h3 className="text-base font-semibold mb-3">Watch Demo Video</h3>
-                <GhlCalendar />
+          <aside className="w-full lg:w-[320px] xl:w-[360px] lg:sticky lg:top-16 lg:max-h-[80vh] overflow-y-auto scrollbar-hide">
+            <div className="space-y-6 px-1 pb-4">
+              <div className="w-full max-w-80 mx-auto">
+                <BlogDemoForm
+                  blogLink="/playbooks/blogs/building-client-relationships"
+                  blogTitle={blogData.title}
+                />
               </div>
-              {/* <TableOfContents sections={blogData.content.sections} /> */}
+              <div className="w-full max-w-80 mx-auto">
+                <TableOfContents sections={blogData.content.sections} />
+              </div>
             </div>
           </aside>
         </div>

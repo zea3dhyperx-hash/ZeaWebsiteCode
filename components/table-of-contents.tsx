@@ -31,12 +31,12 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
   useEffect(() => {
     const handleScroll = () => {
       const headings = document.querySelectorAll("h2, h1")
-      let current = ""
+      let current = activeId
 
       headings.forEach((heading) => {
         const rect = heading.getBoundingClientRect()
-        if (rect.top < 100) {
-          current = heading.id || ""
+        if (rect.top < 120) {
+          current = heading.id || current
         }
       })
 
@@ -45,21 +45,27 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [activeId])
 
   const handleScrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      const headerOffset = 96
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY
+      const offsetPosition = elementPosition - headerOffset
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" })
       setActiveId(id)
     }
   }
 
   return (
-    <aside className="sticky top-8 hidden h-fit w-64 lg:block">
-      <div className="rounded-lg border border-border bg-card p-6">
+    <aside className="sticky top-8 hidden h-fit w-80 lg:block">
+      <div className="rounded-lg border border-border bg-card p-6 shadow-md">
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-sm font-semibold text-foreground">Table of Contents</h3>
+          <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
+            <span className="inline-flex h-2 w-2 rounded-full bg-primary" aria-hidden />
+            Table of Contents
+          </h3>
           <button
             onClick={() => setIsVisible(!isVisible)}
             className="text-xs text-muted-foreground hover:text-foreground transition-colors"
@@ -70,19 +76,27 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
 
         {isVisible && (
           <nav className="space-y-2">
-            {tocItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleScrollToSection(item.id)}
-                className={`block w-full text-left text-sm transition-all duration-200 ${
-                  activeId === item.id
-                    ? "border-l-2 border-primary pl-3 font-semibold text-primary"
-                    : "border-l-2 border-transparent pl-3 text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {item.title}
-              </button>
-            ))}
+            {tocItems.map((item) => {
+              const isActive = activeId === item.id
+              return (
+                <button
+                  type="button"
+                  key={item.id}
+                  onClick={() => handleScrollToSection(item.id)}
+                  className={`flex items-center gap-2 w-full text-left text-sm transition-all duration-200 ${
+                    isActive
+                      ? "border-l-2 border-primary pl-3 font-semibold text-primary"
+                      : "border-l-2 border-transparent pl-3 text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className={`h-2 w-2 rounded-full ${isActive ? "bg-primary" : "bg-muted-foreground/60"}`}
+                  />
+                  <span>{item.title}</span>
+                </button>
+              )
+            })}
           </nav>
         )}
 

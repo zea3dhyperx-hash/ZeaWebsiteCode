@@ -8,12 +8,29 @@ import { useState } from "react"
 import Image from "next/image"
 
 export function Footer() {
+  const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
+  const [subscribed, setSubscribed] = useState(false)
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle newsletter subscription
-    setEmail("")
+    try {
+      const body = new URLSearchParams()
+      body.append("fullName", fullName)
+      body.append("email", email)
+      await fetch("https://n8n.urlfactory.website/webhook/ZeaCRM-Subscribe", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      })
+    } catch (err) {
+      console.error("Subscription webhook failed", err)
+    } finally {
+      setFullName("")
+      setEmail("")
+      setSubscribed(true)
+    }
   }
 
   return (
@@ -23,14 +40,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="zeaCRM logo"
-                width={120}
-                height={32}
-                priority
-                className="h-8 w-auto"
-              />
+              <Image src="/logo.png" alt="zeaCRM logo" width={120} height={32} priority className="h-8 w-auto" />
             </div>
             <p className="text-sm text-gray-400">
               ZeaCRM is an AI-powered CRM platform built for all industries — from healthcare to real estate, retail,
@@ -101,13 +111,22 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-white">FOLLOW US</h4>
             <div className="flex gap-4 mb-6">
-              <a href="https://www.facebook.com/people/ZEA-CRM/61580373855637/" className="text-gray-400 hover:text-amber-400 transition-colors">
+              <a
+                href="https://www.facebook.com/people/ZEA-CRM/61580373855637/"
+                className="text-gray-400 hover:text-amber-400 transition-colors"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="https://www.instagram.com/zea_crm_official?igsh=ODhhODdwZjA5ZmYx" className="text-gray-400 hover:text-amber-400 transition-colors">
+              <a
+                href="https://www.instagram.com/zea_crm_official?igsh=ODhhODdwZjA5ZmYx"
+                className="text-gray-400 hover:text-amber-400 transition-colors"
+              >
                 <Instagram size={20} />
               </a>
-              <a href="https://linkedin.com/company/zea-crm" className="text-gray-400 hover:text-amber-400 transition-colors">
+              <a
+                href="https://linkedin.com/company/zea-crm"
+                className="text-gray-400 hover:text-amber-400 transition-colors"
+              >
                 <Linkedin size={20} />
               </a>
               <a href="https://www.youtube.com/@ZEACRM" className="text-gray-400 hover:text-amber-400 transition-colors">
@@ -116,30 +135,50 @@ export function Footer() {
             </div>
 
             <div className="space-y-2">
-              <p className="text-sm font-semibold text-white">Subscribe for product updates and automation tips.</p>
-              <form onSubmit={handleSubscribe} className="gap-2">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 my-2 rounded text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-amber-400 text-slate-950 rounded font-semibold text-sm hover:bg-amber-500 transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
+              {subscribed ? (
+                <p className="text-sm text-amber-300 font-semibold mt-2">
+                  🎉✨ Thanks for subscribing! We&apos;re excited to share new product updates and helpful tips with you soon. 💌🚀
+                </p>
+              ) : (
+                <form onSubmit={handleSubscribe} className="gap-2">
+                  <p className="text-sm font-semibold text-white">Subscribe for product updates and automation tips.</p>
+                  <input
+                    type="text"
+                    placeholder="Full name"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 my-2 rounded text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 my-2 rounded text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-amber-400 text-slate-950 rounded font-semibold text-sm hover:bg-amber-500 transition-colors"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="border-t border-slate-800 pt-8 text-center text-sm text-gray-500">
-          <p>© 2025 ZeaCRM | Powered by <a href="https://url-factory.com/" className="text-gray-300 hover:text-amber-400 transition-colors">URL-Factory</a> | All rights reserved</p>
+          <p>
+            Ac 2025 ZeaCRM | Powered by{" "}
+            <a href="https://url-factory.com/" className="text-gray-300 hover:text-amber-400 transition-colors">
+              URL-Factory
+            </a>{" "}
+            | All rights reserved
+          </p>
         </div>
       </div>
     </footer>

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { SignInModal } from "./sign-in-modal"
 import { GetStartedModal } from "./get-started-modal"
+import { DemoForm } from "./demo-form"
 import Image from "next/image"
 
 
@@ -23,6 +24,7 @@ export function Header() {
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false)
   const [isSignInOpen, setIsSignInOpen] = useState(false)
   const [isGetStartedOpen, setIsGetStartedOpen] = useState(false)
+  const [isDemoOpen, setIsDemoOpen] = useState(false)
   const pathname = usePathname()
 
   const isActive = (href: string) => {
@@ -251,10 +253,10 @@ export function Header() {
               <a href="https://app.zeacrm.com/">Login to App</a>
             </Button>
             <Button
-              // onClick={() => setIsGetStartedOpen(true)}
+              onClick={() => setIsDemoOpen(true)}
               className="bg-primary  hover:scale-110 text-black font-semibold transition-all duration-300 "
             >
-              <a href="/demo">Book a Demo</a>
+              Book a Demo
             </Button>
           </div>
 
@@ -359,8 +361,12 @@ export function Header() {
                   //   setIsOpen(false)
                   // }}
                   className="w-full bg-primary text-black font-semibold"
+                  onClick={() => {
+                    setIsDemoOpen(true)
+                    setIsOpen(false)
+                  }}
                 >
-                  <a href="/get-started">Get Started</a>
+                  Book a Demo
                 </Button>
               </div>
             </div>
@@ -370,6 +376,7 @@ export function Header() {
 
       <SignInModal isOpen={isSignInOpen} onClose={() => setIsSignInOpen(false)} />
       <GetStartedModal isOpen={isGetStartedOpen} onClose={() => setIsGetStartedOpen(false)} />
+      <DemoForm isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
     </>
   )
 }
