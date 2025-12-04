@@ -73,7 +73,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
     Object.entries(payload).forEach(([key, value]) => body.append(key, value == null ? "" : String(value)))
     try {
       setSubmitError(false)
-      await fetch("https://n8n.urlfactory.website/webhook-test/Zeacrm-1pricing", {
+      await fetch("https://n8n.urlfactory.website/webhook/Zeacrm-1pricing", {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
