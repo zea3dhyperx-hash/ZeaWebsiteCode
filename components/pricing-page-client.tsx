@@ -16,6 +16,8 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
   const [currency, setCurrency] = useState<Currency>(initialCountry?.toUpperCase() === "IN" ? "INR" : "USD")
   const [showForm, setShowForm] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [showEnterpriseForm, setShowEnterpriseForm] = useState(false)
+  const [enterpriseSubmitted, setEnterpriseSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState(false)
   const [formData, setFormData] = useState({
     fullName: "",
@@ -27,11 +29,33 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
     subscribed: "tac agreed" as string,
     terms: false,
   })
+  const [enterpriseFormData, setEnterpriseFormData] = useState({
+    fullName: "",
+    email: "",
+    company: "",
+    phone: "",
+    teamSize: "",
+    message: "",
+    subscriber: false,
+    subscribed: "tac agreed" as string,
+    terms: false,
+  })
+  const autofillReset: React.CSSProperties = {
+    WebkitBoxShadow: "0 0 0 1000px #0f172a inset",
+    boxShadow: "0 0 0 1000px #0f172a inset",
+    WebkitTextFillColor: "#fff",
+  }
 
   const handleOpenForm = (plan: "Standard" | "Pro") => {
     setFormData((prev) => ({ ...prev, plan }))
     setSubmitted(false)
     setShowForm(true)
+  }
+
+  const handleOpenEnterpriseForm = () => {
+    setEnterpriseFormData((prev) => ({ ...prev }))
+    setEnterpriseSubmitted(false)
+    setShowEnterpriseForm(true)
   }
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -63,6 +87,35 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
     }))
   }
 
+  const handleEnterpriseFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const target = e.target
+
+    if (target instanceof HTMLInputElement) {
+      if (target.type === "checkbox") {
+        const { name, checked } = target
+        setEnterpriseFormData((prev) => ({
+          ...prev,
+          [name]: checked,
+          ...(name === "subscriber" ? { subscribed: checked ? "subscriber" : "tac agreed" } : {}),
+        }))
+        return
+      }
+
+      const { name, value } = target
+      setEnterpriseFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }))
+      return
+    }
+
+    const { name, value } = target as HTMLTextAreaElement | HTMLSelectElement
+    setEnterpriseFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const payload = {
@@ -84,6 +137,32 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       setSubmitError(true)
     } finally {
       setSubmitted(true)
+    }
+  }
+
+  const handleEnterpriseFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const payload = {
+      ...enterpriseFormData,
+      plan: "Enterprise",
+      subscribed: enterpriseFormData.subscriber ? "subscriber" : "tac agreed",
+    }
+    const body = new URLSearchParams()
+    Object.entries(payload).forEach(([key, value]) => body.append(key, value == null ? "" : String(value)))
+    try {
+      setSubmitError(false)
+      // await fetch("https://n8n.urlfactory.website/webhook-test/Zeacrm-2pricing", {
+      await fetch("https://n8n.urlfactory.website/webhook/Zeacrm-2pricing", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      })
+    } catch (err) {
+      console.error("Pricing webhook failed", err)
+      setSubmitError(true)
+    } finally {
+      setEnterpriseSubmitted(true)
     }
   }
 
@@ -146,7 +225,6 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       buttonText: "Talk to Sales",
       buttonStyle: "bg-transparent border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black",
       highlighted: false,
-      href: "/contact-us",
     },
   ]
 
@@ -254,21 +332,16 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                   })}
                 </ul>
 
-                {plan.href ? (
-                  <Link
-                    href={plan.href}
-                    className={`w-full py-3 px-4 rounded-lg font-semibold transition-all block text-center ${plan.buttonStyle}`}
-                  >
-                    {plan.buttonText}
-                  </Link>
-                ) : (
-                  <button
-                    className={`w-full py-3 px-4 rounded-lg font-semibold transition-all ${plan.buttonStyle}`}
-                    onClick={() => handleOpenForm(plan.name === "Pro" ? "Pro" : "Standard")}
-                  >
-                    {plan.buttonText}
-                  </button>
-                )}
+                <button
+                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-all ${plan.buttonStyle}`}
+                  onClick={() =>
+                    plan.name === "Enterprise"
+                      ? handleOpenEnterpriseForm()
+                      : handleOpenForm(plan.name === "Pro" ? "Pro" : "Standard")
+                  }
+                >
+                  {plan.buttonText}
+                </button>
               </div>
             ))}
           </div>
@@ -388,6 +461,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                     onChange={handleFormChange}
                     required
                     className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                    style={autofillReset}
                     placeholder="Your Name"
                   />
                 </div>
@@ -398,6 +472,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                     value={formData.plan}
                     onChange={handleFormChange}
                     className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                    style={autofillReset}
                   >
                     <option value="Standard">Standard</option>
                     <option value="Pro">Pro</option>
@@ -412,6 +487,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                     onChange={handleFormChange}
                     required
                     className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                    style={autofillReset}
                     placeholder="you@company.com"
                   />
                 </div>
@@ -422,6 +498,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                     value={formData.message}
                     onChange={handleFormChange}
                     className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white min-h-[90px] focus:outline-none focus:ring-2 focus:ring-amber-400"
+                    style={autofillReset}
                     placeholder="Tell us if you have specific requirements"
                   />
                 </div>
@@ -432,6 +509,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                     value={formData.company}
                     onChange={handleFormChange}
                     className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                    style={autofillReset}
                     placeholder="Your Company"
                   />
                 </div>
@@ -473,6 +551,162 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                 className="w-full rounded-lg bg-amber-400 px-4 py-3 font-semibold text-black hover:bg-amber-500 transition-colors"
               >
                 Get Pricing
+              </button>
+              {submitError && (
+                <p className="text-sm text-red-400 text-center">
+                  We couldn&apos;t reach the server right now, but your request was captured.
+                </p>
+              )}
+            </form>
+          )}
+        </div>
+      </div>
+    )}
+
+    {/* Enterprise Form Modal */}
+    {showEnterpriseForm && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4">
+        <div className="relative w-full max-w-3xl rounded-2xl border border-amber-300 bg-gray-900 p-6 shadow-2xl">
+          <button
+            aria-label="Close"
+            className="absolute right-4 top-4 text-amber-300 hover:text-white"
+            onClick={() => setShowEnterpriseForm(false)}
+          >
+            <X className="h-6 w-6" />
+          </button>
+          {enterpriseSubmitted ? (
+            <div className="flex flex-col items-center text-center space-y-4 py-6">
+              <Image src="/form-image.jpg" alt="Thank you" width={420} height={320} className="rounded-lg" />
+              <h3 className="text-xl font-semibold text-foreground">Thank you!</h3>
+              <p className="text-sm text-muted-foreground max-w-md">
+                We&apos;ve received your Enterprise request. Our sales team will reach out with tailored options shortly.
+              </p>
+            </div>
+          ) : (
+            <form className="space-y-4" onSubmit={handleEnterpriseFormSubmit}>
+              <div className="space-y-1 text-center">
+                <h3 className="text-2xl font-bold text-white">Talk to Sales - Enterprise</h3>
+                <p className="text-sm text-muted-foreground">
+                  Tell us about your organization so we can craft the right Enterprise plan for you.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Full Name*</label>
+                  <input
+                    name="fullName"
+                    value={enterpriseFormData.fullName}
+                    onChange={handleEnterpriseFormChange}
+                    required
+                    className="w-full rounded-lg border border-border bg-gray-950 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-300"
+                    style={autofillReset}
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Business Email*</label>
+                  <input
+                    name="email"
+                    type="email"
+                    value={enterpriseFormData.email}
+                    onChange={handleEnterpriseFormChange}
+                    required
+                    className="w-full rounded-lg border border-border bg-gray-950 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-300"
+                    style={autofillReset}
+                    placeholder="you@company.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Company Name*</label>
+                  <input
+                    name="company"
+                    value={enterpriseFormData.company}
+                    onChange={handleEnterpriseFormChange}
+                    required
+                    className="w-full rounded-lg border border-border bg-gray-950 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-300"
+                    style={autofillReset}
+                    placeholder="Your Company"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Phone</label>
+                  <input
+                    name="phone"
+                    value={enterpriseFormData.phone}
+                    onChange={handleEnterpriseFormChange}
+                    className="w-full rounded-lg border border-border bg-gray-950 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-300"
+                    style={autofillReset}
+                    placeholder="+1 (555) 123-4567"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Team Size</label>
+                  <input
+                    name="teamSize"
+                    value={enterpriseFormData.teamSize}
+                    onChange={handleEnterpriseFormChange}
+                    className="w-full rounded-lg border border-border bg-gray-950 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-300"
+                    style={autofillReset}
+                    placeholder="e.g., 50-200"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 text-foreground">Plan</label>
+                  <input
+                    value="Enterprise"
+                    disabled
+                    className="w-full rounded-lg border border-border bg-gray-950 px-3 py-2 text-white opacity-80"
+                  />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm mb-1 text-foreground">Message / Requirements</label>
+                  <textarea
+                    name="message"
+                    value={enterpriseFormData.message}
+                    onChange={handleEnterpriseFormChange}
+                    className="w-full rounded-lg border border-border bg-gray-950 px-3 py-2 text-white min-h-[100px] focus:outline-none focus:ring-2 focus:ring-amber-300"
+                    style={autofillReset}
+                    placeholder="Tell us about your goals, timelines, or special requirements"
+                  />
+                </div>
+                <div className="flex items-center gap-2 md:col-span-2">
+                  <input
+                    name="subscriber"
+                    type="checkbox"
+                    checked={enterpriseFormData.subscriber}
+                    onChange={handleEnterpriseFormChange}
+                    className="h-4 w-4 rounded border border-border bg-gray-950 text-amber-300 focus:ring-amber-300"
+                  />
+                  <span className="text-sm text-muted-foreground">
+                    I agree to receive communications from{" "}
+                    <Link href="/" target="_blank" rel="noreferrer" className="text-amber-300 underline">
+                      ZeaCRM
+                    </Link>
+                    .
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 md:col-span-2">
+                  <input
+                    name="terms"
+                    type="checkbox"
+                    required
+                    onChange={handleEnterpriseFormChange}
+                    className="h-4 w-4 rounded border border-border bg-gray-950 text-amber-300 focus:ring-amber-300"
+                  />
+                  <span className="text-sm text-muted-foreground">
+                    I agree to the{" "}
+                    <Link href="/terms-of-service" target="_blank" rel="noreferrer" className="text-amber-300 underline">
+                      Terms &amp; Conditions
+                    </Link>
+                    .
+                  </span>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="w-full rounded-lg bg-amber-300 px-4 py-3 font-semibold text-black hover:bg-amber-400 transition-colors shadow-lg shadow-amber-300/30"
+              >
+                Request Enterprise Pricing
               </button>
               {submitError && (
                 <p className="text-sm text-red-400 text-center">
