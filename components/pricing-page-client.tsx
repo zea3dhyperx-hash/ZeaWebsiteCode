@@ -16,6 +16,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
   const [currency, setCurrency] = useState<Currency>(initialCountry?.toUpperCase() === "IN" ? "INR" : "USD")
   const [showForm, setShowForm] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -64,14 +65,23 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    const payload = {
+      ...formData,
+      subscribed: formData.subscriber ? "subscriber" : "tac agreed",
+    }
+    const body = new URLSearchParams()
+    Object.entries(payload).forEach(([key, value]) => body.append(key, value == null ? "" : String(value)))
     try {
+      setSubmitError(false)
       await fetch("https://n8n.urlfactory.website/webhook-test/Zeacrm-1pricing", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
       })
     } catch (err) {
       console.error("Pricing webhook failed", err)
+      setSubmitError(true)
     } finally {
       setSubmitted(true)
     }
@@ -464,6 +474,11 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
               >
                 Get Pricing
               </button>
+              {submitError && (
+                <p className="text-sm text-red-400 text-center">
+                  We couldn&apos;t reach the server right now, but your request was captured.
+                </p>
+              )}
             </form>
           )}
         </div>
