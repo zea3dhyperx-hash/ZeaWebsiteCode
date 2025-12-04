@@ -14,48 +14,21 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import ChatWidget from "./chatbot"
 
-const countries = [
-  "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan",
-  "Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi",
-  "Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Costa Rica","Côte d’Ivoire","Croatia","Cuba","Cyprus","Czechia",
-  "Democratic Republic of the Congo","Denmark","Djibouti","Dominica","Dominican Republic",
-  "Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia",
-  "Fiji","Finland","France",
-  "Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana",
-  "Haiti","Honduras","Hungary",
-  "Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy",
-  "Jamaica","Japan","Jordan",
-  "Kazakhstan","Kenya","Kiribati","Kuwait","Kyrgyzstan",
-  "Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg",
-  "Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar",
-  "Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway",
-  "Oman",
-  "Pakistan","Palau","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal",
-  "Qatar",
-  "Republic of the Congo","Romania","Russia","Rwanda",
-  "Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria",
-  "Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu",
-  "Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan",
-  "Vanuatu","Vatican City","Venezuela","Vietnam",
-  "Yemen",
-  "Zambia","Zimbabwe",
-]
-
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    jobTitle: "",
+    fullName: "",
+
     workEmail: "",
     company: "",
-    employees: "",
     phone: "",
-    country: "",
-    productInterest: "",
+    scheduleDate: "",
+    scheduleTime: "",
+
     comments: "",
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -70,16 +43,22 @@ export default function ContactUsPage() {
     if (submitting) return
     setSubmitting(true)
     setSubmitted(false)
+    setSubmitError(false)
     try {
+      const body = new URLSearchParams()
+      Object.entries(formData).forEach(([key, value]) => body.append(key, value ?? ""))
+
       await fetch("https://n8n.urlfactory.website/webhook/Zeacrm-contacts", {
-      // await fetch("https://n8n.urlfactory.website/webhook-test/Zeacrm-contacts", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
       })
       setSubmitted(true)
     } catch (err) {
       console.error("Webhook submission failed", err)
+      setSubmitError(true)
+      setSubmitted(true)
     } finally {
       setSubmitting(false)
     }
@@ -189,53 +168,36 @@ export default function ContactUsPage() {
                       <h3 className="text-xl font-semibold text-foreground">Thank you!</h3>
                       <p className="text-sm text-muted-foreground max-w-md">
                         We&apos;ve received your details. Our team will reach out soon with the right next steps.
+                        {submitError && " We couldn't reach the server, but your request was captured."}
                       </p>
                     </div>
                   ) : (
                     <form className="space-y-5" id="contact-form" onSubmit={handleSubmit}>
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-base font-medium mb-2">First name*</label>
+                          <label className="block text-base font-medium mb-2">Full Name*</label>
                           <Input
-                            name="firstName"
-                            value={formData.firstName}
+                            name="fullName"
+                            value={formData.fullName}
                             onChange={handleChange}
                             className="bg-gray-800 border-gray-700 text-white"
-                            placeholder="First name"
+                            placeholder="Your full name"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-base font-medium mb-2">Last name*</label>
+                          <label className="block text-base font-medium mb-2">Company</label>
                           <Input
-                            name="lastName"
-                            value={formData.lastName}
+                            name="company"
+                            value={formData.company}
                             onChange={handleChange}
                             className="bg-gray-800 border-gray-700 text-white"
-                            placeholder="Last name"
-                            required
+                            placeholder="Company"
                           />
                         </div>
                       </div>
 
                       <div className="grid md:grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-base font-medium mb-2">Job Title</label>
-                          <select
-                            name="jobTitle"
-                            value={formData.jobTitle}
-                            onChange={handleChange}
-                            className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
-                          >
-                            <option value="">Select</option>
-                            <option>Founder / CXO</option>
-                            <option>Operations</option>
-                            <option>Sales</option>
-                            <option>Marketing</option>
-                            <option>IT / Systems</option>
-                            <option>Other</option>
-                          </select>
-                        </div>
                         <div>
                           <label className="block text-base font-medium mb-2">Work Email*</label>
                           <Input
@@ -248,39 +210,6 @@ export default function ContactUsPage() {
                             required
                           />
                         </div>
-                      </div>
-
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-base font-medium mb-2">Company</label>
-                          <Input
-                            name="company"
-                            value={formData.company}
-                            onChange={handleChange}
-                            className="bg-gray-800 border-gray-700 text-white"
-                            placeholder="Company"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-base font-medium mb-2">Employees</label>
-                          <select
-                            name="employees"
-                            value={formData.employees}
-                            onChange={handleChange}
-                            className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
-                          >
-                            <option value="">Select</option>
-                            <option>1-10</option>
-                            <option>11-50</option>
-                            <option>51-200</option>
-                            <option>201-500</option>
-                            <option>501-1000</option>
-                            <option>1000+</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div className="grid md:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-base font-medium mb-2">Phone</label>
                           <Input
@@ -292,39 +221,32 @@ export default function ContactUsPage() {
                             placeholder="+91 98765 43210"
                           />
                         </div>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-base font-medium mb-2">Country/Region</label>
-                          <select
-                            name="country"
-                            value={formData.country}
+                          <label className="block text-base font-medium mb-2">Preferred Date</label>
+                          <Input
+                            name="scheduleDate"
+                            type="date"
+                            value={formData.scheduleDate}
                             onChange={handleChange}
-                            className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
-                          >
-                            <option value="">Select</option>
-                            {countries.map((c) => (
-                              <option key={c}>{c}</option>
-                            ))}
-                          </select>
+                            className="bg-gray-800 border-gray-700 text-white"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-base font-medium mb-2">Preferred Time</label>
+                          <Input
+                            name="scheduleTime"
+                            type="time"
+                            value={formData.scheduleTime}
+                            onChange={handleChange}
+                            className="bg-gray-800 border-gray-700 text-white"
+                          />
                         </div>
                       </div>
 
                       <div className="space-y-4">
-                        <div>
-                          <label className="block text-base font-medium mb-2">Product Interest</label>
-                          <select
-                            name="productInterest"
-                            value={formData.productInterest}
-                            onChange={handleChange}
-                            className="w-full rounded-md border border-gray-700 bg-gray-800 text-white px-3 py-2"
-                          >
-                            <option value="">Select</option>
-                            <option>ZeaCRM Core</option>
-                            <option>Voice / WhatsApp Automation</option>
-                            <option>Education CRM</option>
-                            <option>Healthcare CRM</option>
-                            <option>Custom Solutions</option>
-                          </select>
-                        </div>
                         <div>
                           <label className="block text-base font-medium mb-2">Questions/Comments</label>
                           <Textarea
@@ -584,3 +506,6 @@ export default function ContactUsPage() {
     </>
   )
 }
+
+
+

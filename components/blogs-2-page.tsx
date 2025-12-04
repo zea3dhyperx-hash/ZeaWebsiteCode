@@ -11,6 +11,9 @@ export function Blogs2Page() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [selectedAuthor, setSelectedAuthor] = useState("All Authors")
+  const [newsletterName, setNewsletterName] = useState("")
+  const [newsletterEmail, setNewsletterEmail] = useState("")
+  const [newsletterSubscribed, setNewsletterSubscribed] = useState(false)
 
   const featuredArticles = BLOG_POSTS.filter((p) => p.featured).slice(0, 3).map((p, idx) => ({
     id: idx + 1,
@@ -62,6 +65,27 @@ export function Blogs2Page() {
       return matchesSearch && matchesCategory && matchesAuthor
     })
   }, [searchQuery, selectedCategory, selectedAuthor])
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    try {
+      const body = new URLSearchParams()
+      body.append("fullName", newsletterName)
+      body.append("email", newsletterEmail)
+      await fetch("https://n8n.urlfactory.website/webhook/ZeaCRM-Subscribe", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      })
+    } catch (err) {
+      console.error("Newsletter subscribe failed", err)
+    } finally {
+      setNewsletterName("")
+      setNewsletterEmail("")
+      setNewsletterSubscribed(true)
+    }
+  }
 
   return (
     <>
@@ -253,16 +277,35 @@ export function Blogs2Page() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-foreground mb-4 animate-slide-up">Subscribe to Our Newsletter</h2>
             <p className="text-muted-foreground mb-8">Get the latest CRM insights and strategies delivered weekly</p>
-            <div className="flex gap-2 animate-slide-up">
+            <form className="flex flex-col sm:flex-row gap-2 animate-slide-up justify-center" onSubmit={handleNewsletterSubmit}>
+              <input
+                type="text"
+                placeholder="Full name"
+                value={newsletterName}
+                onChange={(e) => setNewsletterName(e.target.value)}
+                required
+                className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground hover-lift min-w-[220px]"
+              />
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground hover-lift"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                required
+                className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground hover-lift min-w-[220px]"
               />
-              <button className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold hover-lift">
+              <button
+                type="submit"
+                className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold hover-lift"
+              >
                 Subscribe
               </button>
-            </div>
+            </form>
+            {newsletterSubscribed && (
+              <p className="mt-3 text-sm text-amber-500 font-semibold">
+                🎉 Thanks for subscribing! We&apos;ll keep you updated.
+              </p>
+            )}
           </div>
         </section>
       </main>
