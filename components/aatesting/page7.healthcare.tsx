@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AniHealthcare from "../animations/ani-health";
 import { SegmentCarousel } from "../segment-carousel";
+import { BookDemoButton } from "../book-demo-button";
 
 
 export default function HealthcareCRMPage() {
@@ -213,9 +214,9 @@ export default function HealthcareCRMPage() {
                 <Button asChild size="lg" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
                   <Link href="/playbooks/videos">Watch Demo Video</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
-              <Link href="/get-started">Book a Demo</Link>
-                </Button>
+                <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition-transform duration-200 hover:scale-[1.03] active:scale-95">
+                  Book a Demo
+                </BookDemoButton>
               </div>
             </div>
             <div className="rounded-xl border border-border overflow-hidden bg-card">
@@ -811,9 +812,9 @@ export default function HealthcareCRMPage() {
               <Button asChild size="lg" variant="secondary" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background transition-transform duration-200 hover:scale-[1.03] active:scale-95">
-                <Link href="/get-started">Book a Demo</Link>
-              </Button>
+              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-transparent px-6 py-3 text-lg font-semibold text-background transition-transform duration-200 hover:scale-[1.03] active:scale-95">
+                Book a Demo
+              </BookDemoButton>
             </div>
           </div>
         </section>

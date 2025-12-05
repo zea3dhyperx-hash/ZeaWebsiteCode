@@ -1,3 +1,5 @@
+import { BookDemoButton } from "./book-demo-button"
+
 export function WhyUs2Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background to-card/30 py-20">
@@ -21,9 +23,9 @@ export function WhyUs2Hero() {
           Join 2,000+ businesses that automate their sales, marketing, and customer management with ZeaCRM. They are achieving up to 3x faster growth and 40% higher lead conversions through AI-driven automation. Are you ready?
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover-lift hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
-          <a href="/get-started"> Book a Demo</a>
-          </button>
+          <BookDemoButton className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover-lift hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
+            Book a Demo
+          </BookDemoButton>
           <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
             <a href="/playbooks/videos"> Watch Demo Video</a>
           </button>

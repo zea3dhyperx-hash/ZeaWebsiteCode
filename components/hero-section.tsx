@@ -6,6 +6,7 @@ import AniHero from "./animations/ani-hero"
 import { useEffect } from "react";
 import { GetStartedModal } from "./get-started-modal"
 import { SignInModal } from "./sign-in-modal"
+import { BookDemoButton } from "./book-demo-button"
 
 export function HeroSection() {
   useEffect(() => {
@@ -84,11 +85,10 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                className="bg-primary hover:bg-primary text-black font-semibold px-8 py-6 text-base rounded-lg">
-                <a href="/get-started">Book a Demo</a>
-              </Button>
-              
+              <BookDemoButton className="flex items-center justify-center gap-2 rounded-full bg-green-400 px-8 py-6 text-base font-semibold text-black transition hover:scale-[1.02] hover:bg-green-300 active:scale-95">
+                Book a Demo
+              </BookDemoButton>
+
               <Button
                 variant="outline"
                 onClick={() => window.location.href = "/playbooks/videos"}

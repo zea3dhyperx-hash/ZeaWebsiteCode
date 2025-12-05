@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AniFinance from "../animations/ani-finance";
+import { BookDemoButton } from "../book-demo-button";
 import {
   ShieldCheck,
   TrendingUp,
@@ -202,9 +203,9 @@ export default function FinanceInsuranceCRM() {
               <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/get-started">Book a Demo</Link>
-              </Button>
+              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+                Book a Demo
+              </BookDemoButton>
             </div>
           </div>
           <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
@@ -372,9 +373,9 @@ ZeaCRM ensures every transaction, message, and signature happens securely—meet
             <Button asChild size="lg" variant="secondary">
               <Link href="/playbooks/videos">Watch Demo Video</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background">
-              <Link href="/get-started">Book a Demo</Link>
-            </Button>
+            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-transparent px-6 py-3 text-lg font-semibold text-background transition hover:scale-105 hover:bg-white/10">
+              Book a Demo
+            </BookDemoButton>
           </div>
         </div>
       </section>

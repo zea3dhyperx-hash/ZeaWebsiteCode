@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AniRetail from "../animations/ani-retail";
 import AniRetail1 from "../animations/ani-retail1";
+import { BookDemoButton } from "../book-demo-button";
 import {
   ShoppingBag,
   Store,
@@ -206,9 +207,9 @@ export default function RetailEcomCRM() {
               <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/get-started">Book a Demo</Link>
-              </Button>
+              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+                Book a Demo
+              </BookDemoButton>
             </div>
           </div>
           <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
@@ -358,9 +359,9 @@ Our AI predicts buying behavior, suggests next-best offers, and ensures every me
             <Button asChild size="lg" variant="secondary">
               <Link href="/playbooks/videos">Watch Demo Video</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent text-background border-background">
-              <Link href="/get-started">Book a Demo</Link>
-            </Button>
+            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-transparent px-6 py-3 text-lg font-semibold text-background transition hover:scale-105 hover:bg-white/10">
+              Book a Demo
+            </BookDemoButton>
           </div>
         </div>
       </section>

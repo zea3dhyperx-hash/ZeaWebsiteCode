@@ -7,6 +7,7 @@ import ChatWidget from "@/components/chatbot";
 import FAQ from "@/components/faq";
 import Link from "next/link";
 import AniHealthcare from "../animations/ani-health";
+import { BookDemoButton } from "../book-demo-button";
 
 export default function HealthcareCRM() {
   const [expanded, setExpanded] = useState(false);
@@ -165,9 +166,9 @@ export default function HealthcareCRM() {
                 <Button asChild size="lg">
                   <Link href="/playbooks/videos">Watch Demo Video</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/get-started">Book a Demo</Link>
-                </Button>
+                <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+                  Book a Demo
+                </BookDemoButton>
               </div>
             </div>
             <div className="rounded-xl border border-border p-6 bg-card">
@@ -430,9 +431,9 @@ export default function HealthcareCRM() {
               <Button asChild size="lg" className="hover:scale-110 text-xl">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
-              <Button asChild size="lg" className="hover:scale-110 text-xl" variant="outline">
-                <Link href="/get-started">Book a Demo</Link>
-              </Button>
+              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-xl font-semibold text-primary transition hover:scale-110 hover:bg-primary/10">
+                Book a Demo
+              </BookDemoButton>
             </div>
         </section>
 
@@ -473,5 +474,4 @@ export default function HealthcareCRM() {
     </>
   );
 }
-
 

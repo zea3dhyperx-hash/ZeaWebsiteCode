@@ -22,6 +22,7 @@ import {
   Users2,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { BookDemoButton } from "./book-demo-button"
 
 const industries = [
   // {
@@ -344,13 +345,10 @@ export function IndustriesPage() {
             See how ZeaCRM can adapt to your industry and empower your team with smarter automation and insights.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-6 text-lg"><a href="/playbooks/videos">Watch Demo Video</a></Button>
-            <Button
-              variant="outline"
-              className="border-amber-400 text-amber-400 hover:bg-amber-400 px-8 py-6 text-lg bg-transparent"
-            >
-                <a href="/get-started">Book a Demo</a>
-            </Button>
+          <Button className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-6 text-lg"><a href="/playbooks/videos">Watch Demo Video</a></Button>
+          <BookDemoButton className="border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black px-8 py-6 text-lg bg-transparent rounded-md transition-colors">
+            Book a Demo
+          </BookDemoButton>
           </div>
         </div>
       </section>

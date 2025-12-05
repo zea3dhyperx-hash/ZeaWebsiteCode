@@ -8,6 +8,7 @@ import { Brain, Compass, Crown, Facebook, HandHeart, Heart, Instagram, Lightbulb
 import FAQ from "@/components/faq"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
+import { BookDemoButton } from "../book-demo-button"
 
 const team = [
   {
@@ -749,12 +750,9 @@ export default function AboutUsPageContentAlt() {
                 Experience the future of customer workflows with intelligent automation and a human touch.
               </p>
               <div className="flex flex-wrap justify-center gap-3 pt-2">
-                <Link
-                  href="/"
-                  className="px-4 py-2 rounded-lg bg-primary text-slate-950 font-semibold hover:bg-amber-500 transition-colors shadow-[0_10px_30px_-12px_rgba(251,191,36,0.5)]"
-                >
+                <BookDemoButton className="px-4 py-2 rounded-lg bg-primary text-slate-950 font-semibold hover:bg-amber-500 transition-colors shadow-[0_10px_30px_-12px_rgba(251,191,36,0.5)]">
                   Book a Demo
-                </Link>
+                </BookDemoButton>
                 {/* <Link
                   href="/contact-us"
                   className="px-4 py-2 rounded-lg border border-slate-700 text-gray-200 font-semibold hover:border-amber-300 hover:text-amber-200 transition-colors"

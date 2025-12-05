@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { BookDemoButton } from "./book-demo-button"
 import { Check } from "lucide-react"
 
 export function FeatureCardsSection() {
@@ -63,12 +64,9 @@ export function FeatureCardsSection() {
                   ))}
                 </ul>
 
-                <a
-                  href="/playbooks/videos"
-                  className="inline-block text-primary font-semibold hover:text-primary transition-colors text-sm md:text-base"
-                >
-                  WANT TO KNOW MORE BOOK A DEMO HERE →
-                </a>
+                <BookDemoButton className="inline-block text-primary font-semibold transition-colors text-sm md:text-base underline-offset-4 hover:underline">
+                  WANT TO KNOW MORE? BOOK A DEMO HERE →
+                </BookDemoButton>
               </div>
             </div>
 

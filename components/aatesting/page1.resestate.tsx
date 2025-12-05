@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import ChatWidget from "@/components/chatbot";
 import FAQ from "@/components/faq";
 import Link from "next/link";
+import { BookDemoButton } from "../book-demo-button";
 import AniHealthcare from "../animations/ani-health";
 import AniRealEstate from "../animations/ani-realestate";
 import {
@@ -222,9 +223,9 @@ export default function RealEstateCRM() {
               <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/get-started">Book a Demo</Link>
-              </Button>
+              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+                Book a Demo
+              </BookDemoButton>
             </div>
           </div>
           <div className="rounded-xl border border-border p-0 object-contain bg-card overflow-hidden">
@@ -444,9 +445,9 @@ export default function RealEstateCRM() {
             <Button asChild size="lg">
               <Link href="/playbooks/videos">Watch Demo Video</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/get-started">Book a Demo</Link>
-            </Button>
+            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+              Book a Demo
+            </BookDemoButton>
           </div>
         </div>
       </section>
