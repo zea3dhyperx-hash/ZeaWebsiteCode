@@ -85,18 +85,18 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <BookDemoButton className="flex items-center justify-center gap-2 rounded-full bg-green-400 px-8 py-6 text-base font-semibold text-black transition hover:scale-[1.02] hover:bg-green-300 active:scale-95">
+              <BookDemoButton className="border-2 border-blue-400 text-blue-400 hover:bg-primary hover:text-background font-bold px-8 py-3 text-base rounded-lg flex items-center justify-center gap-2 bg-transparent">
                 Book a Demo
               </BookDemoButton>
 
-              <Button
+              {/* <Button
                 variant="outline"
                 onClick={() => window.location.href = "/playbooks/videos"}
                 className="border-2 border-blue-400 text-blue-400 hover:bg-primary font-semibold px-8 py-6 text-base rounded-lg flex items-center justify-center gap-2 bg-transparent"
               >
                   <Play size={18} />
                   Watch Demo Video
-              </Button>
+              </Button> */}
             </div>
             
           </div>

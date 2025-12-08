@@ -33,7 +33,7 @@ export default function FeaturesPage() {
         <FeaturesSlider />
         {/* <FeaturesHeroSection /> */}
         {/* <FeaturesCardsSection /> */}
-        <FeaturesResultsSection />
+        {/* <FeaturesResultsSection /> */}
         {/* <FeaturesAutomationSection */}
         <FeaturesMobileSection />
         <Features2Showcase />

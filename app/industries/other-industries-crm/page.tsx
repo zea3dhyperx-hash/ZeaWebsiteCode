@@ -1,12 +1,12 @@
-import HealthcareCRM from "@/components/aatesting/page";
-import RealEstateCRM from "@/components/aatesting/page1.resestate";
-import RetailEcomCRM from "@/components/aatesting/page2.retailcrm";
-import ProfessionalServicesCRM from "@/components/aatesting/page3.professional";
-import EducationTrainingCRM from "@/components/aatesting/page4.education";
-import FinanceInsuranceCRM from "@/components/aatesting/page5.finance";
-import AutomotiveManufacturingCRM from "@/components/aatesting/page6.automotive";
-import HealthcareCRMAdvanced from "@/components/aatesting/page7.healthcare";
-import OtherIndustriesCRMPage from "@/components/aatesting/page8.otherpages";
+
+import RealEstateCRM from "@/components/All Industries/page1.resestate";
+import RetailEcomCRM from "@/components/All Industries/page2.retailcrm";
+import ProfessionalServicesCRM from "@/components/All Industries/page3.professional";
+import EducationTrainingCRM from "@/components/All Industries/page4.education";
+import FinanceInsuranceCRM from "@/components/All Industries/page5.finance";
+import AutomotiveManufacturingCRM from "@/components/All Industries/page6.automotive";
+import HealthcareCRMAdvanced from "@/components/All Industries/page7.healthcare";
+import OtherIndustriesCRMPage from "@/components/All Industries/page8.otherpages";
 import type { Metadata } from "next";
 
 export const metadata = {

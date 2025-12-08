@@ -1,4 +1,7 @@
  "use client"
+
+import { BookDemoButton } from "./book-demo-button"
+
  
 export function Features2Hero() {
   const scrollToFeatures = () => {
@@ -43,12 +46,15 @@ export function Features2Hero() {
           >
             Explore All Features
           </button>
-          <a
-            href="/playbooks/videos"
+          {/* <a
+            href=""
             className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300 inline-flex items-center justify-center"
           >
-            Request Demo
-          </a>
+            Book a Demo
+          </a> */}
+          <BookDemoButton className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300 inline-flex items-center justify-center">
+            Book a Demo
+          </BookDemoButton>
         </div>
       </div>
     </section>

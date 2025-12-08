@@ -263,10 +263,10 @@ export default function AutomotiveManufacturingCRM() {
               </span>
             </div> */}
             <div className="mt-6 flex gap-4 justify-center md:justify-start">
-              <Button asChild size="lg">
+              {/* <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
-              </Button>
-              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+              </Button> */}
+              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-2 text-lg font-semibold text-primary transition hover:bg-primary/10">
                 Book a Demo
               </BookDemoButton>
             </div>
@@ -633,10 +633,10 @@ export default function AutomotiveManufacturingCRM() {
           <p className="mt-4 text-lg">Whether it's managing showrooms, suppliers, or after-sales service — ZeaCRM brings every team under one system.</p>
           <p className="mt-4 text-lg">With AI automation, integrated data, and predictive analytics, your organization becomes more agile, data-driven, and future-ready.</p>
           <div className="mt-8 flex gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary" className="hover:scale-105 transition transition-all">
+            {/* <Button asChild size="lg" variant="secondary" className="hover:scale-105 transition transition-all">
               <Link href="/playbooks/videos">Watch Demo Video</Link>
-            </Button>
-            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-transparent px-6 py-3 text-lg font-semibold text-background transition hover:scale-105 hover:bg-white/10">
+            </Button> */}
+            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-background px-6 py-2 text-lg font-semibold text-primary transition hover:scale-105">
               Book a Demo
             </BookDemoButton>
           </div>

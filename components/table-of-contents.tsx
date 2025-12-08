@@ -60,7 +60,7 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
 
   return (
     <aside className="sticky top-8 hidden h-fit w-80 lg:block">
-      <div className="rounded-lg border border-border bg-card p-6 shadow-md">
+      <div className="rounded-lg border border-border border-primary bg-card p-6 shadow-md">
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
             <span className="inline-flex h-2 w-2 rounded-full bg-primary" aria-hidden />

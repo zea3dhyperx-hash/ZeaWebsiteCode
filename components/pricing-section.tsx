@@ -6,65 +6,84 @@ import Link from "next/link"
 import Image from "next/image"
 
 type Currency = "USD" | "INR"
+type PlanName = "ZEA Starter" | "ZEA Growth" | "ZEA Scale" | "ZEA Enterprise"
 
 const pricingPlans = [
   {
-    name: "Standard",
-    priceINR: "5,499",
-    priceUSD: "69",
-    period: "/ Month",
-    description: "Essential tools for small teams",
+    name: "ZEA Starter",
+    priceINR: "5,500",
+    priceUSD: "97",
+    period: "/ month",
+    description: "Essential workflows and automation for lean teams",
     features: [
-      // "Features Included",
-      "Contacts and Pipeline Management",
-      "Invoicing Management",
-      "Reputation Management",
-      "Marketing Automation",
-      "Dashboard",
-      "2 Workflow Automation",
-      "Reporting",
-      "Up to 5 Users",
+      "Users: up to 5",
+      "Workflows, Automations, Pipelines, Contacts, Conversations, Calendars, Reporting (All)",
+      "Sites optional (disabled by default)",
+      "Memberships / Marketing / AI restricted",
+      "Support: 2 onboarding calls",
+      "WhatsApp support (business hours)",
+      "Add-ons: WhatsApp automation ₹600/mo (client pays message wallet)",
+      "Add-ons: LLM API billed to client",
     ],
     buttonText: "Get Started",
     buttonStyle: "bg-primary text-black hover:bg-primary",
     highlighted: false,
   },
   {
-    name: "Pro",
-    priceINR: "10,999",
-    priceUSD: "129",
-    period: "/ Month",
-    description: "Advanced automation for growing businesses",
+    name: "ZEA Growth",
+    priceINR: "9,999",
+    priceUSD: "197",
+    period: "/ month",
+    description: "Marketing, memberships, and payments to accelerate growth",
     features: [
-      // "Features Included",
-      "Contacts and Pipeline Management",
-      "Invoicing Management",
-      "Reputation Management",
-      "Dashboard",
-      "AI Agents",
-      "Membership Module",
-      "5 Workflow Automation",
-      "Marketing Automation (Using LLM)",
-      "Reporting",
-      "WhatsApp Integration",
-      "Up to 10 Users",
+      "Users: up to 10",
+      "Everything in Starter",
+      "Payment Integrations (Pro)",
+      "Marketing (Pro)",
+      "Memberships (Pro)",
+      "API Integrations (Pro)",
+      "Reputation (Pro)",
+      "Support: 4 onboarding sessions",
+      "Monthly optimization review",
     ],
     buttonText: "Get Started",
     buttonStyle: "bg-primary text-black hover:bg-primary",
     highlighted: true,
   },
   {
-    name: "Enterprise",
-    priceINR: "19,999",
-    priceUSD: "249",
-    period: "/ Month",
-    description: "All modules and premium support",
+    name: "ZEA Scale",
+    priceINR: "14,999",
+    priceUSD: "297",
+    period: "/ month",
+    description: "Branded dashboards and priority support for larger teams",
     features: [
-      // "Features Included",
-      "All Modules with Unlimited Access",
-      "Additional Storage Facility",
-      "Dedicated Account Manager",
-      "Up to 25 Users",
+      "Users: up to 25",
+      "Everything in Growth",
+      "AI Agents (Pro)",
+      "Branded dashboards",
+      "Expanded media storage",
+      "Priority support",
+      "Weekly training clinic",
+      "1 custom snapshot/setup per quarter",
+    ],
+    buttonText: "Get Started",
+    buttonStyle: "bg-primary text-black hover:bg-primary",
+    highlighted: false,
+  },
+  {
+    name: "ZEA Enterprise",
+    priceINR: "24,999+",
+    priceUSD: "397",
+    period: "/ month",
+    description: "Custom rollouts, white-label dashboards, and SLA coverage",
+    features: [
+      "Users: 50+ or custom",
+      "White-label dashboards",
+      "SLA + dedicated account manager",
+      "20×7 option",
+      "Custom automation builds & API engineering",
+      "Multi-location rollout (5)",
+      "On-site / bootcamp training (optional)",
     ],
     buttonText: "Talk to Sales",
     buttonStyle: "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-black",
@@ -73,7 +92,7 @@ const pricingPlans = [
 ]
 
 export function PricingSection() {
-  const [currency, setCurrency] = useState<Currency>("USD")
+  const [currency, setCurrency] = useState<Currency>("INR")
   const [showForm, setShowForm] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState(false)
@@ -83,7 +102,7 @@ export function PricingSection() {
     fullName: "",
     email: "",
     company: "",
-    plan: "Standard",
+    plan: "ZEA Starter",
     message: "",
     subscriber: false,
     subscribed: "tac agreed" as string,
@@ -106,7 +125,7 @@ export function PricingSection() {
     WebkitTextFillColor: "#fff",
   }
 
-  const handleOpenForm = (plan: "Standard" | "Pro") => {
+  const handleOpenForm = (plan: PlanName) => {
     setFormData((prev) => ({ ...prev, plan }))
     setSubmitted(false)
     setShowForm(true)
@@ -204,7 +223,7 @@ export function PricingSection() {
     e.preventDefault()
     const payload = {
       ...enterpriseFormData,
-      plan: "Enterprise",
+      plan: "ZEA Enterprise",
       subscribed: enterpriseFormData.subscriber ? "subscriber" : "tac agreed",
     }
     const body = new URLSearchParams()
@@ -224,7 +243,7 @@ export function PricingSection() {
       setEnterpriseSubmitted(true)
     }
   }
-  const currencySymbol = currency === "INR" ? "INR" : "$"
+  const currencySymbol = currency === "INR" ? "₹" : "$"
 
   return (
     <>
@@ -258,47 +277,38 @@ export function PricingSection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`rounded-lg p-8 border-2 transition-all ${
+              className={`rounded-lg p-8 border-2 transition-all flex flex-col h-full ${
                 plan.highlighted
-                  ? "border-primary bg-gray-900 shadow-2xl shadow-primary/20 scale-105"
+                  ? "border-primary bg-gray-900 shadow-2xl shadow-primary/20"
                   : "border-gray-700 bg-gray-950 hover:border-primary"
               }`}
             >
               {/* Plan Name */}
               <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-              <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
+              <p className="text-gray-400 text-sm mb-6 min-h-[56px]">{plan.description}</p>
 
               {/* Price */}
               <div className="mb-6">
-                <div className="flex items-baseline gap-1">
+                <div className="flex flex-col items-start leading-tight">
                   <span className="text-4xl font-bold text-white">
                     <span className="currency">{currencySymbol}</span> {currency === "INR" ? plan.priceINR : plan.priceUSD}
                   </span>
-                  <span className="text-gray-400">{plan.period}</span>
+                  <span className="text-gray-400 text-sm">{plan.period}</span>
                 </div>
               </div>
 
               {/* Features */}
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, featureIndex) => {
-                  const isStandard = plan.name === "Standard";
-                  const isLast = featureIndex === plan.features.length - 1;
-                  const showAsUnavailable = isStandard && isLast && feature.toLowerCase().includes("whatsapp integration");
-                  return (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      {showAsUnavailable ? (
-                        <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                      ) : (
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      )}
-                      <span className={showAsUnavailable ? "text-gray-400" : "text-gray-300"}>{feature}</span>
-                    </li>
-                  );
-                })}
+              <ul className="space-y-4 mb-8 flex-1">
+                {plan.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
               </ul>
 
               {/* Button */}
@@ -306,9 +316,7 @@ export function PricingSection() {
                 <button
                   className={`px-6 py-3 rounded-lg font-semibold transition-all text-center ${plan.buttonStyle}`}
                   onClick={() =>
-                    plan.name === "Enterprise"
-                      ? handleOpenEnterpriseForm()
-                      : handleOpenForm(plan.name === "Pro" ? "Pro" : "Standard")
+                    plan.name === "ZEA Enterprise" ? handleOpenEnterpriseForm() : handleOpenForm(plan.name as PlanName)
                   }
                 >
                   {plan.buttonText}
@@ -369,8 +377,9 @@ export function PricingSection() {
                     className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
                     style={autofillReset}
                   >
-                    <option value="Standard">Standard</option>
-                    <option value="Pro">Pro</option>
+                    <option value="ZEA Starter">ZEA Starter</option>
+                    <option value="ZEA Growth">ZEA Growth</option>
+                    <option value="ZEA Scale">ZEA Scale</option>
                   </select>
                 </div>
                 <div>
@@ -548,7 +557,7 @@ export function PricingSection() {
                   <div>
                     <label className="block text-sm mb-1 text-foreground">Plan</label>
                     <input
-                      value="Enterprise"
+                      value="ZEA Enterprise"
                       disabled
                       className="w-full rounded-lg border border-border bg-gray-950 px-3 py-2 text-white opacity-80"
                     />

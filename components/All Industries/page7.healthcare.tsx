@@ -211,10 +211,10 @@ export default function HealthcareCRMPage() {
                 Deliver seamless patient care with ZeaCRM — the all-in-one AI platform designed for hospitals, clinics, labs, and wellness professionals.
               </p>
               <div className="mt-8 flex gap-4 justify-center md:justify-start">
-                <Button asChild size="lg" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
+                {/* <Button asChild size="lg" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
                   <Link href="/playbooks/videos">Watch Demo Video</Link>
-                </Button>
-                <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition-transform duration-200 hover:scale-[1.03] active:scale-95">
+                </Button> */}
+                <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-1.5 text-lg font-semibold text-primary transition-transform duration-200 hover:scale-[1.03] active:scale-95">
                   Book a Demo
                 </BookDemoButton>
               </div>
@@ -809,9 +809,9 @@ export default function HealthcareCRMPage() {
               ZeaCRM transforms the way healthcare organizations operate — combining AI automation, secure data, and actionable insights into one powerful CRM platform.
             </p>
             <div className="mt-8 flex gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
+              {/* <Button asChild size="lg" variant="secondary" className="transition-transform duration-200 hover:scale-[1.03] active:scale-95">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
-              </Button>
+              </Button> */}
               <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-transparent px-6 py-3 text-lg font-semibold text-background transition-transform duration-200 hover:scale-[1.03] active:scale-95">
                 Book a Demo
               </BookDemoButton>

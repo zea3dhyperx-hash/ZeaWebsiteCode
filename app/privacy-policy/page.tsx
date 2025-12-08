@@ -16,7 +16,11 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-foreground mb-8">Privacy Policy</h1>
           <p className="prose prose-invert max-w-none space-y-6 pb-10 text-muted-foreground">
-            ZeaCRM values your privacy and is committed to protecting all your personal information. This Privacy Policy describes how ZeaCRM collects, uses, stores, discloses, and safeguards your information when you use our website (www.zeacrm.com), mobile applications, or any other digital or offline platforms associated with ZeaCRM. By accessing or using ZeaCRM’s services, you agree to this Privacy Policy. ZeaCRM may update this Policy periodically, and we encourage you to review it from time to time to stay informed about how we protect your data.
+            ZeaCRM values your privacy and is committed to protecting all your personal information. This Privacy Policy describes how ZeaCRM collects, uses, stores, discloses, and safeguards your information when you use our website (
+            <a href="https://zeacrm.com/" className="text-primary underline" target="_blank" rel="noreferrer">
+              www.zeacrm.com
+            </a>
+            ), mobile applications, or any other digital or offline platforms associated with ZeaCRM. By accessing or using ZeaCRM’s services, you agree to this Privacy Policy. ZeaCRM may update this Policy periodically, and we encourage you to review it from time to time to stay informed about how we protect your data.
           </p>
 
           <div className="prose prose-invert max-w-none space-y-6">
@@ -27,7 +31,11 @@ export default function PrivacyPolicyPage() {
                 ZeaCRM, Company, We, Us, and Our refer to Zea Technologies FZC and its digital platforms.
               </p>
               <p className="text-muted-foreground py-2">
-                Platform refers to www.zeacrm.com, ZeaCRM mobile app, and other affiliated digital products or services.
+                Platform refers to{" "}
+                <a href="https://zeacrm.com/" className="text-primary underline" target="_blank" rel="noreferrer">
+                  www.zeacrm.com
+                </a>
+                , ZeaCRM mobile app, and other affiliated digital products or services.
               </p>
               <p className="text-muted-foreground py-2">
                 You, Your, and User refer to any individual or entity using ZeaCRM services.

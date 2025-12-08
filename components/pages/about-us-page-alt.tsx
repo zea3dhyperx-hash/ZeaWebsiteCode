@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 
-import { Brain, Compass, Crown, Facebook, HandHeart, Heart, Instagram, Lightbulb, Linkedin, Rocket, ShieldCheck, Sparkles, Twitter, Users } from "lucide-react"
+import { Brain, Compass, Crown, HandHeart, Heart, Lightbulb, Linkedin, Mail, Rocket, ShieldCheck, Sparkles, Users } from "lucide-react"
 
 import FAQ from "@/components/faq"
 import { Footer } from "@/components/footer"
@@ -18,10 +18,8 @@ const team = [
     img: "/about-us-images/founder21.png",
     slug: "vinoth-kumar",
     socials: {
-      instagram: "https://instagram.com/vinoth-kumar",
-      facebook: "https://facebook.com/vinoth.kumar",
-      twitter: "https://twitter.com/vinothk",
-      linkedin: "https://linkedin.com/in/vinothk",
+      email: "mailto:vinoth.a@url-factory.com",
+      linkedin: "https://www.linkedin.com/in/vinothkumarashok/",
     },
   },
   {
@@ -32,10 +30,8 @@ const team = [
     // img: "/about-us-images/founder1.jpg",
     slug: "soujanya-rao",
     socials: {
-      instagram: "https://instagram.com/soujanya-rao",
-      facebook: "https://facebook.com/soujanya.rao",
-      twitter: "https://twitter.com/soujanyarao",
-      linkedin: "https://linkedin.com/in/soujanyarao",
+      email: "mailto:soujanya.k@url-factory.com",
+      linkedin: "https://www.linkedin.com/in/rao-soujanya/",
     },
   },
 ]
@@ -214,7 +210,7 @@ const leaders = [
 
 export default function AboutUsPageContentAlt() {
   const [showAllTeam, setShowAllTeam] = useState(false)
-  const [marqueeActive, setMarqueeActive] = useState(false)
+  const [marqueeActive] = useState(true)
   const marqueeRef = useRef<HTMLDivElement | null>(null)
 
   const MAX_IMAGES_PER_ROW = 12
@@ -228,35 +224,15 @@ export default function AboutUsPageContentAlt() {
   )
 
   useEffect(() => {
-    const node = marqueeRef.current
-    if (!node || marqueeActive) return
-
-    const start = () => {
-      setMarqueeActive(true)
-      // Warm images in the background once we decide to render them
-      const urls = optimizedRows.flatMap((row) => row.images)
-      urls.forEach((src) => {
-        const img = new Image()
-        img.decoding = "async"
-        img.loading = "eager"
-        img.src = src
-      })
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const isVisible = entries.some((entry) => entry.isIntersecting)
-        if (isVisible) {
-          start()
-          observer.disconnect()
-        }
-      },
-      { rootMargin: "200px" }
-    )
-
-    observer.observe(node)
-    return () => observer.disconnect()
-  }, [marqueeActive, optimizedRows])
+    // Warm marquee images immediately so the track is ready when users arrive
+    const urls = optimizedRows.flatMap((row) => row.images)
+    urls.forEach((src) => {
+      const img = new Image()
+      img.decoding = "async"
+      img.loading = "eager"
+      img.src = src
+    })
+  }, [optimizedRows])
   const scrollToLeader = (slug: string) => {
     const target = document.getElementById(`leader-${slug}`)
     if (target) {
@@ -297,9 +273,12 @@ export default function AboutUsPageContentAlt() {
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">About Us</h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance max-w-5xl mx-auto">We build AI-powered tools that keep relationships human.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
+            {/* <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
                 <a href="/playbooks/videos">Request Demo</a>
-            </button>
+            </button> */}
+            <BookDemoButton className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
+              Book a Demo
+            </BookDemoButton>
             </div>
         </div>
         </section>
@@ -421,23 +400,17 @@ export default function AboutUsPageContentAlt() {
                       <div className="absolute inset-0 overflow-hidden rounded-2xl [backface-visibility:hidden]">
                         <img src={member.img} alt={member.name} className="h-full w-full object-cover" />
                       </div>
-                      <div className="absolute inset-0 rounded-2xl bg-slate-950/90 flex flex-col items-center justify-center gap-4 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                        <p className="text-white font-semibold">{member.name}</p>
-                        <div className="flex gap-4 text-amber-200">
-                          <a href={member.socials.instagram} aria-label={`${member.name} Instagram`} className="hover:text-amber-400 transition-colors" target="_blank" rel="noreferrer">
-                            <Instagram className="h-5 w-5" />
-                          </a>
-                          <a href={member.socials.facebook} aria-label={`${member.name} Facebook`} className="hover:text-amber-400 transition-colors" target="_blank" rel="noreferrer">
-                            <Facebook className="h-5 w-5" />
-                          </a>
-                          <a href={member.socials.twitter} aria-label={`${member.name} Twitter`} className="hover:text-amber-400 transition-colors" target="_blank" rel="noreferrer">
-                            <Twitter className="h-5 w-5" />
-                          </a>
-                          <a href={member.socials.linkedin} aria-label={`${member.name} LinkedIn`} className="hover:text-amber-400 transition-colors" target="_blank" rel="noreferrer">
-                            <Linkedin className="h-5 w-5" />
-                          </a>
+                        <div className="absolute inset-0 rounded-2xl bg-slate-950/90 flex flex-col items-center justify-center gap-4 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                          <p className="text-white font-semibold">{member.name}</p>
+                          <div className="flex gap-4 text-amber-200">
+                            <a href={member.socials.email} aria-label={`${member.name} Email`} className="hover:text-amber-400 transition-colors" target="_blank" rel="noreferrer">
+                              <Mail className="h-5 w-5" />
+                            </a>
+                            <a href={member.socials.linkedin} aria-label={`${member.name} LinkedIn`} className="hover:text-amber-400 transition-colors" target="_blank" rel="noreferrer">
+                              <Linkedin className="h-5 w-5" />
+                            </a>
+                          </div>
                         </div>
-                      </div>
                     </div>
                   </div>
                   <div className="space-y-1">
@@ -615,7 +588,7 @@ export default function AboutUsPageContentAlt() {
                 </Link> */}
                 <Link
                   href="/contact-us"
-                  className="px-4 py-2 rounded-lg border border-slate-700 text-gray-200 font-semibold hover:border-amber-300 hover:text-amber-200 transition-colors"
+                  className="px-4 py-2 rounded-lg border hover:scale-105 border-slate-700 text-background bg-primary font-semibold transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -664,9 +637,9 @@ export default function AboutUsPageContentAlt() {
           <div className="text-center space-y-3">
             <p className="text-amber-400 font-semibold">Meet the Team</p>
             <h3 className="text-3xl font-bold text-white">The people building ZeaCRM</h3>
-            <p className="text-gray-300 max-w-3xl mx-auto">
+            {/* <p className="text-gray-300 max-w-3xl mx-auto">
               Four subtle, alternating marquee rows glide past in an even rhythm for a premium, parallax feel.
-            </p>
+            </p> */}
             <p className="text-gray-300 max-w-3xl mx-auto">
               We are a global team of engineers, designers, and product thinkers committed to building software that feels modern, intuitive, and human-centered. Every feature we ship is shaped by real-world challenges and a deep focus on customer experience.
             </p>

@@ -35,9 +35,9 @@ export function CTATransformSection() {
               <BookDemoButton className="bg-primary hover:bg-primary text-black font-semibold px-8 py-3 rounded-lg transition-colors">
                 Book a Demo
               </BookDemoButton>
-              <button className="border-2 border-primary text-primary hover:bg-primary hover:text-black font-semibold px-8 py-3 rounded-lg transition-colors">
+              {/* <button className="border-2 border-primary text-primary hover:bg-primary hover:text-black font-semibold px-8 py-3 rounded-lg transition-colors">
                 <a href="/playbooks/videos">Schedule a Demo</a>
-              </button>
+              </button> */}
             </div>
 
             {/* Benefits */}

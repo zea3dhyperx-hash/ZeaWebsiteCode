@@ -184,12 +184,12 @@ export default function EducationTrainingCRM() {
             <p className="mt-3 text-muted-foreground text-lg">ZeaCRM helps educational institutions build smarter relationships with students and parents through automation, analytics, and AI.</p>
             <p className="mt-3 text-muted-foreground text-lg">From the first inquiry to alumni engagement, every interaction is organized, tracked, and optimized — so your team focuses on learning, not logistics.</p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
-              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-2 text-lg font-semibold text-primary transition hover:bg-primary/10">
                 Book a Demo
               </BookDemoButton>
-              <Button asChild size="lg">
+              {/* <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
           {/* <div className="rounded-xl border border-border p-6 bg-card">
@@ -897,10 +897,10 @@ Spend less time on manual coordination and more time shaping learning outcomes.
 </p>
         <p className="mt-6 text-center text-background">Smarter Workflows | Happier Students | Proven Results</p>
           <div className="mt-8 flex gap-4 justify-center">
-            <Button asChild size="lg" className="bg-background text-primary hover:scale-105 hover:bg-background transition transition-all">
+            {/* <Button asChild size="lg" className="bg-background text-primary hover:scale-105 hover:bg-background transition transition-all">
               <Link href="/playbooks/videos">Watch Demo Video</Link>
-            </Button>
-            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-transparent px-6 py-3 text-lg font-semibold text-background transition hover:scale-105 hover:bg-white/10">
+            </Button> */}
+            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-background px-6 py-2 text-lg font-semibold text-primary transition hover:scale-105">
               Book a Demo
             </BookDemoButton>
           </div>

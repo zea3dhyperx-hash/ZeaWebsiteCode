@@ -200,10 +200,10 @@ export default function FinanceInsuranceCRM() {
               ))}
             </div>
             <div className="mt-6 flex gap-4 justify-center md:justify-start">
-              <Button asChild size="lg">
+              {/* <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
-              </Button>
-              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+              </Button> */}
+              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-2 text-lg font-semibold text-primary transition hover:bg-primary/10">
                 Book a Demo
               </BookDemoButton>
             </div>
@@ -370,10 +370,10 @@ ZeaCRM ensures every transaction, message, and signature happens securely—meet
           <p className="mt-4 text-lg">ZeaCRM helps your institution stay compliant, responsive, and growth-focused—without complexity.</p>
           <p className="mt-4 text-lg">Automate what slows you down and focus on what matters most: building lasting client relationships.</p>
           <div className="mt-8 flex gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary">
+            {/* <Button asChild size="lg" variant="secondary">
               <Link href="/playbooks/videos">Watch Demo Video</Link>
-            </Button>
-            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-transparent px-6 py-3 text-lg font-semibold text-background transition hover:scale-105 hover:bg-white/10">
+            </Button> */}
+            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-background bg-background px-6 py-2 text-lg font-semibold text-primary transition hover:scale-105">
               Book a Demo
             </BookDemoButton>
           </div>

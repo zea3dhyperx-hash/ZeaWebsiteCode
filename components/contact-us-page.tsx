@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -32,6 +32,7 @@ export default function ContactUsPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState(false)
+  const formRef = useRef<HTMLDivElement | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const target = e.target
@@ -101,7 +102,10 @@ export default function ContactUsPage() {
                   Have questions about ZeaCRM, need support, or just want to explore how automation can transform your
                   business? Our team is only a message away.
                 </p>
-                <Button className="mt-8 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 text-lg">
+                <Button
+                  className="mt-8 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 text-lg"
+                  onClick={() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                >
                   Send a Message
                 </Button>
               </div>
@@ -171,7 +175,7 @@ export default function ContactUsPage() {
                   </div>
                 </div>
 
-                <Card className="p-8 bg-gray-900/50 border-amber-400 hover:scale-101 transition-smooth">
+                <Card ref={formRef} className="p-8 bg-gray-900/50 border-amber-400 hover:scale-101 transition-smooth">
                 <div className="flex items-center space-x-3">
                   <MessageCircle className="w-6 h-6 text-amber-400" />
                   <h2 className="text-2xl font-bold">Get in Touch Instantly</h2>

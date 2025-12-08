@@ -4,16 +4,18 @@ import React, { useState } from "react"
 import { Check, ChevronDown, BadgeCheck, Scale, TrendingUp, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { BookDemoButton } from "./book-demo-button"
 
 interface PricingPageClientProps {
   initialCountry?: string
 }
 
 type Currency = "USD" | "INR"
+type PlanName = "ZEA Starter" | "ZEA Growth" | "ZEA Scale" | "ZEA Enterprise"
 
 export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
-  const [currency, setCurrency] = useState<Currency>(initialCountry?.toUpperCase() === "IN" ? "INR" : "USD")
+  const [currency, setCurrency] = useState<Currency>("INR")
   const [showForm, setShowForm] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [showEnterpriseForm, setShowEnterpriseForm] = useState(false)
@@ -23,7 +25,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
     fullName: "",
     email: "",
     company: "",
-    plan: "Standard",
+    plan: "ZEA Starter",
     message: "",
     subscriber: false,
     subscribed: "tac agreed" as string,
@@ -46,7 +48,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
     WebkitTextFillColor: "#fff",
   }
 
-  const handleOpenForm = (plan: "Standard" | "Pro") => {
+  const handleOpenForm = (plan: PlanName) => {
     setFormData((prev) => ({ ...prev, plan }))
     setSubmitted(false)
     setShowForm(true)
@@ -144,7 +146,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
     e.preventDefault()
     const payload = {
       ...enterpriseFormData,
-      plan: "Enterprise",
+      plan: "ZEA Enterprise",
       subscribed: enterpriseFormData.subscriber ? "subscriber" : "tac agreed",
     }
     const body = new URLSearchParams()
@@ -168,59 +170,80 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
 
   const pricingPlans = [
     {
-      name: "Standard",
-      priceINR: "5,499",
-      priceUSD: "69",
-      period: "/ Month",
-      description: "Essential tools for small teams",
+      name: "ZEA Starter",
+      priceINR: "5,500",
+      priceUSD: "97",
+      period: "/ month",
+      description: "Essential workflows and automation for lean teams",
       features: [
-        "Contacts and Pipeline Management",
-        "Invoicing Management",
-        "Reputation Management",
-        "Marketing Automation",
-        "Dashboard",
-        "2 Workflow Automation",
-        "Reporting",
-        "Up to 5 Users",
+        "Users: up to 5",
+        "Workflows, Automations, Pipelines, Contacts, Conversations, Calendars, Reporting (All)",
+        "Sites optional (disabled by default)",
+        "Memberships / Marketing / AI restricted",
+        "Support: 2 onboarding calls",
+        "WhatsApp support (business hours)",
+        "Add-ons: WhatsApp automation ₹600/mo (client pays message wallet)",
+        "Add-ons: LLM API billed to client",
       ],
       buttonText: "Get Started",
       buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
       highlighted: false,
     },
     {
-      name: "Pro",
-      priceINR: "10,999",
-      priceUSD: "129",
-      period: "/ Month",
-      description: "Advanced automation for growing businesses",
+      name: "ZEA Growth",
+      priceINR: "9,999",
+      priceUSD: "197",
+      period: "/ month",
+      description: "Marketing, memberships, and payments to accelerate growth",
       features: [
-        "Contacts and Pipeline Management",
-        "Invoicing Management",
-        "Reputation Management",
-        "Dashboard",
-        "AI Agents",
-        "Membership Module",
-        "5 Workflow Automation",
-        "Marketing Automation (Using LLM)",
-        "Reporting",
-        "WhatsApp Integration",
-        "Up to 10 Users",
+        "Users: up to 10",
+        "Everything in Starter",
+        "Payment Integrations (Pro)",
+        "Marketing (Pro)",
+        "Memberships (Pro)",
+        "API Integrations (Pro)",
+        "Reputation (Pro)",
+        "Support: 4 onboarding sessions",
+        "Monthly optimization review",
       ],
       buttonText: "Get Started",
       buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
       highlighted: true,
     },
     {
-      name: "Enterprise",
-      priceINR: "19,999",
-      priceUSD: "249",
-      period: "/ Month",
-      description: "All modules and premium support",
+      name: "ZEA Scale",
+      priceINR: "14,999",
+      priceUSD: "297",
+      period: "/ month",
+      description: "Branded dashboards and priority support for larger teams",
       features: [
-        "All Modules with Unlimited Access",
-        "Additional Storage Facility",
-        "Dedicated Account Manager",
-        "Up to 25 Users",
+        "Users: up to 25",
+        "Everything in Growth",
+        "AI Agents (Pro)",
+        "Branded dashboards",
+        "Expanded media storage",
+        "Priority support",
+        "Weekly training clinic",
+        "1 custom snapshot/setup per quarter",
+      ],
+      buttonText: "Get Started",
+      buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
+      highlighted: false,
+    },
+    {
+      name: "ZEA Enterprise",
+      priceINR: "24,999+",
+      priceUSD: "397",
+      period: "/ month",
+      description: "Custom rollouts, white-label dashboards, and SLA coverage",
+      features: [
+        "Users: 50+ or custom",
+        "White-label dashboards",
+        "SLA + dedicated account manager",
+        "20×7 option",
+        "Custom automation builds & API engineering",
+        "Multi-location rollout (5)",
+        "On-site / bootcamp training (optional)",
       ],
       buttonText: "Talk to Sales",
       buttonStyle: "bg-transparent border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black",
@@ -264,7 +287,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       {/* Hero Section */}
       <section className="py-16 md:py-24 px-4 md:px-8 pt-24 pb-0 animate-slide-up">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-slide-up">Pricing</h1>
+          <h1 className="text-6xl md:text-6xl font-bold text-foreground mb-4 animate-slide-up">Pricing</h1>
           <p className="text-xl text-amber-400 mb-8 animate-slide-up">One Powerful Platform. Simple Pricing</p>
           <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
             No hidden costs, no complex tiers. Just transparent plans that give you everything you need to grow, automate, and connect with your customers.
@@ -291,53 +314,42 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
             {pricingPlans.map((plan, index) => (
               <div
                 key={index}
-                className={`rounded-lg p-8 border-2 hover:scale-105 transition-transform transition-all ${
+                className={`rounded-lg p-8 border-2 transition-all flex flex-col h-full ${
                   plan.highlighted
-                    ? "border-amber-400 hover:scale-110 transition-transform bg-gray-900 shadow-2xl shadow-amber-400/20 md:scale-105"
+                    ? "border-amber-400 bg-gray-900 shadow-2xl shadow-amber-400/20"
                     : "border-gray-700 bg-gray-950 hover:border-amber-400"
                 }`}
               >
                 <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
+                <p className="text-gray-400 text-sm mb-6 min-h-[56px]">{plan.description}</p>
 
                 <div className="mb-6">
-                  <div className="flex items-baseline gap-1">
+                  <div className="flex flex-col items-start leading-tight">
                     <span className="text-4xl font-bold text-white">
                       <span className="currency">{currencySymbol}</span>{" "}
                       {currency === "INR" ? plan.priceINR : plan.priceUSD}
                     </span>
-                    <span className="text-gray-400">{plan.period}</span>
+                    <span className="text-gray-400 text-sm">{plan.period}</span>
                   </div>
                 </div>
 
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => {
-                    const isStandard = plan.name === "Standard"
-                    const isLast = featureIndex === plan.features.length - 1
-                    const showAsUnavailable = isStandard && isLast && feature.toLowerCase().includes("whatsapp integration")
-                    return (
-                      <li key={featureIndex} className="flex items-start gap-3">
-                        {showAsUnavailable ? (
-                          <span className="w-5 h-5 mt-0.5 flex items-center justify-center text-red-500">x</span>
-                        ) : (
-                          <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                        )}
-                        <span className={showAsUnavailable ? "text-gray-400 line-through" : "text-gray-300"}>{feature}</span>
-                      </li>
-                    )
-                  })}
+                <ul className="space-y-4 mb-8 flex-1">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <button
                   className={`w-full py-3 px-4 rounded-lg font-semibold transition-all ${plan.buttonStyle}`}
                   onClick={() =>
-                    plan.name === "Enterprise"
-                      ? handleOpenEnterpriseForm()
-                      : handleOpenForm(plan.name === "Pro" ? "Pro" : "Standard")
+                    plan.name === "ZEA Enterprise" ? handleOpenEnterpriseForm() : handleOpenForm(plan.name as PlanName)
                   }
                 >
                   {plan.buttonText}
@@ -417,9 +429,12 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
             <button className="bg-amber-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-amber-500 transition-colors">
               <a href="/contact-us">Contact Sales</a>
             </button>
-            <button className="border-2 border-amber-400 text-amber-400 px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 hover:text-black transition-colors">
+            {/* <button className="border-2 border-amber-400 text-amber-400 px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 hover:text-black transition-colors">
               <a href="/playbooks/videos">Watch Demo Video</a>
-            </button>
+            </button> */}
+            <BookDemoButton className="border-2 border-amber-400 text-amber-400 px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 hover:text-black transition-colors">
+                Book a Demo
+            </BookDemoButton>
           </div>
         </div>
       </section>
@@ -449,7 +464,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
               <div className="space-y-1 text-center">
                 <h3 className="text-2xl font-bold text-white">Get Your ZeaCRM Pricing</h3>
                 <p className="text-sm text-muted-foreground">
-                  Choose your plan — Standard or Pro — and get a tailored quote instantly.
+                  Choose your plan - Starter, Growth, or Scale - and get a tailored quote instantly.
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
@@ -474,8 +489,9 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                     className="w-full rounded-lg border border-border bg-gray-900 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
                     style={autofillReset}
                   >
-                    <option value="Standard">Standard</option>
-                    <option value="Pro">Pro</option>
+                    <option value="ZEA Starter">ZEA Starter</option>
+                    <option value="ZEA Growth">ZEA Growth</option>
+                    <option value="ZEA Scale">ZEA Scale</option>
                   </select>
                 </div>
                 <div>
@@ -653,7 +669,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                 <div>
                   <label className="block text-sm mb-1 text-foreground">Plan</label>
                   <input
-                    value="Enterprise"
+                    value="ZEA Enterprise"
                     disabled
                     className="w-full rounded-lg border border-border bg-gray-950 px-3 py-2 text-white opacity-80"
                   />

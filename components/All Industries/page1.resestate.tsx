@@ -220,10 +220,10 @@ export default function RealEstateCRM() {
               ))}
             </div>
             <div className="mt-8 flex gap-4 justify-center md:justify-start">
-              <Button asChild size="lg">
+              {/* <Button asChild size="lg">
                 <Link href="/playbooks/videos">Watch Demo Video</Link>
-              </Button>
-              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+              </Button> */}
+              <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-1.5 text-lg font-semibold text-primary transition hover:bg-primary/10">
                 Book a Demo
               </BookDemoButton>
             </div>
@@ -442,10 +442,10 @@ export default function RealEstateCRM() {
             Experience the next generation of real estate management with complete visibility and control.
           </p>
           <div className="mt-8 flex items-center justify-center gap-4">
-            <Button asChild size="lg">
+            {/* <Button asChild size="lg">
               <Link href="/playbooks/videos">Watch Demo Video</Link>
-            </Button>
-            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-lg font-semibold text-primary transition hover:bg-primary/10">
+            </Button> */}
+            <BookDemoButton className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-1.5 text-lg font-semibold text-primary transition hover:bg-primary/10">
               Book a Demo
             </BookDemoButton>
           </div>
