@@ -13,9 +13,12 @@ const dmSans = DM_Sans({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "zeaCRM - AI-Powered CRM for the Future of Business",
   description: "Manage customers, automate workflows, and grow your business with zeaCRM",
-  generator: "v0.app",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      // { url: "/icon-dark-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    // apple: "/apple-icon.png",
     shortcut: "/favicon.png",
   },
   verification: {

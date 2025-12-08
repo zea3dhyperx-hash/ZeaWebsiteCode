@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import React, { useState } from "react"
 import { Check, ChevronDown, BadgeCheck, Scale, TrendingUp, X } from "lucide-react"
@@ -177,13 +177,10 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       description: "Essential workflows and automation for lean teams",
       features: [
         "Users: up to 5",
-        "Workflows, Automations, Pipelines, Contacts, Conversations, Calendars, Reporting (All)",
-        "Sites optional (disabled by default)",
-        "Memberships / Marketing / AI restricted",
-        "Support: 2 onboarding calls",
-        "WhatsApp support (business hours)",
-        "Add-ons: WhatsApp automation ₹600/mo (client pays message wallet)",
-        "Add-ons: LLM API billed to client",
+        "Core: Workflows, Automations, Pipelines, Contacts, Conversations, Calendars, Reporting (All)",
+        "Limits: Sites optional (disabled by default), Memberships / Marketing / AI restricted",
+        "Support: 2 onboarding calls, WhatsApp support (business hours)",
+        "Add-ons: WhatsApp automation ₹600/mo (client pays message wallet), LLM API billed to client",
       ],
       buttonText: "Get Started",
       buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
@@ -203,8 +200,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
         "Memberships (Pro)",
         "API Integrations (Pro)",
         "Reputation (Pro)",
-        "Support: 4 onboarding sessions",
-        "Monthly optimization review",
+        "Support: 4 onboarding sessions, Monthly optimization review",
       ],
       buttonText: "Get Started",
       buttonStyle: "bg-amber-400 text-black hover:bg-amber-500",
@@ -239,9 +235,11 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       features: [
         "Users: 50+ or custom",
         "White-label dashboards",
-        "SLA + dedicated account manager",
-        "20×7 option",
-        "Custom automation builds & API engineering",
+        "SLA",
+        "dedicated account manager",
+        "20x7 option",
+        "Custom automation builds",
+        "API engineering",
         "Multi-location rollout (5)",
         "On-site / bootcamp training (optional)",
       ],
@@ -374,8 +372,8 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 hover:scale-105 transition-transform">
             {[
               { title: "Transparent monthly billing", icon: BadgeCheck },
-              { title: "No hidden costs", icon: Scale },
-              { title: "Scales with your business needs", icon: TrendingUp },
+    { title: "No hidden costs", icon: Scale },
+    { title: "Scales with your business needs", icon: TrendingUp },
             ].map((item, index) => (
               <div key={index} className="bg-black p-6 rounded-lg border border-gray-700 text-center">
                 <div className="flex justify-center mb-3 text-amber-400">
@@ -423,7 +421,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Automate. Grow. Succeed.</h2>
           <p className="text-gray-400 mb-8">
-            Choose the plan that fits your business today—and scale efficiently with ZeaCRM tomorrow.
+            Choose the plan that fits your business todayâ€”and scale efficiently with ZeaCRM tomorrow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-amber-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-amber-500 transition-colors">
@@ -737,3 +735,10 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
     </>
   )
 }
+
+
+
+
+
+
+
