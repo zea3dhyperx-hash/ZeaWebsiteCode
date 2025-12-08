@@ -4,7 +4,6 @@ import { BlogContent } from "@/components/blog-content"
 import { BlogFooter } from "@/components/blog-footer"
 import { TableOfContents } from "@/components/table-of-contents"
 import FAQ from "@/components/faq"
-import Link from "next/link";
 import React from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
