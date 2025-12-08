@@ -16,3 +16,10 @@ finance - https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e
 retail - https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783b2b865e22f247b285.mp4
 automotive - https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783b82f4c5639389a57b.mp4
 Professional - https://storage.googleapis.com/msgsndr/bsexF0htDBOfNeCh7844/media/692e783baaad912ebc47e727.mp4
+
+
+
+https://www.figma.com/design/RllNNAZWWIK4G82Bp90Kno/Zea-landing?node-id=0-1&t=tqEVmtlcw86yqf9g-1
+
+https://v0.app/chat/ai-robot-ui-jsZJpKqJ1UO?b=b_SIdJyqlEmdF&path=%2F&ref=ZQT5ZE#K4VBv5Os7snLNaJ9EVSHjGiQcDC0tcix
+
