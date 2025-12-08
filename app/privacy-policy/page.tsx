@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
     <>
       <Header />
       <main className="min-h-screen bg-background py-12 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-8">
           <h1 className="text-4xl font-bold text-foreground mb-8">Privacy Policy</h1>
           <p className="prose prose-invert max-w-none space-y-6 pb-10 text-muted-foreground">
             ZeaCRM values your privacy and is committed to protecting all your personal information. This Privacy Policy describes how ZeaCRM collects, uses, stores, discloses, and safeguards your information when you use our website (
@@ -27,23 +27,23 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">Definitions</h2>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 ZeaCRM, Company, We, Us, and Our refer to Zea Technologies FZC and its digital platforms.
               </p>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 Platform refers to{" "}
                 <a href="https://zeacrm.com/" className="text-primary underline" target="_blank" rel="noreferrer">
                   www.zeacrm.com
                 </a>
                 , ZeaCRM mobile app, and other affiliated digital products or services.
               </p>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 You, Your, and User refer to any individual or entity using ZeaCRM services.
               </p>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 Services refers to all products, software, and tools provided by ZeaCRM to help businesses manage customer relationships, sales, and marketing.
               </p>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 Policy refers to this Privacy Policy.
               </p>
             </section>
@@ -124,7 +124,7 @@ export default function PrivacyPolicyPage() {
             {/* <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">Contact</h2>
               <p className="text-muted-foreground">
-                If you have any questions about this Policy, please contact support@zeacrm.com.
+                If you have any questions about this Policy, please contact <a href="mailto:support@zeacrm.com" className="text-primary underline">support@zeacrm.com</a>.
               </p>
             </section>
 
@@ -173,7 +173,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">6. Contact Us</h2>
               <p className="text-muted-foreground">
-                If you have any questions about this Privacy Policy, please contact us at support@zeacrm.com
+                If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@zeacrm.com" className="text-primary underline">support@zeacrm.com</a>
               </p>
             </section> */}
           </div>

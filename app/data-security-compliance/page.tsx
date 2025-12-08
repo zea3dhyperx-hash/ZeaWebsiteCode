@@ -13,16 +13,16 @@ export default function DataSecurityCompliancePage() {
     <>
       <Header />
       <main className="min-h-screen bg-background py-12 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-8">
           <h1 className="text-4xl font-bold text-foreground mb-8">Data Security and Compliance</h1>
-            <p className="text-muted-foreground py-2">
+            <p className="text-muted-foreground leading-relaxed">
               At ZeaCRM, protecting customer data is at the core of what we do. We comply with major global data protection regulations, including GDPR, CCPA, and USA Data Protection Law, ensuring that your business data remains secure and compliant.
             </p>
 
           <div className="prose prose-invert max-w-none space-y-6">
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">Security Practices</h2>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 ZeaCRM employs multi-layered security practices that include:
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 mt-4">
@@ -41,54 +41,58 @@ export default function DataSecurityCompliancePage() {
                 <li>ISO 27001 Practices – Adheres to international standards of information security.</li>
                 <li>CCPA Readiness – Allows California residents to access or delete personal data upon request.</li>
               </ul>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 Your data is stored securely in geographically redundant servers hosted in the UAE and EU, depending on user location. ZeaCRM ensures data minimization and retention only for the duration required by business or legal needs.
               </p>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 All third-party vendors handling ZeaCRM data (including payment processors, analytics tools, and integrations) comply with the same strict privacy and security standards.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">Incident Response</h2>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 At ZeaCRM, we take incident management with the utmost seriousness. In the rare event of a data breach or unauthorized access, ZeaCRM’s security team follows a structured, time-bound response protocol. You will be notified within 72 hours of detection, along with complete transparency on the nature of the breach, affected data, and potential risks.
               </p>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 Immediate containment and recovery measures will be initiated to minimize disruption and ensure service continuity. Our dedicated security specialists conduct thorough root cause analysis to identify vulnerabilities, followed by corrective and preventive actions to ensure that similar incidents do not occur in the future. Continuous monitoring, audits, and post-incident reviews are part of our commitment to maintaining your trust and data safety.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">Your Role in Security</h2>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 While ZeaCRM provides enterprise-grade protection, maintaining account security is a shared responsibility. As a user, your vigilance strengthens the system’s defense. We strongly recommend using complex, unique passwords and enabling multi-factor authentication (MFA) for every account.
               </p>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
                 Avoid sharing login credentials, especially across teams, and ensure that inactive users are promptly removed from your organization’s account. Periodically review access permissions to confirm that only authorized individuals have the necessary rights. By following these simple yet essential practices, you play an active role in safeguarding your organization’s data integrity and confidentiality.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">Contact</h2>
-              <p className="text-muted-foreground py-2">
-                For data protection and compliance queries, contact support@zeacrm.com.
+              <p className="text-muted-foreground leading-relaxed">
+                For data protection and compliance queries, contact{" "}
+                <a href="mailto:support@zeacrm.com" className="text-primary underline">
+                  support@zeacrm.com
+                </a>
+                .
               </p>
             </section>
 
             {/* <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">2. Data Encryption</h2>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
               </p>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">2. Data Encryption</h2>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
               </p>
-              <p className="text-muted-foreground py-2">
+              <p className="text-muted-foreground leading-relaxed">
               </p>
             </section>
 
