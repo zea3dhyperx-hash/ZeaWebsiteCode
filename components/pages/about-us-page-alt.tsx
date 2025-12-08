@@ -170,7 +170,8 @@ const leaders = [
     slug: "vinoth-kumar",
     name: "Vinoth Kumar",
     role: "Founder",
-    img: "/about-us-images/founder22.jpg",
+    // img: "/about-us-images/founder22.jpg",
+    img: "/F01.png",
     slogan: "Work with heart, finish what you start.",
     copy:
     "Vinoth was born in Kancheepuram, Tamil Nadu, in a family rooted in traditional weaving - a place where discipline, craftsmanship, and hard work were a way of life. Growing up in a simple South Indian home, he learned to stay accountable, work honestly, and finish what he starts. Those values became the foundation of who he is today. \n\nEven though his passion was always sales, he followed the classic Tamil Nadu route and completed Engineering in 2010. Life moved forward, and he married Soujanya - now his co-founder - and together they are raising their son, Mithran. \n\nAfter nearly a decade in Bengaluru's fast urban life, Vinoth realised something important: businesses weren't failing due to lack of talent, but due to broken systems. So he left the city and settled in Salem with a mission to help small businesses automate, organise, and grow without chaos. \n\nWith just a laptop and long nights of figuring things out, he built URL Factory and later ZEA CRM - not just as tools, but as practical ecosystems that solve real operational problems. People come to Vinoth for clarity, workflows, and structure - and he rarely says no, a weakness that also makes him deeply trusted. His vision is simple: build strong systems, help founders breathe easier, and scale a company beyond $10M with honesty, discipline, and purpose.",
@@ -180,7 +181,7 @@ const leaders = [
     slug: "soujanya-rao",
     name: "Katta Soujanya Rao",
     role: "Founder",
-    img: "/about-us-images/founder1.jpg",
+    img: "/F11.png",
     slogan: "Helping teams operate with discipline, structure, and smart automation.",
     copy:
       "Katta Soujanya Rao is the Co-Founder of URL Factory and ZeaCRM, two rapidly growing technology ventures focused on helping businesses automate their operations, streamline workflows, and scale with confidence.\n\nWith over five years of experience in sales, marketing, and growth strategy, she brings a strong understanding of customer behavior, operational challenges, and the systems modern businesses need to perform efficiently. Her career across startups and multinational companies shaped her ability to build solutions that are practical, scalable, and easy for any business to adopt. Driven by this experience, Soujanya co-founded URL Factory to deliver digital solutions, workflow automation, voice AI, and operational systems that support service-based businesses. \n\nAs a co-founder of ZeaCRM, she leads product direction for a business management platform designed for growing companies - offering CRM and lead management, sales pipelines, communication tools, and automated workflows that simplify daily operations. Under her leadership, both platforms have expanded significantly, supporting industries across services, retail, education, healthcare, real estate, and blue-collar sectors. \n\nHer vision remains clear: to help businesses work smarter, automate faster, and grow consistently using modern AI and workflow technologies.",

@@ -173,7 +173,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       name: "ZEA Starter",
       priceINR: "5,500",
       priceUSD: "97",
-      period: "/ month",
+      period: "per month",
       description: "Essential workflows and automation for lean teams",
       features: [
         "Users: up to 5",
@@ -190,7 +190,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       name: "ZEA Growth",
       priceINR: "9,999",
       priceUSD: "197",
-      period: "/ month",
+      period: "per month",
       description: "Marketing, memberships, and payments to accelerate growth",
       features: [
         "Users: up to 10",
@@ -210,7 +210,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       name: "ZEA Scale",
       priceINR: "14,999",
       priceUSD: "297",
-      period: "/ month",
+      period: "per month",
       description: "Branded dashboards and priority support for larger teams",
       features: [
         "Users: up to 25",
@@ -230,7 +230,7 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
       name: "ZEA Enterprise",
       priceINR: "24,999+",
       priceUSD: "397",
-      period: "/ month",
+      period: "per month",
       description: "Custom rollouts, white-label dashboards, and SLA coverage",
       features: [
         "Users: 50+ or custom",
@@ -278,6 +278,8 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
   ]
 
   const currencySymbol = currency === "INR" ? "₹" : "$"
+  const visiblePlans = currency === "USD" ? pricingPlans.filter((plan) => plan.name !== "ZEA Starter") : pricingPlans
+  const gridCols = currency === "USD" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
 
   return (
     <>
@@ -299,21 +301,21 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
           <div className="flex justify-center mb-16 -mt-2 pr-2">
             <div className="inline-flex rounded-lg border border-primary overflow-hidden shadow-sm">
               <button
-                className={`px-4 py-2 text-sm font-semibold ${currency === "USD" ? "bg-amber-400 text-black" : "text-white hover:bg-gray-800"}`}
-                onClick={() => setCurrency("USD")}
-              >
-                USD
-              </button>
-              <button
-                className={`px-4 py-2 text-sm font-semibold border-l border-gray-700 ${currency === "INR" ? "bg-amber-400 text-black" : "text-white hover:bg-gray-800"}`}
+                className={`px-4 py-2 text-sm font-semibold ${currency === "INR" ? "bg-amber-400 text-black" : "text-white hover:bg-gray-800"}`}
                 onClick={() => setCurrency("INR")}
               >
                 INR
               </button>
+              <button
+                className={`px-4 py-2 text-sm font-semibold border-l border-gray-700 ${currency === "USD" ? "bg-amber-400 text-black" : "text-white hover:bg-gray-800"}`}
+                onClick={() => setCurrency("USD")}
+              >
+                USD
+              </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
-            {pricingPlans.map((plan, index) => (
+          <div className={`grid ${gridCols} gap-4 `}>
+            {visiblePlans.map((plan, index) => (
               <div
                 key={index}
                 className={`rounded-lg p-8 border-2 transition-all flex flex-col h-full ${
@@ -326,13 +328,22 @@ export function PricingPageClient({ initialCountry }: PricingPageClientProps) {
                 <p className="text-gray-400 text-sm mb-6 min-h-[56px]">{plan.description}</p>
 
                 <div className="mb-6">
-                  <div className="flex flex-col items-start leading-tight">
-                    <span className="text-4xl font-bold text-white">
-                      <span className="currency">{currencySymbol}</span>{" "}
-                      {currency === "INR" ? plan.priceINR : plan.priceUSD}
-                    </span>
-                    <span className="text-gray-400 text-sm">{plan.period}</span>
-                  </div>
+                  {plan.name === "ZEA Enterprise" ? (
+                    <button
+                      className="w-full py-3 px-4 rounded-lg font-semibold transition-all bg-transparent border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black"
+                      onClick={handleOpenEnterpriseForm}
+                    >
+                      Talk to Sales
+                    </button>
+                  ) : (
+                    <div className="flex flex-col items-start leading-tight">
+                      <span className="text-4xl font-bold text-white">
+                        <span className="currency">{currencySymbol}</span>{" "}
+                        {currency === "INR" ? plan.priceINR : plan.priceUSD}
+                      </span>
+                      <span className="text-gray-400 text-sm">{plan.period}</span>
+                    </div>
+                  )}
                 </div>
 
                 <ul className="space-y-4 mb-8 flex-1">
