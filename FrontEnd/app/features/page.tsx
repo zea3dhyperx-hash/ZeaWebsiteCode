@@ -1,19 +1,48 @@
+// Server component with client wrapper
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
+import { FeaturesHeroSection } from "@/components/features-hero-section"
+import { FeaturesCardsSection } from "@/components/features-cards-section"
+import { FeaturesResultsSection } from "@/components/features-results-section"
+import { FeaturesAutomationSection } from "@/components/features-automation-section"
+import { FeaturesMobileSection } from "@/components/features-mobile-section"
+import { FeaturesScaleSection } from "@/components/features-scale-section"
+import { Features2Grid } from "@/components/features-2-grid"
+import { Features2Hero } from "@/components/features-2-hero"
+import { Features2CTA } from "@/components/features-2-cta"
+import { Features2Integration } from "@/components/features-2-integration"
+import { Features2Showcase } from "@/components/features-2-showcase"
+import { FeaturesSlider } from "@/components/features-slider"
+import ChatWidget from "@/components/chatbot"
+
+export const metadata = {
+  title: "Zea CRM Features",
+  description:
+    "Explore Zea CRM's powerful features designed to streamline your business operations, enhance customer relationships, and drive growth with AI-powered automation.",
+};
+
+
 export default function FeaturesPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen bg-background text-foreground">
-        <div className="container mx-auto max-w-5xl px-4 py-12">
-          <h1 className="text-4xl font-bold mb-4">Features</h1>
-          <p className="text-muted-foreground">
-            Feature highlights will appear here.
-          </p>
-        </div>
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen">
+      {/* <ClientScrollRestore> */}
+        <Header />
+        <Features2Hero />
+        <Features2Grid />
+        <FeaturesSlider />
+        {/* <FeaturesHeroSection /> */}
+        {/* <FeaturesCardsSection /> */}
+        {/* <FeaturesResultsSection /> */}
+        {/* <FeaturesAutomationSection */}
+        <FeaturesMobileSection />
+        <Features2Showcase />
+        <Features2Integration />
+        <Features2CTA />
+        <FeaturesScaleSection />
+        <Footer />
+        <ChatWidget />
+      {/* </ClientScrollRestore> */}
+    </main>
   )
 }

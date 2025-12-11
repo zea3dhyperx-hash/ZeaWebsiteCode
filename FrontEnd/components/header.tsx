@@ -248,13 +248,13 @@ export function Header() {
             <Button
               // variant="outline"
               // onClick={() => setIsSignInOpen(true)}
-              className="hover-lift hover:scale-110 hover:bg-primary/10 hover:text-primary transition-all duration-300"
+              className="hover-lift hover:scale-110 hover:bg-primary/10 hover:text-primary transition-all duration-300 rounded-full px-5"
             >
               <a href="https://app.zeacrm.com/">Login to App</a>
             </Button>
             <Button
               onClick={() => setIsDemoOpen(true)}
-              className="bg-primary  hover:scale-110 text-black font-semibold transition-all duration-300 "
+              className="bg-primary hover:scale-110 text-black font-semibold transition-all duration-300 rounded-full px-5"
             >
               Book a Demo
             </Button>
@@ -349,7 +349,7 @@ export function Header() {
                 </div>
                 <Button
                   variant="outline"
-                  className="w-full bg-transparent hover:bg-primary"
+                  className="w-full bg-transparent hover:bg-primary rounded-full"
                 >
                   <Link href="https://app.zeacrm.com/?logout=true" >
                     Log In
@@ -360,7 +360,7 @@ export function Header() {
                   //   setIsGetStartedOpen(true)
                   //   setIsOpen(false)
                   // }}
-                  className="w-full bg-primary text-black font-semibold"
+                  className="w-full bg-primary text-black font-semibold rounded-full"
                   onClick={() => {
                     setIsDemoOpen(true)
                     setIsOpen(false)

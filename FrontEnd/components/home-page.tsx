@@ -299,15 +299,15 @@ export default function HomePage() {
           {/* Centered grid of business buttons */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
             {[
-              { name: <a href="/industries/healthcare-crm">"Healthcare"</a>, icon: "🏥" },
-              { name: <a href="/industries/real-estate-crm">"Real Estate"</a>, icon: "🏢" },
-              { name: <a href="/industries/professional-services-crm">"Professional Services"</a>, icon: "💼" },
-              { name: <a href="/industries/education-training-crm">"Education & Training"</a>, icon: "📚" },
-              { name: <a href="/industries/finance-insurance-crm">"Finance and Insurance"</a>, icon: "💰" },
-              { name: <a href="/industries/automotive-manufacturing-crm">"Automotive & Manufacturing"</a>, icon: "🚗" },
+              { id: "healthcare", name: <a href="/industries/healthcare-crm">"Healthcare"</a>, icon: "🏥" },
+              { id: "real-estate", name: <a href="/industries/real-estate-crm">"Real Estate"</a>, icon: "🏢" },
+              { id: "professional-services", name: <a href="/industries/professional-services-crm">"Professional Services"</a>, icon: "💼" },
+              { id: "education", name: <a href="/industries/education-training-crm">"Education & Training"</a>, icon: "📚" },
+              { id: "finance", name: <a href="/industries/finance-insurance-crm">"Finance and Insurance"</a>, icon: "💰" },
+              { id: "automotive", name: <a href="/industries/automotive-manufacturing-crm">"Automotive & Manufacturing"</a>, icon: "🚗" },
             ].map((business) => (
               <button
-                key={business.name}
+                key={business.id}
                 className="p-4 bg-black border border-gray-700 hover:border-yellow-500 hover:bg-gray-900 transition-all rounded-2xl text-center group"
               >
                 <span className="text-2xl mb-2 block">{business.icon}</span>
@@ -330,7 +330,7 @@ export default function HomePage() {
       <section className="py-24 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
+            <div className="text-white z-30">
               <h2 className="text-4xl md:text-6xl font-bold mb-8 text-balance leading-tight">
                 Multiple workspaces. One AI Team with different AI employees.
               </h2>
@@ -342,11 +342,11 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center ">
               <img
                 src="/images/untitled-20design-20-2835-29.jpg"
                 alt="ZEA CRM Dashboard on desktop monitor with plants"
-                className="max-w-3xl h-auto w-auto border-foreground"
+                className="max-w-3xl h-auto w-auto border-foreground scale-140"
               />
             </div>
           </div>
@@ -357,11 +357,11 @@ export default function HomePage() {
       <section className="py-24 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="flex justify-center md:justify-start">
+            <div className="flex justify-center item-center mx-20 md:justify-start">
               <img
                 src="/images/frame.png"
                 alt="ZEA CRM Dashboard on mobile phone with glowing effect"
-                className="w-full max-w-md h-auto"
+                className="w-full max-w-md h-auto scale-140"
               />
             </div>
             <div className="text-white">
@@ -381,7 +381,7 @@ export default function HomePage() {
       <section className="py-24 px-4 bg-black">
         <div className="max-w-7xl space-y-8 mx-12">
           {/* Purple Card with Phone Mockup - Full Width Horizontal */}
-          <Card className="bg-gradient-to-br from-purple-600 via-purple-500 to-purple-400 border-none p-12 md:p-16 rounded-3xl overflow-hidden">
+          <Card className="bg-gradient-to-br from-purple-600 via-purple-500 to-purple-400 border-none pl-20 rounded-3xl overflow-hidden">
             <div className="grid md:grid-cols-2 items-center gap-8">
               <div className="text-white">
                 <h2 className="text-4xl font-bold mb-6 text-balance leading-tight md:text-4xl">
